@@ -1,0 +1,6 @@
+@ATO_API_HostAddress = http://localhost:5000
+
+GET {{ATO_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
