@@ -47,10 +47,39 @@ namespace Service.AccountSer
         {
             return await _accountRepository.GetAllAsync();
         }
+        public async Task<IEnumerable<Account>> GetAccountsAsync()
+        {
+            try
+            {
+
+            return await _accountRepository.Query()
+                   .Include(b => b.TourCompany)
+                   .Include(b => b.TouristFacility)
+                   .ToListAsync();
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
 
         public async Task<Account> GetAccountByIdAsync(Guid id)
         {
-            return await _accountRepository.GetByIdAsync(id);
+
+            try
+            {
+
+                return await _accountRepository.Query()
+                       .Include(b => b.TourCompany)
+                       .Include(b => b.TouristFacility)
+                       .FirstOrDefaultAsync(a => a.Id == id);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
         }
 
         public async Task AddAccountAsync(Account account)
@@ -220,6 +249,31 @@ namespace Service.AccountSer
             var passwordRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$");
 
             return passwordRegex.IsMatch(password);
+        }
+
+        public async Task<bool> ResetPasswordAsync(Guid id, string newPassword)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+                return false;
+
+            var removePasswordResult = await _userManager.RemovePasswordAsync(user);
+            if (!removePasswordResult.Succeeded)
+                return false;
+
+            var addPasswordResult = await _userManager.AddPasswordAsync(user, newPassword);
+            return addPasswordResult.Succeeded;
+        }
+
+        public async Task<bool> InactiveAccountAsync(Guid id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+                return false;
+
+            user.isAccountActive = false;
+            var updateResult = await _userManager.UpdateAsync(user);
+            return updateResult.Succeeded;
         }
     }
 }

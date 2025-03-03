@@ -14,7 +14,8 @@ namespace Service.UserSupportSer
     {
         Task<ResponseVM> RequestUserSupport(UserSupport userSupport);
         Task<ResponseVM> ReplyRequestUserSupport(ReplyUserSupportRequest userSupport);
-        Task<PagedResult<UserSupport>> ListUserSupport(string? search, bool? IsResolved, IssueType? issueType, int page, int pageSize);
+        //Task<PagedResult<UserSupport>> ListUserSupport(string? search, bool? IsResolved, IssueType? issueType, int page, int pageSize);
+        Task<List<UserSupport>> ListUserSupport();
         Task<UserSupport> UserSupportDetails(Guid SupportId);
     }
 }

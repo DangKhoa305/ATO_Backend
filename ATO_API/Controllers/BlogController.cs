@@ -26,26 +26,45 @@ namespace ATO_API.Controllers
             _blogService = blogService;
             _mapper = mapper;
         }
+        //[HttpGet("get-blogs")]
+        //public async Task<IActionResult> GetBlogs(
+        //    [FromQuery] string? search,
+        //    [FromQuery] BlogType? blogtype,
+        //    [FromQuery] int page = 1,
+        //    [FromQuery] int pageSize = 8
+        //)
+        //{
+        //    try
+        //    {
+        //        var response = await _blogService.GetListBlogs(search, blogtype, page, pageSize);
+        //        List<ListBlog_Guest_DTO> responseResult = _mapper.Map<List<ListBlog_Guest_DTO>>(response.Items);
+        //        return Ok(new PagedResult<ListBlog_Guest_DTO>
+        //        {
+        //            Items = responseResult,
+        //            TotalItems = response.TotalItems,
+        //            CurrentPage = response.CurrentPage,
+        //            PageSize = response.PageSize,
+        //            TotalPages = response.TotalPages
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new ResponseVM
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        });
+        //    }
+        //}
+
         [HttpGet("get-blogs")]
-        public async Task<IActionResult> GetBlogs(
-            [FromQuery] string? search,
-            [FromQuery] BlogType? blogtype,
-            [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 8
-        )
+        public async Task<IActionResult> GetBlogs()
         {
             try
             {
-                var response = await _blogService.GetListBlogs(search, blogtype, page, pageSize);
-                List<ListBlog_Guest_DTO> responseResult = _mapper.Map<List<ListBlog_Guest_DTO>>(response.Items);
-                return Ok(new PagedResult<ListBlog_Guest_DTO>
-                {
-                    Items = responseResult,
-                    TotalItems = response.TotalItems,
-                    CurrentPage = response.CurrentPage,
-                    PageSize = response.PageSize,
-                    TotalPages = response.TotalPages
-                });
+                var response = await _blogService.GetListBlogs();
+                List<ListBlog_Guest_DTO> responseResult = _mapper.Map<List<ListBlog_Guest_DTO>>(response);
+                return Ok(responseResult);
             }
             catch (Exception ex)
             {

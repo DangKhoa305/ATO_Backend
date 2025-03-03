@@ -28,12 +28,17 @@ namespace ATO_API.Config
                     src.Account.TourCompany != null ? src.Account.TourCompany.CompanynName :
                     src.Account.TouristFacility != null ? src.Account.TouristFacility.TouristFacilityName : "Hệ thống ATOS"
                 ));
+                config.CreateMap<BlogCreateRequest, Blog>();
                 // user support
                 config.CreateMap<UserSupportRequest, UserSupport>();
                 config.CreateMap<UserSupport, UserSupportDetails>()
                 .ForMember(dest => dest.ResponeBy, opt => opt.MapFrom(src => src.ResponeAccount.Fullname))
                 .ForMember(dest => dest.IssueTypeDescription, opt => opt.MapFrom(src => GetEnumDescription(src.IssueType)));
 
+                // manage users 
+                config.CreateMap<Account, UserRespone>();
+                config.CreateMap<TourCompany, UserRespone_TourCompany>();
+                config.CreateMap<TouristFacility, UserRespone_TouristFacility>();
             });
 
             return mapperConfig.CreateMapper();

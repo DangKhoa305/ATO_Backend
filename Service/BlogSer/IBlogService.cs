@@ -12,6 +12,9 @@ namespace Service.BlogSer
     {
         Task<List<Blog>> GetListBlogs();
         Task<Blog> GetBlogDetails(Guid BlogId);
+        Task<Blog> CreateBlogAsync(Blog blog);
+        Task<bool> UpdateBlogAsync(Guid blogId, Blog blog);
+        Task<bool> UpdateStatusAsync(Guid blogId, BlogStatus newStatus, string replyContent);
         Task<PagedResult<Blog>> GetListBlogs(string? search, BlogType? blogtype, int page, int pageSize);
     }
 }

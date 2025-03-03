@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "EHOtw+cWUjVmtJBSUlDibwnJqx9jbHVQNzR2/G5pcLI=",
+  "Hash": "ZQKgN14FtrjbgP8WfN9zZONvtp+hAP7f/ho6rsMEh2A=",
   "Source": "ATO_API",
   "BasePath": "_content/ATO_API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

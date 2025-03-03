@@ -19,7 +19,7 @@ namespace ATO_API.Controllers.Admin
 {
     [Route("api/support/admin")]
     [ApiController]
-    //[Authorize("Admin")]
+    [Authorize(Roles = "Admin")]
     public class UserSupportController : ControllerBase
     {
         private readonly IUserSupportService _userSupportService;
@@ -34,25 +34,13 @@ namespace ATO_API.Controllers.Admin
         }
         [HttpGet("list-user-supports")]
         [ProducesResponseType(typeof(PagedResult<UserSupport>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> ListUserSupport(
-            [FromQuery] string? search,
-            [FromQuery] IssueType? issueType,
-            [FromQuery] bool? IsResolved,
-            [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 8)
+        public async Task<IActionResult> ListUserSupport()
         {
             try
             {
-                PagedResult<UserSupport> response = await _userSupportService.ListUserSupport(search, IsResolved, issueType, page,pageSize);
-                List<UserSupportDetails> responseResult = _mapper.Map<List<UserSupportDetails>>(response.Items);
-                return Ok(new PagedResult<UserSupportDetails>
-                {
-                    Items = responseResult,
-                    TotalItems = response.TotalItems,
-                    CurrentPage = response.CurrentPage,
-                    PageSize = response.PageSize,
-                    TotalPages = response.TotalPages
-                });
+                List<UserSupport> response = await _userSupportService.ListUserSupport();
+                List<UserSupportDetails> responseResult = _mapper.Map<List<UserSupportDetails>>(response);
+                return Ok(responseResult);
             }
             catch (Exception ex)
             {

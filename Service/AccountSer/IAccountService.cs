@@ -12,11 +12,14 @@ namespace Service.AccountSer
     public interface IAccountService
     {
         Task<IEnumerable<Account>> GetAllAccountsAsync();
+        Task<IEnumerable<Account>> GetAccountsAsync();
         Task<Account> GetAccountByIdAsync(Guid accountId);
         Task AddAccountAsync(Account account);
         Task UpdateAccountAsync(Account account);
         Task<ResponseLogin> LoginAsync(LoginDTO model);
         Task<ResponseVM_Email> ForgotPasswordSendOTPAsync(string email);
         Task<ResponseVM> ForgotPasswordAsync(ForgotPassword_DTO model);
+        Task<bool> ResetPasswordAsync(Guid id, string newPassword);
+        Task<bool> InactiveAccountAsync(Guid id);
     }
 }

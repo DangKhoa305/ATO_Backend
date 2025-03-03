@@ -16,7 +16,7 @@ namespace Service.UserSupportSer
     {
 
         private readonly IRepository<UserSupport> _userSupportRepository;
-        public UserSupportService( IRepository<UserSupport> userSupportRepository
+        public UserSupportService(IRepository<UserSupport> userSupportRepository
         )
         {
             _userSupportRepository = userSupportRepository;
@@ -69,12 +69,27 @@ namespace Service.UserSupportSer
             }
         }
 
+        public Task<List<UserSupport>> ListUserSupport()
+        {
+            try
+            {
+                var query = _userSupportRepository.Query()
+                                .Include(b => b.ResponeAccount).ToListAsync();
+                return query;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<ResponseVM> ReplyRequestUserSupport(ReplyUserSupportRequest userSupport)
         {
             try
             {
                 var usersp = await _userSupportRepository.GetByIdAsync(userSupport.SupportId);
-                if(usersp == null)
+                if (usersp == null)
                 {
                     return new ResponseVM
                     {
@@ -126,7 +141,7 @@ namespace Service.UserSupportSer
                     Message = "Đã sảy ra lỗi. Vui lòng thử lại sau!"
                 };
             }
-            
+
         }
 
         public async Task<UserSupport> UserSupportDetails(Guid SupportId)
