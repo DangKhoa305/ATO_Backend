@@ -14,15 +14,15 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Khoa\Source\Repos\ATO_Backend\ATO_API:/app:rw
-      - C:\Users\Khoa\Source\Repos\ATO_Backend:/src:rw
-      - C:\Users\Khoa\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\Khoa\.nuget\packages:/.nuget/packages:ro
-      - D:\Quan trong ko xoa\NuGetPackages:/.nuget/fallbackpackages:ro
-      - C:\Users\Khoa\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-      - C:\Users\Khoa\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
-      - C:\Users\Khoa\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
-      - C:\Users\Khoa\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Users\dangk\Desktop\New folder\ATO_API:/app:rw
+      - C:\Users\dangk\Desktop\New folder:/src:rw
+      - C:\Users\dangk\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\dangk\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/.nuget/fallbackpackages:ro
+      - C:\Users\dangk\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\dangk\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\dangk\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\dangk\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
       - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
       - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
 
