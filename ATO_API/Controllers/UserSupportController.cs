@@ -30,6 +30,8 @@ namespace ATO_API.Controllers
         }
         [HttpPost("request-support")]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateUserSupport([FromBody] UserSupportRequest request)
         {
             try

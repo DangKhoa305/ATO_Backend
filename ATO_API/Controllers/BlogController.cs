@@ -56,14 +56,14 @@ namespace ATO_API.Controllers
         //        });
         //    }
         //}
-
         [HttpGet("get-blogs")]
+        [ProducesResponseType(typeof(List<Blog_Guest_DTO>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetBlogs()
         {
             try
             {
                 var response = await _blogService.GetListBlogs();
-                List<ListBlog_Guest_DTO> responseResult = _mapper.Map<List<ListBlog_Guest_DTO>>(response);
+                List<Blog_Guest_DTO> responseResult = _mapper.Map<List<Blog_Guest_DTO>>(response);
                 return Ok(responseResult);
             }
             catch (Exception ex)
@@ -76,6 +76,7 @@ namespace ATO_API.Controllers
             }
         }
         [HttpGet("get-blog-details/{blogId}")]
+        [ProducesResponseType(typeof(Blog_Guest_DTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetBlogDetails(
             Guid blogId
         )

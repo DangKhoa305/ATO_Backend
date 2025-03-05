@@ -68,6 +68,24 @@ namespace Service.BlogSer
             }
 
         }
+        public async Task<List<Blog>> GetListBlogs_CM()
+        {
+            try
+            {
+                return await _blogRepository.Query()
+                    .Include(b => b.Account)
+                        .ThenInclude(a => a.TourCompany)
+                    .Include(b => b.Account)
+                        .ThenInclude(a => a.TouristFacility)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+
+        }
         public async Task<PagedResult<Blog>> GetListBlogs(string? search, BlogType? blogtype, int page, int pageSize)
         {
             try

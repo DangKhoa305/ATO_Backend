@@ -43,6 +43,11 @@ builder.Services.AddIdentity<Account, IdentityRole<Guid>>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("guest", policy =>
+        policy.RequireRole("guest"));
+});
 
 // Adding Authentication
 builder.Services.AddAuthentication(options =>

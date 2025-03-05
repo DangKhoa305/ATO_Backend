@@ -30,8 +30,62 @@ namespace ATO_API.Controllers.ContentModerators
             _blogService = blogService;
             _mapper = mapper;
         }
+        [HttpGet("get-blogs")]
+        [ProducesResponseType(typeof(List<Blog_CM_DTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetBlogs()
+        {
+            try
+            {
+                var response = await _blogService.GetListBlogs_CM();
+                List<Blog_CM_DTO> responseResult = _mapper.Map<List<Blog_CM_DTO>>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
 
+        [HttpGet("get-blog-details/{blogId}")]
+        [ProducesResponseType(typeof(Blog_CM_DTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetBlogDetails(
+            Guid blogId
+        )
+        {
+            try
+            {
+                var response = await _blogService.GetBlogDetails(blogId);
+                if (response == null)
+                {
+                    return StatusCode(400, new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Không tìm thấy bài viết",
+                    });
+                }
+                Blog_CM_DTO responseResult = _mapper.Map<Blog_CM_DTO>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
         [HttpPut("update-reply/{blogId}")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateReplyRequest(Guid blogId, [FromBody] UpdateReplyRequestDto request)
         {
             try
@@ -49,6 +103,9 @@ namespace ATO_API.Controllers.ContentModerators
             }
         }
         [HttpPost("create")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateBlog([FromBody] BlogCreateRequest model)
         {
             try
@@ -66,6 +123,9 @@ namespace ATO_API.Controllers.ContentModerators
             }
         }
         [HttpPut("update/{id}")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateBlog(Guid id, [FromBody] BlogUpdateRequest model)
         {
             try
@@ -79,7 +139,7 @@ namespace ATO_API.Controllers.ContentModerators
 
                 return Ok(new ResponseVM { Status = true, Message = "Cập nhật thành công!" });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, new ResponseVM { Status = false, Message = "Đã xảy ra lỗi vui lòng thử lại sau!" });
             }

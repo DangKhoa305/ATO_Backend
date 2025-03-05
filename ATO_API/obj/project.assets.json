@@ -4073,11 +4073,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dangk\\Desktop\\New folder\\ATO_API\\ATO_API.csproj",
+      "projectUniqueName": "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\ATO_API.csproj",
       "projectName": "ATO_API",
-      "projectPath": "C:\\Users\\dangk\\Desktop\\New folder\\ATO_API\\ATO_API.csproj",
+      "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\ATO_API.csproj",
       "packagesPath": "C:\\Users\\dangk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dangk\\Desktop\\New folder\\ATO_API\\obj\\",
+      "outputPath": "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4099,11 +4099,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\dangk\\Desktop\\New folder\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\dangk\\Desktop\\New folder\\Data\\Data.csproj"
+            "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj"
             },
-            "C:\\Users\\dangk\\Desktop\\New folder\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\dangk\\Desktop\\New folder\\Service\\Service.csproj"
+            "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj"
             }
           }
         }

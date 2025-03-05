@@ -24,6 +24,8 @@ namespace ATO_API.Controllers
             _mapper = mapper;
         }
         [HttpGet]
+        [ProducesResponseType(typeof(About), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAbout()
         {
             try
@@ -39,5 +41,6 @@ namespace ATO_API.Controllers
                 });
             }
         }
+
     }
 }

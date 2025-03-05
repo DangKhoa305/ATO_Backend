@@ -37,6 +37,8 @@ namespace ATO_API.Controllers.Admin
             _mapper = mapper;
         }
         [HttpGet("get-list-users")]
+        [ProducesResponseType(typeof(List<UserRespone>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetUsers()
         {
             try
@@ -65,6 +67,9 @@ namespace ATO_API.Controllers.Admin
             }
         }
         [HttpGet("get-user/{id}")]
+        [ProducesResponseType(typeof(UserRespone), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetUser(Guid id)
         {
             try
@@ -88,6 +93,9 @@ namespace ATO_API.Controllers.Admin
             }
         }
         [HttpPost("reset-password/{id}")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ResetPassword(Guid id)
         {
             try
@@ -107,6 +115,9 @@ namespace ATO_API.Controllers.Admin
         }
 
         [HttpPut("inactive-account/{id}")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> InactiveAccount(Guid id)
         {
             try

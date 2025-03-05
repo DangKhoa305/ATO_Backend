@@ -33,7 +33,8 @@ namespace ATO_API.Controllers.Admin
             _mapper = mapper;
         }
         [HttpGet("list-user-supports")]
-        [ProducesResponseType(typeof(PagedResult<UserSupport>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<UserSupport>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ListUserSupport()
         {
             try
@@ -53,6 +54,8 @@ namespace ATO_API.Controllers.Admin
         }
         [HttpPut("reply-request-support")]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ReplyRequestUserSupport([FromBody] ReplyUserSupportRequest request)
         {
             try
@@ -84,6 +87,8 @@ namespace ATO_API.Controllers.Admin
         }
         [HttpGet("request-support-detail/{SupportId}")]
         [ProducesResponseType(typeof(UserSupportDetails), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> RequestUserSupportDetails(Guid SupportId)
         {
             try
