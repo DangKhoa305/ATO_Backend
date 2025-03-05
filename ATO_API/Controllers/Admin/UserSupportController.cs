@@ -17,7 +17,7 @@ using Service.UserSupportSer;
 
 namespace ATO_API.Controllers.Admin
 {
-    [Route("api/support/admin")]
+    [Route("api/admin/support")]
     [ApiController]
     [Authorize(Roles = "Admin")]
     public class UserSupportController : ControllerBase

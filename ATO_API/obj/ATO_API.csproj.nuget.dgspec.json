@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\ATO_API.csproj": {}
+    "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\ATO_API\\ATO_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\ATO_API.csproj": {
+    "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\ATO_API\\ATO_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\ATO_API.csproj",
+        "projectUniqueName": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\ATO_API\\ATO_API.csproj",
         "projectName": "ATO_API",
-        "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\ATO_API.csproj",
-        "packagesPath": "C:\\Users\\dangk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dangk\\Desktop\\ato\\ATO_API\\obj\\",
+        "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\ATO_API\\ATO_API.csproj",
+        "packagesPath": "C:\\Users\\Khoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\ATO_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Quan trong ko xoa\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dangk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj"
+              "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj"
+              "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Service\\Service.csproj"
               }
             }
           }
@@ -106,20 +105,20 @@
         }
       }
     },
-    "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj": {
+    "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\dangk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\obj\\",
+        "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\Khoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Quan trong ko xoa\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dangk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -128,7 +127,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -198,20 +196,20 @@
         }
       }
     },
-    "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj": {
+    "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\dangk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dangk\\Desktop\\ato\\Service\\obj\\",
+        "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\Khoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Quan trong ko xoa\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dangk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -220,15 +218,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj"
+              "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj"
               }
             }
           }

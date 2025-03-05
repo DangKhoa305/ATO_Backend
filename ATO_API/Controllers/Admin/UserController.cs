@@ -12,7 +12,7 @@ using Service.AccountSer;
 
 namespace ATO_API.Controllers.Admin
 {
-    [Route("api/user/admin")]
+    [Route("api/admin/user")]
     [Authorize(Roles = "Admin")]
     [ApiController]
     public class UserController : ControllerBase

@@ -18,6 +18,7 @@ using Service.AccountSer;
 using Service.BlogSer;
 using Service.EmailSer;
 using Service.Repository;
+using Service.SystemConfigSer;
 using Service.UserSupportSer;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -128,7 +129,7 @@ builder.Services.AddScoped<IRepository<Account>, Repository<Account>>();
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<IRepository<Blog>, Repository<Blog>>();
 // email service 
-builder.Services.Configure<EmailSetting>(configuration.GetSection("EmailSettings"));
+//builder.Services.Configure<EmailSetting>(configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<IEmailService, EmailService>();
 // about
 builder.Services.AddScoped<IAboutService, AboutService>();
@@ -136,6 +137,9 @@ builder.Services.AddScoped<IRepository<About>, Repository<About>>();
 // user support
 builder.Services.AddScoped<IUserSupportService, UserSupportService>();
 builder.Services.AddScoped<IRepository<UserSupport>, Repository<UserSupport>>();
+//SystemConfigurations
+builder.Services.AddScoped<ISystemConfigurationsService, SystemConfigurationsService>();
+builder.Services.AddScoped<IRepository<SystemConfigurations>, Repository<SystemConfigurations>>();
 
 // app
 var app = builder.Build();

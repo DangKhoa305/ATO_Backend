@@ -14,7 +14,7 @@ using Service.PageResult;
 
 namespace ATO_API.Controllers.ContentModerators
 {
-    [Route("api/blog/content-moderators")]
+    [Route("api/content-moderators/blog")]
     [ApiController]
     [Authorize(Roles = "ContentModerators")]
 

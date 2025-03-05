@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,7 @@ namespace Data.ArmsContext
         {
             #region configuration
             modelBuilder.ApplyConfiguration(new AboutConfiguration());
+            modelBuilder.ApplyConfiguration(new SystemConfigurationsConfiguration());
             modelBuilder.ApplyConfiguration(new AccountConfiguration());
             modelBuilder.ApplyConfiguration(new BlogConfiguration());
             modelBuilder.ApplyConfiguration(new TourCompanyConfiguration());
@@ -113,10 +115,12 @@ namespace Data.ArmsContext
             new TouristFacilitySeeder(modelBuilder).Seed();
             new UserSupportSeeder(modelBuilder).Seed();
             new UserIssueSeeder(modelBuilder).Seed();
+            new SystemConfigurationsSeeder(modelBuilder).Seed();
             #endregion
 
         }
         #region DbSet
+        public DbSet<SystemConfigurations> SystemConfigurationses { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Blog> Blogs { get; set; }

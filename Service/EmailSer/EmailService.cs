@@ -1,9 +1,12 @@
 ﻿using Data.DTO.Request;
 using Data.DTO.Respone;
+using Data.Models;
 using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MimeKit;
+using Service.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +15,41 @@ using System.Threading.Tasks;
 
 namespace Service.EmailSer
 {
-    public class EmailService: IEmailService
+    public class EmailService : IEmailService
     {
-        private readonly EmailSetting _emailSettings;
-        public EmailService(IOptions<EmailSetting> emailSettings)
+        private readonly IRepository<SystemConfigurations> _systemConfigurationsRepository;
+        public EmailService(IRepository<SystemConfigurations> systemConfigurationsRepository)
         {
-            _emailSettings = emailSettings.Value;
+            _systemConfigurationsRepository = systemConfigurationsRepository;
         }
 
         public async Task<ResponseVM> SendEmailAsync(EmailRequest emailRequest)
         {
             try
             {
+                EmailSetting emailSetting = new EmailSetting();
+                emailSetting.Port = int.TryParse(
+                await _systemConfigurationsRepository.Query()
+                    .Where(b => b.ConfigKey == "Port")
+                    .Select(b => b.ConfigValue)
+                    .FirstOrDefaultAsync(), out int portValue) ? portValue : 587;
+
+                emailSetting.Email = await _systemConfigurationsRepository.Query()
+                    .Where(b => b.ConfigKey == "Email")
+                    .Select(b => b.ConfigValue)
+                    .FirstOrDefaultAsync() ?? "";
+
+                emailSetting.SmtpServer = await _systemConfigurationsRepository.Query()
+                    .Where(b => b.ConfigKey == "SmtpServer")
+                    .Select(b => b.ConfigValue)
+                    .FirstOrDefaultAsync() ?? "";
+                emailSetting.AppPassword = await _systemConfigurationsRepository.Query()
+                    .Where(b => b.ConfigKey == "AppPassword")
+                    .Select(b => b.ConfigValue)
+                    .FirstOrDefaultAsync() ?? "";
+
                 var message = new MimeMessage();
-                message.From.Add(new MailboxAddress("ATO System", _emailSettings.Email));
+                message.From.Add(new MailboxAddress("ATO System", emailSetting.Email));
                 message.To.Add(new MailboxAddress("", emailRequest.ToEmail));
 
                 message.Subject = emailRequest.Subject;
@@ -37,8 +61,8 @@ namespace Service.EmailSer
 
                 using (var client = new SmtpClient())
                 {
-                    await client.ConnectAsync(_emailSettings.SmtpServer, _emailSettings.Port, SecureSocketOptions.StartTls);
-                    await client.AuthenticateAsync(_emailSettings.Email, _emailSettings.AppPassword);
+                    await client.ConnectAsync(emailSetting.SmtpServer, emailSetting.Port, SecureSocketOptions.StartTls);
+                    await client.AuthenticateAsync(emailSetting.Email, emailSetting.AppPassword);
                     await client.SendAsync(message);
                     await client.DisconnectAsync(true);
                 }
