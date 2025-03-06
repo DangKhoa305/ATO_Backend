@@ -7,7 +7,7 @@ using Service.SystemConfigSer;
 
 namespace ATO_API.Controllers.Admin
 {
-    [Route("api/config/admin")]
+    [Route("api/admin/config")]
     [ApiController]
     [Authorize(Roles = "Admin")]
     public class ConfigController : ControllerBase

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj": {}
+    "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj": {
+    "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\Khoa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Khoa\\Source\\Repos\\ATO_Backend\\Data\\obj\\",
+        "projectPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\dangk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dangk\\Desktop\\ato\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Quan trong ko xoa\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Khoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dangk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

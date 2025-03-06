@@ -33,7 +33,7 @@ namespace ATO_API.Controllers.Admin
             _mapper = mapper;
         }
         [HttpGet("list-user-supports")]
-        [ProducesResponseType(typeof(List<UserSupport>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<UserSupportDetails>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ListUserSupport()
         {

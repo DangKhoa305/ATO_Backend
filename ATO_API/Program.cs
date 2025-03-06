@@ -19,6 +19,7 @@ using Service.BlogSer;
 using Service.EmailSer;
 using Service.Repository;
 using Service.SystemConfigSer;
+using Service.TouristFacilitySer;
 using Service.UserSupportSer;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -140,7 +141,9 @@ builder.Services.AddScoped<IRepository<UserSupport>, Repository<UserSupport>>();
 //SystemConfigurations
 builder.Services.AddScoped<ISystemConfigurationsService, SystemConfigurationsService>();
 builder.Services.AddScoped<IRepository<SystemConfigurations>, Repository<SystemConfigurations>>();
-
+//TouristFacility
+builder.Services.AddScoped<ITouristFacilityService, TouristFacilityService>();
+builder.Services.AddScoped<IRepository<TouristFacility>, Repository<TouristFacility>>();
 // app
 var app = builder.Build();
 
