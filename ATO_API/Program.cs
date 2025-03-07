@@ -17,6 +17,7 @@ using Service.AboutSer;
 using Service.AccountSer;
 using Service.BlogSer;
 using Service.EmailSer;
+using Service.ProductSer;
 using Service.Repository;
 using Service.SystemConfigSer;
 using Service.TouristFacilitySer;
@@ -144,6 +145,11 @@ builder.Services.AddScoped<IRepository<SystemConfigurations>, Repository<SystemC
 //TouristFacility
 builder.Services.AddScoped<ITouristFacilityService, TouristFacilityService>();
 builder.Services.AddScoped<IRepository<TouristFacility>, Repository<TouristFacility>>();
+//Product
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IRepository<Product>, Repository<Product>>();
+//OCOPSell
+builder.Services.AddScoped<IRepository<OCOPSell>, Repository<OCOPSell>>();
 // app
 var app = builder.Build();
 

@@ -116,6 +116,8 @@ namespace Data.ArmsContext
             new UserSupportSeeder(modelBuilder).Seed();
             new UserIssueSeeder(modelBuilder).Seed();
             new SystemConfigurationsSeeder(modelBuilder).Seed();
+            new ProductSeeder(modelBuilder).Seed();
+            new OCOPSellSeeder(modelBuilder).Seed();
             #endregion
 
         }

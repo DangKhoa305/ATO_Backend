@@ -11,8 +11,18 @@ namespace Data.Models
     {
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }
+        public List<string> Imgs { get; set; }
+        public double? Price { get; set; }
         public string? Description { get; set; }
-        public UnitProduct UnitProduct { get; set; }
+        public string? Additional { get; set; }
+        public string? NutritionType { get; set; }
+        public string? Age { get; set; }
+        public string? Ingredient { get; set; }
+        public string? Volume { get; set; }
+        public string? Origin { get; set; }
+        public string? Manufacturer { get; set; }
+        public string? AddressManufacturer { get; set; }
+        public UnitProduct? UnitProduct { get; set; }
         //category
         public ProductCategory ProductCategory { get; set; }
         public DateTime CreateDate { get; set; }
@@ -42,6 +52,6 @@ namespace Data.Models
     }
     public enum UnitProduct
     {
-        Kg,g, mg
+        Kg, g, mg, l, ml
     }
 }
