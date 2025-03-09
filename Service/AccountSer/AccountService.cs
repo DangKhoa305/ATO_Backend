@@ -8,6 +8,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
+using Nest;
 using Service.EmailSer;
 using Service.Repository;
 using System;
@@ -23,14 +24,14 @@ namespace Service.AccountSer
 {
     public class AccountService : IAccountService
     {
-        private readonly IRepository<Account> _accountRepository;
+        private readonly Service.Repository.IRepository<Account> _accountRepository;
         private readonly UserManager<Account> _userManager;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
         private readonly IMemoryCache _cache;
         private readonly TimeSpan _otpLifetime = TimeSpan.FromMinutes(5);
         public AccountService(
-            IRepository<Account> accountRepository,
+            Service.Repository.IRepository<Account> accountRepository,
             UserManager<Account> userManager,
             IConfiguration configuration,
             IEmailService emailService,
@@ -52,10 +53,10 @@ namespace Service.AccountSer
             try
             {
 
-            return await _accountRepository.Query()
-                   .Include(b => b.TourCompany)
-                   .Include(b => b.TouristFacility)
-                   .ToListAsync();
+                return await _accountRepository.Query()
+                       .Include(b => b.TourCompany)
+                       .Include(b => b.TouristFacility)
+                       .ToListAsync();
             }
             catch (Exception)
             {
@@ -275,5 +276,11 @@ namespace Service.AccountSer
             var updateResult = await _userManager.UpdateAsync(user);
             return updateResult.Succeeded;
         }
+        public async Task<Account?> GetAccountByPhoneNumberAsync(string phoneNumber)
+        {
+            return await _accountRepository.Query()
+                   .FirstOrDefaultAsync(a => a.PhoneNumber == phoneNumber);
+        }
+
     }
 }

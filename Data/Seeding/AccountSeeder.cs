@@ -20,13 +20,12 @@ namespace Data.Seeding
         public void Seed()
         {
 
-
             // Seed role data
             modelBuilder.Entity<IdentityRole<Guid>>().HasData(
                 new IdentityRole<Guid>() { Id = Guid.Parse("B8FD818F-63F1-49EE-BEC5-F7B66CAFBFCA"), Name = "Admin", NormalizedName = "ADMIN" },
                 new IdentityRole<Guid>() { Id = Guid.Parse("0DAE2462-9EBD-452E-A89C-06D4B6025E68"), Name = "ContentModerators", NormalizedName = "CONTENTMODERATORS" },
                 new IdentityRole<Guid>() { Id = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A"), Name = "TourismCompanies", NormalizedName = "TOURISMCOMPANIES" },
-                new IdentityRole<Guid>() { Id = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3"), Name = "AgriculturalTourismFacilityOwners", NormalizedName = "ATFO" },
+                new IdentityRole<Guid>() { Id = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3"), Name = "AgriculturalTourismFacilityOwners", NormalizedName = "AGRICULTURALTOURISMFACILITYOWNERS" },
                 new IdentityRole<Guid>() { Id = Guid.Parse("C78A64EB-5190-44C1-9886-CA707854B807"), Name = "Tourists", NormalizedName = "TOURISTS" },
                 new IdentityRole<Guid>() { Id = Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD"), Name = "TourGuides", NormalizedName = "TOURGUIDES" }
             );

@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +51,7 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new CertificationConfiguration());
             modelBuilder.ApplyConfiguration(new UserIssueConfiguration());
             modelBuilder.ApplyConfiguration(new UserSupportConfiguration());
+            modelBuilder.ApplyConfiguration(new TourGuideConfiguration());
             #endregion
             #region config FK for generate account and role,...
             modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
@@ -132,6 +132,7 @@ namespace Data.ArmsContext
         public DbSet<Certification> Certifications { get; set; }
         public DbSet<UserSupport> UserSupports { get; set; }
         public DbSet<UserIssue> UserIssues { get; set; }
+        public DbSet<TourGuide> TourGuides { get; set; }
         #endregion
     }
 

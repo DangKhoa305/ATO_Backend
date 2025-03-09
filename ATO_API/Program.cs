@@ -20,6 +20,7 @@ using Service.EmailSer;
 using Service.ProductSer;
 using Service.Repository;
 using Service.SystemConfigSer;
+using Service.TourCompanySer;
 using Service.TouristFacilitySer;
 using Service.UserSupportSer;
 using System.Text;
@@ -150,6 +151,9 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IRepository<Product>, Repository<Product>>();
 //OCOPSell
 builder.Services.AddScoped<IRepository<OCOPSell>, Repository<OCOPSell>>();
+//TourCompany
+builder.Services.AddScoped<ITourCompanyService, TourCompanyService>();
+builder.Services.AddScoped<IRepository<TourCompany>, Repository<TourCompany>>();
 // app
 var app = builder.Build();
 

@@ -1,5 +1,6 @@
 ﻿using ATO_API.Helper;
 using AutoMapper;
+using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -7,8 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.IdentityModel.Tokens;
 using Service.AccountSer;
+using System.Text.RegularExpressions;
 
 namespace ATO_API.Controllers.Admin
 {
@@ -134,6 +138,111 @@ namespace ATO_API.Controllers.Admin
             {
                 return StatusCode(500, new ResponseVM { Status = false, Message = "Đã xảy ra lỗi vui lòng thử lại sau!" });
             }
+        }
+        [HttpPost("create-account")]
+        [ProducesResponseType(typeof(UserRespone), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CreateAccount([FromBody] CreateAccountRequest request)
+        {
+            try
+            {
+
+                if (!IsValidEmail(request.Email))
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Email không hợp lệ. Vui lòng nhập đúng định dạng."
+                    });
+                }
+
+                if (!IsValidPhoneNumber(request.PhoneNumber))
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng."
+                    });
+                }
+                var existingEmail = await _userManager.FindByEmailAsync(request.Email);
+
+                if (existingEmail != null)
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Email đã tồn tại trong hệ thống."
+                    });
+                }
+
+                var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber);
+                if (existingPhone != null)
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Số điện thoại đã tồn tại trong hệ thống."
+                    });
+                }
+
+                var newAccount = _mapper.Map<Account>(request);
+                newAccount.Id = Guid.NewGuid();
+                newAccount.isAccountActive = true;
+                newAccount.PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a");
+                newAccount.SecurityStamp = Guid.NewGuid().ToString();
+                //TourismCompanies
+                if (request.Role == Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A"))
+                {
+                    newAccount.TourCompany.TourCompanyId = Guid.NewGuid();
+                    newAccount.TourCompany.UserId = newAccount.Id;
+                    newAccount.TourCompany.CreateDate = DateTime.UtcNow;
+                }
+                //afto
+                if (request.Role == Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3"))
+                {
+                    newAccount.TouristFacility.TouristFacilityId = Guid.NewGuid();
+                    newAccount.TouristFacility.UserId = newAccount.Id;
+                    newAccount.TouristFacility.CreateDate = DateTime.UtcNow;
+                }
+                //TourGuide
+                if (request.Role == Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD"))
+                {
+                    newAccount.TourGuide.GuideId = Guid.NewGuid();
+                    newAccount.TourGuide.UserId = newAccount.Id;
+                    newAccount.TourGuide.CreateDate = DateTime.UtcNow;
+                }
+                await _accountService.AddAccountAsync(newAccount);
+                // add role for account
+                var roleName = await _roleManager.Roles
+                    .Where(r => r.Id == request.Role)
+                    .Select(r => r.Name)
+                    .FirstOrDefaultAsync();
+
+                if (!string.IsNullOrEmpty(roleName))
+                {
+                    await _userManager.AddToRoleAsync(newAccount, roleName);
+                }
+                var response = _mapper.Map<UserRespone>(newAccount);
+                response.RoleName = (await _userManager.GetRolesAsync(newAccount)).SingleOrDefault();
+
+                return CreatedAtAction(nameof(GetUsers), new { id = newAccount.Id }, response);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            var emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase);
+            return emailRegex.IsMatch(email);
+        }
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            var phoneRegex = new Regex(@"^(?:\+84|0)[1-9]\d{8,9}$");
+            return phoneRegex.IsMatch(phoneNumber);
         }
 
     }

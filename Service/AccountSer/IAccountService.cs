@@ -21,5 +21,6 @@ namespace Service.AccountSer
         Task<ResponseVM> ForgotPasswordAsync(ForgotPassword_DTO model);
         Task<bool> ResetPasswordAsync(Guid id, string newPassword);
         Task<bool> InactiveAccountAsync(Guid id);
+        Task<Account?> GetAccountByPhoneNumberAsync(string phoneNumber);
     }
 }

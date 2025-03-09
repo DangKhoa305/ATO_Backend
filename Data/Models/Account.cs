@@ -22,6 +22,7 @@ namespace Data.Models
         // người dùng này nếu là tour company
         public virtual TourCompany? TourCompany { get; set; }
         public virtual TouristFacility? TouristFacility { get; set; }
+        public virtual TourGuide? TourGuide { get; set; }
         public virtual ICollection<UserSupport>? UserSupports { get; set; }
     }
 }

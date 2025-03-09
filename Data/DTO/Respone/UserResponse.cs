@@ -44,4 +44,5 @@ namespace Data.DTO.Respone
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateTime { get; set; }
     }
+
 }
