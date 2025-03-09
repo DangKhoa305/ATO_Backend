@@ -10,6 +10,7 @@ namespace Data.Models
     {
         public Guid OCOPSellId { get; set; }
         public double SellVolume { get; set; }
+        public double SalePrice { get; set; }
         public DateTime? ManufacturingDate { get; set; }
         public DateTime? ExpiryDate { get; set; }
         public DateTime CreateDate { get; set; }
@@ -18,5 +19,5 @@ namespace Data.Models
         public Guid ProductId { get; set; }
         public virtual Product? Product { get; set; }
     }
-    
+
 }

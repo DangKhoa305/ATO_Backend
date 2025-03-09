@@ -55,9 +55,7 @@ namespace ATO_API.Controllers.ContentModerators
         [ProducesResponseType(typeof(Blog_CM_DTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetBlogDetails(
-            Guid blogId
-        )
+        public async Task<IActionResult> GetBlogDetails(Guid blogId)
         {
             try
             {

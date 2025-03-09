@@ -18,6 +18,7 @@ namespace Data.Configurations
             // requi
             builder.Property(x => x.SellVolume).IsRequired();
             builder.Property(x => x.CreateDate).IsRequired();
+            builder.Property(x => x.SalePrice).IsRequired();
             //un requi
             builder.Property(x => x.UpdateDate).IsRequired(false);
             builder.Property(x => x.ExpiryDate).IsRequired(false);

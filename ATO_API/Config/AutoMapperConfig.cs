@@ -4,6 +4,7 @@ using Data.DTO.Respone;
 using Data.Models;
 using System.ComponentModel;
 using System.Reflection;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ATO_API.Config
 {
@@ -41,6 +42,14 @@ namespace ATO_API.Config
                 // TouristFacility
                 config.CreateMap<TouristFacility, TouristFacilityDTO>();
                 config.CreateMap<Account, TouristFacilityDTO_UserRespone>();
+                // product
+                config.CreateMap<Product, ProductDTO>();
+                config.CreateMap<CreateProductDTO, Product>();
+                config.CreateMap<UpdateProductDTO, Product>();
+                // OCOPSell
+                config.CreateMap<OCOPSell, OCOPSellDTO>();
+                config.CreateMap<CreateOCOPSellDTO, OCOPSell>();
+                config.CreateMap<UpdateOCOPSellDTO, OCOPSell>();
             });
 
             return mapperConfig.CreateMapper();

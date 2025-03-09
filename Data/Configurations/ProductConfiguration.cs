@@ -20,12 +20,17 @@ namespace Data.Configurations
             builder.Property(x => x.Description).IsRequired();
             builder.Property(x => x.ProductCategory).IsRequired();
             builder.Property(x => x.CreateDate).IsRequired();
-            builder.Property(x => x.UnitProduct).IsRequired();
+            builder.Property(x => x.Imgs).IsRequired();
             //un requi
+            builder.Property(x => x.UnitProduct).IsRequired(false);
             builder.Property(x => x.UpdateDate).IsRequired(false);
             builder.Property(x => x.Description).IsRequired(false);
-
-
+            builder.Property(x => x.Additional).IsRequired(false);
+            builder.Property(x => x.NutritionType).IsRequired(false);
+            builder.Property(x => x.Age).IsRequired(false);
+            builder.Property(x => x.Ingredient).IsRequired(false);
+            builder.Property(x => x.Volume).IsRequired(false);
+            builder.Property(x => x.Price).IsRequired(false);
             #region config relation
             builder.HasOne(x => x.TouristFacility)
                .WithMany(c => c.Products)
