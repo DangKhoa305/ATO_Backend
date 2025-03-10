@@ -108,7 +108,7 @@ namespace ATO_API.Controllers.ContentModerators
         {
             try
             {
-                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var userId = User?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 if (string.IsNullOrEmpty(userId)) return Unauthorized("Không tìm thấy ID người dùng!");
                 var responseResult = _mapper.Map<Blog>(model);
                 responseResult.CreateBy = Guid.Parse(userId);

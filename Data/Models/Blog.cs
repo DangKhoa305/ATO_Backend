@@ -37,9 +37,9 @@ namespace Data.Models
     public enum BlogType
     {
         [Description("Sự kiện")]
-        Even,
+        Even = 1,
         [Description("Tin tức")]
-        News,
+        News = 2,
     }
     public enum BlogStatus
     {
