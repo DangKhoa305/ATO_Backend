@@ -29,6 +29,7 @@ namespace ATO_API.Config
                     src.Account.TouristFacility != null ? src.Account.TouristFacility.TouristFacilityName : "Hệ thống ATOS"
                 ));
                 config.CreateMap<BlogCreateRequest, Blog>();
+                config.CreateMap<BlogUpdateRequest, Blog>();
                 // user support
                 config.CreateMap<UserSupportRequest, UserSupport>();
                 config.CreateMap<UserSupport, UserSupportDetails>()
