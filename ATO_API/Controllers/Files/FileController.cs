@@ -28,7 +28,7 @@ namespace ATO_API.Controllers.Files
             }
 
             // Generate a unique filename
-            var uniqueFileName = System.Guid.NewGuid().ToString();
+            var uniqueFileName = System.Guid.NewGuid().ToString() + Path.GetExtension(file.FileName).ToLower();
             var filePath = Path.Combine(_uploadFolder, uniqueFileName);
 
             // Save the file to the uploads folder

@@ -11,6 +11,25 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Remove="Controllers\GuideTeams\**" />
+		<Compile Remove="Controllers\TourCompany\**" />
+		<Compile Remove="Controllers\Tourist\**" />
+		<Compile Remove="Files\**" />
+		<Content Remove="Controllers\GuideTeams\**" />
+		<Content Remove="Controllers\TourCompany\**" />
+		<Content Remove="Controllers\Tourist\**" />
+		<Content Remove="Files\**" />
+		<EmbeddedResource Remove="Controllers\GuideTeams\**" />
+		<EmbeddedResource Remove="Controllers\TourCompany\**" />
+		<EmbeddedResource Remove="Controllers\Tourist\**" />
+		<EmbeddedResource Remove="Files\**" />
+		<None Remove="Controllers\GuideTeams\**" />
+		<None Remove="Controllers\TourCompany\**" />
+		<None Remove="Controllers\Tourist\**" />
+		<None Remove="Files\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
@@ -28,12 +47,6 @@
 		<Content Update="appsettings.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Controllers\GuideTeams\" />
-		<Folder Include="Controllers\Tourist\" />
-		<Folder Include="Controllers\TourCompany\" />
 	</ItemGroup>
 
 </Project>

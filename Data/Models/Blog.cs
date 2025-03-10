@@ -44,10 +44,10 @@ namespace Data.Models
     public enum BlogStatus
     {
         [Description("Chấp thuận")]
-        Approval,
+        Approval = 0,
         [Description("Đang xử lý")]
-        Processing,
+        Processing = 1,
         [Description("Từ chối")]
-        Reject,
+        Reject = 2,
     }
 }
