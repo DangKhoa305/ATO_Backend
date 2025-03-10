@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 using Service.AccountSer;
+using System.Security.Principal;
 using System.Text.RegularExpressions;
 
 namespace ATO_API.Controllers.Admin
@@ -234,6 +235,114 @@ namespace ATO_API.Controllers.Admin
                 return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
             }
         }
+        //// chưa test
+        //[HttpPut("update-account/{id}")]
+        //[ProducesResponseType(typeof(UserRespone), StatusCodes.Status200OK)]
+        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        //public async Task<IActionResult> UpdateAccount(Guid id, [FromBody] UpdateAccountRequest request)
+        //{
+        //    try
+        //    {
+        //        if (!IsValidEmail(request.Email))
+        //        {
+        //            return BadRequest(new ResponseVM
+        //            {
+        //                Status = false,
+        //                Message = "Email không hợp lệ. Vui lòng nhập đúng định dạng."
+        //            });
+        //        }
+        //        if (!IsValidPhoneNumber(request.PhoneNumber))
+        //        {
+        //            return BadRequest(new ResponseVM
+        //            {
+        //                Status = false,
+        //                Message = "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng."
+        //            });
+        //        }
+
+        //        var account = await _accountService.GetAccountByIdAsync(id);
+        //        if (account == null)
+        //        {
+        //            return NotFound(new ResponseVM
+        //            {
+        //                Status = false,
+        //                Message = "Tài khoản không tồn tại."
+        //            });
+        //        }
+
+        //        if (!account.Email.Equals(request.Email, StringComparison.OrdinalIgnoreCase))
+        //        {
+        //            var existingEmail = await _userManager.FindByEmailAsync(request.Email);
+        //            if (existingEmail != null)
+        //            {
+        //                return BadRequest(new ResponseVM
+        //                {
+        //                    Status = false,
+        //                    Message = "Email đã tồn tại trong hệ thống."
+        //                });
+        //            }
+        //        }
+
+        //        if (!account.PhoneNumber.Equals(request.PhoneNumber, StringComparison.OrdinalIgnoreCase))
+        //        {
+        //            var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber);
+        //            if (existingPhone != null)
+        //            {
+        //                return BadRequest(new ResponseVM
+        //                {
+        //                    Status = false,
+        //                    Message = "Số điện thoại đã tồn tại trong hệ thống."
+        //                });
+        //            }
+        //        }
+
+        //        account = _mapper.Map<UpdateAccountRequest, Account>(request, account);
+
+        //        //TourismCompanies
+        //        if (request.Role == Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A"))
+        //        {
+        //            account.TourCompany.TourCompanyId = Guid.NewGuid();
+        //            account.TourCompany.UpdateTime = DateTime.UtcNow;
+        //        }
+        //        //afto
+        //        if (request.Role == Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3"))
+        //        {
+        //            account.TouristFacility.TouristFacilityId = Guid.NewGuid();
+        //            account.TouristFacility.UpdateTime = DateTime.UtcNow;
+        //        }
+        //        //TourGuide
+        //        if (request.Role == Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD"))
+        //        {
+        //            account.TourGuide.GuideId = Guid.NewGuid();
+        //            account.TourGuide.UpdateDate = DateTime.UtcNow;
+        //        }
+
+        //        await _accountService.UpdateAccountAsync(account);
+
+        //        var currentRoles = await _userManager.GetRolesAsync(account);
+        //        var newRoleName = await _roleManager.Roles
+        //            .Where(r => r.Id == request.Role)
+        //            .Select(r => r.Name)
+        //            .FirstOrDefaultAsync();
+
+        //        if (!string.IsNullOrEmpty(newRoleName) && !currentRoles.Contains(newRoleName))
+        //        {
+        //            await _userManager.RemoveFromRolesAsync(account, currentRoles);
+        //            await _userManager.AddToRoleAsync(account, newRoleName);
+        //        }
+
+        //        var response = _mapper.Map<UserRespone>(account);
+        //        response.RoleName = (await _userManager.GetRolesAsync(account)).SingleOrDefault();
+        //        return Ok(response);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.ToString());
+        //        return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
+        //    }
+        //}
+
         private bool IsValidEmail(string email)
         {
             var emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase);
