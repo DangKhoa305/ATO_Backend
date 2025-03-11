@@ -46,6 +46,8 @@ Generated\ Files/
 [Bb]uild[Ll]og.*
 # File chứa thông tin Service Account (không muốn push lên Git)
 ATO_API/Auth/ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json
+ATO_Backend/ATO_API/Auth/ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json
+
 # NUnit
 *.VisualState.xml
 TestResult.xml
