@@ -30,7 +30,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Content Remove="ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Auth\ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
 		<PackageReference Include="NEST" Version="7.17.5" />
