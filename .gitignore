@@ -37,15 +37,15 @@ bld/
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
-# File chứa thông tin Service Account (không muốn push lên Git)
-Auth/ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json
+
 # Visual Studio 2017 auto generated files
 Generated\ Files/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
-
+# File chứa thông tin Service Account (không muốn push lên Git)
+ATO_API/Auth/ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json
 # NUnit
 *.VisualState.xml
 TestResult.xml
