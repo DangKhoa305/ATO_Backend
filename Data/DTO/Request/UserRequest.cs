@@ -17,10 +17,6 @@ namespace Data.DTO.Request
         public string? AvatarURL { get; set; }
         public DateTime? Dob { get; set; }
         public Guid Role { get; set; }
-        // afto
-        public CreateAccountRequest_TouristFacility? TouristFacility { get; set; }
-        public CreateAccountRequest_TourCompany? TourCompany { get; set; }
-        public CreateAccountRequest_TourGuide? TourGuide { get; set; }
     }
     public class CreateAccountRequest_TouristFacility
     {
@@ -51,6 +47,7 @@ namespace Data.DTO.Request
     }
     public class UpdateAccountRequest
     {
+        public Guid Id { get; set; }
         public string UserName { get; set; }
         public string? Email { get; set; }
         public string? PhoneNumber { get; set; }
@@ -58,10 +55,7 @@ namespace Data.DTO.Request
         public bool? Gender { get; set; }
         public string? AvatarURL { get; set; }
         public DateTime? Dob { get; set; }
+        public bool isAccountActive { get; set; }
         public Guid Role { get; set; }
-        // afto
-        public CreateAccountRequest_TouristFacility? TouristFacility { get; set; }
-        public CreateAccountRequest_TourCompany? TourCompany { get; set; }
-        public CreateAccountRequest_TourGuide? TourGuide { get; set; }
     }
 }

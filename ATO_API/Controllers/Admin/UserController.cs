@@ -186,33 +186,21 @@ namespace ATO_API.Controllers.Admin
                         Message = "Số điện thoại đã tồn tại trong hệ thống."
                     });
                 }
+                var existingUsername = await _userManager.FindByNameAsync(request.UserName);
+                if (existingUsername != null)
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "User name đã tồn tại trong hệ thống."
+                    });
+                }
 
                 var newAccount = _mapper.Map<Account>(request);
                 newAccount.Id = Guid.NewGuid();
                 newAccount.isAccountActive = true;
                 newAccount.PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a");
                 newAccount.SecurityStamp = Guid.NewGuid().ToString();
-                //TourismCompanies
-                if (request.Role == Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A"))
-                {
-                    newAccount.TourCompany.TourCompanyId = Guid.NewGuid();
-                    newAccount.TourCompany.UserId = newAccount.Id;
-                    newAccount.TourCompany.CreateDate = DateTime.UtcNow;
-                }
-                //afto
-                if (request.Role == Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3"))
-                {
-                    newAccount.TouristFacility.TouristFacilityId = Guid.NewGuid();
-                    newAccount.TouristFacility.UserId = newAccount.Id;
-                    newAccount.TouristFacility.CreateDate = DateTime.UtcNow;
-                }
-                //TourGuide
-                if (request.Role == Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD"))
-                {
-                    newAccount.TourGuide.GuideId = Guid.NewGuid();
-                    newAccount.TourGuide.UserId = newAccount.Id;
-                    newAccount.TourGuide.CreateDate = DateTime.UtcNow;
-                }
                 await _accountService.AddAccountAsync(newAccount);
                 // add role for account
                 var roleName = await _roleManager.Roles
@@ -235,113 +223,129 @@ namespace ATO_API.Controllers.Admin
                 return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
             }
         }
-        //// chưa test
-        //[HttpPut("update-account/{id}")]
-        //[ProducesResponseType(typeof(UserRespone), StatusCodes.Status200OK)]
-        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
-        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        //public async Task<IActionResult> UpdateAccount(Guid id, [FromBody] UpdateAccountRequest request)
-        //{
-        //    try
-        //    {
-        //        if (!IsValidEmail(request.Email))
-        //        {
-        //            return BadRequest(new ResponseVM
-        //            {
-        //                Status = false,
-        //                Message = "Email không hợp lệ. Vui lòng nhập đúng định dạng."
-        //            });
-        //        }
-        //        if (!IsValidPhoneNumber(request.PhoneNumber))
-        //        {
-        //            return BadRequest(new ResponseVM
-        //            {
-        //                Status = false,
-        //                Message = "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng."
-        //            });
-        //        }
+        [HttpPut("update-account")]
+        [ProducesResponseType(typeof(UserRespone), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateAccount([FromBody] UpdateAccountRequest request)
+        {
+            try
+            {
+                // Kiểm tra định dạng email
+                if (!IsValidEmail(request.Email))
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Email không hợp lệ. Vui lòng nhập đúng định dạng."
+                    });
+                }
 
-        //        var account = await _accountService.GetAccountByIdAsync(id);
-        //        if (account == null)
-        //        {
-        //            return NotFound(new ResponseVM
-        //            {
-        //                Status = false,
-        //                Message = "Tài khoản không tồn tại."
-        //            });
-        //        }
+                // Kiểm tra định dạng số điện thoại
+                if (!IsValidPhoneNumber(request.PhoneNumber))
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng."
+                    });
+                }
 
-        //        if (!account.Email.Equals(request.Email, StringComparison.OrdinalIgnoreCase))
-        //        {
-        //            var existingEmail = await _userManager.FindByEmailAsync(request.Email);
-        //            if (existingEmail != null)
-        //            {
-        //                return BadRequest(new ResponseVM
-        //                {
-        //                    Status = false,
-        //                    Message = "Email đã tồn tại trong hệ thống."
-        //                });
-        //            }
-        //        }
+                // Lấy tài khoản theo Id
+                var account = await _accountService.GetAccountByIdAsync(request.Id);
+                if (account == null)
+                {
+                    return NotFound(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Không tìm thấy tài khoản."
+                    });
+                }
 
-        //        if (!account.PhoneNumber.Equals(request.PhoneNumber, StringComparison.OrdinalIgnoreCase))
-        //        {
-        //            var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber);
-        //            if (existingPhone != null)
-        //            {
-        //                return BadRequest(new ResponseVM
-        //                {
-        //                    Status = false,
-        //                    Message = "Số điện thoại đã tồn tại trong hệ thống."
-        //                });
-        //            }
-        //        }
+                // Nếu email thay đổi, kiểm tra email mới có bị trùng với tài khoản khác không
+                if (!account.Email.Equals(request.Email, StringComparison.OrdinalIgnoreCase))
+                {
+                    var existingEmail = await _userManager.FindByEmailAsync(request.Email);
+                    if (existingEmail != null && existingEmail.Id != account.Id)
+                    {
+                        return BadRequest(new ResponseVM
+                        {
+                            Status = false,
+                            Message = "Email đã tồn tại trong hệ thống."
+                        });
+                    }
+                }
 
-        //        account = _mapper.Map<UpdateAccountRequest, Account>(request, account);
+                // Nếu số điện thoại thay đổi, kiểm tra xem số mới có bị trùng không
+                if (!account.PhoneNumber.Equals(request.PhoneNumber, StringComparison.OrdinalIgnoreCase))
+                {
+                    var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber);
+                    if (existingPhone != null && existingPhone.Id != account.Id)
+                    {
+                        return BadRequest(new ResponseVM
+                        {
+                            Status = false,
+                            Message = "Số điện thoại đã tồn tại trong hệ thống."
+                        });
+                    }
+                }
+                // Nếu username thay đổi, kiểm tra xem username mới có bị trùng không
+                if (!account.UserName.Equals(request.UserName, StringComparison.OrdinalIgnoreCase))
+                {
+                    var existingUsername = await _userManager.FindByNameAsync(request.UserName);
+                    if (existingUsername != null && existingUsername.Id != account.Id)
+                    {
+                        return BadRequest(new ResponseVM
+                        {
+                            Status = false,
+                            Message = "User name đã tồn tại trong hệ thống."
+                        });
+                    }
+                }
+                account.Email = request.Email;
+                account.PhoneNumber = request.PhoneNumber;
+                account.Fullname = request.Fullname;
+                account.AvatarURL = request.AvatarURL;
+                account.UserName = request.UserName;
+                account.Dob = request.Dob;
+                account.Gender = request.Gender;
+                account.isAccountActive = request.isAccountActive;
+                // Nếu có thay đổi vai trò, cập nhật lại
+                if (request.Role != Guid.Empty)
+                {
+                    // Loại bỏ vai trò hiện tại
+                    var currentRoles = await _userManager.GetRolesAsync(account);
+                    if (currentRoles.Any())
+                    {
+                        await _userManager.RemoveFromRolesAsync(account, currentRoles);
+                    }
 
-        //        //TourismCompanies
-        //        if (request.Role == Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A"))
-        //        {
-        //            account.TourCompany.TourCompanyId = Guid.NewGuid();
-        //            account.TourCompany.UpdateTime = DateTime.UtcNow;
-        //        }
-        //        //afto
-        //        if (request.Role == Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3"))
-        //        {
-        //            account.TouristFacility.TouristFacilityId = Guid.NewGuid();
-        //            account.TouristFacility.UpdateTime = DateTime.UtcNow;
-        //        }
-        //        //TourGuide
-        //        if (request.Role == Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD"))
-        //        {
-        //            account.TourGuide.GuideId = Guid.NewGuid();
-        //            account.TourGuide.UpdateDate = DateTime.UtcNow;
-        //        }
+                    // Lấy tên vai trò theo Id được cung cấp
+                    var roleName = await _roleManager.Roles
+                        .Where(r => r.Id == request.Role)
+                        .Select(r => r.Name)
+                        .FirstOrDefaultAsync();
 
-        //        await _accountService.UpdateAccountAsync(account);
+                    if (!string.IsNullOrEmpty(roleName))
+                    {
+                        await _userManager.AddToRoleAsync(account, roleName);
+                    }
+                }
 
-        //        var currentRoles = await _userManager.GetRolesAsync(account);
-        //        var newRoleName = await _roleManager.Roles
-        //            .Where(r => r.Id == request.Role)
-        //            .Select(r => r.Name)
-        //            .FirstOrDefaultAsync();
+                // Lưu thay đổi vào hệ thống
+                await _accountService.UpdateAccountAsync(account);
 
-        //        if (!string.IsNullOrEmpty(newRoleName) && !currentRoles.Contains(newRoleName))
-        //        {
-        //            await _userManager.RemoveFromRolesAsync(account, currentRoles);
-        //            await _userManager.AddToRoleAsync(account, newRoleName);
-        //        }
+                var response = _mapper.Map<UserRespone>(account);
+                response.RoleName = (await _userManager.GetRolesAsync(account)).SingleOrDefault();
 
-        //        var response = _mapper.Map<UserRespone>(account);
-        //        response.RoleName = (await _userManager.GetRolesAsync(account)).SingleOrDefault();
-        //        return Ok(response);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.ToString());
-        //        return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
-        //    }
-        //}
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
+            }
+        }
 
         private bool IsValidEmail(string email)
         {

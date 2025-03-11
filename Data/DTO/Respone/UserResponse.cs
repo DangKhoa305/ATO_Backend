@@ -20,6 +20,15 @@ namespace Data.DTO.Respone
         public string RoleName { get; set; }
         public virtual UserRespone_TourCompany? TourCompany { get; set; }
         public virtual UserRespone_TouristFacility? TouristFacility { get; set; }
+        public virtual UserRespone_TourGuide? TourGuide { get; set; }
+    }
+    public class UserRespone_TourGuide
+    {
+        public Guid TourCompanyId { get; set; }
+        public string? Bio { get; set; }
+        public string? Languages { get; set; }
+        public string? ExpertiseArea { get; set; }
+        public double Rating { get; set; }
     }
     public class UserRespone_TourCompany
     {
