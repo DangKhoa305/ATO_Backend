@@ -11,5 +11,7 @@ namespace Service.TourCompanySer
     {
         Task<List<TourCompany>> GetListTourCompanies_Admin();
         Task<TourCompany> GetTourCompany_Admin(Guid TourCompanyId);
+        Task AddTourCompanyAsync(TourCompany tourCompany);
+        Task UpdateTourCompanyAsync(TourCompany tourCompany);
     }
 }

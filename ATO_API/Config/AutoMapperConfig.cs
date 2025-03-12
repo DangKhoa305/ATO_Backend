@@ -37,6 +37,7 @@ namespace ATO_API.Config
                 .ForMember(dest => dest.IssueTypeDescription, opt => opt.MapFrom(src => GetEnumDescription(src.IssueType)));
                 // manage users 
                 config.CreateMap<Account, UserRespone>();
+                config.CreateMap<Account, UserUnassignedTourCompany>();
                 config.CreateMap<TourCompany, UserRespone_TourCompany>();
                 config.CreateMap<TouristFacility, UserRespone_TouristFacility>();
                 config.CreateMap<TourGuide, UserRespone_TourGuide>();
@@ -47,6 +48,7 @@ namespace ATO_API.Config
                 // TourCompany
                 config.CreateMap<TourCompany, TourCompanyDTO>();
                 config.CreateMap<Account, TourCompanyDTO_UserRespone>();
+                config.CreateMap<CreateTourCompanyRequest, TourCompany>();
                 // product
                 config.CreateMap<Product, ProductDTO>();
                 config.CreateMap<CreateProductDTO, Product>();

@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Nest;
 using Service.EmailSer;
 using Service.Repository;
+using Service.TourCompanySer;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -25,17 +26,21 @@ namespace Service.AccountSer
     public class AccountService : IAccountService
     {
         private readonly Service.Repository.IRepository<Account> _accountRepository;
+        private readonly Service.Repository.IRepository<TourCompany> _tourCompanyRepository;
         private readonly UserManager<Account> _userManager;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
         private readonly IMemoryCache _cache;
         private readonly TimeSpan _otpLifetime = TimeSpan.FromMinutes(5);
+        private readonly RoleManager<IdentityRole<Guid>> _roleManager;
         public AccountService(
             Service.Repository.IRepository<Account> accountRepository,
-            UserManager<Account> userManager,
+            Service.Repository.IRepository<TourCompany> tourCompanyRepository,
+        UserManager<Account> userManager,
             IConfiguration configuration,
             IEmailService emailService,
-            IMemoryCache cache
+            IMemoryCache cache,
+            RoleManager<IdentityRole<Guid>> roleManager
             )
         {
             _accountRepository = accountRepository;
@@ -43,6 +48,8 @@ namespace Service.AccountSer
             _configuration = configuration;
             _emailService = emailService;
             _cache = cache;
+            _tourCompanyRepository = tourCompanyRepository;
+            _roleManager = roleManager;
         }
         public async Task<IEnumerable<Account>> GetAllAccountsAsync()
         {
@@ -84,6 +91,7 @@ namespace Service.AccountSer
         }
 
         public async Task AddAccountAsync(Account account)
+
         {
             await _accountRepository.AddAsync(account);
         }
@@ -281,6 +289,26 @@ namespace Service.AccountSer
             return await _accountRepository.Query()
                    .FirstOrDefaultAsync(a => a.PhoneNumber == phoneNumber);
         }
+
+        public async Task<IEnumerable<Account>> GetUnassignedTourCompaniesAsync()
+        {
+            var role = await _roleManager.FindByIdAsync("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A");
+            if (role == null)
+            {
+                return Enumerable.Empty<Account>();
+            }
+
+            var tourCompanyUsers = await _userManager.GetUsersInRoleAsync(role.Name);
+
+            // Lấy danh sách UserId đã được gán trong bảng TourCompany
+            var assignedUserIds = await _tourCompanyRepository.Query()
+                                        .Select(tc => tc.UserId)
+                                        .ToListAsync();
+
+            // Lọc ra các user chưa được gán (UserId không nằm trong danh sách assignedUserIds)
+            return tourCompanyUsers.Where(u => !assignedUserIds.Contains(u.Id));
+        }
+
 
     }
 }

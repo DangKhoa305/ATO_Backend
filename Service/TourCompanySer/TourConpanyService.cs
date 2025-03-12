@@ -16,6 +16,15 @@ namespace Service.TourCompanySer
         {
             _tourCompanyRepository = tourCompanyRepository;
         }
+
+        public async Task AddTourCompanyAsync(TourCompany tourCompany)
+        {
+            await _tourCompanyRepository.AddAsync(tourCompany);
+        }
+        public async Task UpdateTourCompanyAsync(TourCompany tourCompany)
+        {
+            await _tourCompanyRepository.UpdateAsync(tourCompany);
+        }
         public async Task<List<TourCompany>> GetListTourCompanies_Admin()
         {
             try

@@ -53,5 +53,16 @@ namespace Data.DTO.Respone
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateTime { get; set; }
     }
-
+    public class UserUnassignedTourCompany
+    {
+        public Guid Id { get; set; }
+        public string? Email { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Fullname { get; set; }
+        public bool? Gender { get; set; }
+        public string? AvatarURL { get; set; }
+        public DateTime? Dob { get; set; }
+        public bool isAccountActive { get; set; }
+        public string RoleName { get; set; }
+    }
 }

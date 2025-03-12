@@ -22,5 +22,6 @@ namespace Service.AccountSer
         Task<bool> ResetPasswordAsync(Guid id, string newPassword);
         Task<bool> InactiveAccountAsync(Guid id);
         Task<Account?> GetAccountByPhoneNumberAsync(string phoneNumber);
+        Task<IEnumerable<Account>> GetUnassignedTourCompaniesAsync();
     }
 }
