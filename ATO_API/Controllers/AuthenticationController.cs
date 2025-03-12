@@ -103,15 +103,15 @@ namespace ATO_API.Controllers
         [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<string>> VerifyOtpAsync(string email, string otp)
+        public async Task<ActionResult<string>> VerifyOtpAsync(string username, string otp)
         {
             try
             {
-                if (_cache.TryGetValue(email, out string storedOtp) && storedOtp == otp)
+                if (_cache.TryGetValue(username, out string storedOtp) && storedOtp == otp)
                 {
-                    _cache.Remove(email);
+                    _cache.Remove(username);
 
-                    var token = _tokenHelper.GenerateAccessToken(email);
+                    var token = _tokenHelper.GenerateAccessToken(username);
 
                     return Ok(new { Token = token });
                 }
@@ -128,8 +128,8 @@ namespace ATO_API.Controllers
             }
 
         }
-        [Authorize("guest")]
-        [HttpPost("forgot-password")]
+        [Authorize]
+        [HttpPost("change-password")]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
