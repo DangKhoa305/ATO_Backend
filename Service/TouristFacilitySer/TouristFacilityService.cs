@@ -16,6 +16,12 @@ namespace Service.TouristFacilitySer
         {
             _touristFacilityRepository = touristFacilityRepository;
         }
+
+        public async Task AddTouristFacilitiesAsync(TouristFacility TouristFacility)
+        {
+            await _touristFacilityRepository.AddAsync(TouristFacility);
+        }
+
         public async Task<List<TouristFacility>> GetListTouristFacilities_Admin()
         {
             try
@@ -42,6 +48,11 @@ namespace Service.TouristFacilitySer
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
+        }
+
+        public async Task UpdateTouristFacilitiesAsync(TouristFacility TouristFacility)
+        {
+            await _touristFacilityRepository.UpdateAsync(TouristFacility);
         }
     }
 }

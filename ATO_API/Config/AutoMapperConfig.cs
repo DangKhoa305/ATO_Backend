@@ -45,6 +45,8 @@ namespace ATO_API.Config
                 // TouristFacility
                 config.CreateMap<TouristFacility, TouristFacilityDTO>();
                 config.CreateMap<Account, TouristFacilityDTO_UserRespone>();
+                config.CreateMap<CreateTouristFacilityRequest, TouristFacility>();
+                config.CreateMap<UpdateTouristFacilityRequest, TouristFacility>();
                 // TourCompany
                 config.CreateMap<TourCompany, TourCompanyDTO>();
                 config.CreateMap<Account, TourCompanyDTO_UserRespone>();

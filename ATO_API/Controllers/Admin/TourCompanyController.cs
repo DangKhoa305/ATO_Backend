@@ -34,7 +34,7 @@ namespace ATO_API.Controllers.Admin
         [HttpGet("list-tour-companies")]
         [ProducesResponseType(typeof(List<TourCompanyDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ListTouristFacility()
+        public async Task<IActionResult> ListTourCompany()
         {
             try
             {
@@ -54,7 +54,7 @@ namespace ATO_API.Controllers.Admin
         [HttpGet("get-tour-company/{TourCompanyId}")]
         [ProducesResponseType(typeof(TourCompanyDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetTouristFacility(Guid TourCompanyId)
+        public async Task<IActionResult> GetTourCompany(Guid TourCompanyId)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace ATO_API.Controllers.Admin
                 await _tourCompanyService.AddTourCompanyAsync(newTourCompany);
 
                 var response = _mapper.Map<TourCompanyDTO>(newTourCompany);
-                return CreatedAtAction(nameof(GetTouristFacility), new { TourCompanyId = newTourCompany.TourCompanyId }, response);
+                return CreatedAtAction(nameof(GetTourCompany), new { TourCompanyId = newTourCompany.TourCompanyId }, response);
             }
             catch (Exception ex)
             {
@@ -161,7 +161,7 @@ namespace ATO_API.Controllers.Admin
                 }
 
                 _mapper.Map(request, existingTourCompany);
-
+                existingTourCompany.UpdateTime = DateTime.UtcNow;
 
                 await _tourCompanyService.UpdateTourCompanyAsync(existingTourCompany);
                 var response = _mapper.Map<TourCompanyDTO>(existingTourCompany);

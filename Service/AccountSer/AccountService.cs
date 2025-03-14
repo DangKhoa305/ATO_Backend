@@ -27,6 +27,7 @@ namespace Service.AccountSer
     {
         private readonly Service.Repository.IRepository<Account> _accountRepository;
         private readonly Service.Repository.IRepository<TourCompany> _tourCompanyRepository;
+        private readonly Service.Repository.IRepository<TouristFacility> _touristFacilityRepository;
         private readonly UserManager<Account> _userManager;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
@@ -36,6 +37,7 @@ namespace Service.AccountSer
         public AccountService(
             Service.Repository.IRepository<Account> accountRepository,
             Service.Repository.IRepository<TourCompany> tourCompanyRepository,
+            Service.Repository.IRepository<TouristFacility> touristFacilityRepository,
         UserManager<Account> userManager,
             IConfiguration configuration,
             IEmailService emailService,
@@ -50,6 +52,7 @@ namespace Service.AccountSer
             _cache = cache;
             _tourCompanyRepository = tourCompanyRepository;
             _roleManager = roleManager;
+            _touristFacilityRepository = touristFacilityRepository;
         }
         public async Task<IEnumerable<Account>> GetAllAccountsAsync()
         {
@@ -309,6 +312,21 @@ namespace Service.AccountSer
             return tourCompanyUsers.Where(u => !assignedUserIds.Contains(u.Id));
         }
 
+        public async Task<IEnumerable<Account>> GetUnassignedTouristFacilitiesAsync()
+        {
+            var role = await _roleManager.FindByIdAsync("49E15EF3-2D88-4812-955F-D00859B3F7E3");
+            if (role == null)
+            {
+                return Enumerable.Empty<Account>();
+            }
 
+            var touristFacilityUsers = await _userManager.GetUsersInRoleAsync(role.Name);
+
+            var assignedUserIds = await _touristFacilityRepository.Query()
+                                        .Select(tc => tc.UserId)
+                                        .ToListAsync();
+
+            return touristFacilityUsers.Where(u => !assignedUserIds.Contains(u.Id));
+        }
     }
 }
