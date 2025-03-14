@@ -12,19 +12,15 @@
 
 	<ItemGroup>
 		<Compile Remove="Controllers\GuideTeams\**" />
-		<Compile Remove="Controllers\TourCompany\**" />
 		<Compile Remove="Controllers\Tourist\**" />
 		<Compile Remove="Files\**" />
 		<Content Remove="Controllers\GuideTeams\**" />
-		<Content Remove="Controllers\TourCompany\**" />
 		<Content Remove="Controllers\Tourist\**" />
 		<Content Remove="Files\**" />
 		<EmbeddedResource Remove="Controllers\GuideTeams\**" />
-		<EmbeddedResource Remove="Controllers\TourCompany\**" />
 		<EmbeddedResource Remove="Controllers\Tourist\**" />
 		<EmbeddedResource Remove="Files\**" />
 		<None Remove="Controllers\GuideTeams\**" />
-		<None Remove="Controllers\TourCompany\**" />
 		<None Remove="Controllers\Tourist\**" />
 		<None Remove="Files\**" />
 	</ItemGroup>

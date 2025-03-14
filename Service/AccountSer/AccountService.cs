@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -66,6 +67,7 @@ namespace Service.AccountSer
                 return await _accountRepository.Query()
                        .Include(b => b.TourCompany)
                        .Include(b => b.TouristFacility)
+                       .Include(b => b.TourGuide)
                        .ToListAsync();
             }
             catch (Exception)
@@ -84,6 +86,7 @@ namespace Service.AccountSer
                 return await _accountRepository.Query()
                        .Include(b => b.TourCompany)
                        .Include(b => b.TouristFacility)
+                       .Include(b => b.TourGuide)
                        .FirstOrDefaultAsync(a => a.Id == id);
             }
             catch (Exception)
@@ -327,6 +330,20 @@ namespace Service.AccountSer
                                         .ToListAsync();
 
             return touristFacilityUsers.Where(u => !assignedUserIds.Contains(u.Id));
+        }
+        public async Task<IEnumerable<Account>> GetGuideTeamsAsync(Guid UserId)
+        {
+            TourCompany TourCompany = await _tourCompanyRepository.Query()
+                   .SingleOrDefaultAsync(x => x.UserId == UserId);
+            var role = await _roleManager.FindByIdAsync("870DD1EC-C340-41EE-9088-0F3612F510CD");
+            if (role == null)
+            {
+                return Enumerable.Empty<Account>();
+            }
+
+            var guideTeamsUsers = await _userManager.GetUsersInRoleAsync(role.Name);
+
+            return guideTeamsUsers.Where(u => u.TourCompany != null && u.TourCompany.TourCompanyId == TourCompany.TourCompanyId);
         }
     }
 }

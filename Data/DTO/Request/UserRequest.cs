@@ -18,6 +18,16 @@ namespace Data.DTO.Request
         public DateTime? Dob { get; set; }
         public Guid Role { get; set; }
     }
+    public class CreateAccountRequest_GT
+    {
+        public string UserName { get; set; }
+        public string? Email { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Fullname { get; set; }
+        public bool? Gender { get; set; }
+        public string? AvatarURL { get; set; }
+        public DateTime? Dob { get; set; }
+    }
     public class CreateAccountRequest_TouristFacility
     {
         public string TouristFacilityName { get; set; }

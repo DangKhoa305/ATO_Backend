@@ -38,7 +38,7 @@ namespace ATO_API.Controllers.Admin
         {
             try
             {
-                List<TourCompany> response = await _tourCompanyService.GetListTourCompanies_Admin();
+                List<Data.Models.TourCompany> response = await _tourCompanyService.GetListTourCompanies_Admin();
                 List<TourCompanyDTO> responseResult = _mapper.Map<List<TourCompanyDTO>>(response);
                 return Ok(responseResult);
             }
@@ -58,7 +58,7 @@ namespace ATO_API.Controllers.Admin
         {
             try
             {
-                TourCompany response = await _tourCompanyService.GetTourCompany_Admin(TourCompanyId);
+                Data.Models.TourCompany response = await _tourCompanyService.GetTourCompany_Admin(TourCompanyId);
                 TourCompanyDTO responseResult = _mapper.Map<TourCompanyDTO>(response);
                 return Ok(responseResult);
             }
@@ -96,7 +96,7 @@ namespace ATO_API.Controllers.Admin
                     });
                 }
 
-                var newTourCompany = _mapper.Map<TourCompany>(request);
+                var newTourCompany = _mapper.Map<Data.Models.TourCompany>(request);
                 newTourCompany.TourCompanyId = Guid.NewGuid();
                 newTourCompany.CreateDate = DateTime.UtcNow;
 

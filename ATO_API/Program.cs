@@ -21,6 +21,7 @@ using Service.ProductSer;
 using Service.Repository;
 using Service.SystemConfigSer;
 using Service.TourCompanySer;
+using Service.TourGuideSer;
 using Service.TouristFacilitySer;
 using Service.UserSupportSer;
 using System.Text;
@@ -156,6 +157,9 @@ builder.Services.AddScoped<ITourCompanyService, TourCompanyService>();
 builder.Services.AddScoped<IRepository<TourCompany>, Repository<TourCompany>>();
 //Certification
 builder.Services.AddScoped<IRepository<Certification>, Repository<Certification>>();
+//TourGuide
+builder.Services.AddScoped<ITourGuideService, TourGuideService>();
+builder.Services.AddScoped<IRepository<TourGuide>, Repository<TourGuide>>();
 // app
 var app = builder.Build();
 

@@ -24,5 +24,6 @@ namespace Service.AccountSer
         Task<Account?> GetAccountByPhoneNumberAsync(string phoneNumber);
         Task<IEnumerable<Account>> GetUnassignedTourCompaniesAsync();
         Task<IEnumerable<Account>> GetUnassignedTouristFacilitiesAsync();
+        Task<IEnumerable<Account>> GetGuideTeamsAsync(Guid UserId);
     }
 }
