@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.DTO.Request
+namespace Data.DTO.Respone
 {
-    public class UpdateConfigRequest
+    public class EmailConfig
     {
         public string Email { get; set; }
         public string AppPassword { get; set; }
     }
-    public class UpdateConfigVNPAYRequest
+    public class VNPayConfig
     {
         public string TmnCode { get; set; }
         public string HashSecret { get; set; }
@@ -21,5 +21,6 @@ namespace Data.DTO.Request
         public string Version { get; set; }
         public string Locale { get; set; }
         public string PaymentBackReturnUrl { get; set; }
+
     }
 }

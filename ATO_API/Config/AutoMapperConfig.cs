@@ -1,74 +1,119 @@
-﻿using AutoMapper;
-using Data.DTO.Request;
+﻿using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
-using System.ComponentModel;
-using System.Reflection;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Service.SystemConfigSer;
 
-namespace ATO_API.Config
+namespace ATO_API.Controllers.Admin
 {
-    public class AutoMapperConfig : Profile
+    [Route("api/admin/config")]
+    [ApiController]
+    [Authorize(Roles = "Admin")]
+    public class ConfigController : ControllerBase
     {
-        public static IMapper Initialize()
-        {
-            var mapperConfig = new MapperConfiguration(config =>
-            {
-                // blog mapper
-                config.CreateMap<Blog, Blog_Guest_DTO>()
-                .ForMember(dest => dest.TouristFacilityId, opt => opt.MapFrom(src => src.Account.TouristFacility.TouristFacilityId))
-                .ForMember(dest => dest.TourCompanyId, opt => opt.MapFrom(src => src.Account.TourCompany.TourCompanyId))
-                 .ForMember(dest => dest.CreateByName, opt => opt.MapFrom(src =>
-                    src.Account.TourCompany != null ? src.Account.TourCompany.CompanynName :
-                    src.Account.TouristFacility != null ? src.Account.TouristFacility.TouristFacilityName : "Hệ thống ATOS"
-                ));
-                config.CreateMap<Blog, Blog_CM_DTO>()
-                .ForMember(dest => dest.TouristFacilityId, opt => opt.MapFrom(src => src.Account.TouristFacility.TouristFacilityId))
-                .ForMember(dest => dest.TourCompanyId, opt => opt.MapFrom(src => src.Account.TourCompany.TourCompanyId))
-                 .ForMember(dest => dest.CreateByName, opt => opt.MapFrom(src =>
-                    src.Account.TourCompany != null ? src.Account.TourCompany.CompanynName :
-                    src.Account.TouristFacility != null ? src.Account.TouristFacility.TouristFacilityName : "Hệ thống ATOS"
-                ));
-                config.CreateMap<BlogCreateRequest, Blog>();
-                config.CreateMap<BlogUpdateRequest, Blog>();
-                // user support
-                config.CreateMap<UserSupportRequest, UserSupport>();
-                config.CreateMap<UserSupport, UserSupportDetails>()
-                .ForMember(dest => dest.ResponeBy, opt => opt.MapFrom(src => src.ResponeAccount.Fullname))
-                .ForMember(dest => dest.IssueTypeDescription, opt => opt.MapFrom(src => GetEnumDescription(src.IssueType)));
-                // manage users 
-                config.CreateMap<Account, UserRespone>();
-                config.CreateMap<Account, UserUnassignedTourCompany>();
-                config.CreateMap<TourCompany, UserRespone_TourCompany>();
-                config.CreateMap<TouristFacility, UserRespone_TouristFacility>();
-                config.CreateMap<TourGuide, UserRespone_TourGuide>();
-                config.CreateMap<CreateAccountRequest, Account>();
-                // TouristFacility
-                config.CreateMap<TouristFacility, TouristFacilityDTO>();
-                config.CreateMap<Account, TouristFacilityDTO_UserRespone>();
-                config.CreateMap<CreateTouristFacilityRequest, TouristFacility>();
-                config.CreateMap<UpdateTouristFacilityRequest, TouristFacility>();
-                // TourCompany
-                config.CreateMap<TourCompany, TourCompanyDTO>();
-                config.CreateMap<Account, TourCompanyDTO_UserRespone>();
-                config.CreateMap<CreateTourCompanyRequest, TourCompany>();
-                // product
-                config.CreateMap<Product, ProductDTO>();
-                config.CreateMap<CreateProductDTO, Product>();
-                config.CreateMap<UpdateProductDTO, Product>();
-                // OCOPSell
-                config.CreateMap<OCOPSell, OCOPSellDTO>();
-                config.CreateMap<CreateOCOPSellDTO, OCOPSell>();
-                config.CreateMap<UpdateOCOPSellDTO, OCOPSell>();
-            });
+        private readonly ISystemConfigurationsService _configService;
 
-            return mapperConfig.CreateMapper();
-        }
-        public static string GetEnumDescription(Enum value)
+        public ConfigController(ISystemConfigurationsService configService)
         {
-            var field = value.GetType().GetField(value.ToString());
-            var attribute = field?.GetCustomAttribute<DescriptionAttribute>();
-            return attribute?.Description ?? value.ToString();
+            _configService = configService;
+        }
+
+        [HttpPut("update-config-email")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateEmailConfig([FromBody] UpdateConfigRequest request)
+        {
+            try
+            {
+                var isUpdated = await _configService.UpdateEmailAndAppPasswordAsync(request.Email, request.AppPassword);
+
+                if (!isUpdated)
+                {
+                    return NotFound(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Email và AppPassword không tìm thấy cấu hình!",
+                    });
+                }
+                return Ok(new ResponseVM
+                {
+                    Status = true,
+                    Message = "Cập nhật cấu hình thành công!",
+                });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new ResponseVM { Status = false, Message = "Đã xảy ra lỗi vui lòng thử lại sau!" });
+            }
+
+        }
+        [HttpGet("get-config-email")]
+        [ProducesResponseType(typeof(EmailConfig), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetEmailConfig()
+        {
+            try
+            {
+                var Configs = await _configService.GetEmailAsync();
+                return Ok(Configs);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new ResponseVM { Status = false, Message = "Đã xảy ra lỗi vui lòng thử lại sau!" });
+            }
+
+        }
+        [HttpGet("get-config-vnpay")]
+        [ProducesResponseType(typeof(VNPayConfig), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetVNPayConfig()
+        {
+            try
+            {
+                var Configs = await _configService.GetVNPayAsync();
+                return Ok(Configs);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new ResponseVM { Status = false, Message = "Đã xảy ra lỗi vui lòng thử lại sau!" });
+            }
+
+        }
+        [HttpPut("update-config-vnpay")]
+        [ProducesResponseType(typeof(VNPayConfig), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateVNPayConfig([FromBody] UpdateConfigVNPAYRequest request)
+        {
+            try
+            {
+                var isUpdated = await _configService.UpdateVNPayConfigAsync(request);
+
+                if (!isUpdated)
+                {
+                    return NotFound(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Không tìm thấy cấu hình!",
+                    });
+                }
+                return Ok(new ResponseVM
+                {
+                    Status = true,
+                    Message = "Cập nhật cấu hình thành công!",
+                });
+            }
+            catch (Exception ex)
+            {
+                //return StatusCode(500, new ResponseVM { Status = false, Message = "Đã xảy ra lỗi vui lòng thử lại sau!" });
+                return BadRequest(ex.Message);
+            }
+
         }
     }
 }
-

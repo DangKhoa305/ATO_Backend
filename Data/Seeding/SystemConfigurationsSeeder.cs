@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,6 +50,73 @@ namespace Data.Seeding
                    ConfigType = ConfigType.EmailConfig,
                    ConfigKey = "AppPassword",
                    ConfigValue = "sllgcjfbkpgcwnmp",
+                   CreateDate = DateTime.UtcNow
+               }
+               ,
+               new SystemConfigurations()
+               {
+                   ConfigId = 5,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "TmnCode",
+                   ConfigValue = "7S4BSWDD",
+                   CreateDate = DateTime.UtcNow
+               }
+               ,
+               new SystemConfigurations()
+               {
+                   ConfigId = 6,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "HashSecret",
+                   ConfigValue = "RC7QASGETNFSP0EDKUE4IT7X6VRKM4NJ",
+                   CreateDate = DateTime.UtcNow
+               },
+               new SystemConfigurations()
+               {
+                   ConfigId = 7,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "Url",
+                   ConfigValue = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html",
+                   CreateDate = DateTime.UtcNow
+               }
+               ,
+               new SystemConfigurations()
+               {
+                   ConfigId = 8,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "Command",
+                   ConfigValue = "pay",
+                   CreateDate = DateTime.UtcNow
+               },
+               new SystemConfigurations()
+               {
+                   ConfigId = 9,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "CurrCode",
+                   ConfigValue = "VND",
+                   CreateDate = DateTime.UtcNow
+               },
+               new SystemConfigurations()
+               {
+                   ConfigId = 10,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "Version",
+                   ConfigValue = "2.1.0",
+                   CreateDate = DateTime.UtcNow
+               },
+               new SystemConfigurations()
+               {
+                   ConfigId = 11,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "Locale",
+                   ConfigValue = "vn",
+                   CreateDate = DateTime.UtcNow
+               },
+               new SystemConfigurations()
+               {
+                   ConfigId = 12,
+                   ConfigType = ConfigType.VnPayConfig,
+                   ConfigKey = "PaymentBackReturnUrl",
+                   ConfigValue = "http://",
                    CreateDate = DateTime.UtcNow
                }
            );
