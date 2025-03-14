@@ -118,6 +118,7 @@ namespace Data.ArmsContext
             new SystemConfigurationsSeeder(modelBuilder).Seed();
             new ProductSeeder(modelBuilder).Seed();
             new OCOPSellSeeder(modelBuilder).Seed();
+            new CertificationSeeder(modelBuilder).Seed();
             #endregion
 
         }

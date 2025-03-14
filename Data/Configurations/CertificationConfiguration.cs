@@ -32,7 +32,7 @@ namespace Data.Configurations
             builder.HasOne(x => x.TouristFacility)
                .WithMany(c => c.Certifications)
                .HasForeignKey(x => x.TouristFacilityId);
-            builder.HasOne(x => x.TouristFacility)
+            builder.HasOne(x => x.Product)
               .WithMany(c => c.Certifications)
               .HasForeignKey(x => x.ProductId);
             #endregion
