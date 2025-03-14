@@ -154,6 +154,8 @@ builder.Services.AddScoped<IRepository<OCOPSell>, Repository<OCOPSell>>();
 //TourCompany
 builder.Services.AddScoped<ITourCompanyService, TourCompanyService>();
 builder.Services.AddScoped<IRepository<TourCompany>, Repository<TourCompany>>();
+//Certification
+builder.Services.AddScoped<IRepository<Certification>, Repository<Certification>>();
 // app
 var app = builder.Build();
 

@@ -9,7 +9,7 @@ namespace Data.Models
     public class Certification
     {
         public Guid CertificationId { get; set; }
-        public string CertificationName { get; set;}
+        public string CertificationName { get; set; }
         public string IssuingOrganization { get; set; }
         public DateTime IssueDate { get; set; }
         public DateTime ExpiryDate { get; set; }
@@ -27,8 +27,9 @@ namespace Data.Models
     }
     public enum StatusApproval
     {
-        Approved,
-        Processing,
-        Reject
+        Approved = 0,
+        Processing = 1,
+        Reject = 2,
+        Update = 3
     }
 }

@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.DTO.Respone;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,15 @@ namespace Service.ProductSer
         Task<bool> CreateOCOPSell_AFTO(OCOPSell newOCOPSell);
         Task<bool> UpdateOCOPSell_AFTO(Guid OCOPSellId, OCOPSell updatedOCOPSell);
         Task<List<OCOPSell>> GetListOCOPSellsByProductId_AFTO(Guid ProductId);
+        Task<List<Certification>> GetListCertificationsByProductId_AFTO(Guid productId);
+        Task<Certification> GetCertification_AFTO(Guid CertificationId);
+        Task<bool> CreateCertification_AFTO(Certification certification, Guid UserId);
+        Task<bool> UpdateCertification_AFTO(Guid CertificationId, Certification certification);
+        Task<bool> ApprovelCertification_CM(Guid CertificationId, Certification certification);
+        Task<List<Certification>> GetListCertifications_CM();
+        Task<Certification> GetCertification_CM(Guid CertificationId);
+        Task<List<Product>> GetListProducts_CM();
+        Task<Product> GetProduct_CM(Guid ProductId);
+        Task<bool> ApprovelProduct_CM(Guid ProductId, Product updatedProduct);
     }
 }

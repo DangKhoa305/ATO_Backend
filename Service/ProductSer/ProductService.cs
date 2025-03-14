@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.DTO.Respone;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
 using System;
@@ -14,15 +15,18 @@ namespace Service.ProductSer
         private readonly IRepository<Product> _productRepository;
         private readonly IRepository<TouristFacility> _touristFacilityRepository;
         private readonly IRepository<OCOPSell> _OCOPSellRepository;
+        private readonly IRepository<Certification> _certificationRepository;
         public ProductService(
             IRepository<Product> productRepository,
             IRepository<TouristFacility> touristFacilityRepository,
-            IRepository<OCOPSell> OCOPSellRepository
+            IRepository<OCOPSell> OCOPSellRepository,
+            IRepository<Certification> certificationRepository
             )
         {
             _productRepository = productRepository;
             _touristFacilityRepository = touristFacilityRepository;
             _OCOPSellRepository = OCOPSellRepository;
+            _certificationRepository = certificationRepository;
         }
 
         public async Task<List<OCOPSell>> GetListOCOPSells_AFTO(Guid UserId)
@@ -193,5 +197,185 @@ namespace Service.ProductSer
             }
         }
 
+        public async Task<List<Certification>> GetListCertificationsByProductId_AFTO(Guid productId)
+        {
+            try
+            {
+                return await _certificationRepository.Query()
+                    .Where(x => x.ProductId == productId)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<Certification> GetCertification_AFTO(Guid CertificationId)
+        {
+            try
+            {
+                return await _certificationRepository.Query()
+                    .FirstOrDefaultAsync(x => x.CertificationId == CertificationId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<bool> CreateCertification_AFTO(Certification certification, Guid UserId)
+        {
+            try
+            {
+                TouristFacility TouristFacility = await _touristFacilityRepository.Query()
+                    .SingleOrDefaultAsync(x => x.UserId == UserId);
+                certification.CertificationId = Guid.NewGuid();
+                certification.TouristFacilityId = TouristFacility.TouristFacilityId;
+                certification.CreateDate = DateTime.UtcNow;
+                certification.StatusApproval = StatusApproval.Processing;
+                await _certificationRepository.AddAsync(certification);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<bool> UpdateCertification_AFTO(Guid CertificationId, Certification certification)
+        {
+            try
+            {
+                Certification existingCertification = await _certificationRepository.Query()
+                    .SingleOrDefaultAsync(x => x.CertificationId == CertificationId);
+
+                if (existingCertification == null)
+                {
+                    throw new Exception("Không tìm thấy chứng nhận!");
+                }
+
+                existingCertification.ProductId = certification.ProductId;
+                existingCertification.CertificationName = certification.CertificationName;
+                existingCertification.IssueDate = certification.IssueDate;
+                existingCertification.ExpiryDate = certification.ExpiryDate;
+                existingCertification.CertificationDetails = certification.CertificationDetails;
+                existingCertification.IssuingOrganization = certification.IssuingOrganization;
+                existingCertification.UpdateDate = DateTime.UtcNow;
+                existingCertification.StatusApproval = StatusApproval.Update;
+
+                await _certificationRepository.UpdateAsync(existingCertification);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<bool> ApprovelCertification_CM(Guid CertificationId, Certification certification)
+        {
+            try
+            {
+                Certification existingCertification = await _certificationRepository.Query()
+                    .SingleOrDefaultAsync(x => x.CertificationId == CertificationId);
+
+                if (existingCertification == null)
+                {
+                    throw new Exception("Không tìm thấy chứng nhận!");
+                }
+
+                existingCertification.StatusApproval = certification.StatusApproval;
+                existingCertification.ReplyRequest = certification.ReplyRequest;
+                existingCertification.UpdateDate = DateTime.UtcNow;
+
+                await _certificationRepository.UpdateAsync(existingCertification);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<List<Certification>> GetListCertifications_CM()
+        {
+            try
+            {
+                return await _certificationRepository.Query()
+                    .Include(x => x.Product)
+                    .Include(x => x.TouristFacility)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<Certification> GetCertification_CM(Guid CertificationId)
+        {
+            try
+            {
+                return await _certificationRepository.Query()
+                    .Include(x => x.Product)
+                    .Include(x => x.TouristFacility)
+                    .FirstOrDefaultAsync(x => x.CertificationId == CertificationId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<List<Product>> GetListProducts_CM()
+        {
+            try
+            {
+                return await _productRepository.Query()
+                    .Include(x => x.Certifications)
+                    .Include(x => x.TouristFacility)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<Product> GetProduct_CM(Guid ProductId)
+        {
+            try
+            {
+                return await _productRepository.Query()
+                    .Include(x => x.Certifications)
+                    .Include(x => x.TouristFacility)
+                    .SingleOrDefaultAsync(x => x.ProductId == ProductId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<bool> ApprovelProduct_CM(Guid ProductId, Product updatedProduct)
+        {
+            try
+            {
+                Product existingProduct = await _productRepository.Query()
+                    .SingleOrDefaultAsync(x => x.ProductId == ProductId);
+
+                if (existingProduct == null)
+                {
+                    throw new Exception("Không tìm thấy sản phẩm!");
+                }
+
+                existingProduct.StatusApproval = updatedProduct.StatusApproval;
+                existingProduct.ReplyRequest = updatedProduct.ReplyRequest;
+                existingProduct.UpdateDate = DateTime.UtcNow;
+
+                await _productRepository.UpdateAsync(existingProduct);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
     }
 }

@@ -27,6 +27,8 @@ namespace Data.Models
         public ProductCategory ProductCategory { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
+        public StatusApproval StatusApproval { get; set; }
+        public string? ReplyRequest { get; set; }
         //FK
         public Guid TouristFacilityId { get; set; }
         public virtual TouristFacility? TouristFacility { get; set; }

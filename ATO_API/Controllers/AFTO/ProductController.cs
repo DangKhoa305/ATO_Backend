@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Azure;
+using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -159,7 +160,7 @@ namespace ATO_API.Controllers.AFTO
             }
         }
         [HttpGet("get-ocop-sell/{OCOPSellId}")]
-        [ProducesResponseType(typeof(ProductDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(OCOPSellDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetOCOPSell(Guid OCOPSellId)
         {
@@ -264,5 +265,113 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
+        [HttpGet("get-certification-by-productid/{ProductId}")]
+        [ProducesResponseType(typeof(List<CertificationRespone>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetCertificationByProductId(Guid ProductId)
+        {
+            try
+            {
+                var response = await _productService.GetListCertificationsByProductId_AFTO(ProductId);
+                List<CertificationRespone> responseResult = _mapper.Map<List<CertificationRespone>>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+        [HttpGet("get-certification/{CertificationId}")]
+        [ProducesResponseType(typeof(CertificationRespone), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetCertification(Guid CertificationId)
+        {
+            try
+            {
+                var response = await _productService.GetCertification_AFTO(CertificationId);
+                CertificationRespone responseResult = _mapper.Map<CertificationRespone>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+        [HttpPost("create-certification")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CreateCertification([FromBody] CreateCertificationDTO createCertificationDTO)
+        {
+            try
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                Certification responseResult = _mapper.Map<Certification>(createCertificationDTO);
+                bool result = await _productService.CreateCertification_AFTO(responseResult, Guid.Parse(userId));
+                if (result)
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = true,
+                        Message = "Tạo mới thành công!",
+                    });
+                }
+                return StatusCode(400, new ResponseVM
+                {
+                    Status = false,
+                    Message = "Tạo mới không thành công!",
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+        [HttpPut("update-certification/{CertificationId}")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateCertification(Guid CertificationId, [FromBody] UpdateCertificationDTO updateCertificationDTO)
+        {
+            try
+            {
+                Certification responseResult = _mapper.Map<Certification>(updateCertificationDTO);
+                bool result = await _productService.UpdateCertification_AFTO(CertificationId, responseResult);
+                if (result)
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = true,
+                        Message = "Cập nhật chứng nhận thành công!",
+                    });
+                }
+                return StatusCode(400, new ResponseVM
+                {
+                    Status = false,
+                    Message = "Cập nhật chứng nhận không thành công!",
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+
     }
 }

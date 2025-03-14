@@ -33,4 +33,9 @@ namespace Data.DTO.Respone
         public DateTime? Dob { get; set; }
         public bool isAccountActive { get; set; }
     }
+    public class TouristFacilityDTO_Certfication
+    {
+        public Guid TouristFacilityId { get; set; }
+        public string TouristFacilityName { get; set; }
+    }
 }

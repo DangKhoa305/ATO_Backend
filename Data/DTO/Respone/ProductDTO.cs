@@ -63,4 +63,29 @@ namespace Data.DTO.Respone
         public UnitProduct? UnitProduct { get; set; }
         public ProductCategory ProductCategory { get; set; }
     }
+    public class ProductDTO_CM
+    {
+        public Guid ProductId { get; set; }
+        public string ProductName { get; set; }
+        public List<string> Imgs { get; set; }
+        public double? Price { get; set; }
+        public string? Description { get; set; }
+        public string? Additional { get; set; }
+        public string? NutritionType { get; set; }
+        public string? Age { get; set; }
+        public string? Ingredient { get; set; }
+        public string? Volume { get; set; }
+        public string? Origin { get; set; }
+        public string? Manufacturer { get; set; }
+        public string? AddressManufacturer { get; set; }
+        public UnitProduct? UnitProduct { get; set; }
+        public ProductCategory ProductCategory { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public StatusApproval StatusApproval { get; set; }
+        public string? ReplyRequest { get; set; }
+        public Guid TouristFacilityId { get; set; }
+        public virtual TouristFacilityDTO_Certfication? TouristFacility { get; set; }
+        public virtual ICollection<CertificationRespone>? Certifications { get; set; }
+    }
 }

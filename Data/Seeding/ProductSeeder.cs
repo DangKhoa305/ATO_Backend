@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,7 +45,8 @@ namespace Data.Seeding
                    Ingredient = "Tinh bột nghệ, Mật ong nguyên chất",
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -71,7 +71,8 @@ namespace Data.Seeding
                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -100,7 +101,8 @@ namespace Data.Seeding
                    Ingredient = "GẠO NẾP THƠM, RUỐC, ỚT, TIÊU",
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -126,7 +128,8 @@ namespace Data.Seeding
                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -154,7 +157,8 @@ namespace Data.Seeding
                    Ingredient = "Trà xanh, Khác",
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -180,7 +184,8 @@ namespace Data.Seeding
                    NutritionType = "Đặc sản địa phương",
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -206,7 +211,8 @@ namespace Data.Seeding
                    Ingredient = "Tía tô, cỏ ngọt",
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                },
                new Product()
                {
@@ -231,7 +237,8 @@ namespace Data.Seeding
                    Ingredient = "Trầm hương, Bột Trầm Hương",
                    Origin = "Việt Nam",
                    Manufacturer = "Xưởng Mộc Việt",
-                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị"
+                   AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
+                   StatusApproval = StatusApproval.Approved
                }
            );
         }
