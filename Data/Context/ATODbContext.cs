@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -122,6 +121,8 @@ namespace Data.ArmsContext
             new ProductSeeder(modelBuilder).Seed();
             new OCOPSellSeeder(modelBuilder).Seed();
             new CertificationSeeder(modelBuilder).Seed();
+            new TourismPackageSeeder(modelBuilder).Seed();
+            new ActivitySeeder(modelBuilder).Seed();
             #endregion
 
         }

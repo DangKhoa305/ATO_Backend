@@ -54,6 +54,7 @@ namespace ATO_API.Config
                 config.CreateMap<TourCompany, TourCompanyDTO>();
                 config.CreateMap<Account, TourCompanyDTO_UserRespone>();
                 config.CreateMap<CreateTourCompanyRequest, TourCompany>();
+                config.CreateMap<TourCompany, TourCompany_TourismPackageRespone>();
                 // product
                 config.CreateMap<Product, ProductDTO>();
                 config.CreateMap<Product, ProductDTO_CM>();
@@ -72,6 +73,10 @@ namespace ATO_API.Config
                 config.CreateMap<Certification, CertificationRespone_CM>();
                 // TourGuide
                 config.CreateMap<TourGuide, TourGuideRespone>();
+                // TourismPackage
+                config.CreateMap<TourismPackage, TourismPackageRespone>();
+                // Activity
+                config.CreateMap<Activity, ActivityRespone>();
             });
 
             return mapperConfig.CreateMapper();
