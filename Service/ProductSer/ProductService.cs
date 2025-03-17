@@ -186,7 +186,7 @@ namespace Service.ProductSer
                 existingProduct.AddressManufacturer = updatedProduct.AddressManufacturer;
                 existingProduct.UnitProduct = updatedProduct.UnitProduct;
                 existingProduct.UpdateDate = DateTime.UtcNow;
-
+                existingProduct.StatusApproval = StatusApproval.Update;
                 await _productRepository.UpdateAsync(existingProduct);
 
                 return true;

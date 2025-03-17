@@ -372,6 +372,5 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
-
     }
 }

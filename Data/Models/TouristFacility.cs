@@ -25,5 +25,6 @@ namespace Data.Models
         public virtual ICollection<Product>? Products { get; set; }
         public virtual ICollection<Certification>? Certifications { get; set; }
         public virtual ICollection<UserSupport>? UserSupports { get; set; }
+        public virtual ICollection<TourismPackage>? TourismPackages { get; set; }
     }
 }

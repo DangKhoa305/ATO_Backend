@@ -28,6 +28,7 @@ namespace Data.Configurations
             builder.Property(x => x.ReplyRequest).IsRequired(false);
             builder.Property(x => x.TouristFacilityId).IsRequired(false);
             builder.Property(x => x.ProductId).IsRequired(false);
+            builder.Property(x => x.Imgs).IsRequired(false);
             #region config relation
             builder.HasOne(x => x.TouristFacility)
                .WithMany(c => c.Certifications)

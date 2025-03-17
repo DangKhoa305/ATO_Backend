@@ -33,6 +33,7 @@ namespace Data.Configurations
             builder.Property(x => x.Volume).IsRequired(false);
             builder.Property(x => x.Price).IsRequired(false);
             builder.Property(x => x.ReplyRequest).IsRequired(false);
+            builder.Property(x => x.Imgs).IsRequired(false);
             #region config relation
             builder.HasOne(x => x.TouristFacility)
                .WithMany(c => c.Products)

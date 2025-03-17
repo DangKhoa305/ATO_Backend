@@ -25,6 +25,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("C58BB9C8-AD26-40BC-A5D5-F8D09049F7AA"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Viên nghệ mật ong \r\n" +
@@ -42,6 +47,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("4335F0E8-9EA3-48A7-B0CF-5185FF675DDE"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Tinh Bột Sắn Dây \r\n" +
@@ -59,6 +69,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("798A3B9B-F7C9-4E84-A563-39421E6585F4"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Cơm cháy \r\n" +
@@ -77,6 +92,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("F51AAAF7-9BB1-4A69-A634-0AB1162FD9C1"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Dầu gội dược liệu \r\n" +
@@ -94,6 +114,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("69006CFE-5233-4B8E-B181-D81A485873E3"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Trà Sen Tây Hồ \r\n" +
@@ -111,6 +136,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("98E14DA8-40DD-4E50-BD9B-EB74112F6625"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Ống rượu tre Việt Nam \r\n" +
@@ -128,6 +158,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("639E1CFC-1266-4B30-9022-3927C1721AFD"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Bột tía tô \r\n" +
@@ -145,6 +180,11 @@ namespace Data.Seeding
                     ProductId = Guid.Parse("65966980-988A-4D92-89B4-2B74425FE3F3"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận OCOP",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Sản phẩm: Nhang trầm hương \r\n" +
@@ -160,6 +200,11 @@ namespace Data.Seeding
                     CertificationId = Guid.NewGuid(),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                     CertificationName = "Chứng nhận TQC",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Chứng nhận hệ thống quản lý chất lượng",
@@ -176,6 +221,11 @@ namespace Data.Seeding
                     IssueDate = DateTime.Now,
                     ExpiryDate = DateTime.Now,
                     CertificationDetails = "Chứng nhận chất lượng sản phẩm",
+                    Imgs = new List<string>()
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media&token=891959b2-1cc7-448a-a86e-e5cf270fe4d9"
+                    },
                     CreateDate = DateTime.Now,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",

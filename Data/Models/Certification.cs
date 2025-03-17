@@ -11,6 +11,7 @@ namespace Data.Models
         public Guid CertificationId { get; set; }
         public string CertificationName { get; set; }
         public string IssuingOrganization { get; set; }
+        public List<string>? Imgs { get; set; }
         public DateTime IssueDate { get; set; }
         public DateTime ExpiryDate { get; set; }
         public string? CertificationDetails { get; set; }

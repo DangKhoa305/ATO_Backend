@@ -21,5 +21,6 @@ namespace Data.Models
         //FK
         public virtual Account? Account { get; set; }
         public virtual ICollection<TourGuide>? TourGuides { get; set; }
+        public virtual ICollection<TourismPackage>? TourismPackages { get; set; }
     }
 }
