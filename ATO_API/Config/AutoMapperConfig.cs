@@ -76,6 +76,7 @@ namespace ATO_API.Config
                 config.CreateMap<TourGuide, TourGuideRespone>();
                 // TourismPackage
                 config.CreateMap<TourismPackage, TourismPackageRespone>();
+                config.CreateMap<TourismPackageRequest, TourismPackage>();
                 // Activity
                 config.CreateMap<Activity, ActivityRespone>();
             });

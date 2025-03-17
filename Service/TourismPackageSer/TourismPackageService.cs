@@ -18,6 +18,27 @@ namespace Service.TourismPackageSer
             _tourismPackageRepository = tourismPackageRepository;
             _touristFacilityRepository = touristFacilityRepository;
         }
+
+        public async Task<bool> CreateTourismPackage_AFTO(TourismPackage responseResult, Guid UserId)
+        {
+            try
+            {
+                TouristFacility TouristFacility = await _touristFacilityRepository.Query()
+                    .SingleOrDefaultAsync(x => x.UserId == UserId);
+                responseResult.PackageId = Guid.NewGuid();
+                responseResult.TouristFacilityId = TouristFacility.TouristFacilityId;
+                responseResult.CreateDate = DateTime.UtcNow;
+                responseResult.StatusApproval = StatusApproval.Processing;
+                await _tourismPackageRepository.AddAsync(responseResult);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<List<TourismPackage>> GetListTourismPackages(Guid UserId)
         {
             try
@@ -43,6 +64,35 @@ namespace Service.TourismPackageSer
                     .Include(b => b.Activities)
                     .Include(b => b.TourCompany)
                     .SingleOrDefaultAsync(x => x.PackageId == PackageId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
+        public async Task<bool> UpdateTourismPackage_AFTO(Guid packageId, TourismPackage responseResult)
+        {
+            try
+            {
+                TourismPackage existingTourismPackage = await _tourismPackageRepository.Query()
+                    .SingleOrDefaultAsync(x => x.PackageId == packageId);
+
+                if (existingTourismPackage == null)
+                {
+                    throw new Exception("Không tìm thấy gói du lịch!");
+                }
+
+                existingTourismPackage.PackageName = responseResult.PackageName;
+                existingTourismPackage.Description = responseResult.Description;
+                existingTourismPackage.Price = responseResult.Price;
+                existingTourismPackage.Durations = responseResult.Durations;
+                existingTourismPackage.TourCompanyId = responseResult.TourCompanyId;
+                existingTourismPackage.UpdateDate = DateTime.UtcNow;
+
+                await _tourismPackageRepository.UpdateAsync(existingTourismPackage);
+
+                return true;
             }
             catch (Exception)
             {
