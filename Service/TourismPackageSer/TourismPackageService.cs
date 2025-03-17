@@ -12,16 +12,21 @@ namespace Service.TourismPackageSer
     public class TourismPackageService : ITourismPackageService
     {
         private readonly IRepository<TourismPackage> _tourismPackageRepository;
-        public TourismPackageService(IRepository<TourismPackage> tourismPackageRepository)
+        private readonly IRepository<TouristFacility> _touristFacilityRepository;
+        public TourismPackageService(IRepository<TourismPackage> tourismPackageRepository, IRepository<TouristFacility> touristFacilityRepository)
         {
             _tourismPackageRepository = tourismPackageRepository;
+            _touristFacilityRepository = touristFacilityRepository;
         }
-        public async Task<List<TourismPackage>> GetListTourismPackages()
+        public async Task<List<TourismPackage>> GetListTourismPackages(Guid UserId)
         {
             try
             {
+                TouristFacility TouristFacility = await _touristFacilityRepository.Query()
+                    .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _tourismPackageRepository.Query()
                     .Include(b => b.TourCompany)
+                    .Where(x => x.TouristFacilityId == TouristFacility.TouristFacilityId)
                     .ToListAsync();
             }
             catch (Exception)

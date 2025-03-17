@@ -9,7 +9,7 @@ namespace Service.TourismPackageSer
 {
     public interface ITourismPackageService
     {
-        Task<List<TourismPackage>> GetListTourismPackages();
+        Task<List<TourismPackage>> GetListTourismPackages(Guid UserId);
         Task<TourismPackage> GetTourismPackage(Guid PackageId);
     }
 }
