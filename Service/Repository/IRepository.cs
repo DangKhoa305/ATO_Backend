@@ -18,6 +18,7 @@ namespace Service.Repository
         Task UpdateAsync(T entity);
         Task DeleteAsync(int id);
         Task DeleteAsync(Guid id);
+        Task DeleteAsync(T obj);
     }
 
 }

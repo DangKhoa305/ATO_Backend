@@ -166,6 +166,8 @@ builder.Services.AddScoped<ITourismPackageService, TourismPackageService>();
 builder.Services.AddScoped<IRepository<TourismPackage>, Repository<TourismPackage>>();
 //Activity
 builder.Services.AddScoped<IRepository<Activity>, Repository<Activity>>();
+//OCOPProductActivity
+builder.Services.AddScoped<IRepository<OCOPProductActivity>, Repository<OCOPProductActivity>>();
 // app
 var app = builder.Build();
 

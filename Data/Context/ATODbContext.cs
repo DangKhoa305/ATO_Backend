@@ -54,6 +54,8 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new TourGuideConfiguration());
             modelBuilder.ApplyConfiguration(new TourismPackageConfiguration());
             modelBuilder.ApplyConfiguration(new ActivityConfiguration());
+            modelBuilder.ApplyConfiguration(new AgriculturalTourPackageConfiguration());
+            modelBuilder.ApplyConfiguration(new OCOPProductActivityConfiguration());
             #endregion
             #region config FK for generate account and role,...
             modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
@@ -123,6 +125,8 @@ namespace Data.ArmsContext
             new CertificationSeeder(modelBuilder).Seed();
             new TourismPackageSeeder(modelBuilder).Seed();
             new ActivitySeeder(modelBuilder).Seed();
+            new AgriculturalTourPackageSeeder(modelBuilder).Seed();
+            new OCOPProductActivitySeeder(modelBuilder).Seed();
             #endregion
 
         }
@@ -140,6 +144,8 @@ namespace Data.ArmsContext
         public DbSet<TourGuide> TourGuides { get; set; }
         public DbSet<TourismPackage> TourismPackages { get; set; }
         public DbSet<Activity> Activities { get; set; }
+        public DbSet<AgriculturalTourPackage> AgriculturalTourPackages { get; set; }
+        public DbSet<OCOPProductActivity> OCOPProductActivities { get; set; }
         #endregion
     }
 

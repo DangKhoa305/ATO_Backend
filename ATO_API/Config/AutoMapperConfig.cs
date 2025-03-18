@@ -62,6 +62,7 @@ namespace ATO_API.Config
                 config.CreateMap<CreateProductDTO, Product>();
                 config.CreateMap<UpdateProductDTO, Product>();
                 config.CreateMap<ApprovelProductDTO, Product>();
+                config.CreateMap<Product, Product_OCOPProductActivityRespone>();
                 // OCOPSell
                 config.CreateMap<OCOPSell, OCOPSellDTO>();
                 config.CreateMap<CreateOCOPSellDTO, OCOPSell>();
@@ -80,6 +81,10 @@ namespace ATO_API.Config
                 // Activity
                 config.CreateMap<Activity, ActivityRespone>();
                 config.CreateMap<ActivityRequest, Activity>();
+                config.CreateMap<Activity, Activity_OCOPProductActivityRespone>();
+                // OCOPProductActivity
+                config.CreateMap<OCOPProductActivity, OCOPProductActivityRespone>();
+                config.CreateMap<OCOPProductActivityRequest, OCOPProductActivity>();
             });
 
             return mapperConfig.CreateMapper();

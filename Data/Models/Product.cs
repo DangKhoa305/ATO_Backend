@@ -34,6 +34,7 @@ namespace Data.Models
         public virtual TouristFacility? TouristFacility { get; set; }
         public virtual ICollection<Certification>? Certifications { get; set; }
         public virtual ICollection<OCOPSell>? OCOPSells { get; set; }
+        public virtual ICollection<OCOPProductActivity>? OCOPProductActivities { get; set; }
     }
     public enum ProductCategory
     {

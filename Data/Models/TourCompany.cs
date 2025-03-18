@@ -22,5 +22,6 @@ namespace Data.Models
         public virtual Account? Account { get; set; }
         public virtual ICollection<TourGuide>? TourGuides { get; set; }
         public virtual ICollection<TourismPackage>? TourismPackages { get; set; }
+        public virtual ICollection<AgriculturalTourPackage>? AgriculturalTourPackages { get; set; }
     }
 }

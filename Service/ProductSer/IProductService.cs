@@ -31,5 +31,8 @@ namespace Service.ProductSer
         Task<List<Product>> GetListProducts_CM();
         Task<Product> GetProduct_CM(Guid ProductId);
         Task<bool> ApprovelProduct_CM(Guid ProductId, Product updatedProduct);
+        Task<List<OCOPProductActivity>> GetListOCOPProductActivityByProductId_AFTO(Guid productId);
+        Task<bool> CreateOCOPProductActivity_AFTO(OCOPProductActivity responseResult);
+        Task<bool> UpdateOCOPProductActivity_AFTO(Guid activityOldId, OCOPProductActivity responseResult);
     }
 }

@@ -79,6 +79,18 @@ namespace Service.Repository
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task DeleteAsync(T obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException(nameof(obj));
+            }
+
+            _context.Set<T>().Remove(obj);
+            await _context.SaveChangesAsync();
+        }
+
     }
 
 }
