@@ -79,6 +79,7 @@ namespace ATO_API.Config
                 config.CreateMap<TourismPackageRequest, TourismPackage>();
                 // Activity
                 config.CreateMap<Activity, ActivityRespone>();
+                config.CreateMap<ActivityRequest, Activity>();
             });
 
             return mapperConfig.CreateMapper();

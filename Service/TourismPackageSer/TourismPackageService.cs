@@ -13,10 +13,32 @@ namespace Service.TourismPackageSer
     {
         private readonly IRepository<TourismPackage> _tourismPackageRepository;
         private readonly IRepository<TouristFacility> _touristFacilityRepository;
-        public TourismPackageService(IRepository<TourismPackage> tourismPackageRepository, IRepository<TouristFacility> touristFacilityRepository)
+        private readonly IRepository<Activity> _activityRepository;
+        public TourismPackageService(
+            IRepository<TourismPackage> tourismPackageRepository,
+            IRepository<TouristFacility> touristFacilityRepository,
+            IRepository<Activity> activityRepository)
         {
             _tourismPackageRepository = tourismPackageRepository;
             _touristFacilityRepository = touristFacilityRepository;
+            _activityRepository = activityRepository;
+        }
+
+        public async Task<bool> CreateActivity_AFTO(Activity responseResult)
+        {
+            try
+            {
+                responseResult.ActivityId = Guid.NewGuid();
+                responseResult.CreateDate = DateTime.UtcNow;
+                responseResult.StatusApproval = StatusApproval.Processing;
+                await _activityRepository.AddAsync(responseResult);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
         }
 
         public async Task<bool> CreateTourismPackage_AFTO(TourismPackage responseResult, Guid UserId)
@@ -67,6 +89,40 @@ namespace Service.TourismPackageSer
             }
             catch (Exception)
             {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
+        public async Task<bool> UpdateActivity_AFTO(Guid activityId, Activity responseResult)
+        {
+            try
+            {
+                Activity existingActivity = await _activityRepository.Query()
+                    .SingleOrDefaultAsync(x => x.ActivityId == activityId);
+
+                if (existingActivity == null)
+                {
+                    throw new Exception("Không tìm thấy hoạt động trải nghiệm!");
+                }
+
+                existingActivity.ActivityName = responseResult.ActivityName;
+                existingActivity.Description = responseResult.Description;
+                existingActivity.DurationInHours = responseResult.DurationInHours;
+                existingActivity.Location = responseResult.Location;
+                existingActivity.Imgs = responseResult.Imgs;
+                existingActivity.BreakTimeInMinutes = responseResult.BreakTimeInMinutes;
+                existingActivity.StartTime = responseResult.StartTime;
+                existingActivity.EndTime = responseResult.EndTime;
+                existingActivity.PackageId = responseResult.PackageId;
+                existingActivity.UpdateDate = DateTime.UtcNow;
+
+                await _activityRepository.UpdateAsync(existingActivity);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }

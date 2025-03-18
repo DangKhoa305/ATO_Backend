@@ -106,7 +106,7 @@ namespace ATO_API.Controllers.AFTO
         [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateProduct(Guid PackageId, [FromBody] TourismPackageRequest tourismPackageRequest)
+        public async Task<IActionResult> UpdateTouristPackage(Guid PackageId, [FromBody] TourismPackageRequest tourismPackageRequest)
         {
             try
             {
@@ -135,5 +135,72 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
+        [HttpPost("create-activity")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CreateActivity([FromBody] ActivityRequest activityRequest)
+        {
+            try
+            {
+                Activity responseResult = _mapper.Map<Activity>(activityRequest);
+                bool result = await _tourismPackageService.CreateActivity_AFTO(responseResult);
+                if (result)
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = true,
+                        Message = "Tạo mới thành công!",
+                    });
+                }
+                return StatusCode(400, new ResponseVM
+                {
+                    Status = false,
+                    Message = "Tạo mới không thành công!",
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+        [HttpPut("update-activity/{ActivityId}")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateActivity(Guid ActivityId, [FromBody] ActivityRequest activityRequest)
+        {
+            try
+            {
+                Activity responseResult = _mapper.Map<Activity>(activityRequest);
+                bool result = await _tourismPackageService.UpdateActivity_AFTO(ActivityId, responseResult);
+                if (result)
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = true,
+                        Message = "Cập nhật thành công!",
+                    });
+                }
+                return StatusCode(400, new ResponseVM
+                {
+                    Status = false,
+                    Message = "Cập nhật không thành công!",
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+
     }
 }

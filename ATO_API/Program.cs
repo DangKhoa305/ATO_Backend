@@ -164,6 +164,8 @@ builder.Services.AddScoped<IRepository<TourGuide>, Repository<TourGuide>>();
 //TourismPackage
 builder.Services.AddScoped<ITourismPackageService, TourismPackageService>();
 builder.Services.AddScoped<IRepository<TourismPackage>, Repository<TourismPackage>>();
+//Activity
+builder.Services.AddScoped<IRepository<Activity>, Repository<Activity>>();
 // app
 var app = builder.Build();
 
