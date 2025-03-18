@@ -14,6 +14,7 @@ namespace Data.Models
         public string? Description { get; set; }
         public double Price { get; set; }
         public double Durations { get; set; }
+        public TimeType DurationsType { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public StatusApproval StatusApproval { get; set; }
@@ -22,5 +23,14 @@ namespace Data.Models
         public virtual TourCompany? TourCompany { get; set; }
         public virtual TouristFacility? TouristFacility { get; set; }
         public virtual ICollection<Activity>? Activities { get; set; }
+    }
+    public enum TimeType
+    {
+        second,
+        minute,
+        hour,
+        day,
+        month,
+        year
     }
 }

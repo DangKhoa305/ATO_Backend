@@ -34,7 +34,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    PackageId = Guid.Parse("32BA5585-D88D-4C07-8C3A-5C3F846CD138")
+                    PackageId = Guid.Parse("32BA5585-D88D-4C07-8C3A-5C3F846CD138"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -50,7 +52,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    PackageId = Guid.Parse("7874FC31-CDAE-4CF7-9AEE-B802ED19ED58")
+                    PackageId = Guid.Parse("7874FC31-CDAE-4CF7-9AEE-B802ED19ED58"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -66,7 +70,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "Cần bổ sung thêm hướng dẫn viên.",
-                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31")
+                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -82,7 +88,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31")
+                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -98,7 +106,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "",
-                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31")
+                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -114,7 +124,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    PackageId = Guid.Parse("A649B3B4-10A2-4225-A229-BE4D66F29552")
+                    PackageId = Guid.Parse("A649B3B4-10A2-4225-A229-BE4D66F29552"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -130,7 +142,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    PackageId = Guid.Parse("A649B3B4-10A2-4225-A229-BE4D66F29552")
+                    PackageId = Guid.Parse("A649B3B4-10A2-4225-A229-BE4D66F29552"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -146,7 +160,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "Cần xác nhận thời tiết.",
-                    PackageId = Guid.Parse("321C5B3A-D096-4406-BD11-FBFBD4436FC5")
+                    PackageId = Guid.Parse("321C5B3A-D096-4406-BD11-FBFBD4436FC5"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 },
                 new Activity
                 {
@@ -162,7 +178,9 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    PackageId = Guid.Parse("321C5B3A-D096-4406-BD11-FBFBD4436FC5")
+                    PackageId = Guid.Parse("321C5B3A-D096-4406-BD11-FBFBD4436FC5"),
+                    BreakTimeInMinutesType = TimeType.hour,
+                    DurationInHoursType = TimeType.minute
                 }
             );
 
