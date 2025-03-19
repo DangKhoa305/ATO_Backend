@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace Data.Configurations
 {
@@ -21,8 +20,6 @@ namespace Data.Configurations
             builder.Property(x => x.Description).IsRequired();
             builder.Property(x => x.DurationInHours).IsRequired();
             builder.Property(x => x.BreakTimeInMinutes).IsRequired();
-            builder.Property(x => x.StartTime).IsRequired();
-            builder.Property(x => x.EndTime).IsRequired();
             builder.Property(x => x.StatusApproval).IsRequired();
             builder.Property(x => x.CreateDate).IsRequired();
             //un requi

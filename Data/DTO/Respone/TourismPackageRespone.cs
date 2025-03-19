@@ -19,6 +19,7 @@ namespace Data.DTO.Respone
         public DateTime? UpdateDate { get; set; }
         public StatusApproval StatusApproval { get; set; }
         public string? ReplyRequest { get; set; }
+        public StatusOperating StatusOperating { get; set; }
         public virtual TourCompany_TourismPackageRespone? TourCompany { get; set; }
         public virtual ICollection<ActivityRespone>? Activities { get; set; }
     }

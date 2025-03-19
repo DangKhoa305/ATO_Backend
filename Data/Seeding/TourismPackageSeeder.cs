@@ -33,7 +33,8 @@ namespace Data.Seeding
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    DurationsType = TimeType.hour
+                    DurationsType = TimeType.hour,
+                    StatusOperating = StatusOperating.Inactive
                 },
                 new TourismPackage
                 {
@@ -47,7 +48,8 @@ namespace Data.Seeding
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "",
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    DurationsType = TimeType.hour
+                    DurationsType = TimeType.hour,
+                    StatusOperating = StatusOperating.Inactive
                 },
                 new TourismPackage
                 {
@@ -62,7 +64,8 @@ namespace Data.Seeding
                     StatusApproval = StatusApproval.Reject,
                     ReplyRequest = "Chưa đáp ứng yêu cầu về an toàn.",
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    DurationsType = TimeType.hour
+                    DurationsType = TimeType.hour,
+                    StatusOperating = StatusOperating.Inactive
                 },
                 new TourismPackage
                 {
@@ -76,7 +79,8 @@ namespace Data.Seeding
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    DurationsType = TimeType.hour
+                    DurationsType = TimeType.hour,
+                    StatusOperating = StatusOperating.Active
                 },
                 new TourismPackage
                 {
@@ -91,7 +95,8 @@ namespace Data.Seeding
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "",
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    DurationsType = TimeType.hour
+                    DurationsType = TimeType.hour,
+                    StatusOperating = StatusOperating.Inactive
                 }
             );
 

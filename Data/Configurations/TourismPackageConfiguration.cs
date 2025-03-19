@@ -22,6 +22,7 @@ namespace Data.Configurations
             builder.Property(x => x.CreateDate).IsRequired();
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.Durations).IsRequired();
+            builder.Property(x => x.StatusOperating).IsRequired();
             builder.Property(x => x.StatusApproval).IsRequired();
 
             // Optional properties

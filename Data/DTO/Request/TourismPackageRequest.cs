@@ -15,5 +15,6 @@ namespace Data.DTO.Request
         public double Durations { get; set; }
         public TimeType DurationsType { get; set; }
         public Guid? TourCompanyId { get; set; }
+        public StatusOperating StatusOperating { get; set; }
     }
 }

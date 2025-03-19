@@ -108,11 +108,10 @@ namespace Service.TourismPackageSer
                 existingActivity.ActivityName = responseResult.ActivityName;
                 existingActivity.Description = responseResult.Description;
                 existingActivity.DurationInHours = responseResult.DurationInHours;
+                existingActivity.DurationInHoursType = responseResult.DurationInHoursType;
                 existingActivity.Location = responseResult.Location;
                 existingActivity.Imgs = responseResult.Imgs;
-                existingActivity.BreakTimeInMinutes = responseResult.BreakTimeInMinutes;
-                existingActivity.StartTime = responseResult.StartTime;
-                existingActivity.EndTime = responseResult.EndTime;
+                existingActivity.BreakTimeInMinutesType = responseResult.BreakTimeInMinutesType;
                 existingActivity.PackageId = responseResult.PackageId;
                 existingActivity.UpdateDate = DateTime.UtcNow;
 
@@ -143,7 +142,9 @@ namespace Service.TourismPackageSer
                 existingTourismPackage.Description = responseResult.Description;
                 existingTourismPackage.Price = responseResult.Price;
                 existingTourismPackage.Durations = responseResult.Durations;
+                existingTourismPackage.DurationsType = responseResult.DurationsType;
                 existingTourismPackage.TourCompanyId = responseResult.TourCompanyId;
+                existingTourismPackage.StatusOperating = responseResult.StatusOperating;
                 existingTourismPackage.UpdateDate = DateTime.UtcNow;
 
                 await _tourismPackageRepository.UpdateAsync(existingTourismPackage);
