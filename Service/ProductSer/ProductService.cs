@@ -433,5 +433,20 @@ namespace Service.ProductSer
             }
         }
 
+        public async Task<List<OCOPProductActivity>> GetListOCOPProductActivityByActivityId_AFTO(Guid activityId)
+        {
+            try
+            {
+                return await _OCOPProductActivityRepository.Query()
+                    .Include(x => x.Product)
+                    .Include(x => x.Activity)
+                    .Where(x => x.ActivityId == activityId)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
     }
 }

@@ -372,14 +372,14 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
-        [HttpGet("get-OCOPproductactivity-by-productid/{ProductId}")]
+        [HttpGet("get-OCOPproductactivity-by-activityid/{ActivityId}")]
         [ProducesResponseType(typeof(List<CertificationRespone>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetOCOPProductActivityByProductId(Guid ProductId)
+        public async Task<IActionResult> GetOCOPProductActivityByActivityId(Guid ActivityId)
         {
             try
             {
-                var response = await _productService.GetListOCOPProductActivityByProductId_AFTO(ProductId);
+                var response = await _productService.GetListOCOPProductActivityByActivityId_AFTO(ActivityId);
                 List<OCOPProductActivityRespone> responseResult = _mapper.Map<List<OCOPProductActivityRespone>>(response);
                 return Ok(responseResult);
             }
@@ -425,47 +425,47 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
-        [HttpPut("update-OCOPproductactivity/{ProductId}/{ActivityOldId}")]
-        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateOCOPProductActivity(Guid ProductId, Guid ActivityOldId, [FromBody] OCOPProductActivityRequest OCOPProductActivityRequest)
-        {
-            try
-            {
-                var response = await _productService.GetProduct_AFTO(ProductId);
-                if (response == null)
-                {
-                    return StatusCode(400, new ResponseVM
-                    {
-                        Status = false,
-                        Message = "Không tìm thấy product!",
-                    });
-                }
-                OCOPProductActivity responseResult = _mapper.Map<OCOPProductActivity>(OCOPProductActivityRequest);
-                bool result = await _productService.UpdateOCOPProductActivity_AFTO(ActivityOldId, responseResult);
-                if (result)
-                {
-                    return Ok(new ResponseVM
-                    {
-                        Status = true,
-                        Message = "Cập nhật thành công!",
-                    });
-                }
-                return StatusCode(400, new ResponseVM
-                {
-                    Status = false,
-                    Message = "Cập nhật không thành công!",
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM
-                {
-                    Status = false,
-                    Message = ex.Message,
-                });
-            }
-        }
+        //[HttpPut("update-OCOPproductactivity/{ProductId}/{ActivityOldId}")]
+        //[ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        //public async Task<IActionResult> UpdateOCOPProductActivity(Guid ProductId, Guid ActivityOldId, [FromBody] OCOPProductActivityRequest OCOPProductActivityRequest)
+        //{
+        //    try
+        //    {
+        //        var response = await _productService.GetProduct_AFTO(ProductId);
+        //        if (response==null)
+        //        {
+        //            return StatusCode(400, new ResponseVM
+        //            {
+        //                Status = false,
+        //                Message = "Không tìm thấy product!",
+        //            });
+        //        }
+        //        OCOPProductActivity responseResult = _mapper.Map<OCOPProductActivity>(OCOPProductActivityRequest);
+        //        bool result = await _productService.UpdateOCOPProductActivity_AFTO(ActivityOldId, responseResult);
+        //        if (result)
+        //        {
+        //            return Ok(new ResponseVM
+        //            {
+        //                Status = true,
+        //                Message = "Cập nhật thành công!",
+        //            });
+        //        }
+        //        return StatusCode(400, new ResponseVM
+        //        {
+        //            Status = false,
+        //            Message = "Cập nhật không thành công!",
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new ResponseVM
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        });
+        //    }
+        //}
     }
 }
