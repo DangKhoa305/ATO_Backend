@@ -32,7 +32,6 @@ namespace Data.Seeding
                     UpdateDate = null,
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = null,
-                    TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     DurationsType = TimeType.hour,
                     StatusOperating = StatusOperating.Inactive
                 },
@@ -47,7 +46,6 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "",
-                    TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     DurationsType = TimeType.hour,
                     StatusOperating = StatusOperating.Inactive
                 },
@@ -63,7 +61,6 @@ namespace Data.Seeding
                     UpdateDate = DateTime.UtcNow,
                     StatusApproval = StatusApproval.Reject,
                     ReplyRequest = "Chưa đáp ứng yêu cầu về an toàn.",
-                    TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     DurationsType = TimeType.hour,
                     StatusOperating = StatusOperating.Inactive
                 },
@@ -78,7 +75,6 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow.AddDays(-5),
                     StatusApproval = StatusApproval.Approved,
                     ReplyRequest = null,
-                    TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     DurationsType = TimeType.hour,
                     StatusOperating = StatusOperating.Active
                 },
@@ -94,7 +90,6 @@ namespace Data.Seeding
                     UpdateDate = DateTime.UtcNow.AddDays(-2),
                     StatusApproval = StatusApproval.Processing,
                     ReplyRequest = "",
-                    TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     DurationsType = TimeType.hour,
                     StatusOperating = StatusOperating.Inactive
                 }

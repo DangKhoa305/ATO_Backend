@@ -69,7 +69,6 @@ namespace Service.TourismPackageSer
                 TouristFacility TouristFacility = await _touristFacilityRepository.Query()
                     .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _tourismPackageRepository.Query()
-                    .Include(b => b.TourCompany)
                     .Where(x => x.TouristFacilityId == TouristFacility.TouristFacilityId)
                     .ToListAsync();
             }
@@ -85,7 +84,6 @@ namespace Service.TourismPackageSer
             {
                 return await _tourismPackageRepository.Query()
                     .Include(b => b.Activities)
-                    .Include(b => b.TourCompany)
                     .SingleOrDefaultAsync(x => x.PackageId == PackageId);
             }
             catch (Exception)
@@ -144,7 +142,6 @@ namespace Service.TourismPackageSer
                 existingTourismPackage.Price = responseResult.Price;
                 existingTourismPackage.Durations = responseResult.Durations;
                 existingTourismPackage.DurationsType = responseResult.DurationsType;
-                existingTourismPackage.TourCompanyId = responseResult.TourCompanyId;
                 existingTourismPackage.StatusOperating = responseResult.StatusOperating;
                 existingTourismPackage.UpdateDate = DateTime.UtcNow;
 

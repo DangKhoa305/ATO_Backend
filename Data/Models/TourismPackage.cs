@@ -19,9 +19,7 @@ namespace Data.Models
         public DateTime? UpdateDate { get; set; }
         public StatusApproval StatusApproval { get; set; }
         public string? ReplyRequest { get; set; }
-        public Guid? TourCompanyId { get; set; }
         public StatusOperating StatusOperating { get; set; }
-        public virtual TourCompany? TourCompany { get; set; }
         public virtual TouristFacility? TouristFacility { get; set; }
         public virtual ICollection<Activity>? Activities { get; set; }
     }

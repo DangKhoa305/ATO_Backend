@@ -28,7 +28,6 @@ namespace Data.Configurations
             // Optional properties
             builder.Property(x => x.Description).IsRequired(false);
             builder.Property(x => x.UpdateDate).IsRequired(false);
-            builder.Property(x => x.TourCompanyId).IsRequired(false);
             builder.Property(x => x.ReplyRequest).IsRequired(false);
 
             #region config relation
@@ -36,10 +35,6 @@ namespace Data.Configurations
             builder.HasOne(x => x.TouristFacility)
                 .WithMany(c => c.TourismPackages)
                 .HasForeignKey(x => x.TouristFacilityId)
-                .OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne(x => x.TourCompany)
-                .WithMany(c => c.TourismPackages)
-                .HasForeignKey(x => x.TourCompanyId)
                 .OnDelete(DeleteBehavior.Restrict);
             #endregion
         }
