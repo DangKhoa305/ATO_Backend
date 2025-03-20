@@ -50,8 +50,10 @@ namespace ATO_API.Config
                 config.CreateMap<CreateTouristFacilityRequest, TouristFacility>();
                 config.CreateMap<UpdateTouristFacilityRequest, TouristFacility>();
                 config.CreateMap<TouristFacility, TouristFacilityDTO_Certfication>();
+                config.CreateMap<TouristFacility, TouristFacilityDTO_Guest>();
                 // TourCompany
                 config.CreateMap<TourCompany, TourCompanyDTO>();
+                config.CreateMap<TourCompany, TourCompanyDTO_Guest>();
                 config.CreateMap<Account, TourCompanyDTO_UserRespone>();
                 config.CreateMap<CreateTourCompanyRequest, TourCompany>();
                 config.CreateMap<UpdateTourCompanyRequest, TourCompany>();
@@ -72,6 +74,7 @@ namespace ATO_API.Config
                 config.CreateMap<UpdateCertificationDTO, Certification>();
                 config.CreateMap<ApprovelCertificationDTO, Certification>();
                 config.CreateMap<Certification, CertificationRespone_CM>();
+                config.CreateMap<Certification, CertificationRespone_Guest>();
                 // TourGuide
                 config.CreateMap<TourGuide, TourGuideRespone>();
                 // TourismPackage

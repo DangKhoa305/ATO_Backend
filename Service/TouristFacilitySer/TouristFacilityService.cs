@@ -54,5 +54,20 @@ namespace Service.TouristFacilitySer
         {
             await _touristFacilityRepository.UpdateAsync(TouristFacility);
         }
+
+        public async Task<TouristFacility> GetTouristFacilities_Guest(Guid TouristFacilityId)
+        {
+            try
+            {
+                return await _touristFacilityRepository.Query()
+                    .Include(b => b.Account)
+                    .Include(b => b.Certifications.Where(a => a.ProductId == null && a.StatusApproval == StatusApproval.Approved))
+                    .SingleOrDefaultAsync(x => x.TouristFacilityId == TouristFacilityId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
     }
 }

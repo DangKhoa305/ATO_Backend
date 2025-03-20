@@ -38,4 +38,16 @@ namespace Data.DTO.Respone
         public Guid TouristFacilityId { get; set; }
         public string TouristFacilityName { get; set; }
     }
+    public class TouristFacilityDTO_Guest
+    {
+        public Guid TouristFacilityId { get; set; }
+        public string TouristFacilityName { get; set; }
+        public string? Address { get; set; }
+        public string? Description { get; set; }
+        public string? ContactInfor { get; set; }
+        public string? EmailTouristFacility { get; set; }
+        public string? Website { get; set; }
+        public string? LogoURL { get; set; }
+        public virtual ICollection<CertificationRespone>? Certifications { get; set; }
+    }
 }

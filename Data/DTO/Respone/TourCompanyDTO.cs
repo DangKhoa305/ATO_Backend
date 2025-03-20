@@ -33,4 +33,14 @@ namespace Data.DTO.Respone
         public DateTime? Dob { get; set; }
         public bool isAccountActive { get; set; }
     }
+    public class TourCompanyDTO_Guest
+    {
+        public Guid TourCompanyId { get; set; }
+        public string CompanynName { get; set; }
+        public string? CompanyDescription { get; set; }
+        public string? AddressCompany { get; set; }
+        public string? EmailCompany { get; set; }
+        public string? Website { get; set; }
+        public string? LogoURL { get; set; }
+    }
 }

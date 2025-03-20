@@ -13,5 +13,6 @@ namespace Service.TouristFacilitySer
         Task<TouristFacility> GetTouristFacilities_Admin(Guid TouristFacilityId);
         Task AddTouristFacilitiesAsync(TouristFacility TouristFacility);
         Task UpdateTouristFacilitiesAsync(TouristFacility TouristFacility);
+        Task<TouristFacility> GetTouristFacilities_Guest(Guid TouristFacilityId);
     }
 }
