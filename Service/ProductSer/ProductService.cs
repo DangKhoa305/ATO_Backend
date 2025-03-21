@@ -448,5 +448,35 @@ namespace Service.ProductSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+        public async Task<List<Product>> GetListProducts_Guest()
+        {
+            try
+            {
+                return await _productRepository.Query()
+                    .Include(x => x.TouristFacility)
+                    .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate < DateTime.UtcNow))
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<Product> GetProduct_Guest(Guid ProductId)
+        {
+            try
+            {
+                return await _productRepository.Query()
+                    .Include(x => x.TouristFacility)
+                     .Include(b => b.Certifications.Where(a => a.ProductId == ProductId && a.StatusApproval == StatusApproval.Approved))
+                    .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate > DateTime.UtcNow))
+                    .SingleOrDefaultAsync(x => x.ProductId == ProductId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,10 +26,10 @@ namespace Data.Seeding
                    OCOPSellId = Guid.NewGuid(),
                    SellVolume = 1000,
                    ProductId = Guid.Parse("C58BB9C8-AD26-40BC-A5D5-F8D09049F7AA"),
-                   ManufacturingDate = DateTime.Parse("2024-03-01"),
+                   ManufacturingDate = DateTime.Parse("2023-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 90000,
                },
                new OCOPSell()
                {
@@ -40,7 +39,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 90000,
                },
                new OCOPSell()
                {

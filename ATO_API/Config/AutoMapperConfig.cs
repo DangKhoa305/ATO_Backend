@@ -51,6 +51,7 @@ namespace ATO_API.Config
                 config.CreateMap<UpdateTouristFacilityRequest, TouristFacility>();
                 config.CreateMap<TouristFacility, TouristFacilityDTO_Certfication>();
                 config.CreateMap<TouristFacility, TouristFacilityDTO_Guest>();
+                config.CreateMap<TouristFacility, ProductDTO_TouristFacility>();
                 // TourCompany
                 config.CreateMap<TourCompany, TourCompanyDTO>();
                 config.CreateMap<TourCompany, TourCompanyDTO_Guest>();
@@ -64,6 +65,22 @@ namespace ATO_API.Config
                 config.CreateMap<UpdateProductDTO, Product>();
                 config.CreateMap<ApprovelProductDTO, Product>();
                 config.CreateMap<Product, Product_OCOPProductActivityRespone>();
+                config.CreateMap<Product, ProductDTO_Guest>()
+                .ForMember(dest => dest.Price,
+                    opt => opt.MapFrom(src =>
+                        src.OCOPSells != null && src.OCOPSells.Any()
+                            ? src.OCOPSells
+                                .OrderBy(s => s.ExpiryDate)
+                                .First().SalePrice
+                            : src.Price))
+                .ForMember(dest => dest.SellVolume,
+                    opt => opt.MapFrom(src =>
+                        src.OCOPSells != null
+                            ? src.OCOPSells
+                                .Where(s => s.ExpiryDate == null || s.ExpiryDate > DateTime.UtcNow)
+                                .Sum(s => s.SellVolume)
+                            : 0));
+
                 // OCOPSell
                 config.CreateMap<OCOPSell, OCOPSellDTO>();
                 config.CreateMap<CreateOCOPSellDTO, OCOPSell>();

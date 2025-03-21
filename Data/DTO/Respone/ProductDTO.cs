@@ -26,8 +26,6 @@ namespace Data.DTO.Respone
         public ProductCategory ProductCategory { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
-        public string DescriptionAPI { get; set; } =
-            "UnitProduct(0-Kg,1-g, 2-mg, 3-l, 4-ml), ProductCategory(0-Food,1-Beverage,2-HerbalMedicine,3-Textiles, 4-SouvenirsFurnitureDecoration, 5-CommunityTourismServicesAndTouristAttractions, 6-Orther)";
     }
     public class CreateProductDTO
     {
@@ -87,5 +85,33 @@ namespace Data.DTO.Respone
         public Guid TouristFacilityId { get; set; }
         public virtual TouristFacilityDTO_Certfication? TouristFacility { get; set; }
         public virtual ICollection<CertificationRespone>? Certifications { get; set; }
+    }
+    public class ProductDTO_Guest
+    {
+        public Guid ProductId { get; set; }
+        public string ProductName { get; set; }
+        public List<string>? Imgs { get; set; }
+        public double? Price { get; set; }
+        public string? Description { get; set; }
+        public string? Additional { get; set; }
+        public string? NutritionType { get; set; }
+        public string? Age { get; set; }
+        public string? Ingredient { get; set; }
+        public string? Volume { get; set; }
+        public string? Origin { get; set; }
+        public string? Manufacturer { get; set; }
+        public string? AddressManufacturer { get; set; }
+        public UnitProduct? UnitProduct { get; set; }
+        public double SellVolume { get; set; }
+        //category
+        public ProductCategory ProductCategory { get; set; }
+        public Guid TouristFacilityId { get; set; }
+        public virtual ProductDTO_TouristFacility? TouristFacility { get; set; }
+        public virtual ICollection<CertificationRespone_Guest>? Certifications { get; set; }
+    }
+    public class ProductDTO_TouristFacility
+    {
+        public Guid TouristFacilityId { get; set; }
+        public string TouristFacilityName { get; set; }
     }
 }
