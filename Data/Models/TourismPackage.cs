@@ -22,6 +22,7 @@ namespace Data.Models
         public StatusOperating StatusOperating { get; set; }
         public virtual TouristFacility? TouristFacility { get; set; }
         public virtual ICollection<Activity>? Activities { get; set; }
+        public virtual ICollection<TourDestination>? TourDestinations { get; set; }
     }
     public enum TimeType
     {

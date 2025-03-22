@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,6 @@ namespace Data.Models
         public Guid? PackageId { get; set; }
         public virtual ICollection<OCOPProductActivity>? OCOPProductActivities { get; set; }
         public virtual TourismPackage? TourismPackage { get; set; }
+        public virtual ICollection<TourDestination>? TourDestinations { get; set; }
     }
 }
