@@ -14,8 +14,10 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Service.AboutSer;
+using Service.AccommodationSer;
 using Service.AccountSer;
 using Service.BlogSer;
+using Service.DriverSer;
 using Service.EmailSer;
 using Service.ProductSer;
 using Service.Repository;
@@ -168,6 +170,12 @@ builder.Services.AddScoped<IRepository<TourismPackage>, Repository<TourismPackag
 builder.Services.AddScoped<IRepository<Activity>, Repository<Activity>>();
 //OCOPProductActivity
 builder.Services.AddScoped<IRepository<OCOPProductActivity>, Repository<OCOPProductActivity>>();
+//Driver
+builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<IRepository<Driver>, Repository<Driver>>();
+//Accommodation
+builder.Services.AddScoped<IAccommodationService, AccommodationService>();
+builder.Services.AddScoped<IRepository<Accommodation>, Repository<Accommodation>>();
 // app
 var app = builder.Build();
 

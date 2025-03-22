@@ -104,6 +104,12 @@ namespace ATO_API.Config
                 // OCOPProductActivity
                 config.CreateMap<OCOPProductActivity, OCOPProductActivityRespone>();
                 config.CreateMap<OCOPProductActivityRequest, OCOPProductActivity>();
+                // DriverRespone
+                config.CreateMap<Driver, DriverRespone>();
+                config.CreateMap<DriverRequest, Driver>();
+                // Accommodation
+                config.CreateMap<Accommodation, AccommodationRespone>();
+                config.CreateMap<AccommodationRequest, Accommodation>();
             });
 
             return mapperConfig.CreateMapper();

@@ -36,23 +36,23 @@ namespace Data.Configurations
             builder.HasOne(x => x.AgriculturalTourPackage)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.TourId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.TourismPackage)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.TourismPackageId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.Driver)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.DriverId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.Accommodation)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.AccommodationId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.Activity)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.ActivityId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                     .OnDelete(DeleteBehavior.NoAction);
             #endregion
         }
     }
