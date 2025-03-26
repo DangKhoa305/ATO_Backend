@@ -15,7 +15,9 @@ namespace Service.Repository
         Task<T> GetByIdAsync(Guid id);
         Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
+        Task AddRangeAsync(T entity);
         Task UpdateAsync(T entity);
+        Task UpdateRangeAsync(T entity);
         Task DeleteAsync(int id);
         Task DeleteAsync(Guid id);
         Task DeleteAsync(T obj);

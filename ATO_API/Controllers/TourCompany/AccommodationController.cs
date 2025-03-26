@@ -20,22 +20,14 @@ namespace ATO_API.Controllers.TourCompany
     [Authorize(Roles = "TourismCompanies")]
     public class AccommodationController : ControllerBase
     {
-        private readonly UserManager<Account> _userManager;
-        private readonly RoleManager<IdentityRole<Guid>> _roleManager;
-        private readonly IAccountService _accountService;
         private readonly IAccommodationService _accommodationService;
         private readonly IMapper _mapper;
 
-        public AccommodationController(UserManager<Account> userManager,
-            RoleManager<IdentityRole<Guid>> roleManager,
-            IAccountService accountService,
+        public AccommodationController(
              IMapper mapper,
              IAccommodationService accommodationService
             )
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
-            _accountService = accountService;
             _mapper = mapper;
             _accommodationService = accommodationService;
         }

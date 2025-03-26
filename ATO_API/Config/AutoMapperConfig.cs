@@ -94,6 +94,8 @@ namespace ATO_API.Config
                 config.CreateMap<Certification, CertificationRespone_Guest>();
                 // TourGuide
                 config.CreateMap<TourGuide, TourGuideRespone>();
+                config.CreateMap<TourGuide, AgriculturalTourPackage_TourGuide_Respone>();
+                config.CreateMap<AgriculturalTourPackageRequest_TourGuides, TourGuide>();
                 // TourismPackage
                 config.CreateMap<TourismPackage, TourismPackageRespone>();
                 config.CreateMap<TourismPackageRequest, TourismPackage>();
@@ -101,6 +103,7 @@ namespace ATO_API.Config
                 config.CreateMap<Activity, ActivityRespone>();
                 config.CreateMap<ActivityRequest, Activity>();
                 config.CreateMap<Activity, Activity_OCOPProductActivityRespone>();
+                config.CreateMap<Activity, AgriculturalTourPackage_TourDestination_Activity_Respone>();
                 // OCOPProductActivity
                 config.CreateMap<OCOPProductActivity, OCOPProductActivityRespone>();
                 config.CreateMap<OCOPProductActivityRequest, OCOPProductActivity>();
@@ -110,6 +113,12 @@ namespace ATO_API.Config
                 // Accommodation
                 config.CreateMap<Accommodation, AccommodationRespone>();
                 config.CreateMap<AccommodationRequest, Accommodation>();
+                // AgriculturalTourPackage
+                config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone>();
+                config.CreateMap<AgriculturalTourPackageRequest, AgriculturalTourPackage>();
+                // TourDestination
+                config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone>();
+                config.CreateMap<TourDestinationRequest, TourDestination>();
             });
 
             return mapperConfig.CreateMapper();

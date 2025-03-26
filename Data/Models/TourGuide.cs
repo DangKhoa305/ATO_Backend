@@ -19,5 +19,7 @@ namespace Data.Models
         public DateTime? UpdateDate { get; set; }
         public virtual Account? Account { get; set; }
         public virtual TourCompany? TourCompany { get; set; }
+        public virtual ICollection<AgriculturalTourPackage>? AgriculturalTourPackages { get; set; }
+        public virtual ICollection<TourDestination>? TourDestinations { get; set; }
     }
 }

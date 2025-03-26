@@ -91,6 +91,17 @@ namespace Service.Repository
             await _context.SaveChangesAsync();
         }
 
+        public async Task AddRangeAsync(T entity)
+        {
+            await _context.Set<T>().AddRangeAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateRangeAsync(T entity)
+        {
+            _context.Set<T>().UpdateRange(entity);
+            await _context.SaveChangesAsync();
+        }
     }
 
 }

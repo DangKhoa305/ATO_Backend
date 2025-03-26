@@ -16,6 +16,7 @@ using Microsoft.OpenApi.Models;
 using Service.AboutSer;
 using Service.AccommodationSer;
 using Service.AccountSer;
+using Service.AgriculturalTourPackageSer;
 using Service.BlogSer;
 using Service.DriverSer;
 using Service.EmailSer;
@@ -176,6 +177,11 @@ builder.Services.AddScoped<IRepository<Driver>, Repository<Driver>>();
 //Accommodation
 builder.Services.AddScoped<IAccommodationService, AccommodationService>();
 builder.Services.AddScoped<IRepository<Accommodation>, Repository<Accommodation>>();
+// AgriculturalTourPackage
+builder.Services.AddScoped<IAgriculturalTourPackageService, AgriculturalTourPackageService>();
+builder.Services.AddScoped<IRepository<AgriculturalTourPackage>, Repository<AgriculturalTourPackage>>();
+// TourDestination
+builder.Services.AddScoped<IRepository<TourDestination>, Repository<TourDestination>>();
 // app
 var app = builder.Build();
 

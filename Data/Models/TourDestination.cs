@@ -22,16 +22,17 @@ namespace Data.Models
         public StatusApproval StatusApproval { get; set; }
         public string? ReplyRequest { get; set; }
         //fk
-        public Guid TourId { get; set; }
-        public Guid TourismPackageId { get; set; }
-        public Guid DriverId { get; set; }
-        public Guid AccommodationId { get; set; }
-        public Guid ActivityId { get; set; }
+        public Guid? TourId { get; set; }
+        public Guid? TourismPackageId { get; set; }
+        public Guid? DriverId { get; set; }
+        public Guid? AccommodationId { get; set; }
+        public Guid? ActivityId { get; set; }
         public virtual AgriculturalTourPackage? AgriculturalTourPackage { get; set; }
         public virtual TourismPackage? TourismPackage { get; set; }
         public virtual Driver? Driver { get; set; }
         public virtual Accommodation? Accommodation { get; set; }
         public virtual Activity? Activity { get; set; }
+        public virtual ICollection<TourGuide>? TourGuides { get; set; }
     }
     public enum TypeActivity
     {

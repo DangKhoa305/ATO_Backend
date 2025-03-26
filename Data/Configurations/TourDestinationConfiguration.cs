@@ -28,31 +28,30 @@ namespace Data.Configurations
             builder.Property(x => x.EndTime).IsRequired();
             builder.Property(x => x.ReplyRequest).IsRequired(false);
             builder.Property(x => x.TourId).IsRequired();
-            builder.Property(x => x.TourismPackageId).IsRequired();
-            builder.Property(x => x.DriverId).IsRequired();
-            builder.Property(x => x.AccommodationId).IsRequired();
-            builder.Property(x => x.ActivityId).IsRequired();
+            builder.Property(x => x.TourismPackageId).IsRequired(false);
+            builder.Property(x => x.DriverId).IsRequired(false);
+            builder.Property(x => x.AccommodationId).IsRequired(false);
+            builder.Property(x => x.ActivityId).IsRequired(false);
             #region config relation
             builder.HasOne(x => x.AgriculturalTourPackage)
                       .WithMany(c => c.TourDestinations)
-                      .HasForeignKey(x => x.TourId)
-                      .OnDelete(DeleteBehavior.NoAction);
+                      .HasForeignKey(x => x.TourId);
             builder.HasOne(x => x.TourismPackage)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.TourismPackageId)
-                      .OnDelete(DeleteBehavior.NoAction);
+                      .OnDelete(DeleteBehavior.SetNull);
             builder.HasOne(x => x.Driver)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.DriverId)
-                      .OnDelete(DeleteBehavior.NoAction);
+                      .OnDelete(DeleteBehavior.SetNull);
             builder.HasOne(x => x.Accommodation)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.AccommodationId)
-                      .OnDelete(DeleteBehavior.NoAction);
+                      .OnDelete(DeleteBehavior.SetNull);
             builder.HasOne(x => x.Activity)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.ActivityId)
-                     .OnDelete(DeleteBehavior.NoAction);
+                      .OnDelete(DeleteBehavior.SetNull);
             #endregion
         }
     }
