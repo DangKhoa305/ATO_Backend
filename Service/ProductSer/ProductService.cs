@@ -16,20 +16,17 @@ namespace Service.ProductSer
         private readonly IRepository<TouristFacility> _touristFacilityRepository;
         private readonly IRepository<OCOPSell> _OCOPSellRepository;
         private readonly IRepository<Certification> _certificationRepository;
-        private readonly IRepository<OCOPProductActivity> _OCOPProductActivityRepository;
         public ProductService(
             IRepository<Product> productRepository,
             IRepository<TouristFacility> touristFacilityRepository,
             IRepository<OCOPSell> OCOPSellRepository,
-            IRepository<Certification> certificationRepository,
-            IRepository<OCOPProductActivity> OCOPProductActivityRepository
+            IRepository<Certification> certificationRepository
             )
         {
             _productRepository = productRepository;
             _touristFacilityRepository = touristFacilityRepository;
             _OCOPSellRepository = OCOPSellRepository;
             _certificationRepository = certificationRepository;
-            _OCOPProductActivityRepository = OCOPProductActivityRepository;
         }
 
         public async Task<List<OCOPSell>> GetListOCOPSells_AFTO(Guid UserId)
@@ -380,75 +377,6 @@ namespace Service.ProductSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
-
-        public async Task<List<OCOPProductActivity>> GetListOCOPProductActivityByProductId_AFTO(Guid productId)
-        {
-            try
-            {
-                return await _OCOPProductActivityRepository.Query()
-                    .Include(x => x.Product)
-                    .Include(x => x.Activity)
-                    .Where(x => x.ProductId == productId)
-                    .ToListAsync();
-            }
-            catch (Exception)
-            {
-                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
-            }
-        }
-        public async Task<bool> CreateOCOPProductActivity_AFTO(OCOPProductActivity OCOPProductActivity)
-        {
-            try
-            {
-                await _OCOPProductActivityRepository.AddAsync(OCOPProductActivity);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
-            }
-        }
-        public async Task<bool> UpdateOCOPProductActivity_AFTO(Guid ActivityOldId, OCOPProductActivity OCOPProductActivity)
-        {
-            try
-            {
-                var exist = await _OCOPProductActivityRepository.Query()
-                    .FirstOrDefaultAsync(x => x.ProductId == OCOPProductActivity.ProductId && x.ActivityId == ActivityOldId);
-                var checkdata = await _OCOPProductActivityRepository.Query()
-                    .FirstOrDefaultAsync(x => x.ProductId == OCOPProductActivity.ProductId && x.ActivityId == OCOPProductActivity.ActivityId);
-                if (checkdata != null) throw new Exception("Đã tồn tại dữ liệu !");
-
-                if (exist != null)
-                {
-                    await _OCOPProductActivityRepository.DeleteAsync(exist);
-                }
-                await _OCOPProductActivityRepository.AddAsync(OCOPProductActivity);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-        }
-
-        public async Task<List<OCOPProductActivity>> GetListOCOPProductActivityByActivityId_AFTO(Guid activityId)
-        {
-            try
-            {
-                return await _OCOPProductActivityRepository.Query()
-                    .Include(x => x.Product)
-                    .Include(x => x.Activity)
-                    .Where(x => x.ActivityId == activityId)
-                    .ToListAsync();
-            }
-            catch (Exception)
-            {
-                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
-            }
-        }
-
         public async Task<List<Product>> GetListProducts_Guest()
         {
             try

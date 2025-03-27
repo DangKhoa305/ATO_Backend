@@ -135,6 +135,26 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
+        [HttpGet("get-activity/{ActivityId}")]
+        [ProducesResponseType(typeof(ActivityRespone), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetActivity(Guid ActivityId)
+        {
+            try
+            {
+                Activity response = await _tourismPackageService.GetActivity(ActivityId);
+                ActivityRespone responseResult = _mapper.Map<ActivityRespone>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
         [HttpPost("create-activity")]
         [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]

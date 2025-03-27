@@ -20,5 +20,10 @@ namespace Data.DTO.Request
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public Guid? PackageId { get; set; }
+        public virtual ICollection<Product_ActivityResquest>? Products { get; set; }
+    }
+    public class Product_ActivityResquest
+    {
+        public Guid ProductId { get; set; }
     }
 }

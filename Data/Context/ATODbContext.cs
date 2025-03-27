@@ -54,7 +54,6 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new TourGuideConfiguration());
             modelBuilder.ApplyConfiguration(new TourismPackageConfiguration());
             modelBuilder.ApplyConfiguration(new ActivityConfiguration());
-            modelBuilder.ApplyConfiguration(new OCOPProductActivityConfiguration());
             modelBuilder.ApplyConfiguration(new AgriculturalTourPackageConfiguration());
             modelBuilder.ApplyConfiguration(new DriverConfiguration());
             modelBuilder.ApplyConfiguration(new AccommodationConfiguration());
@@ -129,7 +128,7 @@ namespace Data.ArmsContext
             new TourismPackageSeeder(modelBuilder).Seed();
             new ActivitySeeder(modelBuilder).Seed();
             new AgriculturalTourPackageSeeder(modelBuilder).Seed();
-            new OCOPProductActivitySeeder(modelBuilder).Seed();
+            new TourGuideSeeder(modelBuilder).Seed();
             #endregion
 
         }
@@ -148,7 +147,6 @@ namespace Data.ArmsContext
         public DbSet<TourismPackage> TourismPackages { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<AgriculturalTourPackage> AgriculturalTourPackages { get; set; }
-        public DbSet<OCOPProductActivity> OCOPProductActivities { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Accommodation> Accommodations { get; set; }
         public DbSet<TourDestination> TourDestinations { get; set; }

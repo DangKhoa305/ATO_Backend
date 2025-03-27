@@ -29,6 +29,7 @@ namespace Service.TourGuideSer
             TourCompany TourCompany = await _tourCompanyRepository.Query()
 .SingleOrDefaultAsync(x => x.UserId == UserId);
             TourGuide.TourCompanyId = TourCompany.TourCompanyId;
+
             await _tourGuideRepository.AddAsync(TourGuide);
         }
 

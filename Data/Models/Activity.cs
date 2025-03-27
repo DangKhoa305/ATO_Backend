@@ -1,5 +1,4 @@
-﻿using Data.Migrations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +22,7 @@ namespace Data.Models
         public StatusApproval StatusApproval { get; set; }
         public string? ReplyRequest { get; set; }
         public Guid? PackageId { get; set; }
-        public virtual ICollection<OCOPProductActivity>? OCOPProductActivities { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
         public virtual TourismPackage? TourismPackage { get; set; }
         public virtual ICollection<TourDestination>? TourDestinations { get; set; }
     }

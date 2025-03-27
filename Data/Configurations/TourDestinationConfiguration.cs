@@ -35,23 +35,24 @@ namespace Data.Configurations
             #region config relation
             builder.HasOne(x => x.AgriculturalTourPackage)
                       .WithMany(c => c.TourDestinations)
-                      .HasForeignKey(x => x.TourId);
+                      .HasForeignKey(x => x.TourId)
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.TourismPackage)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.TourismPackageId)
-                      .OnDelete(DeleteBehavior.SetNull);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.Driver)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.DriverId)
-                      .OnDelete(DeleteBehavior.SetNull);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.Accommodation)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.AccommodationId)
-                      .OnDelete(DeleteBehavior.SetNull);
+                      .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(x => x.Activity)
                       .WithMany(c => c.TourDestinations)
                       .HasForeignKey(x => x.ActivityId)
-                      .OnDelete(DeleteBehavior.SetNull);
+                      .OnDelete(DeleteBehavior.NoAction);
             #endregion
         }
     }

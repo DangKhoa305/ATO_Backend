@@ -14,14 +14,17 @@ namespace Service.TourismPackageSer
         private readonly IRepository<TourismPackage> _tourismPackageRepository;
         private readonly IRepository<TouristFacility> _touristFacilityRepository;
         private readonly IRepository<Activity> _activityRepository;
+        private readonly IRepository<Product> _productRepository;
         public TourismPackageService(
             IRepository<TourismPackage> tourismPackageRepository,
             IRepository<TouristFacility> touristFacilityRepository,
-            IRepository<Activity> activityRepository)
+            IRepository<Activity> activityRepository,
+            IRepository<Product> productRepository)
         {
             _tourismPackageRepository = tourismPackageRepository;
             _touristFacilityRepository = touristFacilityRepository;
             _activityRepository = activityRepository;
+            _productRepository = productRepository;
         }
 
         public async Task<bool> CreateActivity_AFTO(Activity responseResult)
@@ -31,7 +34,17 @@ namespace Service.TourismPackageSer
                 responseResult.ActivityId = Guid.NewGuid();
                 responseResult.CreateDate = DateTime.UtcNow;
                 responseResult.StatusApproval = StatusApproval.Processing;
-                await _activityRepository.AddAsync(responseResult);
+                if (responseResult.Products != null && responseResult.Products.Any())
+                {
+                    var ProductIds = responseResult.Products.Select(tg => tg.ProductId).ToList();
+
+                    var Products = await _productRepository.Query()
+                        .Where(tg => ProductIds.Contains(tg.ProductId))
+                        .ToListAsync();
+
+                    responseResult.Products = Products;
+                }
+                await _activityRepository.AddRangeAsync(responseResult);
 
                 return true;
             }
@@ -61,6 +74,19 @@ namespace Service.TourismPackageSer
             }
         }
 
+        public async Task<Activity> GetActivity(Guid ActivityId)
+        {
+            try
+            {
+                return await _activityRepository.Query()
+                    .Include(b => b.Products)
+                    .SingleOrDefaultAsync(x => x.ActivityId == ActivityId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
 
         public async Task<List<TourismPackage>> GetListTourismPackages(Guid UserId)
         {
@@ -84,6 +110,7 @@ namespace Service.TourismPackageSer
             {
                 return await _tourismPackageRepository.Query()
                     .Include(b => b.Activities)
+                    .ThenInclude(b => b.Products)
                     .SingleOrDefaultAsync(x => x.PackageId == PackageId);
             }
             catch (Exception)
@@ -113,8 +140,19 @@ namespace Service.TourismPackageSer
                 existingActivity.BreakTimeInMinutesType = responseResult.BreakTimeInMinutesType;
                 existingActivity.PackageId = responseResult.PackageId;
                 existingActivity.UpdateDate = DateTime.UtcNow;
-
-                await _activityRepository.UpdateAsync(existingActivity);
+                existingActivity.Products.Clear();
+                if (existingActivity.Products != null)
+                {
+                    var ProductIds = existingActivity.Products.Select(tg => tg.ProductId).ToList();
+                    var Products = await _productRepository.Query()
+                        .Where(tg => ProductIds.Contains(tg.ProductId))
+                        .ToListAsync();
+                    foreach (var tg in Products)
+                    {
+                        existingActivity.Products.Add(tg);
+                    }
+                }
+                await _activityRepository.UpdateRangeAsync(existingActivity);
 
                 return true;
             }

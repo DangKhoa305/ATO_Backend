@@ -169,8 +169,6 @@ builder.Services.AddScoped<ITourismPackageService, TourismPackageService>();
 builder.Services.AddScoped<IRepository<TourismPackage>, Repository<TourismPackage>>();
 //Activity
 builder.Services.AddScoped<IRepository<Activity>, Repository<Activity>>();
-//OCOPProductActivity
-builder.Services.AddScoped<IRepository<OCOPProductActivity>, Repository<OCOPProductActivity>>();
 //Driver
 builder.Services.AddScoped<IDriverService, DriverService>();
 builder.Services.AddScoped<IRepository<Driver>, Repository<Driver>>();

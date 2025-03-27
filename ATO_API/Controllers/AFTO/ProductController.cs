@@ -372,25 +372,5 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
-        [HttpGet("get-OCOPproductactivity-by-activityid/{ActivityId}")]
-        [ProducesResponseType(typeof(List<CertificationRespone>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetOCOPProductActivityByActivityId(Guid ActivityId)
-        {
-            try
-            {
-                var response = await _productService.GetListOCOPProductActivityByActivityId_AFTO(ActivityId);
-                List<OCOPProductActivityRespone> responseResult = _mapper.Map<List<OCOPProductActivityRespone>>(response);
-                return Ok(responseResult);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM
-                {
-                    Status = false,
-                    Message = ex.Message,
-                });
-            }
-        }
     }
 }

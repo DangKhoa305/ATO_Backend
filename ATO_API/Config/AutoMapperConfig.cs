@@ -60,6 +60,8 @@ namespace ATO_API.Config
                 config.CreateMap<UpdateTourCompanyRequest, TourCompany>();
                 // product
                 config.CreateMap<Product, ProductDTO>();
+                config.CreateMap<Product, Product_ActivityRespone>();
+                config.CreateMap<Product_ActivityResquest, Product>();
                 config.CreateMap<Product, ProductDTO_CM>();
                 config.CreateMap<CreateProductDTO, Product>();
                 config.CreateMap<UpdateProductDTO, Product>();
@@ -104,9 +106,6 @@ namespace ATO_API.Config
                 config.CreateMap<ActivityRequest, Activity>();
                 config.CreateMap<Activity, Activity_OCOPProductActivityRespone>();
                 config.CreateMap<Activity, AgriculturalTourPackage_TourDestination_Activity_Respone>();
-                // OCOPProductActivity
-                config.CreateMap<OCOPProductActivity, OCOPProductActivityRespone>();
-                config.CreateMap<OCOPProductActivityRequest, OCOPProductActivity>();
                 // DriverRespone
                 config.CreateMap<Driver, DriverRespone>();
                 config.CreateMap<DriverRequest, Driver>();

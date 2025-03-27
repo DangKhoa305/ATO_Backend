@@ -81,7 +81,7 @@ namespace ATO_API.Controllers.TourCompany
             }
         }
         [HttpPost("request-guide-team")]
-        [ProducesResponseType(typeof(TourGuideRespone), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(TourGuideRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateAccount([FromBody] TourGuideRequest request)
@@ -138,7 +138,7 @@ namespace ATO_API.Controllers.TourCompany
 
                 var newAccount = _mapper.Map<Account>(request.Account);
                 newAccount.Id = Guid.NewGuid();
-                newAccount.isAccountActive = false;
+                newAccount.isAccountActive = true;
                 newAccount.PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a");
                 newAccount.SecurityStamp = Guid.NewGuid().ToString();
 
@@ -169,7 +169,7 @@ namespace ATO_API.Controllers.TourCompany
                     CreateDate = DateTime.Now,
                 };
                 await _tourGuideService.AddTourGuideAsync(tourGuide, Guid.Parse(userId));
-                return CreatedAtAction(nameof(GetGuideTeam), new { id = tourGuide.GuideId }, request);
+                return Ok(request);
             }
             catch (Exception ex)
             {

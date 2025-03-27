@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.DTO.Respone;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace Data.DTO.Request
         public double Durations { get; set; }
         public TimeType DurationsType { get; set; }
         public StatusOperating StatusOperating { get; set; }
+
     }
 }
