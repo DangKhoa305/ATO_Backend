@@ -11,6 +11,7 @@ namespace Service.AgriculturalTourPackageSer
     {
         Task<List<AgriculturalTourPackage>> GetListAgriculturalTourPackages(Guid UserId);
         Task<AgriculturalTourPackage> GetAgriculturalTourPackage(Guid TourId);
+        Task<TourDestination> GetTourDestination(Guid TourDestinationId);
         Task<bool> CreateAgriculturalTourPackage(AgriculturalTourPackage newTour, Guid UserId);
         Task<bool> UpdateAgriculturalTourPackage(Guid TourId, AgriculturalTourPackage updatedTour);
         Task<bool> CreateTourDestination(TourDestination newTourDestination, Guid TourId);

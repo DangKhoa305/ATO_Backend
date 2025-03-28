@@ -7,6 +7,7 @@ using Data.ArmsContext;
 using Data.DTO.Request;
 using Data.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ using Service.AgriculturalTourPackageSer;
 using Service.BlogSer;
 using Service.DriverSer;
 using Service.EmailSer;
+using Service.OrderSer;
 using Service.ProductSer;
 using Service.Repository;
 using Service.SystemConfigSer;
@@ -28,6 +30,7 @@ using Service.TourGuideSer;
 using Service.TourismPackageSer;
 using Service.TouristFacilitySer;
 using Service.UserSupportSer;
+using StackExchange.Redis;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -128,6 +131,8 @@ builder.Services.AddSwaggerGen(config =>
     });
 });
 builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(
+    builder.Configuration.GetValue<string>("Redis:ConnectionString")));
 // token helper 
 builder.Services.AddSingleton<TokenHelper>();
 // account service
@@ -180,6 +185,12 @@ builder.Services.AddScoped<IAgriculturalTourPackageService, AgriculturalTourPack
 builder.Services.AddScoped<IRepository<AgriculturalTourPackage>, Repository<AgriculturalTourPackage>>();
 // TourDestination
 builder.Services.AddScoped<IRepository<TourDestination>, Repository<TourDestination>>();
+// Order
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IRepository<Data.Models.Order>, Repository<Data.Models.Order>>();
+// OrderDetail
+builder.Services.AddScoped<IRepository<OrderDetail>, Repository<OrderDetail>>();
+
 // app
 var app = builder.Build();
 

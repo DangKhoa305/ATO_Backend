@@ -135,6 +135,26 @@ namespace Service.AgriculturalTourPackageSer
             }
         }
 
+        public async Task<TourDestination> GetTourDestination(Guid TourDestinationId)
+        {
+            try
+            {
+                return await _tourDestinationRepository.Query()
+                    .Include(x => x.TourismPackage)
+                    .Include(x => x.Driver)
+                    .Include(x => x.Accommodation)
+                    .Include(x => x.AgriculturalTourPackage)
+                    .Include(x => x.Activity)
+                    .Include(x => x.TourGuides)
+                        .ThenInclude(b => b.Account)
+                    .SingleOrDefaultAsync(x => x.TourDestinationId == TourDestinationId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<bool> UpdateAgriculturalTourPackage(Guid TourId, AgriculturalTourPackage updatedTour)
         {
             try

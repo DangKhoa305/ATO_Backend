@@ -58,6 +58,8 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new DriverConfiguration());
             modelBuilder.ApplyConfiguration(new AccommodationConfiguration());
             modelBuilder.ApplyConfiguration(new TourDestinationConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
             #endregion
             #region config FK for generate account and role,...
             modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
@@ -129,6 +131,9 @@ namespace Data.ArmsContext
             new ActivitySeeder(modelBuilder).Seed();
             new AgriculturalTourPackageSeeder(modelBuilder).Seed();
             new TourGuideSeeder(modelBuilder).Seed();
+            new TourDestinationSeeder(modelBuilder).Seed();
+            new DriverSeeder(modelBuilder).Seed();
+            new AccommodationSeeder(modelBuilder).Seed();
             #endregion
 
         }
@@ -150,7 +155,8 @@ namespace Data.ArmsContext
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Accommodation> Accommodations { get; set; }
         public DbSet<TourDestination> TourDestinations { get; set; }
-
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         #endregion
     }
 

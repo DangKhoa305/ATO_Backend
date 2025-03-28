@@ -383,7 +383,7 @@ namespace Service.ProductSer
             {
                 return await _productRepository.Query()
                     .Include(x => x.TouristFacility)
-                    .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate < DateTime.UtcNow))
+                    .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate > DateTime.UtcNow))
                     .ToListAsync();
             }
             catch (Exception)

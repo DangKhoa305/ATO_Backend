@@ -35,6 +35,7 @@ namespace Data.Models
         public virtual ICollection<Certification>? Certifications { get; set; }
         public virtual ICollection<OCOPSell>? OCOPSells { get; set; }
         public virtual ICollection<Activity>? Activities { get; set; }
+        public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
     public enum ProductCategory
     {

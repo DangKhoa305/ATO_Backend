@@ -111,6 +111,26 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
+        [HttpGet("get-tour-destination/{TourDestinationId}")]
+        [ProducesResponseType(typeof(AgriculturalTourPackage_TourDestination_Respone), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetTourDestination(Guid TourDestinationId)
+        {
+            try
+            {
+                var response = await _agriculturalTourPackageService.GetTourDestination(TourDestinationId);
+                var responseResult = _mapper.Map<AgriculturalTourPackage_TourDestination_Respone>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
         [HttpPost("add-tour-destination/{TourId}")]
         [ProducesResponseType(typeof(TourDestinationRequest), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]

@@ -60,6 +60,7 @@ namespace ATO_API.Config
                 config.CreateMap<UpdateTourCompanyRequest, TourCompany>();
                 // product
                 config.CreateMap<Product, ProductDTO>();
+                config.CreateMap<Product, ProductDTO_Order>();
                 config.CreateMap<Product, Product_ActivityRespone>();
                 config.CreateMap<Product_ActivityResquest, Product>();
                 config.CreateMap<Product, ProductDTO_CM>();
@@ -118,6 +119,12 @@ namespace ATO_API.Config
                 // TourDestination
                 config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone>();
                 config.CreateMap<TourDestinationRequest, TourDestination>();
+                // Order
+                config.CreateMap<Order, OrderRespone>();
+                config.CreateMap<OrderRequest, Order>();
+                // OrderDetail
+                config.CreateMap<OrderDetail, OrderDetailRespone>();
+                config.CreateMap<OrderDetailRequest, OrderDetail>();
             });
 
             return mapperConfig.CreateMapper();
