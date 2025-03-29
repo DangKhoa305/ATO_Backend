@@ -2,6 +2,7 @@
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Nest;
 using Service.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,18 @@ namespace Service.SystemConfigSer
 {
     public class SystemConfigurationsService : ISystemConfigurationsService
     {
-        private readonly IRepository<SystemConfigurations> _systemConfigurationsRepository;
-        public SystemConfigurationsService(IRepository<SystemConfigurations> systemConfigurationsRepository)
+        private readonly Service.Repository.IRepository<SystemConfigurations> _systemConfigurationsRepository;
+        public SystemConfigurationsService(Service.Repository.IRepository<SystemConfigurations> systemConfigurationsRepository)
         {
             _systemConfigurationsRepository = systemConfigurationsRepository;
+        }
+
+        public async Task<string?> GetConfigValueAsync(string key)
+        {
+            return await _systemConfigurationsRepository.Query()
+            .Where(c => c.ConfigKey == key)
+            .Select(c => c.ConfigValue)
+            .FirstOrDefaultAsync();
         }
 
         public async Task<EmailConfig> GetEmailAsync()

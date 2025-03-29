@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace Data.Models
         public DateTime? UpdateDate { get; set; }
         public virtual Account? Account { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-
+        public virtual ICollection<VNPayPaymentResponse> VNPayPaymentResponses { get; set; }
     }
     public enum OrderType
     {

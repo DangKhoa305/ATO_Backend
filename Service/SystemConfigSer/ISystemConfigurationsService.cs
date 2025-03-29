@@ -15,6 +15,7 @@ namespace Service.SystemConfigSer
         Task<EmailConfig> GetEmailAsync();
         Task<VNPayConfig> GetVNPayAsync();
         Task<bool> UpdateVNPayConfigAsync(UpdateConfigVNPAYRequest request);
+        Task<string?> GetConfigValueAsync(string key);
     }
 
 }

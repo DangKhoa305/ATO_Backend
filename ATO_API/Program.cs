@@ -30,6 +30,7 @@ using Service.TourGuideSer;
 using Service.TourismPackageSer;
 using Service.TouristFacilitySer;
 using Service.UserSupportSer;
+using Service.VnPaySer;
 using StackExchange.Redis;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -190,7 +191,9 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IRepository<Data.Models.Order>, Repository<Data.Models.Order>>();
 // OrderDetail
 builder.Services.AddScoped<IRepository<OrderDetail>, Repository<OrderDetail>>();
-
+//vnpay 
+builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<IRepository<VNPayPaymentResponse>, Repository<VNPayPaymentResponse>>();
 // app
 var app = builder.Build();
 

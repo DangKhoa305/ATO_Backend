@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Service.AccountSer;
 using Service.DriverSer;
 using Service.OrderSer;
+using Service.VnPaySer;
 using StackExchange.Redis;
+using System.Text;
 
 namespace ATO_API.Controllers.Tourist
 {
@@ -21,15 +24,21 @@ namespace ATO_API.Controllers.Tourist
         private readonly IOrderService _orderService;
         private readonly IConnectionMultiplexer _redis;
         private readonly IMapper _mapper;
+        private readonly IVnPayService _vnPayService;
+        private readonly IConfiguration _configuration;
         public OrderController(
             IMapper mapper,
             IOrderService orderService,
-            IConnectionMultiplexer redis
+            IConnectionMultiplexer redis,
+            IVnPayService vnPayService,
+            IConfiguration configuration
            )
         {
             _mapper = mapper;
             _orderService = orderService;
             _redis = redis;
+            _vnPayService = vnPayService;
+            _configuration = configuration;
         }
         [HttpGet("get-list-orders")]
         [ProducesResponseType(typeof(List<OrderRespone>), StatusCodes.Status200OK)]
@@ -75,7 +84,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpPost("add-order")]
-        [ProducesResponseType(typeof(OrderRequest), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddOrder([FromBody] OrderRequest OrderRequest)
         {
@@ -85,7 +94,22 @@ namespace ATO_API.Controllers.Tourist
                 var responseResult = _mapper.Map<Data.Models.Order>(OrderRequest);
                 responseResult.CustomerId = Guid.Parse(userId);
                 var response = await _orderService.AddOrder(responseResult);
-                return Ok(OrderRequest);
+                if (OrderRequest.PaymentType == PaymentType.Transfer)
+                {
+                    decimal fee = (decimal)response.TotalAmount;
+                    DateTime timecreate = DateTime.UtcNow;
+
+                    var paymentUrl = await _vnPayService.CreatePaymentUrlAsync(HttpContext, response.OrderId, fee, timecreate, TypePayment.OrderPayment);
+                    return Ok(paymentUrl);
+                }
+                else
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = true,
+                        Message = "Tạo đơn thành công!",
+                    });
+                }
             }
             catch (Exception ex)
             {
@@ -96,6 +120,33 @@ namespace ATO_API.Controllers.Tourist
                 });
             }
         }
+        [HttpGet("return_order")]
+        public async Task<IActionResult> VNPayReturnAsync()
+        {
+            try
+            {
+                var queryParams = Request.Query;
+                var checkResponse = await _vnPayService.PaymentExecute(queryParams);
+                await _orderService.AddOrderPayment(checkResponse);
+                var queryString = new StringBuilder();
+                foreach (var param in queryParams)
+                {
+                    var encodedValue = Uri.EscapeDataString(param.Value);
+                    queryString.Append($"{param.Key}={encodedValue}&");
+                }
+                string returnUrl = _configuration.GetValue<string>("VNPaySettings:ReturnUrl");
+                return Redirect($"{returnUrl}?{queryString}");
+            }
+            catch (Exception)
+            {
+                return BadRequest(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Đã xảy ra lỗi! Vui lòng thử lại sau!"
+                });
+            }
+        }
+
         [HttpPost("add-to-cart")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]

@@ -1,4 +1,5 @@
 ﻿using Data.DTO.Request;
+using Data.Migrations;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -16,6 +17,7 @@ namespace Service.OrderSer
     public class OrderService : IOrderService
     {
         private readonly IRepository<Data.Models.Order> _orderRepository;
+        private readonly IRepository<Data.Models.VNPayPaymentResponse> _VNPayPaymentResponseRepository;
         private readonly IRepository<OrderDetail> _orderDetailRepository;
         private readonly IRepository<Product> _productRepository;
         private readonly IConnectionMultiplexer _redis;
@@ -24,17 +26,18 @@ namespace Service.OrderSer
             IRepository<Data.Models.Order> orderRepository,
             IRepository<OrderDetail> orderDetailRepository,
             IConnectionMultiplexer redis,
-            IRepository<Product> productRepository
-            )
+            IRepository<Product> productRepository,
+            IRepository<Data.Models.VNPayPaymentResponse> vNPayPaymentResponseRepository)
         {
             _orderRepository = orderRepository;
             _orderDetailRepository = orderDetailRepository;
             _redis = redis;
             _db = _redis.GetDatabase();
             _productRepository = productRepository;
+            _VNPayPaymentResponseRepository = vNPayPaymentResponseRepository;
         }
 
-        public async Task<bool> AddOrder(Data.Models.Order order)
+        public async Task<Data.Models.Order> AddOrder(Data.Models.Order order)
         {
             try
             {
@@ -48,7 +51,7 @@ namespace Service.OrderSer
                     item.OrderId = order.OrderId;
                 }
                 await _orderRepository.AddRangeAsync(order);
-                return true;
+                return order;
             }
             catch (Exception)
             {
@@ -118,6 +121,8 @@ namespace Service.OrderSer
                 return await _orderRepository.Query()
                     .Include(x => x.OrderDetails)
                         .ThenInclude(y => y.Product)
+                    .Include(x => x.OrderDetails)
+                        .ThenInclude(y => y.VNPayPaymentResponses)
                     .SingleOrDefaultAsync(x => x.OrderId == OrderId);
             }
             catch (Exception)
@@ -144,5 +149,18 @@ namespace Service.OrderSer
         {
             throw new NotImplementedException();
         }
+
+        public async Task AddOrderPayment(Data.Models.VNPayPaymentResponse checkResponse)
+        {
+            try
+            {
+                await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
     }
 }

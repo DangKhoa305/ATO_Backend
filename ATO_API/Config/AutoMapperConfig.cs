@@ -125,6 +125,8 @@ namespace ATO_API.Config
                 // OrderDetail
                 config.CreateMap<OrderDetail, OrderDetailRespone>();
                 config.CreateMap<OrderDetailRequest, OrderDetail>();
+                // VNPayPaymentResponse
+                config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponseDTO>();
             });
 
             return mapperConfig.CreateMapper();

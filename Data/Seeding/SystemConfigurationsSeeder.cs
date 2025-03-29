@@ -116,7 +116,7 @@ namespace Data.Seeding
                    ConfigId = 12,
                    ConfigType = ConfigType.VnPayConfig,
                    ConfigKey = "PaymentBackReturnUrl",
-                   ConfigValue = "http://",
+                   ConfigValue = "https://localhost:5001/api/tourist/order/return_order",
                    CreateDate = DateTime.UtcNow
                }
            );

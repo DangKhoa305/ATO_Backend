@@ -60,6 +60,7 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new TourDestinationConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
+            modelBuilder.ApplyConfiguration(new VNPayPaymentResponseConfiguration());
             #endregion
             #region config FK for generate account and role,...
             modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
@@ -157,6 +158,7 @@ namespace Data.ArmsContext
         public DbSet<TourDestination> TourDestinations { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<VNPayPaymentResponse> VNPayPaymentResponses { get; set; }
         #endregion
     }
 

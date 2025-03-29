@@ -12,12 +12,13 @@ namespace Service.OrderSer
     {
         Task<List<Order>> ListOrders(Guid UserId);
         Task<Order> GetOrderDetails(Guid OrderId);
-        Task<bool> AddOrder(Order order);
+        Task<Data.Models.Order> AddOrder(Order order);
         Task<bool> UpdateOrder(Guid OrderId, Order order);
 
         // cart
         Task AddToCart(Guid userId, OrderDetail_Cart orderDetail);
         Task ClearCart(Guid userId);
         Task<List<OrderDetail_Cart_Respone>> GetCart(Guid userId);
+        Task AddOrderPayment(VNPayPaymentResponse checkResponse);
     }
 }

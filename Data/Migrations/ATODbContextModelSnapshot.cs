@@ -574,16 +574,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("b8c777a9-55b9-4b3d-860a-d7b56e4c24b7"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "11eb9568-d53d-4708-b8dd-a8e3b7c2815d",
+                        ConcurrencyStamp = "cbe2f31c-adc4-49a6-b2fd-5efd9ab3aa38",
                         Email = "thutt170727@gmail.com",
                         EmailConfirmed = true,
                         Fullname = "Administrator",
                         LockoutEnabled = false,
                         NormalizedEmail = "THUTT170727@GMAIL.COM",
                         NormalizedUserName = "ADMINISTRATOR",
-                        PasswordHash = "AQAAAAIAAYagAAAAEODzxmfj50M0b/TE/V0F9J/Q1TSYX/KkGpTu0TwS59bgtMfHzdP8UbAHQpBkiSbhiQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEPBpRDozCxc46wa1KMNwUyglXmA1F6ptbmNRQmLGhsPnTiAEIncA+1fZnL2cun0pjg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "3cd6865b-a2ea-4680-a5c1-770787202d7f",
+                        SecurityStamp = "d996a3bd-beae-4aaf-ab48-13c9706a83aa",
                         TwoFactorEnabled = false,
                         UserName = "Administrator",
                         isAccountActive = true
@@ -592,16 +592,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("11a068d3-9af4-484c-82a2-e2b5c9d8b5ab"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "2434d37d-3975-49f1-9c5a-8e44d7dc1ca8",
+                        ConcurrencyStamp = "ed2b754c-85e5-47dc-ac87-ebc09797a861",
                         Email = "lucianafuste0717@gmail.com",
                         EmailConfirmed = true,
                         Fullname = "Content Moderators",
                         LockoutEnabled = false,
                         NormalizedEmail = "LUCIANAFUSTE0717@GMAIL.COM",
                         NormalizedUserName = "CONTENTMODERATORS",
-                        PasswordHash = "AQAAAAIAAYagAAAAEByEWyW/GAdOhj01keIP6lGvVO5GGJhtt00yUCdxFTVwTkDyc/9+ewzn55mN/29eRw==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEOj9w6kSV8YF48r79LcExY5MFBOketY13NRpIQgvgnRLE5UTbFYnE0sstpY/6GeIvQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "8eb7d11f-a625-45ce-b359-afbfc3fd4469",
+                        SecurityStamp = "fa4e61f7-0607-4be8-86bb-26bb67925414",
                         TwoFactorEnabled = false,
                         UserName = "ContentModerators",
                         isAccountActive = true
@@ -610,16 +610,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("053d18ef-ba0e-4141-b142-898d28fa9b5d"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "3996b8e4-608b-418f-aeef-d7f74c9242a2",
+                        ConcurrencyStamp = "15fee9d1-9d95-4602-af52-3c4ea265136b",
                         Email = "truongthu112201@gmail.com",
                         EmailConfirmed = true,
                         Fullname = "Tourism Companies",
                         LockoutEnabled = false,
                         NormalizedEmail = "TRUONGTHU112201@GMAIL.COM",
                         NormalizedUserName = "TOURISMCOMPANIES",
-                        PasswordHash = "AQAAAAIAAYagAAAAELXDiXUgbOhlLRgsb4U/lfcjpcp60vRdtFSXDmn7+wzUQKohJrtEm58FdaepfnCS1g==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEDovcu9UYj3UXQwuqwyarXCJXhH5X4LcaS9X3zWMDvp0icFMJirWM2s1CA+7aY3Dzw==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "801f501f-9721-410c-acc9-85aa8d301ca1",
+                        SecurityStamp = "95551f1d-a2ce-4116-9b30-c6fbbf8c5add",
                         TwoFactorEnabled = false,
                         UserName = "TourismCompanies",
                         isAccountActive = true
@@ -628,16 +628,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("d2c3e4f5-6789-0123-4567-89abcdef0123"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "73d50356-007d-46ec-9c33-5e80c9526021",
+                        ConcurrencyStamp = "2eb9daec-8858-4096-b0cc-5e7166eaa634",
                         Email = "contact@saigontourist.net",
                         EmailConfirmed = true,
                         Fullname = "Saigontourist",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@SAIGONTOURIST.NET",
                         NormalizedUserName = "SAIGONTOURISTACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEJtieJnSMWOZfS28Ff79uOCN3FuNLlLEHBbkas4GGbMBVO8ikAyG+8xhKJP4U1dNxg==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEEtUYUFBfTea//moQHVTGLSVKz8xKXW95lQ1nzdULHvqLmhtjKWPJpHyuEC8/u0x9w==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "85a7f22d-9e95-4dd4-9b7d-1081062a417a",
+                        SecurityStamp = "2e33e29e-1cdb-4fe1-b075-44c80971cbc0",
                         TwoFactorEnabled = false,
                         UserName = "SaigontouristAccount",
                         isAccountActive = true
@@ -646,16 +646,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("645f6cd7-a359-4643-9e28-0d6eb32d103b"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "5b61a5d5-f77b-48cf-913d-886a765341b6",
+                        ConcurrencyStamp = "b8d6837a-7fa2-43fa-ae88-1aad10a3e8f5",
                         Email = "support@hanoitourist.com",
                         EmailConfirmed = true,
                         Fullname = "Hanoitourist",
                         LockoutEnabled = false,
                         NormalizedEmail = "SUPPORT@HANOITOURIST.COM",
                         NormalizedUserName = "HANOITOURISTACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEDTJWeLr7vPCs9NwXWEMpuFbRGfPN2G5Dyhh69gYGRI6emD7Qx0zs4TefBj6SYw8eQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEA3uxTaxVrfwX59JnRJyExcw3W5fqv5ijic73545BzE5mUhH3lhFnFI2Y3b8lkBFqA==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "465dba0b-0243-4464-a684-8a9347ac5058",
+                        SecurityStamp = "74775807-b5e0-44d1-919c-21830c49699c",
                         TwoFactorEnabled = false,
                         UserName = "HanoitouristAccount",
                         isAccountActive = true
@@ -664,16 +664,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("e858b667-00c1-4431-8c41-5c9f88b4fcf8"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "ca945003-b217-4871-8724-140918dc786a",
+                        ConcurrencyStamp = "6248cd4e-d5c6-4c89-ab5a-d2e0e88d21de",
                         Email = "info@fiditour.com",
                         EmailConfirmed = true,
                         Fullname = "Fiditour",
                         LockoutEnabled = false,
                         NormalizedEmail = "INFO@FIDITOUR.COM",
                         NormalizedUserName = "FIDITOURACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEF5cr+k7OF9PGnvc58uKRts0J6Oo42PePiKFtTS8S9Vk0SR4fztRDp4fp1jWMynUYg==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEHe6qe0CIetTOPGZkAU1V12cG8Ql6QbM33ZecvdXFSEthqqNhJN/Sx1187Zfp6kccQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "8261e5ee-06a7-4ba3-9c57-f50ed2bbdd81",
+                        SecurityStamp = "ed7e6343-a2a2-4546-90f5-b601f2f86348",
                         TwoFactorEnabled = false,
                         UserName = "FiditourAccount",
                         isAccountActive = true
@@ -682,16 +682,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("d0e45bee-a768-4555-bfeb-788728a53751"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "2d041a7e-6bbe-47e9-a6c7-15b17d46d0ef",
+                        ConcurrencyStamp = "20e24eb9-7902-4c9e-9a46-fc3ef10c3254",
                         Email = "info@danangtravel.com",
                         EmailConfirmed = true,
                         Fullname = "Danang Travel",
                         LockoutEnabled = false,
                         NormalizedEmail = "INFO@DANANGTRAVEL.COM",
                         NormalizedUserName = "DANANGTRAVELACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEFFSdFHnQ9DLK/9UFuk4RPLl6UYg5e7wWfXyi7fkZ2L4rSQB5kkbTpT7Kg8rLJO22A==",
+                        PasswordHash = "AQAAAAIAAYagAAAAECH62jLmugjZ8N6sHSOZehWLIcNp1wE6tO2V14d8NnSeTi9O0y/NsoVI+r4yf0lzZQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "804c9c5e-1afb-4736-b4f4-9d5a3a76ba90",
+                        SecurityStamp = "94215675-1b59-4b9a-a817-35c7257ea2b8",
                         TwoFactorEnabled = false,
                         UserName = "DanangTravelAccount",
                         isAccountActive = true
@@ -700,16 +700,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("aa5c5293-88e6-4110-af70-68feae5d6a89"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "fffb6a42-b465-4656-a84b-5b9ce8d8e9a6",
+                        ConcurrencyStamp = "bd7e0f7f-72c2-4d51-a697-b8205b985c1f",
                         Email = "contact@vietsuntravel.com",
                         EmailConfirmed = true,
                         Fullname = "VietSun Travel",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@VIETSUNTRAVEL.COM",
                         NormalizedUserName = "VIETSUNTRAVELACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEEoM+wxhPa3uSJ6nEvMGmjC7t9gcqSMowjYGkLVBh9rfNZyDHsw1d4ZBen+mhToCnQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEKweU+rvmcmkiXDLHRXrdMqHsG69T8piFDPqWiJhnorip6fA98tdFJLpGZJiSNeI5g==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "a4d04df6-f666-45ab-89ee-ff42fa85d9d7",
+                        SecurityStamp = "4a1fd359-1243-42f7-b645-10ec9ea4aa1f",
                         TwoFactorEnabled = false,
                         UserName = "VietSunTravelAccount",
                         isAccountActive = true
@@ -718,16 +718,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("2ea71d2c-9932-46bc-9423-730dcc7beb92"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "56a7f9f6-b0b5-40a8-a44f-18b093f3f11a",
+                        ConcurrencyStamp = "46122467-3d38-45a4-85e8-5872bcfe01b7",
                         Email = "contact@bambotravel.com",
                         EmailConfirmed = true,
                         Fullname = "Bamboo Travel",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@BAMBOOTRAVEL.COM",
                         NormalizedUserName = "BAMBOOTRAVELACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEAmVYJuK8MSQcM/W2a1uR8CmHXMg6dPHsAf3HPyhfxz3hRpwqKmBJV67E01AZ2LKyw==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEHr4GA1IjiJW9nITaUOyDuEPiSKzWq45HlTUbbFi/Yq+P5ssnTffChBUKTodrJqUhg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "4e1631e5-7659-429e-8b3c-52da69da2dec",
+                        SecurityStamp = "1ae30cbb-eed1-452b-b0e8-00f55951b0fd",
                         TwoFactorEnabled = false,
                         UserName = "BambooTravelAccount",
                         isAccountActive = true
@@ -736,16 +736,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("34417efe-85a3-43bb-8de0-daab43bc3e29"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "9f0c85bd-1f8f-4ac4-9ed8-1e00f5b23bda",
+                        ConcurrencyStamp = "fb76cfe3-242e-4fc1-8292-746d84b5f9fd",
                         Email = "info@phuongnamtravel.com",
                         EmailConfirmed = true,
                         Fullname = "Phương Nam Travel",
                         LockoutEnabled = false,
                         NormalizedEmail = "INFO@PHUONGNAMTRAVEL.COM",
                         NormalizedUserName = "PHUONGNAMTRAVELACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEAd0/ARTkEtcC7UHx/X9auD7H+6DxaRu6fBAu9yF1a9f+Wl2/LVy1GicNetQZiPmOA==",
+                        PasswordHash = "AQAAAAIAAYagAAAAENcnXAYpHPqfVNWoqjZuB7Fl40Pak0PxZTNO4vr0YK/lglmlwZx5map2orGy2AK1bg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "ed84bb3d-eac8-4e5f-91a3-0e4d201969f9",
+                        SecurityStamp = "2a86944b-ad3b-4af2-a937-e6b5105dab93",
                         TwoFactorEnabled = false,
                         UserName = "PhuongNamTravelAccount",
                         isAccountActive = true
@@ -754,16 +754,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("a2416864-ff31-4e7a-bc1b-368cc7c1ee1c"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "b6a76b25-b7ae-4a1c-a109-ca593c1226f0",
+                        ConcurrencyStamp = "f8dd79f0-242d-457d-a7fd-cb0fa12a73dc",
                         Email = "contact@datviettour.com",
                         EmailConfirmed = true,
                         Fullname = "Đất Việt Tour",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@DATVIETTOUR.COM",
                         NormalizedUserName = "DATVIETTOURACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEFiVMSti7iTncDEFn/wgjKITs3MEIoubTE2Tm0N7Q5fP/qU4HXv9RObe4GvusQNxgA==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEBxZSh4UvZBmiE64JGWq+7mhVBWvtvTgnh8UtuWNpEl+vuaG9YKUyTbmu5wJFbE5qg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "d9f390a5-296e-4e5e-8845-151edf990413",
+                        SecurityStamp = "1acd24b4-51bb-433b-9436-f2ad5f398122",
                         TwoFactorEnabled = false,
                         UserName = "DatVietTourAccount",
                         isAccountActive = true
@@ -772,16 +772,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("939a7f24-a476-4e7e-8345-7c58ebb737b4"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "ab1f2131-e063-4e4c-afd0-3f423035c9e9",
+                        ConcurrencyStamp = "1542662e-a0ce-415b-9618-91ec84f42a04",
                         Email = "info@redtour.com.vn",
                         EmailConfirmed = true,
                         Fullname = "Redtour",
                         LockoutEnabled = false,
                         NormalizedEmail = "INFO@REDTOUR.COM.VN",
                         NormalizedUserName = "REDTOURACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEAFKOqVcYscgo3hojrhmQ+Z9SUPtlgxVHrU7GVp/iiBw9cQcpVs4gSQAjl3SQZ3htw==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEOaaIIeC5zW1IfzQIzbavrk5T8BiPK1B2FEuhgTF0g8S9nPyXlcBrwlfYOvvEu6J3A==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "b8a3a837-3efc-4cba-be53-64247dde3e7c",
+                        SecurityStamp = "05922ffe-5696-4db0-8d3e-515c70e24d11",
                         TwoFactorEnabled = false,
                         UserName = "RedtourAccount",
                         isAccountActive = true
@@ -790,16 +790,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("e469a23d-f6de-4c36-9e44-fc43eeb6a24b"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "d9be253e-d8a3-44ca-9fca-fb3e3b79c6f6",
+                        ConcurrencyStamp = "abf63b8e-7da6-484a-99fa-3ef3e28aba07",
                         Email = "support@dulichtoday.com",
                         EmailConfirmed = true,
                         Fullname = "Dulich Today",
                         LockoutEnabled = false,
                         NormalizedEmail = "SUPPORT@DULICHTODAY.COM",
                         NormalizedUserName = "DULICHTODAYACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEPJCAEWR20QCHlHCjl9PUHLG9ez8QeJyLJnWO42+rzfRW6PiI9+pCkJvvVkEaRBqig==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEEfT+lHTQaKtTjTmjBjXIXAVXeoBkCNbVbdVM0kTbgbawYoxvV0nVP5OURANWugeTg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "76d46338-8aa0-4742-8ad3-f20e7e881af6",
+                        SecurityStamp = "237b1e5e-6d44-4dc8-8173-d179e111a3f5",
                         TwoFactorEnabled = false,
                         UserName = "DulichTodayAccount",
                         isAccountActive = true
@@ -808,16 +808,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("b7d23d43-0cf4-41a6-aa07-9cf8f563db77"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "b6e423cb-5cc9-4ffe-be3e-96e026a6ad91",
+                        ConcurrencyStamp = "d443affd-8272-4516-bd53-f286b4212ca0",
                         Email = "contact@havatravel.com",
                         EmailConfirmed = true,
                         Fullname = "Havatravel",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@HAVATRAVEL.COM",
                         NormalizedUserName = "HAVATRAVELACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAELCwEl/E+zWpJIAHvfztFOrIOKQjLbtJrHLVUHQ7l/FLIA903HATKJALB16dazqa4g==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEBc9XCmlBgBNbOOXrPoOUDON92odW6cnlkok4Uh1L80fm+oWUWgZL3iLOvEnSAJAaw==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "5fbcae7d-4e59-4a68-a585-9d0293b59df7",
+                        SecurityStamp = "21527e60-82d1-47af-a4de-192eedfb491e",
                         TwoFactorEnabled = false,
                         UserName = "HavatravelAccount",
                         isAccountActive = true
@@ -826,16 +826,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("bd5e9d2c-fb27-4896-b1d6-cc09dad3cfdb"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "b260ee56-29ce-42e1-86b3-e96050f617cf",
+                        ConcurrencyStamp = "dfa24830-47fe-40f5-84a6-cc3fc05d0c9d",
                         Email = "info@vungtautravel.com",
                         EmailConfirmed = true,
                         Fullname = "Vũng Tàu Travel",
                         LockoutEnabled = false,
                         NormalizedEmail = "INFO@VUNGTAUTRAVEL.COM",
                         NormalizedUserName = "VUNGTAUTRAVELACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAECphC45s7F2mDO6qaGnH/4+pel80pcoN07+dZgNrKv6rIDYJm2hzl0bEoAaEtu7kSQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEJjsHCT9ys45hXcBh+NSFHVTBtrqTTS0aJjyiv7u+7oLjqsb72ypWTvhKcMU1ScZvg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "542cc84e-d9ea-4a74-a0af-e7a16880d379",
+                        SecurityStamp = "53d9b317-3f6f-4d13-b751-418d310a7943",
                         TwoFactorEnabled = false,
                         UserName = "VungTauTravelAccount",
                         isAccountActive = true
@@ -844,16 +844,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("46a916db-f0e3-4855-9171-eff063b5cc90"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "4678f608-5e64-4730-b6a4-63b2e282e29e",
+                        ConcurrencyStamp = "10fef1af-0494-416f-a83f-cbdef93f209e",
                         Email = "support@nhatrangholiday.com",
                         EmailConfirmed = true,
                         Fullname = "Nha Trang Holiday",
                         LockoutEnabled = false,
                         NormalizedEmail = "SUPPORT@NHATRANGHOLIDAY.COM",
                         NormalizedUserName = "NHATRANGHOLIDAYACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEB+ikiYx5XG2VbG7ExD+x57n53/pdtqtlEj1xo+fqXqEuM1hItIBG/XbkjBhwJwEYA==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEF2MMBTMHoifEl7y9iFCNISt22el2GoHqclkiXuH+bfneCkCt1MAZmBCxTWX2/Xysw==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "444ce01a-c5bc-42ca-9df5-b80b576ea9f1",
+                        SecurityStamp = "02952b62-3384-41fa-a2da-b6a2e66afca7",
                         TwoFactorEnabled = false,
                         UserName = "NhaTrangHolidayAccount",
                         isAccountActive = true
@@ -862,16 +862,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("679d0aa0-710b-4026-bcde-d274fcc269a0"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "eac9082d-640d-4139-b7b7-f5d347367650",
+                        ConcurrencyStamp = "66b1d657-40bc-465d-93e2-6e43c72d62f2",
                         Email = "contact@phanthiettours.com",
                         EmailConfirmed = true,
                         Fullname = "Phan Thiết Tours",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@PHANTHIETTOURS.COM",
                         NormalizedUserName = "PHANTHIETTOURSACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEPDFjROeit5RdlU+axlfRhcFPkIDgLBj8aOwPek+oOUmRgJ3aOWAHa8UBRNbPMd16A==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEK8Zn7gnHVzIIOCnOCT6IaiQ84m0WHX7lyh5r38lq+XKbFekETVR1Qgy3Xydhgaqqg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "db3d4ffb-3529-4fce-a083-19abbf4c4c5d",
+                        SecurityStamp = "fb97a085-42ce-4ee2-9d99-60cfd97821d5",
                         TwoFactorEnabled = false,
                         UserName = "PhanThietToursAccount",
                         isAccountActive = true
@@ -880,16 +880,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("c7e55065-cacd-4fdf-ae68-2a4bb8ae3375"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "02885896-4ae2-4c4e-bfc5-0c3e5ef4bd15",
+                        ConcurrencyStamp = "3670e753-c26a-4c14-bbc1-42719b6433c4",
                         Email = "info@dalattour.com",
                         EmailConfirmed = true,
                         Fullname = "Đà Lạt Tour",
                         LockoutEnabled = false,
                         NormalizedEmail = "INFO@DALATOUR.COM",
                         NormalizedUserName = "DALATTOURACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAEEnN/G+xMRzqVG+FLCvp6RqDOShUZODzqWtPwQCv8ckBoQWXFEVhUczKPd5jQeJ4wg==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEKxjCWsVz1IXKfJPZfCn1AKtv+hHlRXSiscJADtHvakKNWqzxqpzVcQPIykF9WVVuQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "53b326da-863d-439b-8dfa-6b084f49fe58",
+                        SecurityStamp = "e6f77c35-b496-4e3b-a4f6-73d2cfb93cb7",
                         TwoFactorEnabled = false,
                         UserName = "DalatTourAccount",
                         isAccountActive = true
@@ -898,16 +898,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("a173d7b4-e503-4508-892a-5d1a4901cd03"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "a1ff514e-ae89-4c13-9398-c1976d7b8aa0",
+                        ConcurrencyStamp = "447c3ceb-89f1-4ebd-9136-0bdba4539452",
                         Email = "contact@quynhonexplorer.com",
                         EmailConfirmed = true,
                         Fullname = "Quy Nhơn Explorer",
                         LockoutEnabled = false,
                         NormalizedEmail = "CONTACT@QUYNHONEXPLORER.COM",
                         NormalizedUserName = "QUYNHONEXPLORERACCOUNT",
-                        PasswordHash = "AQAAAAIAAYagAAAAELzbOFU3Dlt2JCxH82ZXDJWU4KdpbQGraYVa3RT+ZKblIXrfzHFGjaAanQxR5W1wkg==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEJ122kSaWlTPl2E0mwaYuuGBHbUsMoRP6kG/2psNWz+gywMboGfil84VVhKxTlQYxg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "b7514fa6-8d75-49b4-b26c-fb96a4993607",
+                        SecurityStamp = "137e7ad4-c78d-4077-a0a2-7b55800c1aa7",
                         TwoFactorEnabled = false,
                         UserName = "QuyNhonExplorerAccount",
                         isAccountActive = true
@@ -916,16 +916,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("a631bb94-66d8-44db-932b-532892d87754"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "0fa83bd7-851c-423b-99af-b44a5ea4767c",
+                        ConcurrencyStamp = "9e36291b-3a29-410c-bce8-890b8d25e417",
                         Email = "thutt170727@gmail.com",
                         EmailConfirmed = true,
                         Fullname = "Agricultural Tourism Facility Owners",
                         LockoutEnabled = false,
                         NormalizedEmail = "THUTT170727@GMAIL.COM",
                         NormalizedUserName = "ATFO",
-                        PasswordHash = "AQAAAAIAAYagAAAAECxszmIpjykpEEuPfjz1ctLLjx4fApuDW+e+EVAALbTKN9WjuTeSA6PlQvo9tu3gHA==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEGjcpHJGj1f+Xni/sdD4Girq+UDHXAyrgY9A3K3prBVTOPLb14OU1/UqvUQPto5Csw==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "61b0feb5-2604-4461-81b4-fa7fcddf0fd4",
+                        SecurityStamp = "6bbb0b5c-e646-4ef9-83c8-675ac9c22048",
                         TwoFactorEnabled = false,
                         UserName = "ATFO",
                         isAccountActive = true
@@ -934,16 +934,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("e025738e-4686-4282-abc3-dae9c65907f0"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "677b1c1d-04a2-4055-9f97-50d6716695b9",
+                        ConcurrencyStamp = "60eba220-54dc-43e6-9747-e6a879fdb945",
                         Email = "ThangNVSE151059@fpt.edu.vn",
                         EmailConfirmed = true,
                         Fullname = "Tourists",
                         LockoutEnabled = false,
                         NormalizedEmail = "THANGNVSE151059@FPT.EDU.VN",
                         NormalizedUserName = "TOURIST",
-                        PasswordHash = "AQAAAAIAAYagAAAAEO03NSfdzUa54yQR6FZkD4Xryns7dM1LDCyXnJWR+gZ5+drhG8bic8CboVMeFMeIeA==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEBLjAjHk9W2HSgBEbKqhN5sQ3PBculjlgXhtTTGCrSHfx3fCHUx8X802E7RseYoxUg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "2c6d45c1-e77a-47af-a205-3432fc433963",
+                        SecurityStamp = "2c33de96-29ac-4bb6-8364-a04963d40678",
                         TwoFactorEnabled = false,
                         UserName = "Tourists",
                         isAccountActive = true
@@ -952,16 +952,16 @@ namespace Data.Migrations
                     {
                         Id = new Guid("64454a5e-9883-4548-9a9d-d7986bf6b3ad"),
                         AccessFailedCount = 0,
-                        ConcurrencyStamp = "122d4bd9-d539-40c4-bd00-0328c837bbac",
+                        ConcurrencyStamp = "46ffb799-4e78-4f38-9f03-0c33d50f5b6f",
                         Email = "thuthuhe2501@gmail.com",
                         EmailConfirmed = true,
                         Fullname = "TourGuides",
                         LockoutEnabled = false,
                         NormalizedEmail = "THUTHUHE2501@GMAIL.COM",
                         NormalizedUserName = "TOURGUIDES",
-                        PasswordHash = "AQAAAAIAAYagAAAAECFwZ4yf0rIwAA602ZvgRpnK7JLZhPmZ5jy0wvRtOfw0BUHqEGK0sbSm6D8pi1hjjg==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEFa8bWN4YKsnE+2qaN/dVYzbH/88pAl6TQXUg8mksaCaNAqlmQWtvXg/rqeh4SwSGQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "fe39b1cf-6042-4bd7-8f5c-f7fd78cc6c32",
+                        SecurityStamp = "c167713e-e566-410b-9e7b-b31826da1ffc",
                         TwoFactorEnabled = false,
                         UserName = "TourGuides",
                         isAccountActive = true
@@ -971,7 +971,7 @@ namespace Data.Migrations
                         Id = new Guid("22222222-2222-2222-2222-222222222222"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar1.jpg",
-                        ConcurrencyStamp = "cc1c681d-cdd4-4eee-9e93-a9c40c04a5e6",
+                        ConcurrencyStamp = "aac9baca-1898-4d7e-b2dc-a6bec9021607",
                         Dob = new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "johndoe@example.com",
                         EmailConfirmed = true,
@@ -980,9 +980,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "JOHNDOE@EXAMPLE.COM",
                         NormalizedUserName = "JOHNDOE",
-                        PasswordHash = "AQAAAAIAAYagAAAAEN5+muHN3KFElPrlIynWR8zzicuB5t9rgXhnjTcDJOuk07lc8SSPoiRnuFBCb7eJDA==",
+                        PasswordHash = "AQAAAAIAAYagAAAAENKs8a3WtiVV4vz3R4S50sfdLJmii8G9zySWhvPjUhm++tuQGRL7KjZP4P7ZaAQ7wQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "fd01f0de-b15c-40cd-a447-782c30a1b166",
+                        SecurityStamp = "c5f0ba50-da4c-4c20-a2eb-630b9c8decbb",
                         TwoFactorEnabled = false,
                         UserName = "JohnDoe",
                         isAccountActive = true
@@ -992,7 +992,7 @@ namespace Data.Migrations
                         Id = new Guid("44444444-4444-4444-4444-444444444444"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar2.jpg",
-                        ConcurrencyStamp = "e5cc267d-65be-4b73-9b2c-e7e7b19a30d3",
+                        ConcurrencyStamp = "5117165f-46b1-45d2-accc-7f69adc529c6",
                         Dob = new DateTime(1988, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "emmawatson@example.com",
                         EmailConfirmed = true,
@@ -1001,9 +1001,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "EMMAWATSON@EXAMPLE.COM",
                         NormalizedUserName = "EMMAWATSON",
-                        PasswordHash = "AQAAAAIAAYagAAAAEB8oSH6u2lpbh57e892NsdcmJl883qfEFs1fgrA4/I8CkuVk1MWAoydrvIZEon5kGQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEEqs4Xsepl5eNxRlSzSttczY5MMaj5W2YzqvX4KU6YCiDJTgpNXKFYSOB646hvgS4w==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "581f809c-deb3-465b-aa9f-6c752775812c",
+                        SecurityStamp = "a64463b3-c34f-4d69-953d-c4fab8943c29",
                         TwoFactorEnabled = false,
                         UserName = "EmmaWatson",
                         isAccountActive = true
@@ -1013,7 +1013,7 @@ namespace Data.Migrations
                         Id = new Guid("66666666-6666-6666-6666-666666666666"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar3.jpg",
-                        ConcurrencyStamp = "3a24d7a0-df0b-48f4-852b-5ee17f91c270",
+                        ConcurrencyStamp = "b1c17cbe-06a1-4ca8-b2ad-5c154f165bc5",
                         Dob = new DateTime(1985, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "michaelbrown@example.com",
                         EmailConfirmed = true,
@@ -1022,9 +1022,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "MICHAELBROWN@EXAMPLE.COM",
                         NormalizedUserName = "MICHAELBROWN",
-                        PasswordHash = "AQAAAAIAAYagAAAAEJapLsgFmxyrd8qF3H5VSZi7DBEBln57Y9QZht1xr3chAadtNeT0mq5ahBWDyEC1Ow==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEAgRjkMYB7z6axn+cKYA20oTYKQqM8JiiXjwWVS1s7WWO/uuvTc2OUoTCGLxMq4V5Q==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "bee828b7-22d8-4c91-9345-2b6833328512",
+                        SecurityStamp = "fb00592b-2e36-4571-8fba-4a70c22db360",
                         TwoFactorEnabled = false,
                         UserName = "MichaelBrown",
                         isAccountActive = true
@@ -1034,7 +1034,7 @@ namespace Data.Migrations
                         Id = new Guid("88888888-8888-8888-8888-888888888888"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar4.jpg",
-                        ConcurrencyStamp = "4ae40c94-8689-4a05-b727-a32157cff024",
+                        ConcurrencyStamp = "31cf979e-8423-43db-aba1-cf00384f0a6b",
                         Dob = new DateTime(1992, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "sophialee@example.com",
                         EmailConfirmed = true,
@@ -1043,9 +1043,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "SOPHIALEE@EXAMPLE.COM",
                         NormalizedUserName = "SOPHIALEE",
-                        PasswordHash = "AQAAAAIAAYagAAAAEDj9WMyHo+Ix9b7J2vJ8AGCspJX8QW14dej/PbpbfhkiNo9bNJjCLrI7Ab2KJDYa+A==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEMUhqIwLMbji9cu44v8rgzxlexaUpQYmCJCdEu4s15g/GcCVzbXp2A2EIYT7D4Qgew==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "beeda6a2-ed50-4462-a5d1-caa7620d7dc3",
+                        SecurityStamp = "9da25599-45d2-4ba0-b8c8-0eda6b8144d0",
                         TwoFactorEnabled = false,
                         UserName = "SophiaLee",
                         isAccountActive = true
@@ -1055,7 +1055,7 @@ namespace Data.Migrations
                         Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar5.jpg",
-                        ConcurrencyStamp = "eed5f266-40a5-4732-9173-64b164278400",
+                        ConcurrencyStamp = "5dfa4bd8-96f4-4915-8bc7-ef72d589521e",
                         Dob = new DateTime(1995, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "davidjohnson@example.com",
                         EmailConfirmed = true,
@@ -1064,9 +1064,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "DAVIDJOHNSON@EXAMPLE.COM",
                         NormalizedUserName = "DAVIDJOHNSON",
-                        PasswordHash = "AQAAAAIAAYagAAAAEPcSqpj1v4DC0EDeuz5uvMfewPoaroiwTt5VYFgXU0B8K7KfY+yRQ1tf+pveAcqlIQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEI/a/KKGO+/kUi+DnpbevRlIbVNSQmQ//p+kTKOLN81dZkoWtvaIkQAoSiJaJZGT/g==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "2751689a-ffee-4e28-8f9e-15a9f5a75b74",
+                        SecurityStamp = "f44be9b9-da29-495b-8cbf-e021b956cfd8",
                         TwoFactorEnabled = false,
                         UserName = "DavidJohnson",
                         isAccountActive = true
@@ -1076,7 +1076,7 @@ namespace Data.Migrations
                         Id = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar6.jpg",
-                        ConcurrencyStamp = "01e2e950-ccaf-4b33-bf43-64aa0b4409f0",
+                        ConcurrencyStamp = "0dfd399e-51b6-4d73-b284-7216dc1f9bfe",
                         Dob = new DateTime(1987, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "liamnguyen@example.com",
                         EmailConfirmed = true,
@@ -1085,9 +1085,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "LIAMNGUYEN@EXAMPLE.COM",
                         NormalizedUserName = "LIAMNGUYEN",
-                        PasswordHash = "AQAAAAIAAYagAAAAENz+cs7uDrhGUOw7l/UxPTVFIT7tTQUVEtRUbSGsx2jJKtihhiDcMJHTsrA/iLLyWQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEMnDHARNLhnAqY+o/pzxOrgdYIfi3Joa3ugaM3ou7YpriROSlzrjO/hKxHMS9Af6DQ==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "8a23553e-db05-4360-8d44-5ec56922a01e",
+                        SecurityStamp = "b9c65345-dbb2-416a-bfac-61b213fbff29",
                         TwoFactorEnabled = false,
                         UserName = "LiamNguyen",
                         isAccountActive = true
@@ -1097,7 +1097,7 @@ namespace Data.Migrations
                         Id = new Guid("eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar7.jpg",
-                        ConcurrencyStamp = "2c17819b-9b57-4bfb-854d-e2283abca4e5",
+                        ConcurrencyStamp = "a505f2d9-40ab-4767-ab68-b1a508e1df3e",
                         Dob = new DateTime(1993, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "oliviakim@example.com",
                         EmailConfirmed = true,
@@ -1106,9 +1106,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "OLIVIAKIM@EXAMPLE.COM",
                         NormalizedUserName = "OLIVIAKIM",
-                        PasswordHash = "AQAAAAIAAYagAAAAECbLgbPHyuYDxOJlSYG5B6cxYSx1HFCHncInH2XA0TCgF65UZWCdQaIozyftXMo50w==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEHqNwATmHHuL9RAn6DwpnAzLWo5xsrS51yN9kTaUc/TndC2JWovo6PmNeLtm3U2Q+Q==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "25c851d4-3977-45ee-96d0-e139a9364620",
+                        SecurityStamp = "0728c770-83e8-4c09-b21c-bd1743bc373a",
                         TwoFactorEnabled = false,
                         UserName = "OliviaKim",
                         isAccountActive = true
@@ -1118,7 +1118,7 @@ namespace Data.Migrations
                         Id = new Guid("870dd1ec-c340-41ee-9088-0f3612f510cd"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar8.jpg",
-                        ConcurrencyStamp = "aa982c7a-d7b0-4033-9367-a736506bdd07",
+                        ConcurrencyStamp = "5c9f70b0-23ad-4eb4-9e23-3d23dcda30eb",
                         Dob = new DateTime(1989, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "daniel.martinez@example.com",
                         EmailConfirmed = true,
@@ -1127,9 +1127,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "DANIEL.MARTINEZ@EXAMPLE.COM",
                         NormalizedUserName = "DANIELMARTINEZ",
-                        PasswordHash = "AQAAAAIAAYagAAAAEEMr9CJ+QjrmnqunDKR9u+ZLbXQGRkF/t9St2m7Q0z+RN5e93FwJBFvNpxOv7S5XTQ==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEKqykwr5TGcjQVXakOG7fnkGkRfrVX33rTMsQYH8sF/K0JPMs2N+s6YgYLGs4Uirsw==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "8254cad6-2ef5-4e5b-a27b-4549bdfcd8bd",
+                        SecurityStamp = "1491f4d7-2d9b-4e02-880e-a63f6f3f3cc8",
                         TwoFactorEnabled = false,
                         UserName = "DanielMartinez",
                         isAccountActive = true
@@ -1139,7 +1139,7 @@ namespace Data.Migrations
                         Id = new Guid("99990000-aaaa-bbbb-cccc-ddddeeeeffff"),
                         AccessFailedCount = 0,
                         AvatarURL = "https://example.com/avatar9.jpg",
-                        ConcurrencyStamp = "59146ce3-e6f2-47bc-be9e-1f2d5344c747",
+                        ConcurrencyStamp = "afff21c2-67c1-4cdf-a0bc-0880c9260293",
                         Dob = new DateTime(1994, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         Email = "emilyclark@example.com",
                         EmailConfirmed = true,
@@ -1148,9 +1148,9 @@ namespace Data.Migrations
                         LockoutEnabled = false,
                         NormalizedEmail = "EMILYCLARK@EXAMPLE.COM",
                         NormalizedUserName = "EMILYCLARK",
-                        PasswordHash = "AQAAAAIAAYagAAAAEGf9QoEAHDVO88W19gLnpgvWLv/YXF/si6YTaZqJZR9GCGf0XZsLMacijgzSA8jZ0A==",
+                        PasswordHash = "AQAAAAIAAYagAAAAEKMpntDMy8AUPrB3/rxPP+sYgq/x7HZ++MorNrj0upsmqFN2kl6H/6QGs+loEUGJmg==",
                         PhoneNumberConfirmed = false,
-                        SecurityStamp = "1742f8b0-d49e-4f30-a353-19fa0de817df",
+                        SecurityStamp = "1da439c7-ac6c-4f34-a3a1-a11419de19b7",
                         TwoFactorEnabled = false,
                         UserName = "EmilyClark",
                         isAccountActive = true
@@ -1216,7 +1216,7 @@ namespace Data.Migrations
                         ActivityName = "Khám phá Hang Sửng Sốt",
                         BreakTimeInMinutes = 15.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9949),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3457),
                         Description = "Hành trình khám phá hang động kỳ vĩ nhất Hạ Long.",
                         DurationInHours = 2.5,
                         DurationInHoursType = 1,
@@ -1231,7 +1231,7 @@ namespace Data.Migrations
                         ActivityName = "Tắm biển tại Bãi Cháy",
                         BreakTimeInMinutes = 10.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9954),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3464),
                         Description = "Thư giãn và tận hưởng không khí trong lành tại bãi biển nổi tiếng.",
                         DurationInHours = 2.0,
                         DurationInHoursType = 1,
@@ -1246,7 +1246,7 @@ namespace Data.Migrations
                         ActivityName = "Tham quan Bà Nà Hills",
                         BreakTimeInMinutes = 20.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9959),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3469),
                         Description = "Trải nghiệm cáp treo, thăm Cầu Vàng và nhiều địa điểm thú vị.",
                         DurationInHours = 4.0,
                         DurationInHoursType = 1,
@@ -1262,7 +1262,7 @@ namespace Data.Migrations
                         ActivityName = "Dạo phố cổ Hội An về đêm",
                         BreakTimeInMinutes = 15.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9963),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3475),
                         Description = "Khám phá phố cổ Hội An với hàng trăm chiếc đèn lồng lung linh.",
                         DurationInHours = 3.0,
                         DurationInHoursType = 1,
@@ -1277,7 +1277,7 @@ namespace Data.Migrations
                         ActivityName = "Leo núi Fansipan",
                         BreakTimeInMinutes = 30.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9966),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3480),
                         Description = "Chinh phục nóc nhà Đông Dương bằng cáp treo hoặc đường bộ.",
                         DurationInHours = 6.0,
                         DurationInHoursType = 1,
@@ -1293,7 +1293,7 @@ namespace Data.Migrations
                         ActivityName = "Khám phá chợ nổi Cái Răng",
                         BreakTimeInMinutes = 15.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9985),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3484),
                         Description = "Trải nghiệm chợ nổi Cái Răng vào buổi sáng, thưởng thức các món ăn đặc sản trên thuyền.",
                         DurationInHours = 3.0,
                         DurationInHoursType = 1,
@@ -1308,7 +1308,7 @@ namespace Data.Migrations
                         ActivityName = "Tham quan vườn trái cây",
                         BreakTimeInMinutes = 10.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9989),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3489),
                         Description = "Tận hưởng không gian xanh mát, thưởng thức trái cây tươi ngay tại vườn.",
                         DurationInHours = 2.0,
                         DurationInHoursType = 1,
@@ -1323,7 +1323,7 @@ namespace Data.Migrations
                         ActivityName = "Lặn ngắm san hô tại Hòn Thơm",
                         BreakTimeInMinutes = 20.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9999),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3508),
                         Description = "Lặn biển ngắm san hô, tận hưởng làn nước trong xanh của Phú Quốc.",
                         DurationInHours = 3.5,
                         DurationInHoursType = 1,
@@ -1339,7 +1339,7 @@ namespace Data.Migrations
                         ActivityName = "Khám phá làng chài Rạch Vẹm",
                         BreakTimeInMinutes = 15.0,
                         BreakTimeInMinutesType = 2,
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 722, DateTimeKind.Utc).AddTicks(2),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3513),
                         Description = "Tham quan làng chài nổi tiếng với những cây cầu gỗ và sao biển tự nhiên.",
                         DurationInHours = 2.5,
                         DurationInHoursType = 1,
@@ -1403,7 +1403,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("72985040-386d-43ac-833d-1c2cc36cbd17"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9256),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9177),
                         Description = "Trải nghiệm tuyệt vời tại Hang Sửng Sốt - một trong những hang động đẹp nhất Hạ Long.",
                         Durations = 2.5,
                         DurationsType = 3,
@@ -1418,7 +1418,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("2df2222f-37be-4780-9ebd-d4fcf4107e28"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9262),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9190),
                         Description = "Tận hưởng kỳ nghỉ thú vị với hoạt động tắm biển tại Bãi Cháy, Quảng Ninh.",
                         Durations = 2.0,
                         DurationsType = 3,
@@ -1433,7 +1433,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("938425a8-1ef7-4b26-a01e-effe123015c7"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9266),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9199),
                         Description = "Hành trình khám phá Bà Nà Hills, trải nghiệm cáp treo và tham quan Cầu Vàng.",
                         Durations = 4.0,
                         DurationsType = 3,
@@ -1448,7 +1448,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("7d92159e-bd23-42e8-ba5d-94f02e8abc7a"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9270),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9206),
                         Description = "Trải nghiệm không gian lung linh của phố cổ Hội An về đêm với hàng trăm chiếc đèn lồng rực rỡ.",
                         Durations = 3.0,
                         DurationsType = 3,
@@ -1463,7 +1463,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("f0cfb5d7-bfa4-4d0c-bf72-c8d37f62c0a1"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9273),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9213),
                         Description = "Chinh phục nóc nhà Đông Dương bằng cáp treo hoặc đường bộ, tận hưởng khung cảnh tuyệt đẹp của Sapa.",
                         Durations = 6.0,
                         DurationsType = 3,
@@ -1478,7 +1478,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("f12a6bbe-5187-4713-b9bc-1b5e1d4ebeb8"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9276),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9220),
                         Description = "Khám phá nét văn hóa miền Tây sông nước với chợ nổi Cái Răng vào sáng sớm. Thưởng thức các món ăn đặc sản trên thuyền và giao lưu với người dân địa phương.",
                         Durations = 3.0,
                         DurationsType = 3,
@@ -1493,7 +1493,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("d83b9062-ca46-48e2-8db9-a05d24436ff1"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9281),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9228),
                         Description = "Tham quan chợ nổi Cái Răng vào buổi sáng, khám phá vườn trái cây buổi chiều. Trải nghiệm cuộc sống dân dã miền Tây và thưởng thức trái cây tươi ngon.",
                         Durations = 8.0,
                         DurationsType = 3,
@@ -1508,7 +1508,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("d470cefb-e618-420f-a399-31bbe277596e"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9285),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9235),
                         Description = "Trải nghiệm lặn biển ngắm san hô tại Hòn Thơm, tận hưởng làn nước trong xanh và hệ sinh thái đa dạng dưới đáy biển.",
                         Durations = 3.5,
                         DurationsType = 3,
@@ -1523,7 +1523,7 @@ namespace Data.Migrations
                     new
                     {
                         TourId = new Guid("276cb0a3-4406-4943-8e7a-ee2b62e49e79"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9288),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9244),
                         Description = "Tham gia hành trình khám phá đại dương với hoạt động lặn ngắm san hô tại Hòn Thơm, kết hợp tham quan làng chài Rạch Vẹm - nơi nổi tiếng với những cây cầu gỗ và sao biển tự nhiên.",
                         Durations = 8.0,
                         DurationsType = 2,
@@ -1586,7 +1586,7 @@ namespace Data.Migrations
                 b.HasData(
                     new
                     {
-                        BlogId = new Guid("c16309ba-702a-419c-b99b-8cefcd529738"),
+                        BlogId = new Guid("bb8da454-b180-4377-bc2f-1a30963b48d8"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<h2>Bà con Sán Chỉ trò chuyện với du khách trong Hội Mùa vàng Bình Liêu năm 2024</h2>\r\n    <p>Từ bao đời nay, cộng đồng dân cư ở Quảng Ninh sống quần cư với tinh thần đoàn kết, trọng tình, trọng nghĩa. Truyền thống này thể hiện ở chữ hiếu với cha mẹ, ông bà, tôn sư trọng đạo, tôn vinh các bậc tiền bối có công khai khẩn mở mang quê hương. Nhiều nơi ở Quảng Ninh có tục tế tổ, chạp tổ, tảo mộ, có miếu thờ Tiên Công.</p>\r\n    <p>Người Quảng Ninh cũng phóng khoáng và tự do trong tư duy nên đây là miền đất có nhiều lễ hội dân gian mang tính xã hội và tính nhân văn cao, là thông điệp nối kết quá khứ và hiện tại. Các lễ hội có phần nghi lễ nghiêm trang, phần hội phóng khoáng, vui vẻ giúp con người gắn kết lại với nhau.</p>\r\n\r\n    <h2>Rước kiệu trong lễ hội đại phan của người Sán Dìu ở xã Hải Hòa, TP Cẩm Phả</h2>\r\n\r\n    <p>Tại Quảng Ninh, cộng đồng tham gia lễ hội còn bao gồm đông đảo khách du lịch. Theo cách hiểu đó, sinh hoạt lễ hội là sinh hoạt văn hoá cộng đồng không chỉ là sinh hoạt cộng đồng của dân cư bản địa mà còn của du khách đến từ nhiều vùng khác. Do đó, hoà mình vào không khí lễ hội, nghĩa là du khách đã được trải nghiệm, được trao truyền các giá trị văn hoá. Do vậy, tính chất bảo tồn đã có sẵn ở hoạt động đó.</p>\r\n\r\n    <p>Tại các lễ hội ở Quảng Ninh, những trò chơi truyền thống như đua thuyền, các đám rước, các tập tục dân gian gắn với lễ hội cũng cần được lan tỏa, để du khách có thể trực tiếp trải nghiệm. Nhập vai vào các hình thức diễn xướng đó, người trải nghiệm không chỉ là du khách, mà còn như một người dân thực thụ, một thành viên trong cộng đồng có lễ hội... Điều này sẽ kích thích và tạo ra sức hút đối với du khách khi hòa mình vào không khí lễ hội.</p>\r\n\r\n    <p>Sự tham gia của cộng đồng du khách cũng sẽ tạo ra sự kết nối các lễ hội, trong đó có lễ hội ở vùng Yên Tử. GS.TS Lê Hồng Lý, Chủ tịch Hội Văn nghệ dân gian Việt Nam, cho rằng, lễ hội dân gian nói lên sự phong phú của không gian văn hóa Yên Tử. Theo không gian của dãy Yên Tử thì lễ hội dân gian trong khu vực này không chỉ thuộc khu vực Yên Tử, mà còn là một hệ thống chuỗi lễ hội suốt dãy Yên Tử trải qua các tỉnh Hải Dương, Bắc Giang và Quảng Ninh. Vì thế, lễ hội dân gian cũng như các loại hình khác không dừng lại ở một điểm mà trải rộng trên một không gian lớn và có sự kết nối giữa các nơi để thành một không gian văn hóa tâm linh hết sức hấp dẫn. Hơn nữa, các lễ hội này không phải chỉ là những lễ hội tôn giáo đơn thuần mà là rất nhiều lễ hội dân gian diễn ra xung quanh khu vực, để tạo nên một không gian văn hóa tín ngưỡng hấp dẫn. Riêng ở Quảng Ninh có thể điểm ra các lễ hội như: Lễ hội đền An Sinh, lễ hội của các làng ven dãy Yên Tử. Kết nối với các lễ hội theo dãy Yên Tử là nhiều lễ hội khác liên quan đến nhà Trần trên đất Quảng Ninh như: Lễ hội Bạch Đằng, Lễ hội đền Đức Ông, Lễ hội đền Cửa Ông, Lễ hội Vân Đồn...</p>\r\n\r\n    <h2>Quang cảnh không gian chính tổ chức lễ hội mùa vàng miền sóong cọ xã Đại Dực, huyện Tiên Yên</h2>\r\n\r\n    <p>Bên cạnh việc bảo tồn lễ hội truyền thống, Quảng Ninh cũng xây dựng và duy trì nhiều lễ hội hiện đại đã được cộng đồng cư dân bản địa và du khách đón nhận. Theo các nhà nghiên cứu văn hoá, lễ hội hiện đại là cơ hội quảng bá tiềm năng thế mạnh những thành tựu phát triển kinh tế - xã hội, quảng bá văn hoá con người Quảng Ninh nói riêng, Việt Nam nói chung. Lễ hội Hoa anh đào hay Lễ hội Hokkaido gần đây là những ví dụ điển hình cho việc thắt chặt quan hệ ngoại giao giữa Việt Nam với các nước trên thế giới, trong đó có ngoại giao nhân dân, thông qua hoạt động văn hoá lễ hội. Đây sẽ là mẫu hình tương lai cho nhiều hoạt động văn hoá tương tự, cho thấy vị trí kết nối hội tụ và lan toả của Quảng Ninh. Không chỉ kết nối với Hải Phòng, Bắc Giang, Hải Dương, mà còn ra các vùng khác trong nước và vượt ra ngoài biên giới.</p>\r\n",
@@ -1598,7 +1598,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("f2ca6877-fa03-480b-a4be-ad0b2678fce2"),
+                        BlogId = new Guid("0714f39c-72e8-44ad-ab2d-1f767e1a1497"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<p>Thực hiện Nghị quyết Đại hội Đảng bộ (ĐHĐB) huyện lần thứ XXVI, huyện Mai Châu (tỉnh Hòa Bình) đã hướng tới việc xây dựng \"nền kinh tế xanh” bằng chương trình hành động với những lộ trình cụ thể và đạt được những kết quả đáng ghi nhận.</p>\r\n    <p>Khai thác vẻ đẹp cảnh quan thiên nhiên và bản sắc văn hóa dân tộc, hàng năm huyện Mai Châu thu hút đông khách du lịch quốc tế đến tham quan, trải nghiệm.</p>\r\n\r\n    <h2>Đưa du lịch trở thành ngành kinh tế mũi nhọn</h2>\r\n    <p>Từ việc tạo được bứt phá trong phát triển du lịch cộng đồng (DLCĐ), Mai Châu trở thành cái tên đầy sức hút đối với du khách và đứng trước nhiều vận hội mới để vươn tầm phát triển... \"Lĩnh vực du lịch của huyện đã trải qua một hành trình đặc biệt đánh dấu sự chung sức, đồng lòng của đảng bộ, chính quyền và nhân dân các dân tộc trong toàn huyện,” đồng chí Hà Công Nghị, Phó Bí thư Thường trực Huyện ủy Mai Châu chia sẻ. Với phương châm chỉ đạo xuyên suốt qua 3 kỳ ĐHĐB huyện \"phát triển DLCĐ gắn với xây dựng nông thôn mới” đã tạo được sự đồng lòng, nhất trí cao từ cấp ủy, chính quyền cơ sở, phù hợp với nguyện vọng của người dân.</p>\r\n    <p>Thực hiện chủ trương phát triển DLCĐ, năm 2010 được coi là vạch xuất phát để Mai Châu bắt đầu thực hiện hành trình phát triển mới. Thời điểm đó, toàn huyện mới có 11 nhà nghỉ, 54 hộ kinh doanh nhà nghỉ cộng đồng, 8 xã có hoạt động DLCĐ. Tổng doanh thu từ hoạt động du lịch đạt gần 10 tỷ đồng/năm. Cả năm đón khoảng 64 nghìn lượt khách du lịch. Toàn huyện cũng chỉ có bản Lác (xã Chiềng Châu) được coi là bản DLCĐ. Sản phẩm du lịch nghèo nàn, chất lượng dịch vụ thấp nên chưa tạo sức hút đáng kể đối với du khách. Trong bối cảnh đầy thử thách, cả hệ thống chính trị huyện Mai Châu quyết tâm tạo ra hướng phát triển mang tính đột phá cho lĩnh vực du lịch của huyện, đó là DLCĐ.</p>\r\n    <p>Sau 15 năm, Mai Châu đang hiện thực hóa những chỉ tiêu phát triển kinh tế - xã hội một cách toàn diện. Đáng kể nhất là sự phát triển vươn tầm của ngành du lịch. Đến thời điểm này, huyện có quy hoạch đồng bộ, bài bản về phát triển du lịch. Bằng cách thực hiện hiệu quả những quyết sách quan trọng về phát triển du lịch, Mai Châu đã bứt phá, đưa du lịch trở thành ngành kinh tế mũi nhọn. \"Nghị quyết ĐHĐB huyện qua các nhiệm kỳ là \"kim chỉ nam” định hướng cho các hoạt động phát triển du lịch của huyện. Từ nghị quyết đã có nhiều giải pháp được triển khai đồng bộ, hiệu quả. Công tác quản lý nhà nước đối với hoạt động du lịch được tăng cường. Hạ tầng phục vụ du lịch được quan tâm đầu tư. Phát triển du lịch gắn với bảo tồn, giữ gìn và phát huy bản sắc văn hóa được quan tâm. Nhờ đó, từ 1 điểm DLCĐ ban đầu là bản Lác, đến nay toàn huyện có gần 150 cơ sở lưu trú du lịch, 7 điểm DLCĐ, 12 khách sạn, 28 nhà nghỉ, 106 homestay, thu hút, tạo việc làm cho trên 1.200 lao động trong lĩnh vực du lịch. Trên địa bàn huyện có 15 dự án du lịch, thương mại được UBND tỉnh quyết định chủ trương đầu tư, tổng vốn đăng ký trên 1.178 tỷ đồng. Các dự án đều có quy mô, khả năng đáp ứng nhu cầu về nghỉ dưỡng chất lượng cao cho khách du lịch. Từ những nỗ lực đó đã đưa ngành thương mại, dịch vụ, du lịch chiếm tỷ trọng lớn nhất trong cơ cấu kinh tế của huyện (chiếm 37% năm 2024), vượt chỉ tiêu Nghị quyết ĐHĐB huyện lần thứ XXVI đề ra.</p>\r\n\r\n    <h2>Xây dựng nền \"kinh tế xanh”, bền vững</h2>\r\n    <p>Không chỉ đặt mục tiêu tạo ra những dấu ấn rõ nét trong lĩnh vực du lịch, theo đồng chí Phạm Văn Hoàn, Chủ tịch UBND huyện Mai Châu thì huyện xác định nông nghiệp vẫn là một \"trụ đỡ” cho sự phát triển kinh tế - xã hội. Để đưa giá trị sản xuất nông nghiệp ngày càng cao theo tinh thần Nghị quyết ĐHĐB huyện lần thứ XXVI, thời gian qua huyện đã nỗ lực để tạo ra những bước đột phá mới.</p>\r\n    <p>Đảng bộ, chính quyền các cấp trong huyện tăng cường công tác lãnh đạo, chỉ đạo sản xuất. Đẩy mạnh chuyển đổi cơ cấu cây trồng, vật nuôi theo hướng hàng hóa, phù hợp từng vùng, theo hướng nâng cao giá trị gia tăng và phát triển bền vững. Đồng chí Ngần Văn Toàn, Phó trưởng phòng NN&PTNT huyện Mai Châu cho biết, huyện tích cực tuyên truyền, khuyến khích người dân lựa chọn cây trồng, vật nuôi phù hợp đưa vào sản xuất. Thực hiện thâm canh tăng vụ, chuyển đổi sang sản xuất hàng hóa, xây dựng mô hình sản xuất có giá trị kinh tế cao, như mô hình trồng rau an toàn tại xã Chiềng Châu, Bao La, Mai Hịch...; ứng dụng công nghệ cao trong chăn nuôi, thực hiện giám sát an toàn dịch bệnh...</p>\r\n    <p>Để thúc đẩy tiêu thụ, nâng cao giá trị sản phẩm, huyện quan tâm đầu tư, xây dựng nhãn hiệu tập thể cho sản phẩm nông nghiệp, nhất là những sản phẩm có tính đặc trưng như \"Ngô nếp Thung Khe”, \"Khoai sọ Phúc Sạn”, \"Tỏi tía Thành Sơn”, \"Lợn đen Mường Pa”, \"Rượu Mai Hạ”, \"Gà đen Hang Kia, Pà Cò”, mới đây nhất là \"Cá dầm xanh Mai Châu” nhằm góp phần nâng cao giá trị, tăng sức cạnh tranh của sản phẩm...</p>\r\n    <p>Từ việc thực hiện có hiệu quả lộ trình phát triển kinh tế nông nghiệp phù hợp với điều kiện thực tế địa phương đã thúc đẩy kinh tế - xã hội của huyện Mai Châu ngày càng phát triển bền vững. Trong đó, nông nghiệp vẫn đóng vai trò \"trụ đỡ” với giá trị sản xuất nông, lâm, thuỷ sản năm 2024 đạt 1.452,3 tỷ đồng, chiếm tỷ trọng 28%. Du lịch - ngành kinh tế mũi nhọn tiếp tục là ngành chiếm tỷ trọng cao nhất trong cơ cấu kinh tế của huyện.</p>\r\n",
@@ -1610,7 +1610,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("44a2891d-a9e4-44ef-bd25-b7263323546a"),
+                        BlogId = new Guid("e88d3b9b-c780-43c3-af83-b0897c57b95b"),
                         BlogStatus = 0,
                         BlogType = 1,
                         Content = "<p>\"Để tạo không khí, không gian trải nghiệm Tết, huyện sẽ tổ chức đa dạng các lễ hội xuân, các hoạt động vui chơi, giải trí trên địa bàn huyện, ở các thôn khe bản... đáp ứng nhu cầu hưởng thụ, vui xuân của bà con và cũng là điểm đến hấp dẫn cho hành trình du xuân của du khách\" - ông Vi Ngọc Nhất, Trưởng Phòng Văn hoá - Thông tin huyện cho biết.</p>\r\n\r\n    <h2>Không khí Tết ở Bình Liêu</h2>\r\n    <p>Xuân này về Bình Liêu, du khách sẽ được hoà mình vào không gian Lễ hội đình Lục Nà, lễ hội được mong đợi nhất dịp đầu xuân.</p>\r\n    <p>Về Bình Liêu ngay từ tháng Chạp, du khách đã cảm nhận được không khí Tết đang cận kề bên từng nếp nhà của người Dao, trên những cành đào đá nở sớm. Có lẽ điều mà nhiều du khách thích thú tìm hiểu, hoà mình vào nhất là Tết của người Dao, một lễ hội, nét văn hoá đặc sắc ở Bình Liêu. Người Dao ở đây ăn Tết từ 15 tháng Chạp cho tới 15 tháng Giêng của năm mới. Trong suốt một tháng Tết, người Dao luân phiên ăn Tết từng hộ gia đình trong họ. Rộn ràng nhất là từ 20 tháng Chạp tới rằm tháng Giêng. Không khí Tết, màu sắc Tết sẽ rộn ràng khắp ngõ xóm, làng bản của người Dao.</p>\r\n\r\n    <h2>Lễ hội truyền thống</h2>\r\n    <p>Mỗi cộng đồng dân tộc ở Bình Liêu đều có phong tục đón năm mới riêng. Đây chính là mảnh ghép để làm nên bức tranh văn hóa Tết cổ truyền đặc sắc nơi miền biên viễn. Người Tày tại Bình Liêu thường tổ chức nghi lễ Then để cầu phúc, cầu an vào dịp đầu năm và lễ tạ vào dịp cuối năm. Ngoài thưởng thức không gian đậm chất văn hoá truyền thống, người dân và du khách còn có cơ hội tham gia những trò chơi dân gian... được tổ chức ở quy mô cấp thôn, cấp xã.</p>\r\n\r\n    <h3>Lễ hội đình Lục Nà</h3>\r\n    <p>Tết đến xuân về cũng là thời điểm mà Bình Liêu tổ chức nhiều lễ hội truyền thống. Lễ hội lớn nhất và được mong đợi nhất là Lễ hội đình Lục Nà, tổ chức thường niên từ 15-17 tháng Giêng hàng năm. Lễ hội nổi bật với nghi lễ rước sắc phong, lễ tế thần... và nhiều hoạt động văn hoá, thể thao dân tộc. Du khách có thể hoà mình vào các trò chơi tung còn, đẩy gậy, kéo co, đánh quay... hoặc thưởng thức những làn điệu then trong trẻo cùng tiếng đàn tính ngọt ngào giữa núi rừng.</p>\r\n\r\n    <h3>Hội Soóng cọ của người Sán Chỉ</h3>\r\n    <p>Tiếp theo, hội Soóng cọ của người Sán Chỉ tổ chức thường niên vào 16/3 âm lịch. Lễ hội sẽ tái hiện một số trò chơi dân gian và nghi lễ tâm linh. Nơi đây, du khách có thể hoà mình vào các chương trình văn nghệ hát giao duyên, lễ cầu may của người Sán Chỉ... Điểm mới của lễ hội năm nay là có nhiều hoạt động văn hoá, thể thao sôi động, hoạt động tôn vinh cây dong riềng, miến dong gắn với hoạt động tham quan thác Khe Vằn, đỉnh Cao Ly...</p>\r\n\r\n    <h3>Lễ hội Kiêng gió</h3>\r\n    <p>Không những thế, năm nay là dịp đặc biệt khi Lễ hội Kiêng gió sẽ được tổ chức vào dịp 30/4-01/5 gắn với lễ công bố tục kiêng gió người Dao Thanh Phán là Di sản văn hóa phi vật thể quốc gia. Lễ hội là dịp du khách thưởng thức các tiết mục hát Pả dung, trích đoạn đám cưới người Dao Thanh Phán, trích lễ cấp sắc của người Dao, múa, hát Then… của đồng bào các dân tộc Bình Liêu.</p>\r\n\r\n    <h2>Hoạt động Tết Nguyên Đán 2025</h2>\r\n    <p>Dịp Tết Nguyên đán 2025 năm nay, Bình Liêu đã công bố và sẽ tổ chức khoảng 30 hoạt động văn hoá, thể thao đặc sắc ở khắp 7 xã, thị trấn của huyện. Các hoạt động này sẽ trải dài từ trước, trong và sau Tết Nguyên đán 2025. Đặc biệt, huyện sẽ khôi phục và tổ chức Lễ hội đình Vô Ngại trong 2 ngày 5-6 tháng Giêng.</p>\r\n\r\n    <h2>Du lịch xuyên Tết</h2>\r\n    <p>Được biết, để phục vụ du khách du xuân trảy hội, du lịch xuyên Tết, Bình Liêu cũng đã vận động, khuyến khích mở, duy trì các dịch vụ ăn uống, lưu trú trong dịp Tết. Hiện nay, huyện đã công bố danh sách 14 cơ sở lưu trú là khách sạn, nhà nghỉ, homestay và 6 nhà hàng, quán ăn phục vụ du khách xuyên Tết.</p>\r\n\r\n    <p>Vậy là, xuân này về Bình Liêu, du khách sẽ được du ngoạn xuyên Tết, trải nghiệm không khí tưng bừng, rộn ràng của lễ hội, thưởng lãm thiên nhiên hùng vĩ, hoang sơ của thác Khe Vằn, ruộng bậc thang, những cung đường biên giới uốn lượn và thưởng thức những món ẩm thực đặc sắc của đồng bào.</p>\r\n",
@@ -1622,7 +1622,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("34a90761-5ef5-4fad-84c8-492e8f38e67c"),
+                        BlogId = new Guid("231dddfb-4f15-465e-81b2-6be19ccd0612"),
                         BlogStatus = 0,
                         BlogType = 1,
                         Content = " <p>Trong không gian Tết ấm cúng, du khách sẽ được tham gia vào các hoạt động truyền thống như dựng cây nêu, gói bánh chưng, viết thư pháp.</p>\r\n    \r\n    <p>Trong không gian Tết ấm cúng, du khách sẽ được tham gia vào các hoạt động truyền thống như dựng cây nêu, gói bánh chưng, viết thư pháp… Ngoài ra, hoạt động in tranh Đông Hồ cũng sẽ được tái hiện, mang đến không khí Tết xưa và là cơ hội để mọi người tự tay tạo ra những tác phẩm nghệ thuật độc đáo. Các em nhỏ sẽ được chơi các trò chơi dân gian hấp dẫn như kéo co, cỏ búng, đập phủ phủ, đánh cầu lông gà, đánh mảng, đánh quay, ném pao, tung còn, đẩy gậy… Những trò chơi này không chỉ mang tính giải trí mà còn giúp các em hiểu rõ hơn về giá trị văn hóa truyền thống của dân tộc.</p>\r\n\r\n    <p>Năm nay, chương trình có thêm những điểm nhấn đặc biệt, ứng dụng công nghệ để mang đến trải nghiệm mới mẻ, thú vị cho du khách, đặc biệt là giới trẻ. Du khách sẽ được tham gia vào các hoạt động như “Vượt thử thách khám phá Tết Ất Tỵ”, nơi họ sẽ tìm hiểu những đặc trưng của Tết qua các câu đố và thử thách thú vị. Bên cạnh đó, chương trình “Tour năm rắn” sẽ giúp du khách tìm hiểu về loài rắn trong văn hóa dân tộc, qua hiện vật tại bảo tàng. Du khách cũng có cơ hội trải nghiệm vẽ rắn và tìm hiểu ý nghĩa của loài vật này trong các truyền thuyết và tín ngưỡng dân gian của nhiều dân tộc.</p>\r\n\r\n    <p>Với sự kết hợp giữa các hoạt động truyền thống và công nghệ hiện đại, chương trình “Vui xuân Ất Tỵ” hứa hẹn sẽ là một trải nghiệm đầy màu sắc, mang đậm bản sắc văn hóa dân tộc và là cơ hội để du khách khám phá và trải nghiệm Tết cổ truyền trong không gian đậm đà sắc xuân.</p>\r\n",
@@ -1634,7 +1634,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("38297e6f-7319-4a25-9f16-d9891436860c"),
+                        BlogId = new Guid("987115bd-1b6b-44d2-89ce-8378c5691ef7"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<h2>Những điểm đến đặc sắc</h2>\r\n    <p><strong>KDL Suối Mơ</strong> dự kiến đón từ 35-40 ngàn lượt khách với nhiều hoạt động miễn phí như trò chơi dân gian, múa lân, biểu diễn thư pháp, xếp lá dừa...</p>\r\n    <p><strong>KDL Bửu Long</strong> trang trí hơn 50 ngàn chậu hoa, tổ chức chương trình biểu diễn nghệ thuật với giá vé không đổi: 150.000đ/người lớn, 60.000đ/trẻ em.</p>\r\n    <p>Năm 2025, Đồng Nai tổ chức nhiều lễ hội lớn như: <span class=\"highlight\">Lễ hội Hương bưởi Tân Triều, Lễ hội Khinh khí cầu quốc tế, Festival gốm Biên Hòa</span>.</p>\r\n    \r\n    <h2>Bảo đảm vui chơi an toàn</h2>\r\n    <p>Các khu vui chơi dưới nước như Suối Mơ, Sơn Tiên, Bửu Long, Bò Cạp Vàng, Tre Việt tăng cường đảm bảo an toàn, bố trí nhân viên cứu hộ.</p>\r\n    <p>Giám đốc Sở Văn hóa, Thể thao và Du lịch yêu cầu các cơ sở du lịch phải:</p>\r\n    <ul>\r\n        <li>Bố trí đủ lực lượng phục vụ khách.</li>\r\n        <li>Đảm bảo vệ sinh an toàn thực phẩm.</li>\r\n        <li>Tăng cường nhân viên cứu hộ, chuyên gia hướng dẫn khách.</li>\r\n        <li>Rà soát khu vực nguy hiểm, lắp đặt biển cảnh báo.</li>\r\n        <li>Kiểm tra thiết bị trò chơi mạo hiểm thường xuyên.</li>\r\n    </ul>\r\n    \r\n    <p>Với sự chuẩn bị kỹ lưỡng, du lịch Đồng Nai hứa hẹn sẽ là điểm đến hấp dẫn dịp Tết Nguyên đán 2025.</p>",
@@ -1646,7 +1646,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("30fd17e9-a773-433d-b797-6adee3b04945"),
+                        BlogId = new Guid("ae3c38b1-2db3-4cae-aceb-eeb488515f24"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<h2>Tiềm năng phát triển du lịch cộng đồng</h2>\r\n    <p>Đắk Lắk có dân số gần 2 triệu người với 49 dân tộc từ các vùng miền trong cả nước. Đồng bào Ê Đê, M’nông và Gia Rai là các dân tộc thiểu số tại chỗ, ngoài ra còn có các dân tộc khác như Mường, Tày, Nùng, Dao, Thái, Mông.</p>\r\n    <p>Không gian văn hóa cồng chiêng Tây Nguyên đã được UNESCO ghi danh là Di sản văn hóa phi vật thể đại diện của nhân loại.</p>\r\n    \r\n    <h2>Điểm du lịch sinh thái và danh thắng</h2>\r\n    <p>Đắk Lắk có nhiều danh thắng như thác Dray Nur, Dray Sáp Thượng, Thủy Tiên, Bìm Bịp, hồ Lắk, Ea Kao, Ea Súp... cùng hệ sinh thái đa dạng như Vườn quốc gia Yok Đôn, Chư Yang Sin.</p>\r\n    \r\n    <h2>Chính sách phát triển du lịch</h2>\r\n    <p>Năm 2022, Tỉnh ủy Đắk Lắk ban hành Đề án phát triển du lịch giai đoạn 2021-2025, định hướng đến năm 2030. Năm 2021, HĐND tỉnh ban hành Nghị quyết hỗ trợ phát triển du lịch cộng đồng.</p>\r\n    \r\n    <h2>Kết quả đạt được</h2>\r\n    <p>Giai đoạn 2021-2023, tỉnh đã hỗ trợ phát triển du lịch cộng đồng tại buôn Akǒ Dhông, buôn Kuốp và buôn Trí. Năm 2024, Đắk Lắk thu hút hơn 2,4 triệu lượt khách, doanh thu đạt hơn 9.000 tỷ đồng.</p>\r\n    \r\n    <h2>Mục tiêu phát triển</h2>\r\n    <p>Trong năm 2025, tỉnh tiếp tục hỗ trợ du lịch cộng đồng tại buôn Tour (Hòa Phú) và buôn Kli A (Đạt Hiếu). Đến năm 2030, Đắk Lắk đặt mục tiêu đưa du lịch trở thành ngành kinh tế mũi nhọn.</p>\r\n",
@@ -1658,7 +1658,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("12a6de17-b098-4ecd-8235-86bd3e61c189"),
+                        BlogId = new Guid("0bedb593-8a83-407e-b000-b77d933c6b6c"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<h2>Văn hóa bản địa Tây Nguyên là một tiềm năng du lịch của tỉnh Lâm Đồng</h2>\r\n    <p>Thực tế tại tỉnh Lâm Đồng, một số huyện và thành phố đã có nhiều cách tiếp cận trong việc khai thác tài nguyên tự nhiên, tài nguyên nhân văn có sẵn của địa phương, xây dựng thành các chương trình du lịch đặc trưng như:</p>\r\n    <ul>\r\n        <li>Du lịch lịch sử - văn hóa (Khu di tích Quốc gia đặc biệt khảo cổ Cát Tiên, Khu ủy Khu VI..., huyện Đạ Huoai)</li>\r\n        <li>Du lịch miệt vườn (Vườn trái cây Nam Nhi, huyện Đạ Huoai)</li>\r\n        <li>Du lịch sinh thái - văn hóa (trải nghiệm văn hóa trà, văn hóa người Mạ, huyện Bảo Lâm)</li>\r\n        <li>Du lịch tham quan sản xuất tơ lụa ở TP Bảo Lộc</li>\r\n        <li>Du lịch trải nghiệm âm nhạc cồng chiêng tại huyện Lạc Dương</li>\r\n        <li>Du lịch tắm suối nước nóng ở huyện Đam Rông</li>\r\n    </ul>\r\n    \r\n    <p>Ngoài ra, Đức Trọng, Đơn Dương, Lâm Hà cũng đã tận dụng những di sản văn hóa xã hội, cùng cảnh quan thiên nhiên tại địa phương để thu hút du khách đến trải nghiệm.</p>\r\n    \r\n    <h3>Tiềm năng du lịch tại xã Đạ Đờn</h3>\r\n    <p>“Qua khảo sát các tài nguyên du lịch tại địa phương, chúng tôi nhận thấy xã Đạ Đờn (huyện Lâm Hà) có đủ tiềm năng để phát triển các loại hình du lịch sinh thái, du lịch nông nghiệp, du lịch cộng đồng, du lịch văn hóa, du lịch làng nghề...” - Phó Chủ tịch UBND xã Đạ Đờn Ka Điệp chia sẻ.</p>\r\n    \r\n    <h3>Quan điểm từ các chuyên gia du lịch</h3>\r\n    <p>Ông Touneh Tín - Công ty We For U - cho biết: “Du lịch nông thôn chính là thế mạnh của tỉnh Lâm Đồng.” Ông nhấn mạnh việc khai thác tiềm năng du lịch nông thôn không chỉ nâng cao thu nhập cho nông dân, mà còn tạo ra những giá trị kết nối kinh tế - văn hóa - nhân văn.</p>\r\n    \r\n    <p>“Thời gian qua, các hoạt động du lịch nông thôn đã tạo ra ‘kênh’ quảng bá, tiêu thụ các sản phẩm OCOP tại chỗ. Thông qua quà tặng là những sản phẩm OCOP, địa phương giúp nông dân tiêu thụ sản phẩm và phát triển loại hình du lịch trải nghiệm nông sản đặc trưng của địa phương” - ông Touneh Tín chia sẻ.</p>\r\n    \r\n    <h3>Kết nối giữa các địa phương</h3>\r\n    <p>Từ thực tiễn du lịch nông thôn ở Lâm Đồng cho thấy, việc kết nối giữa các địa phương cũng rất cần thiết. Việc kết nối không chỉ thể hiện được tính đa dạng về cảnh quan, kinh tế, lịch sử, văn hóa mà còn tăng thêm tính trải nghiệm cho du khách.</p>\r\n",
@@ -1670,7 +1670,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("da8e184e-b279-4309-8df3-ee6430390d93"),
+                        BlogId = new Guid("7b768990-54ef-4306-b490-66df249e68b7"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<h2>Kết quả giải thưởng năm nay</h2>\r\n    <p>Việt Nam có 17 đơn vị đạt giải tại 04 hạng mục:</p>\r\n    \r\n    <h3>1. Giải thưởng Dịch vụ Spa ASEAN</h3>\r\n    <ul>\r\n        <li>Yoko Onsen Spa, Khu nghỉ dưỡng khoáng nóng Yoko Onsen Quang Hanh - Tỉnh Quảng Ninh</li>\r\n        <li>An Spa - Thành phố Đà Nẵng</li>\r\n        <li>Akoya Spa, Khách sạn nghỉ dưỡng Vinpearl Resort & Golf Nam Hội An - Tỉnh Quảng Nam</li>\r\n        <li>Six Senses Côn Đảo Spa & Wellness Village, Khách sạn nghỉ dưỡng Six Senses Côn Đảo - Tỉnh Bà Rịa - Vũng Tàu</li>\r\n        <li>KARA SPA, Khách sạn Caravelle - Thành phố Hồ Chí Minh</li>\r\n    </ul>\r\n    \r\n    <h3>2. Giải thưởng Du lịch cộng đồng ASEAN - CBT ASEAN</h3>\r\n    <ul>\r\n        <li>Điểm du lịch cộng đồng Hữu Liên, huyện Hữu Lũng - Tỉnh Lạng Sơn</li>\r\n        <li>Khu du lịch Hồng Vân, huyện Thường Tín - Thành phố Hà Nội</li>\r\n        <li>Làng Toom Sara Đà Nẵng - Thành phố Đà Nẵng</li>\r\n        <li>Hợp tác xã du lịch dựa vào cộng đồng Cơ tu Nam Giang - Tỉnh Quảng Nam</li>\r\n        <li>Điểm du lịch cộng đồng Cồn Chim - Tỉnh Trà Vinh</li>\r\n    </ul>\r\n    \r\n    <h3>3. Giải thưởng Nhà ở có phòng cho khách du lịch thuê - Homestay ASEAN</h3>\r\n    <ul>\r\n        <li>Cụm Homestay xã Phương Độ, thành phố Hà Giang - Tỉnh Hà Giang</li>\r\n        <li>Cụm Homestay xã Yên Thịnh, huyện Hữu Lũng - Tỉnh Lạng Sơn</li>\r\n        <li>Cụm Homestay Làng Nhà sàn dân tộc sinh thái Thái Hải - Tỉnh Thái Nguyên</li>\r\n        <li>Cụm Homestay Làng cổ Đường Lâm, Thành phố Hà Nội</li>\r\n        <li>Cụm Homestay Giồng Trôm - Bình Đại - Tỉnh Bến Tre</li>\r\n    </ul>\r\n    \r\n    <h3>4. Giải thưởng Nhà vệ sinh cộng cộng ASEAN</h3>\r\n    <ul>\r\n        <li>Nhà vệ sinh cộng cộng - Đài quan sát Saigon SkyDeck - Tháp tài chính Bitexco - Thành phố Hồ Chí Minh</li>\r\n        <li>Vạn Thịnh Rest Stop - Hộ Kinh doanh Trạm dừng chân Vạn Thịnh - Thành phố Hồ Chí Minh</li>\r\n    </ul>\r\n    \r\n    <h2>Ý nghĩa của giải thưởng</h2>\r\n    <p>Việc các doanh nghiệp du lịch Việt Nam nhận được những giải thưởng quan trọng của ASEAN đã góp phần khẳng định quyết tâm nâng cao chất lượng dịch vụ của du lịch Việt Nam.</p>\r\n    <p>Điều này thể hiện cam kết theo phương châm hành động tại Nghị quyết 82/NQ-CP của Chính phủ: \"Sản phẩm đặc sắc - Dịch vụ chuyên nghiệp - Thủ tục thuận tiện, đơn giản - Giá cả cạnh tranh - Môi trường vệ sinh sạch đẹp - Điểm đến an toàn, văn minh, thân thiện\".</p>\r\n    <p>Đây cũng là điểm nhấn khẳng định sự phục hồi ấn tượng của du lịch Việt Nam trong năm vừa qua, đón 17,6 triệu lượt khách quốc tế, tăng 40% so với năm 2023, phục vụ 110 triệu lượt khách nội địa và tổng thu du lịch đạt 840 nghìn tỷ đồng.</p>\r\n",
@@ -1682,7 +1682,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("e7617669-b6d2-49d1-bb0e-5db20ebde2c1"),
+                        BlogId = new Guid("c864d071-60eb-4309-84de-3235ccabe426"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<p>Buổi lễ có sự tham dự của các Bộ trưởng, Thứ trưởng phụ trách du lịch, lãnh đạo cơ quan du lịch các quốc gia ASEAN, các đối tác, tổ chức quốc tế, phóng viên báo chí khu vực và quốc tế.</p>\r\n\r\n<p>Diễn ra từ ngày 15-20/01/2025, đoàn Việt Nam do Thứ trưởng Bộ Văn hóa, Thể thao và Du lịch Hồ An Phong làm trưởng đoàn, cùng Cục trưởng Cục Du lịch Quốc gia Việt Nam Nguyễn Trùng Khánh và các cán bộ Cục Du lịch Quốc gia Việt Nam, Cục Hợp tác quốc tế (Bộ VHTTDL) đã tham dự hàng loạt các hội nghị và sự kiện bên lề của ATF 2025 như: Hội nghị Bộ trưởng Du lịch ASEAN lần thứ 28, Hội nghị Bộ trưởng Du lịch với các đối tác ASEAN+3 lần thứ 24; Hội nghị Bộ trưởng Du lịch ASEAN - Ấn Độ lần thứ 12; Hội nghị Bộ trưởng Du lịch ASEAN - Nga lần thứ 4; Hội nghị Cơ quan Du lịch Quốc gia ASEAN lần thứ 61; Hội nghị Cơ quan Du lịch Quốc gia với các đối tác; chương trình làm việc với các tổ chức quốc tế như CNN, Agoda, WTTC, US-ABC, EU-ABC...</p>\r\n\r\n<p>Các đại biểu Việt Nam dự lễ bế mạc ATF 2025 (Ảnh: TITC)</p>\r\n\r\n<p>Tại Diễn đàn năm nay, đoàn Việt Nam tham dự Hội chợ TRAVEX với Gian hàng Du lịch Việt Nam nhằm mục đích thúc đẩy sự chủ động hội nhập ASEAN, thể hiện vai trò thành viên tích cực của Cộng đồng kinh tế khu vực; giới thiệu một số chính sách phát triển du lịch mới nhằm đẩy mạnh thu hút khách du lịch quốc tế đến Việt Nam; giới thiệu về Năm Du lịch quốc gia - Huế 2025; đồng thời tăng cường quảng bá thương hiệu du lịch Việt Nam với các giá trị nổi bật và các dòng sản phẩm du lịch chủ đạo, truyền tải thông điệp Việt Nam là điểm đến an toàn, thân thiện, hấp dẫn tới cộng đồng các quốc gia ASEAN, các nước đối tác và bạn bè trên thế giới.</p>\r\n\r\n<p>Chương trình biểu diễn nghệ thuật khép lại ATF 2025 (Ảnh: TITC)</p>\r\n\r\n<p>Nhân dịp này, Lễ trao giải thưởng du lịch ASEAN đã tôn vinh 17 đơn vị của Việt Nam ở các hạng mục giải thưởng, gồm có: Giải thưởng Dịch vụ Spa ASEAN; Giải thưởng Du lịch cộng đồng ASEAN (CBT ASEAN); Giải thưởng nhà ở có phòng cho khách du lịch thuê (homestay ASEAN); Giải thưởng Nhà vệ sinh công cộng ASEAN.</p>\r\n\r\n<p>Chuyển giao quyền đăng cai ATF 2026 cho Bộ trưởng Bộ Du lịch Philippines Christina Garcia Frasco (Ảnh: TITC)</p>\r\n\r\n<p>ATF 2025 đã chính thức khép lại, truyền đi thông điệp “Đoàn kết trong hành động - Định hình du lịch ASEAN ngày mai”, khẳng định sự phục hồi mạnh mẽ của du lịch ASEAN, nâng cao khả năng thích ứng và cạnh tranh để trở thành điểm đến du lịch hàng đầu của thế giới. Việc tổ chức Diễn đàn Du lịch ASEAN hàng năm góp phần nâng cao vị thế của ASEAN như một khu vực hòa bình, đáng tin cậy và trở thành một khối kinh tế thịnh vượng, quan trọng của thế giới.</p>\r\n\r\n<p>Theo kế hoạch, Diễn đàn Du lịch ASEAN 2026 sẽ được tổ chức tại Philippines.</p>\r\n",
@@ -1694,7 +1694,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("598d02b1-4a85-43cb-be02-2d2189b0461e"),
+                        BlogId = new Guid("a4323245-b017-4858-b6eb-189bf146da39"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<p>Cùng dự có bà Nguyễn Phương Hòa, Cục trưởng Cục Hợp tác quốc tế; bà Phan Linh Chi, Phó Cục trưởng Cục Du lịch Quốc gia Việt Nam cùng các cán bộ thuộc Cục Du lịch Quốc gia Việt Nam, Cục Hợp tác quốc tế.</p>\r\n\r\n    <h2>Thứ trưởng Bộ VHTTDL Trịnh Thị Thủy tiếp Tổng Giám đốc OIF Caroline St-Hilaire</h2>\r\n    <img src=\"path_to_image\" alt=\"Thứ trưởng Bộ VHTTDL Trịnh Thị Thủy tiếp Tổng Giám đốc OIF Caroline St-Hilaire\">\r\n    <p>Vui mừng tiếp đón bà Caroline St-Hilaire cùng đoàn công tác đến thăm, làm việc tại trụ sở Bộ VHTTDL, Thứ trưởng Trịnh Thị Thủy khẳng định, Việt Nam luôn coi trọng quan hệ hợp tác với OIF cùng các nước trong cộng đồng Pháp ngữ, từ quan hệ chính trị cho đến hợp tác về văn hóa, thể thao và du lịch.</p>\r\n\r\n    <p>Các hoạt động của OIF luôn nhận được sự quan tâm của lãnh đạo Đảng, Nhà nước Việt Nam. Trong đó vào tháng 10/2024, Tổng Bí thư Tô Lâm đã dự Hội nghị cấp cao Pháp ngữ lần thứ 19. Đồng thời gửi lời cảm ơn đến những hỗ trợ của OIF cho các hoạt động của Việt Nam trong cộng đồng Pháp ngữ.</p>\r\n\r\n    <p>Về phía ngành VHTTDL, các hoạt động chuyên môn được tổ chức có sự gắn kết giữa ngành với cộng đồng Pháp ngữ. Thông qua các hoạt động VHTTDL, Việt Nam đã tăng cường sự hiện diện, thể hiện là thành viên có trách nhiệm trong cộng đồng Pháp ngữ thời gian qua.</p>\r\n\r\n    <h2>Toàn cảnh buổi tiếp</h2>\r\n    <img src=\"path_to_image\" alt=\"Toàn cảnh buổi tiếp\">\r\n    <p>Bộ VHTTDL mong muốn thúc đẩy quan hệ hợp tác với OIF cùng các nước thành viên của cộng đồng Pháp ngữ; tiếp tục tăng cường sự hiện diện của Việt Nam trong các hoạt động, Thứ trưởng Trịnh Thị Thủy khẳng định.</p>\r\n\r\n    <p>Việt Nam đã, đang và sẽ tham gia tích cực các hoạt động của OIF cũng như mong muốn tiếp tục nhận được sự quan tâm, giúp đỡ của tổ chức khi triển khai các hoạt động, nhất là các hoạt động hợp tác, giao lưu, quảng bá VHTTDL.</p>\r\n\r\n    <h2>Về du lịch</h2>\r\n    <p>Thứ trưởng Trịnh Thị Thủy cho biết, Chính phủ Việt Nam xác định du lịch là một trong những ngành kinh tế mũi nhọn, đóng góp tích cực cho tăng trưởng kinh tế - xã hội của Việt Nam. Kết nối văn hóa - du lịch với các quốc gia trong cộng đồng Pháp ngữ là một trong những ưu tiên của Việt Nam. Việt Nam mong muốn OIF hỗ trợ phát triển du lịch nông thôn, du lịch cộng đồng cũng như công tác quảng bá văn hóa - du lịch Việt Nam đến các quốc gia trong cộng đồng.</p>\r\n\r\n    <h2>Về văn hóa, nghệ thuật</h2>\r\n    <p>Việt Nam hiện tập trung vào hai đối tượng để phát triển đó là nghệ sĩ và sinh viên trường nghệ thuật. Trong đó, chú ý mời các chuyên gia quốc tế tới Việt Nam huấn luyện chuyên môn cho nghệ sĩ và sinh viên ở các loại hình nghệ thuật đặc thù như múa ba-lê, sản xuất phim hoạt hình, áp dụng kỹ thuật vào làm phim,... Thứ trưởng mong muốn OIF hỗ trợ kết nối nghệ sĩ Việt Nam với các nghệ sĩ trong cộng đồng Pháp ngữ, giúp các nghệ sĩ Việt Nam học hỏi được thêm kinh nghiệm biểu diễn; nâng cao trình độ nguồn nhân lực cho lĩnh vực nghệ thuật biểu diễn, điện ảnh của Việt Nam; hỗ trợ đoàn nghệ sĩ Việt Nam khi đến các nước thuộc cộng đồng. Cùng với đó, các hoạt động phát triển ngôn ngữ giữa các bên cũng cần được đẩy mạnh.</p>\r\n\r\n    <h2>Về thể thao</h2>\r\n    <p>Thứ trưởng đề nghị OIF hỗ trợ Việt Nam nâng cao năng lực, trình độ cho các HLV, VĐV; giúp các VĐV của Việt Nam cải thiện thành tích ở các đấu trường quốc tế.</p>\r\n\r\n    <h2>Tổng Giám đốc OIF Caroline St-Hilaire tặng quà lưu niệm</h2>\r\n    <img src=\"path_to_image\" alt=\"Tổng Giám đốc OIF Caroline St-Hilaire tặng quà lưu niệm\">\r\n    <p>Tổng Giám đốc OIF Caroline St-Hilaire thể hiện sự nhất trí cao với những đề xuất của Thứ trưởng Trịnh Thị Thủy. Theo bà Caroline St-Hilaire, đây đều là những sáng kiến giúp phát triển quan hệ giữa Việt Nam - OIF và các nước thuộc cộng đồng Pháp ngữ, đồng thời thể hiện cam kết mạnh mẽ của Việt Nam trong thúc đẩy hợp tác VHTTDL với OIF.</p>\r\n\r\n    <h2>Chụp hình lưu niệm</h2>\r\n    <img src=\"path_to_image\" alt=\"Lãnh đạo hai bên chụp hình lưu niệm\">\r\n    <p>“Việt Nam là thành viên trách nhiệm, tích cực của OIF khi tham gia nhiều hoạt động văn hóa, thể thao của cộng đồng Pháp ngữ. Việt Nam là quốc gia có nhiều di sản văn hóa ấn tượng, cảnh quan thiên nhiên hùng vĩ. OIF sẽ hỗ trợ Việt Nam thúc đẩy quảng bá văn hóa - du lịch.”, bà Caroline St-Hilaire đánh giá.</p>\r\n\r\n    <p>Tổng Giám đốc OIF khẳng định, OIF luôn sẵn sàng lắng nghe, hỗ trợ Việt Nam tổ chức các hoạt động thúc đẩy hợp tác VHTTDL với các nước trong cộng đồng, đồng thời cam kết hỗ trợ Việt Nam trong công tác đào tạo nguồn nhân lực lĩnh vực VHTTDL.</p>\r\n\r\n    <p>Trong thời gian tới, OIF sẽ thực hiện thí điểm dự án phát triển du lịch bền vững tại các nước khu vực Đông Nam Á, trong đó có Việt Nam, với trọng tâm là tăng cường vai trò của thanh niên, thúc đẩy tính chuyên nghiệp trong phát triển du lịch bền vững. Tổng Giám đốc OIF bày tỏ mong muốn Bộ VHTTDL sẽ cùng hợp tác thực hiện triển khai dự án này.</p>\r\n",
@@ -1706,7 +1706,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("27936e5a-cda9-41c4-bca9-398d7efd02f0"),
+                        BlogId = new Guid("ce1c84a6-dce6-425f-aba8-c6e979c0a46e"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<p>Ngoài ra, đồng bào các dân tộc huyện Bát Xát còn bảo tồn, trao truyền và phát triển các nghề thủ công truyền thống độc đáo, như đan lát tre, mây, nứa, vầu; ủ bia của người Hà Nhì, chạm khắc bạc, nấu rượu của người Dao; may thêu, dệt vải, rèn nông cụ của người Mông, Dao…</p>\r\n\r\n    <p>Ông Phạm Văn Tâm, Trưởng Phòng Văn hóa - Thông tin huyện Bát Xát cho biết: Để văn hóa các dân tộc ngày càng đậm đà bản sắc, các cấp, ngành chức năng của huyện đã triển khai, thực hiện nhiều giải pháp hữu hiệu gìn giữ, phát huy “sức mạnh mềm” của văn hóa.</p>\r\n\r\n    <p>Huyện Bát Xát đã triển khai Đề án 05 về “Phát triển du lịch gắn với bảo tồn và phát huy bản sắc văn hóa các dân tộc huyện Bát Xát giai đoạn 2020 - 2025”; phối hợp với các sở, ngành đẩy nhanh công tác quy hoạch, trọng tâm là khu vực Y Tý; rà soát thống kê, quản lý các tài nguyên du lịch; xây dựng Đề án phát triển du lịch Y Tý đến năm 2030, tầm nhìn đến năm 2050; thành lập Ban Chỉ đạo du lịch cấp huyện, Tổ quản lý du lịch Y Tý - Mường Hum và xây dựng Đề án thành lập Ban Quản lý Di tích và phát triển du lịch cấp huyện. Đồng thời, tăng cường xúc tiến, quảng bá du lịch trên các kênh truyền thông, qua các sự kiện, hội nghị; bước đầu hình thành và gắn kết chuỗi sản phẩm OCOP, đặc sản địa phương, làng nghề truyền thống với các hoạt động du lịch…</p>\r\n\r\n    <p>Đến nay, huyện Bát Xát có 2 di tích được công nhận cấp quốc gia và 7 di tích cấp tỉnh. Thời gian tới, huyện Bát Xát tập trung nâng cao chất lượng phong trào “Toàn dân đoàn kết xây dựng đời sống văn hóa”; tạo thuận lợi để đội ngũ nghệ nhân ở địa phương sáng tạo, trao truyền nét đẹp bản sắc văn hóa dân tộc cho thế hệ trẻ và tham gia các hoạt động quảng bá bản sắc văn hóa truyền thống, góp phần thúc đẩy du lịch địa phương phát triển theo phương châm “biến di sản thành tài sản”.</p>\r\n",
@@ -1718,7 +1718,7 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        BlogId = new Guid("4045233f-2de4-483f-a591-ba137c604574"),
+                        BlogId = new Guid("7ac2ed3b-c633-40c2-ae2d-9ad2418a9ded"),
                         BlogStatus = 0,
                         BlogType = 2,
                         Content = "<p>Không gian trưng bày “Tết xưa - Tết thời bao cấp” sẽ đưa du khách ngược dòng thời gian trở về “Tết xưa - Tết thời bao cấp” của thập kỷ 70, 80 để cùng sống lại một giai đoạn lịch sử đặc biệt của đất nước. Tết thời bao cấp tuy còn thiếu thốn về vật chất nhưng đầy ắp tình người và thiêng liêng.</p>\r\n\r\n    <h2>Không gian trưng bày Tết xưa tại Hoàng thành Thăng Long</h2>\r\n    <p>“Tết thời bao cấp” được tái hiện qua 3 không gian trưng bày: Gian hàng mậu dịch quốc doanh, gian hàng tranh - hoa - pháo Tết và không gian thờ cúng. Mặc dù không gian trưng bày không lớn nhưng đã làm nổi bật được đời sống vật chất, tinh thần và văn hóa tâm linh của người dân thủ đô Hà Nội cách đây nửa thế kỷ.</p>\r\n\r\n    <h2>Không gian trưng bày “Nghi lễ Tết cung đình ngày xuân”</h2>\r\n    <p>Không gian trưng bày “Nghi lễ Tết cung đình ngày xuân”, được trưng bày thông qua hình thức giới thiệu tư liệu, diễn giải bằng tranh vẽ phỏng dựng và hiện vật mô hình, giúp du khách có thể hình dung ra được phần nào đời sống chính trị, văn hóa, lịch sử quá khứ vàng son hoàng cung xưa kia.</p>\r\n\r\n    <h2>Nghi lễ “Tống cựu nghinh tân”</h2>\r\n    <p>Vào ngày 23 tháng Chạp, sẽ tái hiện nghi lễ “Tống cựu nghinh tân” tại Khu di sản Hoàng thành Thăng Long - Hà Nội, thể nghiệm những lễ nghi trong dịp Tết Nguyên đán đã từng diễn ra trong cung đình Thăng Long xưa thể hiện mong muốn hưng thịnh cho quốc gia, bình an no ấm cho nhân dân.</p>\r\n\r\n    <h2>Nghi lễ Tiến lịch</h2>\r\n    <p>Nghi lễ Tiến lịch không chỉ là một nghi lễ thiêng liêng đóng vai trò quan trọng trong đời sống cung đình và dân gian xưa mà “lịch” đã trở thành một vật đặc biệt gắn liền với đời sống của con người trong quá khứ, hiện tại và tương lai.</p>\r\n\r\n    <h2>Lễ dựng Nêu</h2>\r\n    <p>Lễ dựng Nêu là một trong những hoạt động điểm nhấn của chương trình. Cây nêu ngày Tết là một phong tục truyền thống của người Việt Nam, thường được dựng vào dịp Tết Nguyên đán. Cây nêu được dựng vào ngày 23 tháng Chạp Âm lịch, sau lễ tiễn ông Táo về trời, và hạ xuống vào ngày mùng 7 tháng Giêng, kết thúc kỳ nghỉ Tết. Phong tục dựng cây nêu không chỉ phổ biến trong cộng đồng người Kinh và trong dân gian mà còn được duy trì trong kinh thành Thăng long cũng như xuất hiện ở nhiều dân tộc thiểu số khác tại Việt Nam.</p>\r\n\r\n    <h2>Các Nghi Lễ Khác</h2>\r\n    <p>Trong khuôn khổ chương trình còn có các nghi lễ thả cá chép tiễn ông Công ông Táo về trời; Lễ đổi gác, Lễ khai xuân…</p>\r\n",
@@ -1785,13 +1785,13 @@ namespace Data.Migrations
                 b.HasData(
                     new
                     {
-                        CertificationId = new Guid("c2efe06a-7a68-49c9-90f4-46bb7b3cb7e4"),
+                        CertificationId = new Guid("87430ba7-766b-4bdd-bb44-b11b016a5d45"),
                         CertificationDetails = "Sản phẩm: Viên nghệ mật ong \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9800),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9799),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3263),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3262),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9795),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3256),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("c58bb9c8-ad26-40bc-a5d5-f8d09049f7aa"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1800,13 +1800,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("4b814d55-0a9c-429a-a3d3-d8b5eb7eece3"),
+                        CertificationId = new Guid("8e65c5d9-bde2-4a23-b86f-114dec7b76dd"),
                         CertificationDetails = "Sản phẩm: Tinh Bột Sắn Dây \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9806),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9805),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3270),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3269),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9804),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3269),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("4335f0e8-9ea3-48a7-b0cf-5185ff675dde"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1815,13 +1815,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("f37826c9-f33a-4e43-ba86-2b2107fca870"),
+                        CertificationId = new Guid("313612d7-5a41-4a38-a45b-9a2d24dfe8e6"),
                         CertificationDetails = "Sản phẩm: Cơm cháy \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9810),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9810),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3277),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3276),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9809),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3275),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("798a3b9b-f7c9-4e84-a563-39421e6585f4"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1830,13 +1830,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("2bfa7860-c37a-436b-9899-e8dc332be0b1"),
+                        CertificationId = new Guid("a3f7a331-628a-4477-a253-585d0669d881"),
                         CertificationDetails = "Sản phẩm: Dầu gội dược liệu \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9815),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9814),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3283),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3282),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9814),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3282),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("f51aaaf7-9bb1-4a69-a634-0ab1162fd9c1"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1845,13 +1845,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("b738a302-d53f-4472-9e57-aa6938eb682a"),
+                        CertificationId = new Guid("627ddfdc-368b-401a-91ac-2328ba6f0f92"),
                         CertificationDetails = "Sản phẩm: Trà Sen Tây Hồ \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9819),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9819),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3289),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3288),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9818),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3288),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("69006cfe-5233-4b8e-b181-d81a485873e3"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1860,13 +1860,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("f8ed02d4-f362-4c52-8d4a-5e87549a2b1e"),
+                        CertificationId = new Guid("48c3d716-c1b5-499b-b934-58ee7dc6f1c0"),
                         CertificationDetails = "Sản phẩm: Ống rượu tre Việt Nam \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9824),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9823),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3297),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3297),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9823),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3296),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("98e14da8-40dd-4e50-bd9b-eb74112f6625"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1875,13 +1875,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("e3d297d3-37e4-4a40-bc9d-57ebbaf8ac8f"),
+                        CertificationId = new Guid("6da843d1-50a7-49d1-b1fd-459607e94dcb"),
                         CertificationDetails = "Sản phẩm: Bột tía tô \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9830),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9829),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3303),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3303),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9829),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3302),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("639e1cfc-1266-4b30-9022-3927c1721afd"),
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
@@ -1890,13 +1890,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("f4367139-2828-4483-87e9-7fb20ac9e0ea"),
+                        CertificationId = new Guid("110450a5-0981-41b8-bf1a-bd50728eaa48"),
                         CertificationDetails = "Sản phẩm: Nhang trầm hương \r\n Đơn vị: Hợp tác xã Dịch vụ Nông nghiệp tổng hợp Đồng Tâm \r\n Địa chỉ: Thôn 9, xã Quỳnh Vinh, thị xã Hoàng mai, tỉnh Nghệ An\r\nĐã tham gia đánh giá phân hạng sản phẩm chương trình một xã một sản phẩm OCOP đợt 2 năm 2022",
                         CertificationName = "Chứng nhận OCOP",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9834),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9834),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3309),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3309),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9833),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3308),
                         IssuingOrganization = "Ủy ban nhân dân xã",
                         ProductId = new Guid("65966980-988a-4d92-89b4-2b74425fe3f3"),
                         StatusApproval = 1,
@@ -1904,13 +1904,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("3f542af5-d042-42b9-91ab-0fb68a24d24f"),
+                        CertificationId = new Guid("bb53227d-a72d-48b2-9c79-78eb6e834b59"),
                         CertificationDetails = "Chứng nhận hệ thống quản lý chất lượng",
                         CertificationName = "Chứng nhận TQC",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9838),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9837),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3314),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3313),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9837),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3313),
                         IssuingOrganization = "Trung tâm kiểm nghiệm và chứng nhận CGLOBAL",
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ chưa đạt yêu cầu!",
                         StatusApproval = 2,
@@ -1918,13 +1918,13 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        CertificationId = new Guid("896eb5dc-7e01-4573-971e-675f6f43b022"),
+                        CertificationId = new Guid("d1d5aead-8173-4ab5-9470-c84878899a9d"),
                         CertificationDetails = "Chứng nhận chất lượng sản phẩm",
                         CertificationName = "Chứng nhận chất lượng sản phẩm",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9842),
-                        ExpiryDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9840),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3319),
+                        ExpiryDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3317),
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fc1.webp?alt=media\\u0026token=891959b2-1cc7-448a-a86e-e5cf270fe4d9\"]",
-                        IssueDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(9840),
+                        IssueDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(3317),
                         IssuingOrganization = "Tổng cục tiêu chuẩn đo lường chất lượng",
                         ReplyRequest = "Yêu cầu xác nhận chứng chỉ được phê duyệt!",
                         StatusApproval = 0,
@@ -2153,8 +2153,8 @@ namespace Data.Migrations
                 b.HasData(
                     new
                     {
-                        OCOPSellId = new Guid("a5472ed7-85de-4318-81ff-f4a83e1eec2d"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7973),
+                        OCOPSellId = new Guid("6d69d676-d1ee-419f-9834-e1b4cebab7b7"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1091),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2023, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("c58bb9c8-ad26-40bc-a5d5-f8d09049f7aa"),
@@ -2163,8 +2163,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("8768965b-6b68-4c61-a566-d11ea504016a"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7982),
+                        OCOPSellId = new Guid("80bde595-8d2a-41be-96ed-a4bc9a4e3b0c"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1108),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("c58bb9c8-ad26-40bc-a5d5-f8d09049f7aa"),
@@ -2173,8 +2173,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("a16ac9ac-6aad-4818-a109-3eb2370a79ca"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7988),
+                        OCOPSellId = new Guid("2125bbd5-1000-47e3-a860-9b6b9f683189"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1116),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("c58bb9c8-ad26-40bc-a5d5-f8d09049f7aa"),
@@ -2183,8 +2183,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("ed793d1d-33e4-4b43-89bc-60289ede9353"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7994),
+                        OCOPSellId = new Guid("b6c16967-6246-4a50-a29b-43b313ffb6ad"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1123),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("4335f0e8-9ea3-48a7-b0cf-5185ff675dde"),
@@ -2193,8 +2193,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("3f16c3ff-c3e2-4713-9a76-27d77db3875c"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8014),
+                        OCOPSellId = new Guid("f74cd50a-cede-492c-993b-d0d3c382cd98"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1154),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("4335f0e8-9ea3-48a7-b0cf-5185ff675dde"),
@@ -2203,8 +2203,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("b4b2c858-22b1-4969-bb69-d1aef18cdeb4"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8020),
+                        OCOPSellId = new Guid("2696f307-0afe-4edf-bc23-dd32f9111c58"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1164),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("4335f0e8-9ea3-48a7-b0cf-5185ff675dde"),
@@ -2213,8 +2213,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("d5172bae-0e5b-4f0d-9a34-a640d9a72e22"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8027),
+                        OCOPSellId = new Guid("f8369d59-70e8-4d63-8f89-3694c97002e0"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1172),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("798a3b9b-f7c9-4e84-a563-39421e6585f4"),
@@ -2223,8 +2223,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("85941755-aec8-4c26-ae55-c8cbb207d524"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8054),
+                        OCOPSellId = new Guid("59a4be2b-9707-4cf0-8395-328f1340cbda"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1243),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("798a3b9b-f7c9-4e84-a563-39421e6585f4"),
@@ -2233,8 +2233,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("309fed8e-644d-49cb-9600-3596d806871d"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8059),
+                        OCOPSellId = new Guid("304330b9-fab8-43f4-ae75-5ca906416b4b"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1257),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("798a3b9b-f7c9-4e84-a563-39421e6585f4"),
@@ -2243,8 +2243,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("171956e9-99fe-45ac-8854-7087002e6de8"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8065),
+                        OCOPSellId = new Guid("0e7584b1-6cfe-46fe-9c08-6bb188a8a621"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1264),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("f51aaaf7-9bb1-4a69-a634-0ab1162fd9c1"),
@@ -2253,8 +2253,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("7d0e130e-800a-47c8-bdd4-796a4138b2ce"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8070),
+                        OCOPSellId = new Guid("aa0b805b-41b0-4e45-906f-c18e80c8b9ec"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1272),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("f51aaaf7-9bb1-4a69-a634-0ab1162fd9c1"),
@@ -2263,8 +2263,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("cb007d5a-f710-4183-b32f-fca92d570e71"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8076),
+                        OCOPSellId = new Guid("0fb6b9f2-b877-45f3-9688-f8ea10ba9c2e"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1279),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("f51aaaf7-9bb1-4a69-a634-0ab1162fd9c1"),
@@ -2273,8 +2273,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("b432cfb8-b8a0-41c5-98b0-5e2d51a950fb"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8081),
+                        OCOPSellId = new Guid("24155fb7-0155-4be9-8ef2-25adcd82ea9f"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1286),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("69006cfe-5233-4b8e-b181-d81a485873e3"),
@@ -2283,8 +2283,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("b8c841e0-5e42-4f18-a674-04f2cec88c33"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(8086),
+                        OCOPSellId = new Guid("a8b033ca-b8fa-45a6-bb13-90d8bf77a6b1"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(1296),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("69006cfe-5233-4b8e-b181-d81a485873e3"),
@@ -2293,8 +2293,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("643c6176-1bb1-4551-bf8e-781bc68ed7a1"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9466),
+                        OCOPSellId = new Guid("a6deb572-839e-4a1d-9b27-46d4c193498f"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(2958),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("69006cfe-5233-4b8e-b181-d81a485873e3"),
@@ -2303,8 +2303,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("a532b8e7-0b3e-4bf6-b8b2-fba805688011"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9494),
+                        OCOPSellId = new Guid("b9d12223-c8d7-4de0-9a1a-5e483ba790cb"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(2987),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("98e14da8-40dd-4e50-bd9b-eb74112f6625"),
@@ -2313,8 +2313,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("abf2c1f3-6a0b-476d-8862-669e11e17099"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9500),
+                        OCOPSellId = new Guid("39453f4b-89bf-4406-a9a9-d1a6c045b7af"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(2996),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("98e14da8-40dd-4e50-bd9b-eb74112f6625"),
@@ -2323,8 +2323,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("fa1d242c-2c80-4053-8224-32cd96abdea2"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9506),
+                        OCOPSellId = new Guid("02efaf1e-7a87-44bb-8b75-c9ad0a507dd2"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3003),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("98e14da8-40dd-4e50-bd9b-eb74112f6625"),
@@ -2333,8 +2333,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("cec36d04-5819-45a0-8cb1-a75438e5fc0c"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9512),
+                        OCOPSellId = new Guid("1309f746-e97e-484d-a448-c45f3294eb70"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3012),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("639e1cfc-1266-4b30-9022-3927c1721afd"),
@@ -2343,8 +2343,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("9e058a20-4a64-49b4-9dd1-85a1c4879bd4"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9517),
+                        OCOPSellId = new Guid("f2d4fe23-a49a-4649-bb21-7593f254f2c7"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3019),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("639e1cfc-1266-4b30-9022-3927c1721afd"),
@@ -2353,8 +2353,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("e7b484e0-37d7-4bad-a9b5-bb5f7fd33e75"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9523),
+                        OCOPSellId = new Guid("74bff0da-b950-42ef-a949-90ac6b970ed9"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3027),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("639e1cfc-1266-4b30-9022-3927c1721afd"),
@@ -2363,8 +2363,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("c58626d2-8a12-43e8-9f62-f84a91f1a389"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9529),
+                        OCOPSellId = new Guid("868b5a07-9c09-4145-9d83-85e55703366a"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3041),
                         ExpiryDate = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("65966980-988a-4d92-89b4-2b74425fe3f3"),
@@ -2373,8 +2373,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("bec7549b-8f8c-49d5-95bb-4fa45d094aba"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9538),
+                        OCOPSellId = new Guid("55a7bd41-b079-4903-baf7-0cd4b4719669"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3049),
                         ExpiryDate = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("65966980-988a-4d92-89b4-2b74425fe3f3"),
@@ -2383,8 +2383,8 @@ namespace Data.Migrations
                     },
                     new
                     {
-                        OCOPSellId = new Guid("fa11aaf1-0898-4ff9-8584-0353983c2118"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9631),
+                        OCOPSellId = new Guid("dcca7132-039f-455c-8153-18fd6d0084f7"),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3056),
                         ExpiryDate = new DateTime(2027, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ManufacturingDate = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                         ProductId = new Guid("65966980-988a-4d92-89b4-2b74425fe3f3"),
@@ -2534,7 +2534,7 @@ namespace Data.Migrations
                         Additional = "Tiêu hóa & gan, Tim mạch & huyết áp, Khả năng miễn dịch, Khớp, cơ bắp & Xương, Căng thẳng, giấc ngủ, và nlo lắng",
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
                         Age = "Người lớn",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7586),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(708),
                         Description = "Viên Nghệ Mật Ong Hoàng Mai Nguyên Chất - Hỗ Trợ Giảm Đau Dạ Dày, Làm Đẹp Da\r\n\r\n1. Thông tin sản phẩm:\r\n- Quy cách đóng gói: 500gr\r\n- Hạn sử dụng: 18 tháng \r\n- Xuất xứ: Việt Nam\r\n-  Hoàng Mai, tỉnh Nghệ An\r\n- Chứng chỉ: Chứng nhận OCOP 3 sao\r\n- Thương hiệu: HTX Đồng Tâm\r\n\r\n2. Ưu điểm nổi bật\r\n- Sản phẩm đạt chuẩn chất lượng tiêu chuẩn OCOP.\r\n- Áp dụng công nghệ bào chế tinh bột nghệ Nano Curcumin.\r\n- Thành phần: tinh bột nghệ, mật ong tự nhiên nguyên chất không pha tạp.\r\n- Tinh chế từ 100% nguyên liêu tự nhiên không hóa chất bảo quản.\r\n\r\n3. Công dụng sản phẩm\r\n- Hỗ trợ đường tiêu hoá: phòng các chứng viêm va giảm đau dạ dày ( bao tử), đại tràng, bệnh đường ruột.\r\n- Giảm mụn, nám, tàng nhang, thâm sạm, ngăn ngừa lão hoá từ bên trong giúp dưỡng nhan, làm hồng hào da, nhuận sắc\r\n- Lưu thông m.á.u, hỗ trợ các bệnh viêm khớp, tim mạch, tiểu đường\r\n- Làm hạ huyết áp, giảm cholesterol\r\n- Giúp an thần, ngủ ngon \r\n- Tăng cường sinh lực cho phái mạnh\r\n- Cải thiện sức khoẻ, sắc đẹp đẹp cho phụ nữ sau sinh\r\n\r\n4. Hướng dẫn sử dụng:\r\n- Viên nghê mật ong Hoàng Mai thơm ngon, khá mềm nên có thể nhai trực tiếp hoặc kết hợp uống với nước.\r\n- Nếu đau dạ dày nặng ngày dùng 3 lần, 5-7 viên/ lần sau khi ăn, khoảng 1 tháng đã cải thiện nên giảm tần suất dùng xuống ngày 2 lần \r\n- Uống tốt sức khỏe & tái tạo – trẻ hóa da ngày dùng 2 lần, 3-5 viên/ lần.\r\n- Các mẹ ở cử, sau sanh khoảng 7 ngày-10 ngày khi xuống sạch dịch và huyết thì dùng ngày dùng 3 lần, 5 viên/ lần.\r\n- Trẻ em trên 2 đến 6 tuổi ngày dùng 2 lần, 2-3 viên/ lần.\r\n*** Lưu ý: Phụ nữ mang thai, người bị sỏi thận, sỏi mật, người chuẩn bị phẩu thuật, trẻ em dưới 2 tuổi không nên dùng.\r\n\r\n5. Hướng dẫn bảo quản viên tinh bột nghệ mật ong Hoàng Mai\r\n- Để nơi thoáng mát, tránh tiếp xúc ánh nắng mặt trời.\r\n- Không nên đặt dưới nền đất lạnh, sẽ ảnh hưởng đến chất lượng.\r\n- Tránh để nước hoặc không khí tiếp xúc với sản phẩm, sẽ gây ẩm mốc.\r\n- Đậy nắp kín trước và sau khi sử dụng. \r\n\r\n6. Quy trình đổi trả sản phẩm nếu có lỗi từ nhà sản xuất theo quy định của Shopee.\r\n Điều kiện áp dụng (trong vòng 03 ngày kể từ khi nhận sản phẩm):\r\n- Vui lòng quay video mở hàng (shop chỉ giải quyết đơn hàng khi có video mở hàng)\r\n- Hàng hóa hư hỏng do vận chuyển hoặc do nhà sản xuất.\r\n- Không đủ số lượng như trong đơn hàng.\r\n\r\nSẢN PHẨM NÀY KHÔNG PHẢI LÀ THUỐC VÀ KHÔNG CÓ TÁC DỤNG THAY THẾ THUỐC CHỮA BỆNH.\r\n#Viennghe #Vientinhnghe #Viennghematong #Vientinhnghematong #Matong  #Suaongchua #tinhbotnghe #tinhbot #botnghevang #nghe #tinhbotnghevang #tinhbotnghethiennhien #tinhbotnghehuuco #tinhbotnghetunhien #tinhbotnghexuatkhau #sanxuattinhbotnghe #vientinhbotnghe #vientinhbot #nghevang #shopmall #Shopuytin #ocop",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F51c69bc2dd52e99cedbea5ae436d8172.mp4?alt=media\\u0026token=0321ec29-4610-42b8-a908-44fb85efbac1\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7r98o-lmyybsw1u1274a%40resize_w900_nl.webp?alt=media\\u0026token=8df7ec0c-528c-4420-b9d8-1aa642cf458b\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7r98o-ln887g33oi54f0%40resize_w900_nl.webp?alt=media\\u0026token=e4a624c3-296d-4553-812e-c17832510225\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7r98o-lnq49wxk2v7ea0%40resize_w900_nl.webp?alt=media\\u0026token=b6600b96-94ef-473e-ba86-72a4f5568635\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7ras8-m2faqd729rck56%40resize_w900_nl.webp?alt=media\\u0026token=2df35c4e-8b69-4210-80f3-58f6dee45ac5\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7ras8-m2faqlwlhj90fe%40resize_w900_nl.webp?alt=media\\u0026token=bddafaae-310a-421f-ac7d-ba10a052b63a\"]",
                         Ingredient = "Tinh bột nghệ, Mật ong nguyên chất",
@@ -2553,7 +2553,7 @@ namespace Data.Migrations
                     {
                         ProductId = new Guid("4335f0e8-9ea3-48a7-b0cf-5185ff675dde"),
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7604),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(719),
                         Description = "Tinh Bột Sắn Dây Nguyên Chất Vị Chanh Leo Đồng Tâm 500g - Hỗ Trợ Thanh Nhiệt, Giải Độc, Mát Gan\r\n\r\nI. THÔNG TIN SẢN PHẨM: \r\n- Xuất xứ: Việt Nam\r\n- Quy cách đóng gói: Hộp 500 gram\r\n- Hạn sử dụng: 18 tháng kể từ NSX\r\n- Thành phần: 100 % Nguyên chất bột sắn dây\r\n\r\nII. CÔNG DỤNG: \r\n- Đồ uống thanh nhiệt giải độc do nóng gan, làm trắng da sáng da từ bên trong. Giải nhiệt, rôm sảy, nóng trong người. Giảu rượu giúp cơ thể tỉnh táo, nhanh hồi phục.              \r\n- Chất làm đặc thực phẩm: Tinh bột sắn dây thường được sử dụng như một chất làm đặc trong các món tráng miệng, nước ép, nước uống và các món canh sệt. Nó giúp tăng độ đặc và nhờn cho các món ăn mà không thay đổi hương vị hay màu sắc của chúng.\r\n- Thành phần trong sản phẩm làm đẹp: Tinh bột sắn dây có khả năng hấp thụ dầu và làm dịu da, nên nó thường được sử dụng trong các sản phẩm chăm sóc da. \r\n- Thức ăn bổ sung: Tinh bột sắn dây có chứa chất xơ và chất dinh dưỡng có lợi như kali, canxi và vitamin C. Việc tiêu thụ tinh bột sắn dây có thể giúp cải thiện tiêu hóa, hỗ trợ sự chuyển hóa chất béo, giảm cholesterol và duy trì sự ổn định của đường huyết.\r\n- Sản phẩm không chứa gluten: Tinh bột sắn dây không chứa gluten, là một lựa chọn tuyệt vời cho những người có chứng dị ứng hoặc nhạy cảm với gluten. Nó có thể được sử dụng để thay thế tinh bột từ các nguồn ngũ cốc khác trong nấu ăn và nướng bánh.\r\n- Tạo mặt nạ tự nhiên: Tinh bột sắn dây có thể được kết hợp với các nguyên liệu tự nhiên khác như mật ong, sữa chua, bột trà xanh để tạo mặt nạ tự nhiên.\r\n\r\nIII. CÁCH SỬ DỤNG:\r\nTheo Đông Y, bột sắn dây có vị ngọt, mát, tính bình nên cây thường được sử dụng trong việc thanh nhiệt và giải độc. Còn theo y học hiện đại thành phần hoạt chất có trong bột sắn dây góp phần ngăn ngừa một số b.ệ.n.h. Sau đây là một số cách sử dụng bột sắn dây.\r\n- Cảm nắng, nhức đầu, sốt nóng: Sử dụng khoảng 12g bột sắn dây hòa vào nước cùng với một chút đường để uống.\r\n- Đau bụng đi ngoài giống kiết lỵ: Sử dụng bột sắn dây hòa vào nước cùng với một chút đường để uống.\r\n- Loại bỏ và ngăn ngừa cảm, nôn, đau đầu ở trẻ nhỏ do bị cảm, gió: Nấu chín bột sắn dây cùng gạo tẻ thành cháo, thêm gừng giã nát và mật ong, cho trẻ ăn từ 3 - 5 ngày.\r\n- Chống ngứa do mồ hôi gây nên: 5g bột sắn dây, 5g thiên hoa phấn, 20g hoạt thạch. Trộn đều hỗn hợp rồi rắc lên những khu vực bị ngứa.\r\n- Vùng ngực và bụng cảm thấy nóng cồn cào, khát nước: lấy 120g sắn dây trộn đều với 15g gạo tẻ, sử dụng để nấu cháo, ăn từ 3 - 5 ngày sẽ làm thuyên giảm tình trạng trên.\r\n- Loại bỏ kiết lỵ do nhiệt: Để loại bỏ đau bụng, nóng rát vùng hậu môn, phải rặn khi đại tiện, pha bột sắn dây với nước và đường, sau đó nấu chín đặc và ăn trong 2 - 3 lần/ngày.\r\n- Ngăn ngừa viêm họng: bột sắn dây giúp cơ thể ức chế một số v.i k.huẩn có h.ại. Vì thế, nếu bị viêm họng, bạn có thể lấy từ 10-15g bột pha nước nóng để uống. Sau vài ngày triệu chứng viêm họng sẽ chấm dứt hoàn toàn.\r\n- Hết n.gộ đ.ộc r.ượu: Hòa tan bột sắn dây với một chút đường có thể thêm nước cốt chanh. Có thể sử dụng muối thay cho đường ",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7ras8-m2faqlwlhj90fe%40resize_w900_nl.webp?alt=media\\u0026token=bddafaae-310a-421f-ac7d-ba10a052b63a\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-1.webp?alt=media\\u0026token=4d8cfdbb-9f89-4e0b-9026-eeb3b551ea0c\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-2.webp?alt=media\\u0026token=bad36b93-8f59-4463-8622-b0a7ea89821e\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-3.webp?alt=media\\u0026token=d111fa72-4b38-4bfc-9c7b-9b5111eadb07\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-4.webp?alt=media\\u0026token=7c347385-45bd-474f-9930-77dca305655c\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-5.webp?alt=media\\u0026token=b6b5ea5e-dee5-4c3f-ac83-231fe6bd4a68\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-6.webp?alt=media\\u0026token=d3542914-5791-4d36-95a6-071e554aa407\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-7.webp?alt=media\\u0026token=4126eb69-2b91-4c39-a8dc-f548b1b9bbd6\"]",
                         Manufacturer = "Xưởng Mộc Việt",
@@ -2569,7 +2569,7 @@ namespace Data.Migrations
                     {
                         ProductId = new Guid("798a3b9b-f7c9-4e84-a563-39421e6585f4"),
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7618),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(732),
                         Description = "✅ Thông tin sản phẩm cơm cố đô ruốc đậm đà 300g- 600g:\r\n    1 gói 05 miếng to đùng.\r\n    Shop đóng gói thùng giấy catton chắc chắn hạn chế bể vỡ khi vận chuyển.\r\n    Trọng lượng mỗi gói cơm cháy cố đô ruốc đậm  Khoảng 600 gram/Túi\r\n\r\n✅ Cơm cháy bên mình để khô ráo dầu mới bỏ vào bịch, và chiên dầu mới để không bị gắt dầu nha các bạn.\r\n     sản phẩm đóng trong túi zips kín, sử dụng rất tiện ích\r\n     Hạn sử dụng: 6 Tháng\r\n     Nguồn gốc xuất xứ : Thành phố Ninh Bình - tỉnh Ninh Bình\r\n\r\n✅ HƯỚNG DẪN SỬ DỤNG VÀ BÀO QUẢN :\r\n- Dùng ngay khi mở miệng túi không cần chế biến.\r\n- Bảo quản nơi khô ráo, thoáng mát và tránh ánh nắng trực tiếp.\r\n \r\n✅ Shop mình tự tin là chuẩn bị hàng nhanh, sáng các bạn đặt đơn thì chiều mình gởi hàng. Tuy nhiên thời gian giao hàng còn phụ thuộc vào đơn vị giao hàng nữa, đôi khi có những trường hợp giao chậm hơn so với dự kiến. Shop mong các bạn hiểu và thông cảm ạ !\r\n\r\n✅ Thời gian giao hàng đối với các tỉnh miền bắc, miền trung: 1-3 ngày. Tỉnh phía Nam : 3-5 ngày.\r\n\r\n1 Túi 05 MIẾNG TO ĐÙNG CƠM CHÁY RUỐC HÀNH ỚT | SHOP CƠM CHÁY CỐ ĐÔ - TINH HOA NÔNG SẢN VIÊT\r\n\r\n#cơm_cháy #cơm_cháy_chà_bông #cơm_cháy_rụm #cơm_cháy_mỡ_hành #cơm_cháy_khô_gà #cơm_cháy_chiên #nước_mắm #cơm_cháy_chiên_mắm #cơm_cháy_lắc_khô_gà #cơm_cháy_mắm_hành #com_cháy_chà_bông #cơm_cháy_ngon #cơm_cháy_chà_bông_ngon #cơm_cháy_khô #cơm_cháy_mắm_ớt #cơm_cháy_chà_bông_mỡ_hành #cơm_cháy_mắm #cơm_cháy_tỏi #cơm_cháy_giá_sỉ",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F3-1.mp4?alt=media\\u0026token=37fe4454-a6ed-4f76-a68e-784edb1b2089\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F32.webp?alt=media\\u0026token=1b2c7198-56da-46dc-bef8-c1371e4bbd16\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F33.webp?alt=media\\u0026token=feac05a6-f278-4bae-85ab-4a9453decd2a\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F34.webp?alt=media\\u0026token=153f06d6-d1ee-4781-a17a-b43c0028fbea\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F35.webp?alt=media\\u0026token=0cf39ab3-b794-4d99-90a6-4d4026b690d8\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F36.webp?alt=media\\u0026token=0f2875bb-7146-4a3d-8774-d449d78a925a\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F37.webp?alt=media\\u0026token=4ef86b59-4468-4e52-af69-5084c99281c8\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F38.webp?alt=media\\u0026token=f332cd0d-fc6f-45e4-87cf-5ad8c1dfc749\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F310.webp?alt=media\\u0026token=1c52bcc3-1800-4c86-a874-842c62dca2af\"]",
                         Ingredient = "GẠO NẾP THƠM, RUỐC, ỚT, TIÊU",
@@ -2588,7 +2588,7 @@ namespace Data.Migrations
                     {
                         ProductId = new Guid("f51aaaf7-9bb1-4a69-a634-0ab1162fd9c1"),
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7626),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(741),
                         Description = "Chào mừng bạn ghé thăm gian hàng chính hãng của PHAN NAM FOOD - cửa hàng nông sản sạch an toàn!\r\nPHAN NAM FOOD là hệ thống cửa hàng nông sản sạch chuyên cung cấp các sản phẩm đạt chuẩn OCOP, VietGap cùng những đặc sản tiêu biểu của địa phương nhằm phục vụ nhu cầu tiêu dùng của người dân được tiếp cận với những thực phẩm sạch, tươi ngon. Mong muốn giới thiệu những đặc sản địa phương tới người dân cả nước PHAN NAM FOOD chính thức có mặt trên sàn thương mại điện tử để khách hàng dễ dàng mua hàng, lựa chọn sản phẩm chất lượng cao với giá tốt nhất và được giao hàng tận nơi.\r\n\r\nTheo dõi gian hàng để nhận ngay voucher giảm giá và cập nhật nhiều chương trình khuyến mãi hấp dẫn từ PHAN NAM FOOD các bạn nhé!\r\n----------------------------\r\nTHÔNG TIN SẢN PHẨM: Dầu gội dược liệu Glow THỦY TÙNG 400ml\r\n- Thương hiệu: Thủy Tùng, sản phẩm ocop 3 sao.\r\n- Trọng lượng: 400ml\r\n- Thành phần: Nước, Bồ kết, hương nhu tía, mần trầu, chanh, vỏ bưởi, sả chanh, gừng, tinh dầu vỏ bưởi, tinh dầu sả chanh, dầu dừa.\r\n- Dầu gội chiết xuất từ những dược liệu thiên nhiên giúp chăm sóc và nuôi dưỡng tóc từ gốc đến ngọn, bảo vệ tóc khỏi các tác nhân có hại từ bên ngoài, giúp tóc sạch gàu, suôn mềm, thoáng mát da đầu.\r\n- HSD: 3 năm kể từ ngày sản xuất (NSX xem trên bao bì)\r\n- Hướng Dẫn Sử Dụng: Làm ướt tóc và da đầu, lấy khoảng 3 - 5ml dầu gội sau đó thoa đều và gội từ 3 - 5 phút rồi xả kỹ bằng nước sạch, nên gội thêm lần 2 để có hiệu quả tốt hơn.\r\n- Cách bảo quản: Nơi khô ráo, tránh ánh sáng trực tiếp.\r\n\r\n#daugoiduoclieu #daugọithaoduoc #daugoiboket #daugoikichthichmoctoc #daugoithaoduocantoan",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F41.png?alt=media\\u0026token=a06f9212-5073-41f6-9cc9-79311b9eb056\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F42.webp?alt=media\\u0026token=fb9ba94c-fdec-47fb-b782-f145d2b611e7\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F43.webp?alt=media\\u0026token=4b849fd1-6be9-4fa5-846c-c1865071899d\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F44.webp?alt=media\\u0026token=d50897e6-af7d-47bd-bc4b-e8e196dd65af\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F45.webp?alt=media\\u0026token=facf05b2-93fb-4519-b412-b73961492d1f\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F46.webp?alt=media\\u0026token=4b7b2e0c-8882-4c0f-86b2-e362dcccabec\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F47.webp?alt=media\\u0026token=47195d9c-a6f1-4416-a67b-cae2ba719f10\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F48.webp?alt=media\\u0026token=5a284068-ab8c-486e-a50a-407e1ed4489d\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F49.webp?alt=media\\u0026token=a0c04528-e4db-427c-984d-f1ef780fd838\"]",
                         Manufacturer = "Xưởng Mộc Việt",
@@ -2605,7 +2605,7 @@ namespace Data.Migrations
                         ProductId = new Guid("69006cfe-5233-4b8e-b181-d81a485873e3"),
                         Additional = "Trà túi lọc & lá trà",
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7637),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(751),
                         Description = "🌱Sản phẩm đạt tiêu chuẩn OCOP 4 SAO theo Quyết định 919/QĐ-Ttg năm 2018 của Chính phủ\r\n\r\n\r\n\r\n✅THÔNG TIN SẢN PHẨM:\r\n\r\n• Trà Sen Bách Diệp là sự hòa quyện tuyệt vời giữa hương thơm ngan ngát của sen Bách Diệp Hồ Tây và vị đậm đà của trà Tân Cương Thái Nguyên.\r\n\r\n• 100% Trà Sen Bách Diệp Tây Hồ Hà Nội được thu hái thủ công, tuyển chọn những búp chè tươi ngon. Trà được gói trọn trong bông Sen giúp cho lá trà thẩm thấu toàn bộ hương sen, sau đó được sấy thăng hoa theo công nghệ hiện đại của Đức để giữ được trong hương vị và bảo quản được lâu, khi pha tạo nên cảm giác khoan khoái và thư giãn.\r\n\r\n• Hải Linh tự hào là thương hiệu Trà sen Bách Diệp uy tín, có sản lượng tiêu thụ lớn nhất hiện nay.\r\n\r\n\r\n\r\n✅ Set quà sang trọng: Một set bao gồm: Trà Sen, hộp trà và túi xách đẹp mắt, thích hợp làm quà tặng cao cấp.\r\n\r\n- Trọng lượng: Set 10 bông trà (tổng trọng lượng 1.000g). Mỗi bông trà sen sau khi đã được sấy thăng hoa (mất hơi nước) có trọng lượng 26gram, đủ tiêu chuẩn cho 6 người uống (4gram trà / 1 người).\r\n\r\n- Trà đã được ướp bông sen sau đó sấy thăng hoa cả búp nên chỉ cần bảo quản ở nhiệt độ thường\r\n\r\n- HSD 12 tháng kể từ ngày sản xuất, NSX và HSD được in trên bao bì từng bông.\r\n\r\n\r\n\r\n\r\n\r\n\r\n✅ CHI TIẾT SẢN PHẨM:\r\n\r\n• Thành phần: 100% trà xanh chất lượng được bọc bên trong búp sen tươi.\r\n\r\n• Hướng dẫn sử dụng: \r\n\r\n- Rót nước sôi để tráng ấm, chén pha trà: Giúp tiệt trùng dụng cụ pha trà và làm nóng ấm, chén pha trà.\r\n\r\n- Cho khoảng 10g trà và phần gạo sen vào trong ấm.\r\n\r\n- Châm 200ml nước sôi có nhiệt độ 75 đến 80 độ C vào ấm, rồi hãm 20-25 giây.\r\n\r\n-  Rót trà từ ấm: Hãm đủ thời gian, bạn hãy rót hết lượng trà trong ấm ra chén Tống qua chiếc lọc trà và tránh để lại nước trong ấm (Lọc trà giúp giữ lại những xác trà nhỏ giúp nước trà trong và tinh khiết hơn)\r\n\r\n\r\n\r\n\r\n\r\n\r\n✅ CÔNG DỤNG CỦA TRÀ SEN: \r\n\r\n• Trà sen Bách Diệp giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. Hạn chế nguy cơ mắc các bệnh về gan, hạn chế sự hấp thu các chất béo vào cơ thể.\r\n\r\n• Tăng cường hệ miễn dịch giúp cho cơ thể giúp cơ thể chống lại những hiện tượng nhiễm virus và nhiễm khuẩn.\r\n\r\n\r\n\r\n✅ QUY CÁCH ĐÓNG GÓI: Trà và búp sen được sấy khô và hút chân không giúp giữ hương vị trà được lâu, thân thiện với môi trường.\r\n\r\n\r\n\r\n\r\n\r\n\r\n✅ CHÍNH SÁCH ĐỔI TRẢ CỦA TRÀ SEN HÀ NỘI OFFICIAL : \r\n\r\n👉 1 đổi 1 trong trường hợp lỗi do nhà sản xuất, sai sản phẩm và theo quy định của Shopee. \r\n\r\n👉 Trường hợp gửi thiếu, các bạn liên hệ shop để được đổi lại, gửi bù MIỄN PHÍ. (Các bạn nhớ QUAY CLIP BÓC HÀNG để được giải quyết nhé).\r\n\r\n\r\n\r\n#tràbúpsen #tràbôngsen #tràngon #tràcaocấp #chèbúpsen #tràsen #tràướphoasen #tràsentâyhồ #tràhoasen #trà #tràbiếu #sentrà #tràướpsentâyhồ #chèướpsen #tràướpbôngsen #chèsen #chèsentâyhồ #tràsenhànội #chèhoasen",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F51.webp?alt=media\\u0026token=5218426e-19ff-4feb-b968-93e08e7f6c92\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F52.webp?alt=media\\u0026token=65af2dec-b460-4f5c-8c4b-8c76b6581a83\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F53.webp?alt=media\\u0026token=a5f9bc6d-d647-4b36-9c9e-bf86eead7692\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F54.webp?alt=media\\u0026token=94412ff3-d1eb-427a-8114-3290d62edd31\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F55.webp?alt=media\\u0026token=1cade255-31ff-4248-ac2f-0f2f8513b33c\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F56.webp?alt=media\\u0026token=7df9da7d-de96-49bc-a5e5-15113e8bb8e0\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F57.webp?alt=media\\u0026token=d9ab3abb-2461-45e6-a22b-3cf0f2a2060f\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F58.webp?alt=media\\u0026token=8a4bda8c-0e6c-4154-8dc0-6c3c23ea8f53\"]",
                         Ingredient = "Trà xanh, Khác",
@@ -2623,7 +2623,7 @@ namespace Data.Migrations
                     {
                         ProductId = new Guid("98e14da8-40dd-4e50-bd9b-eb74112f6625"),
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7656),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(774),
                         Description = "1. R.ư.ợ.u ống tre Việt 1 ống dung tích 750ml. Bộ sản phẩm đi kèm thêm búa rõ R.ư.ợ.u  và hộp đựng.\r\n2. R.ư.ợ.u  ống Tre Việt có 2 vị: 1 là vị nếp cái hoa vàng kết hợp với thảo mộc. 2 là vị R.ư.ợ.u  truyền thống\r\n3. Độ R.ư.ợ.u  lúc bơm vào cây tre là 50 độ, sau thời gian tre hấp thụ đến khi thu hoạch độ R.ư.ợ.u  còn khoảng 32 độ.\r\n4.R.ư.ợ.u  có mùi thơm do kết hợp của Tre, thảo mộc … và Vị ngọt thanh nhẹ, dễ uống.\r\n5. Cách làm R.ư.ợ.u  ống tre: R.ư.ợ.u  nếp sau khi nấu xong, cho qua máy khử các độc tố trong R.ư.ợ.u  như Metanol; Andehit. Rồi hạ thổ 1 năm với các loại hoa quả, thảo mộc hoặc dùng R.ư.ợ.u  nếp cái hoa vàng hạ thổ với các loại thảo mộc. Sau đó bơm vào cây tre đang sinh trưởng. Sau 6 tháng mới cho thu hoạch được.\r\n6. R.ư.ợ.u  dùng men bắc truyền thống, hay còn gọi là Men Trấu của các cụ ngày xưa hay nấu R.ư.ợ.u .\r\n7. Sản phẩm đã được cho đi kiểm nghiệm chuẩn chỉnh về chất lượng sản phẩm nên cực kỳ an toàn. Ngoài ra sản Phẩm R.ư.ợ.u  ống Tre Việt  đạt chứng chỉ Ocop 3 sao. Đây là sản phẩm R.ư.ợ.u  ống Tre đầu tiên ở Việt Nam đạt chứng chỉ Ocop.\r\n8. Bảo quản R.ư.ợ.u  ống Tre: Để nơi khô ráo, thoáng mát, Lúc uống muốn ngon hơn có thể để vào ngăn mát tủ lạnh.\r\n9. R.ư.ợ.u  uống ngon nhất trong 6 tháng đầu. Về sau độ R.ư.ợ.u  sẽ giảm dần, và R.ư.ợ.u  sẽ ngọt hơn",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F61.mp4?alt=media\\u0026token=9fde074e-3db4-4035-9816-923ff1caef9b\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F62.webp?alt=media\\u0026token=5e7d93e8-e10e-47e1-be82-573a9436bdca\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F63.webp?alt=media\\u0026token=7b8fd32b-486b-4fec-bb89-ec59959708d0\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F64.webp?alt=media\\u0026token=d7b0593b-a8a7-44de-917a-35e3699f5cd1\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F65.webp?alt=media\\u0026token=daa304f2-2707-486e-862e-e39f5aff3c25\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F66.webp?alt=media\\u0026token=e9b4469d-a2c9-458a-ba20-e2968a4db706\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F67.webp?alt=media\\u0026token=67fb95cf-5e3b-4dbe-afa7-80dd4c85b7ce\"]",
                         Manufacturer = "Xưởng Mộc Việt",
@@ -2641,7 +2641,7 @@ namespace Data.Migrations
                     {
                         ProductId = new Guid("639e1cfc-1266-4b30-9022-3927c1721afd"),
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7663),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(782),
                         Description = "Bột lá tía tô nguyên chất được bào chế từ lá tía tô tươi, phơi khô, tán mịn để tạo thành sản phẩm bột nguyên chất, giữ được thành phần dưỡng chất bên trong \r\nPhân tích thành phần lá tía tô ta sẽ thấy : 0,3 - 0,5% tinh dầu (khối lượng khô), citral chiếm 20% khối lượng khô. Trong đó thành phần  tinh dầu chủ yếu là perillaldehyd, limonen, L-perrilla alcohol, α-pinen… \r\nLá tía tô có chứa thêm thành phần tanin và glucosid chống v.êm hiệu quả \r\n💗💗 Công dụng dưỡng da của bột lá tía tô nguyên chất Từ xưa, lá tía tô đã được biết đến với các hiệu quả làm đẹp, chăm sóc da mặt. \r\nSử dụng bột lá tía tô nguyên chất sẽ mang đến hiệu quả dưỡng da tuyệt vời mà chị em không thể qua \r\n- Hỗ trợ mụn trứng cá, mụn bọc, mụn sưng đỏ \r\n- Làm sạch da, mịn da, điều tiết dầu nhờn \r\n- Cân bằng độ ẩm cho da khô, nhờn\r\n- Khá.n.gg khuẩn, khá.n.gg v.iê.mm tốt cho làn da mẫn cảm dễ nổi mụn, da dị ứng \r\n- Da sáng dần, đều màu, trắng hồng nếu kiên trì sử dụng \r\n- Hỗ trợ trị Gout\r\n– Cảmho, đau bụng \r\n- Giảm béo, làm đẹp da \r\n- Tốt cho sức khỏe bà bầu và nhiều công dụng khác \r\n🍓🍓 Với thành phần tanin và glucosid hạn chế sự phát triển của vi khuẩn hiệu quả, ngăn ngừa các tác nhân gây mụn, giảm sưng hiệu quả \r\n➡ Lá tía tô có các hoạt chất đặc biệt hiệu quả làm tiêu các bã nhờn trên da, tích tụ gây mụn trứng cá, mụn bọc.\r\n Làm mát từ bên ngoài giúp giảm mụn tối ưu\r\n #bottiato #tiatonguyenchat #botlatiato \r\n• HSD 12 tháng sau khi mở bao bì sản phẩm \r\n• Bảo quản nơi khô ráo, thoáng mát\r\n#bot_tia_to #la_tia_to #bot_tia_to_nguyen_chat",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F71.png?alt=media\\u0026token=e0442041-c3de-4760-9c8e-63d59580a5be\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F72.webp?alt=media\\u0026token=b0fa1e0c-85fb-455e-99c2-66578c832e4b\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F73.webp?alt=media\\u0026token=98568704-49be-4377-beb7-5598f453c2b4\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F74.webp?alt=media\\u0026token=01e37117-b3c5-47eb-8fdd-956c7b8cfa6e\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F75.webp?alt=media\\u0026token=13fdd758-187b-44b8-9b9f-e9fb47148524\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F76.webp?alt=media\\u0026token=be498a71-dc12-42a0-bebd-844b732aa1c8\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F77.webp?alt=media\\u0026token=41f13948-a8de-49ff-88d4-a37b46dd87b8\"]",
                         Ingredient = "Tía tô, cỏ ngọt",
@@ -2659,7 +2659,7 @@ namespace Data.Migrations
                     {
                         ProductId = new Guid("65966980-988a-4d92-89b4-2b74425fe3f3"),
                         AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
-                        CreateDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7669),
+                        CreateDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(789),
                         Description = "THÔNG TIN SẢN PHẨM NHANG TRẦM SẠCH XƯỞNG MỘC VIỆT\r\n\r\n• Thành phần: 95% bột trầm hương tự nhiên Việt Nam, tăm tre Đài Loan cao cấp, bột vỏ cây bời lời Tây Nguyên\r\n\r\n• Trầm phổ thông: tuổi trầm khoảng từ 8-10 năm\r\n\r\n• Trầm cao cấp: tuổi trầm khoảng từ 12-15 năm\r\n\r\n• Trầm đặc biệt: tuổi trầm từ 25 năm trở lên\r\n\r\n• Số lượng cây trong 1kg: loại 40cm có khoảng 650 cây | loại 30cm có khoảng 800 cây\r\n\r\n• Độ nhang dài: 30cm | 40cm (cả cây nhang, tính từ chân đến ngọn)\r\n\r\n• Thời gian cháy: 40-50 phút với loại 30cm | 70-80 phút với loại 40cm, tuỳ vào không gian sử dụng.\r\n\r\n• Xuất xứ: Việt Nam\r\n\r\n• Cách dùng: Thắp ở bàn thờ gia tiên, bàn thờ thần tài ông địa, cúng chùa,...\r\n\r\n• Sản phẩm nhang trầm hương cao cấp được sản xuất thủ công, nguyên liệu thuần tự nhiên, mùi thơm dịu nhẹ, thơm ngọt mùi trầm. Sản phẩm để nơi khô ráo càng lâu càng thơm.\r\n\r\n\r\n\r\nHƯỚNG DẪN SỬ DỤNG NHANG TRẦM SẠCH XƯỞNG MỘC VIỆT\r\n\r\n1/ Trong thờ cúng, gia tiên:\r\n\r\n• Nhang trầm hương sạch dùng trong không gian thờ cúng, tạo sự tưởng nhớ biết ơn và cầu nguyện cho con cháu bình an, gia đình hòa thuận.\r\n\r\n• Nhang trầm hương sạch giúp thanh lọc không gian sống, tiêu trừ các loại mùi hương xấu, thu hút tài lộc.\r\n\r\n• Nhang trầm hương sạch giúp chiêu tài dẫn lộc dịp khai trương, tân gia, tất niên,..\r\n\r\n2/ Trong không gian sống và sức khoẻ:\r\n\r\n• Mùi hương trầm sạch  tạo cảm giác thư giãn, giảm áp lực, căng thẳng, cải thiện sự tập trung.\r\n\r\n• Làm thơm không gian làm việc, làm dịu nhẹ thần kinh và kích thích khả năng tư duy sáng tạo.\r\n\r\n• Nhang trầm hương sạch để xông nhà, trà đạo hoặc yoga giúp tinh thần thông thoáng, cải thiện sức khỏe.\r\n\r\n• Nhang trầm hương sạch, nguyên chất giúp cho giấc ngủ được sâu hơn, cải thiện các chứng đau đầu.\r\n\r\n\r\n\r\nCHÍNH SÁCH ĐỔI TRẢ - BẢO HÀNH\r\n\r\n1/ Đổi trả theo đúng quy định của SHOPEE:\r\n\r\n• Chỉ đổi trả khi hàng hoá còn mới, chưa qua sử dụng.\r\n\r\n• Chấp nhận đổi trả khi hàng hoá bị hỏng hoặc do lỗi của nhà sản xuất.\r\n\r\n2/ Trường hợp được chấp nhận:\r\n\r\n• Hàng không đúng phân loại, mẫu mã như quý khách đặt hàng\r\n\r\n• Không đủ số lượng, không đủ bộ như trong đơn hàng\r\n\r\n3/ Trường hợp không đủ điều kiện áp dụng chính sách:\r\n\r\n• Gửi lại hàng không đúng mẫu mã, không phải hàng của XƯỞNG MỘC VIỆT\r\n\r\n• Do màn hình và điều kiện ánh sáng khác nhau, màu sắc thực tế của sản phẩm có thể chênh lệch khoảng 3-5%.\r\n\r\n\r\n\r\nTHÔNG TIN SẢN XUẤT TRẦM HƯƠNG XƯỞNG MỘC VIỆT\r\n\r\n• Xưởng Mộc Việt là thương hiệu hàng đầu Việt Nam chuyển thu mua, sản xuất và phân phối sản phẩm vòng tay trầm hương, trang sức trầm hương, nhang trầm hương và trầm hương sạch, chuẩn tự nhiên\r\n\r\n• Sản phẩm Xưởng Mộc Việt tự hào nhận các chứng nhận như: OCOP và chuẩn sản phẩm công nghiệp nông thôn tiêu biểu tỉnh Quảng Trị\r\n\r\n• Tất cả sản phẩm được Xưởng Mộc Việt đưa ra thị trường là sản phẩm chính hãng Công ty và cam kết là hàng chuẩn trầm sạch, chuẩn tự nhiên. Được cơ quan chức năng cấp các chứng nhận: OCOP, ISO 9001:2015, VN-TEST",
                         Imgs = "[\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F81.mp4?alt=media\\u0026token=1361932f-6380-4f8f-a8d1-31881efc4ebf\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F82.webp?alt=media\\u0026token=b855f4ab-4b51-43ea-af26-e0deb629f97c\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F83.webp?alt=media\\u0026token=15012cad-7f6f-4cae-842c-c1e8e35d0c89\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F84.webp?alt=media\\u0026token=0576465d-964e-4ffc-93fa-54f410c761e7\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F85.webp?alt=media\\u0026token=ef5f7fbf-bf80-43d6-a4fa-ebda116b5dc1\",\"https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F86.webp?alt=media\\u0026token=521f7498-9a95-424e-884b-72b611b6f0ee\"]",
                         Ingredient = "Trầm hương, Bột Trầm Hương",
@@ -2711,7 +2711,7 @@ namespace Data.Migrations
                         ConfigKey = "SmtpServer",
                         ConfigType = 0,
                         ConfigValue = "smtp.gmail.com",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7460)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(562)
                     },
                     new
                     {
@@ -2719,7 +2719,7 @@ namespace Data.Migrations
                         ConfigKey = "Port",
                         ConfigType = 0,
                         ConfigValue = "587",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7461)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(564)
                     },
                     new
                     {
@@ -2727,7 +2727,7 @@ namespace Data.Migrations
                         ConfigKey = "Email",
                         ConfigType = 0,
                         ConfigValue = "thangnvse151059@fpt.edu.vn",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7462)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(565)
                     },
                     new
                     {
@@ -2735,7 +2735,7 @@ namespace Data.Migrations
                         ConfigKey = "AppPassword",
                         ConfigType = 0,
                         ConfigValue = "sllgcjfbkpgcwnmp",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7463)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(567)
                     },
                     new
                     {
@@ -2743,7 +2743,7 @@ namespace Data.Migrations
                         ConfigKey = "TmnCode",
                         ConfigType = 1,
                         ConfigValue = "7S4BSWDD",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7464)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(568)
                     },
                     new
                     {
@@ -2751,7 +2751,7 @@ namespace Data.Migrations
                         ConfigKey = "HashSecret",
                         ConfigType = 1,
                         ConfigValue = "RC7QASGETNFSP0EDKUE4IT7X6VRKM4NJ",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7465)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(570)
                     },
                     new
                     {
@@ -2759,7 +2759,7 @@ namespace Data.Migrations
                         ConfigKey = "Url",
                         ConfigType = 1,
                         ConfigValue = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7466)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(571)
                     },
                     new
                     {
@@ -2767,7 +2767,7 @@ namespace Data.Migrations
                         ConfigKey = "Command",
                         ConfigType = 1,
                         ConfigValue = "pay",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7467)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(572)
                     },
                     new
                     {
@@ -2775,7 +2775,7 @@ namespace Data.Migrations
                         ConfigKey = "CurrCode",
                         ConfigType = 1,
                         ConfigValue = "VND",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7468)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(573)
                     },
                     new
                     {
@@ -2783,7 +2783,7 @@ namespace Data.Migrations
                         ConfigKey = "Version",
                         ConfigType = 1,
                         ConfigValue = "2.1.0",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7469)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(575)
                     },
                     new
                     {
@@ -2791,15 +2791,15 @@ namespace Data.Migrations
                         ConfigKey = "Locale",
                         ConfigType = 1,
                         ConfigValue = "vn",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7470)
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(576)
                     },
                     new
                     {
                         ConfigId = 12,
                         ConfigKey = "PaymentBackReturnUrl",
                         ConfigType = 1,
-                        ConfigValue = "http://",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(7471)
+                        ConfigValue = "https://localhost:5001/api/tourist/order/return_order",
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(577)
                     });
             });
 
@@ -2863,7 +2863,7 @@ namespace Data.Migrations
                         AddressCompany = "25 Nguyễn Huệ, Quận 1, TP.HCM",
                         CompanyDescription = "Lữ hành hàng đầu Việt Nam.",
                         CompanynName = "Saigontourist",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3969),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(142),
                         EmailCompany = "contact@saigontourist.net",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("d2c3e4f5-6789-0123-4567-89abcdef0123"),
@@ -2875,7 +2875,7 @@ namespace Data.Migrations
                         AddressCompany = "101 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội",
                         CompanyDescription = "Tour du lịch nội địa và quốc tế.",
                         CompanynName = "Hanoitourist",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3975),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(148),
                         EmailCompany = "support@hanoitourist.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("645f6cd7-a359-4643-9e28-0d6eb32d103b"),
@@ -2887,7 +2887,7 @@ namespace Data.Migrations
                         AddressCompany = "15 Lê Lợi, Quận 1, TP.HCM",
                         CompanyDescription = "Tour trọn gói, uy tín.",
                         CompanynName = "Fiditour",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3979),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(153),
                         EmailCompany = "info@fiditour.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("e858b667-00c1-4431-8c41-5c9f88b4fcf8"),
@@ -2899,7 +2899,7 @@ namespace Data.Migrations
                         AddressCompany = "90 Nguyễn Thị Minh Khai, Đà Nẵng",
                         CompanyDescription = "Chuyên tour biển đảo Đà Nẵng.",
                         CompanynName = "Danang Travel",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3982),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(156),
                         EmailCompany = "info@danangtravel.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("d0e45bee-a768-4555-bfeb-788728a53751"),
@@ -2911,7 +2911,7 @@ namespace Data.Migrations
                         AddressCompany = "45 Điện Biên Phủ, Quận 3, TP.HCM",
                         CompanyDescription = "Chuyên tour du lịch nội địa và quốc tế.",
                         CompanynName = "VietSun Travel",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3987),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(160),
                         EmailCompany = "contact@vietsuntravel.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("aa5c5293-88e6-4110-af70-68feae5d6a89"),
@@ -2923,7 +2923,7 @@ namespace Data.Migrations
                         AddressCompany = "15 Phạm Ngũ Lão, Quận 1, TP.HCM",
                         CompanyDescription = "Dịch vụ du lịch cao cấp.",
                         CompanynName = "Bamboo Travel",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3992),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(163),
                         EmailCompany = "contact@bambotravel.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("2ea71d2c-9932-46bc-9423-730dcc7beb92"),
@@ -2935,7 +2935,7 @@ namespace Data.Migrations
                         AddressCompany = "99 Hoàng Diệu, Ba Đình, Hà Nội",
                         CompanyDescription = "Du lịch chất lượng, giá rẻ.",
                         CompanynName = "Phương Nam Travel",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3996),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(166),
                         EmailCompany = "info@phuongnamtravel.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("34417efe-85a3-43bb-8de0-daab43bc3e29"),
@@ -2947,7 +2947,7 @@ namespace Data.Migrations
                         AddressCompany = "10 Lê Thánh Tôn, Quận 1, TP.HCM",
                         CompanyDescription = "Chuyên tổ chức tour du lịch trong và ngoài nước.",
                         CompanynName = "Đất Việt Tour",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(3998),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(168),
                         EmailCompany = "contact@datviettour.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("a2416864-ff31-4e7a-bc1b-368cc7c1ee1c"),
@@ -2959,7 +2959,7 @@ namespace Data.Migrations
                         AddressCompany = "20 Trần Hưng Đạo, Hà Nội",
                         CompanyDescription = "Dịch vụ du lịch chất lượng cao.",
                         CompanynName = "Redtour",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4003),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(171),
                         EmailCompany = "info@redtour.com.vn",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("939a7f24-a476-4e7e-8345-7c58ebb737b4"),
@@ -2971,7 +2971,7 @@ namespace Data.Migrations
                         AddressCompany = "90 Nguyễn Văn Linh, Đà Nẵng",
                         CompanyDescription = "Thông tin và tổ chức tour du lịch.",
                         CompanynName = "Dulichtoday",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4005),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(174),
                         EmailCompany = "support@dulichtoday.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("e469a23d-f6de-4c36-9e44-fc43eeb6a24b"),
@@ -2983,7 +2983,7 @@ namespace Data.Migrations
                         AddressCompany = "120 Phan Chu Trinh, TP.Huế",
                         CompanyDescription = "Công ty du lịch chuyên nghiệp tại Huế.",
                         CompanynName = "Havatravel",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4008),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(176),
                         EmailCompany = "contact@havatravel.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("b7d23d43-0cf4-41a6-aa07-9cf8f563db77"),
@@ -2995,7 +2995,7 @@ namespace Data.Migrations
                         AddressCompany = "50 Nguyễn Trãi, TP. Vũng Tàu",
                         CompanyDescription = "Tour du lịch biển chất lượng cao.",
                         CompanynName = "Vũng Tàu Travel",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4011),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(179),
                         EmailCompany = "info@vungtautravel.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("bd5e9d2c-fb27-4896-b1d6-cc09dad3cfdb"),
@@ -3007,7 +3007,7 @@ namespace Data.Migrations
                         AddressCompany = "75 Hùng Vương, TP. Nha Trang",
                         CompanyDescription = "Dịch vụ đặt tour du lịch biển chuyên nghiệp.",
                         CompanynName = "Nha Trang Holiday",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4014),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(183),
                         EmailCompany = "support@nhatrangholiday.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("46a916db-f0e3-4855-9171-eff063b5cc90"),
@@ -3019,7 +3019,7 @@ namespace Data.Migrations
                         AddressCompany = "23 Lê Lợi, TP. Phan Thiết",
                         CompanyDescription = "Chuyên tour khám phá biển và cát trắng.",
                         CompanynName = "Phan Thiết Tours",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4016),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(186),
                         EmailCompany = "contact@phanthiettours.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("679d0aa0-710b-4026-bcde-d274fcc269a0"),
@@ -3031,7 +3031,7 @@ namespace Data.Migrations
                         AddressCompany = "14 Nguyễn Huệ, TP. Đà Lạt",
                         CompanyDescription = "Tour du lịch khám phá Đà Lạt.",
                         CompanynName = "Đà Lạt Tour",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4019),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(191),
                         EmailCompany = "info@dalattour.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("c7e55065-cacd-4fdf-ae68-2a4bb8ae3375"),
@@ -3043,7 +3043,7 @@ namespace Data.Migrations
                         AddressCompany = "66 Trần Phú, TP. Quy Nhơn",
                         CompanyDescription = "Tour du lịch biển và văn hóa Quy Nhơn.",
                         CompanynName = "Quy Nhơn Explorer",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(4022),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(193),
                         EmailCompany = "contact@quynhonexplorer.com",
                         LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
                         UserId = new Guid("a173d7b4-e503-4508-892a-5d1a4901cd03"),
@@ -3129,7 +3129,7 @@ namespace Data.Migrations
                     {
                         TourDestinationId = new Guid("10000000-0000-0000-0000-000000000003"),
                         ActivityId = new Guid("60f2dcdd-7257-4ce4-8abd-fc01e4eae546"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9402),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9692),
                         Description = "Khởi hành từ bến cảng nổi tiếng của Hạ Long.",
                         EndTime = new DateTime(2025, 6, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
                         StartTime = new DateTime(2025, 6, 10, 9, 30, 0, 0, DateTimeKind.Unspecified),
@@ -3186,7 +3186,7 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000001"),
                         Bio = "Expert in eco-tourism with 5 years of experience.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9330),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9477),
                         ExpertiseArea = "Eco-farming, fruit orchards",
                         Languages = "English, French",
                         Rating = 4.7999999999999998,
@@ -3197,19 +3197,19 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000002"),
                         Bio = "Specialist in sustainable agriculture tours.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9334),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9487),
                         ExpertiseArea = "Tea plantations, organic farming",
                         Languages = "English, Spanish",
                         Rating = 4.5999999999999996,
                         TourCompanyId = new Guid("e33545b1-c97e-412f-b844-17b15cd28b74"),
-                        UpdateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9335),
+                        UpdateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9488),
                         UserId = new Guid("44444444-4444-4444-4444-444444444444")
                     },
                     new
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000003"),
                         Bio = "Guided over 200 eco-tours with top reviews.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9339),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9499),
                         ExpertiseArea = "Mountain trekking, herbal farming",
                         Languages = "English, Vietnamese",
                         Rating = 4.9000000000000004,
@@ -3220,7 +3220,7 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000004"),
                         Bio = "Passionate about agritourism and cultural exchange.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9343),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9505),
                         ExpertiseArea = "Coffee plantations, farm stays",
                         Languages = "English, German",
                         Rating = 4.7000000000000002,
@@ -3231,7 +3231,7 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000005"),
                         Bio = "10 years of experience in eco-tourism industry.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9346),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9525),
                         ExpertiseArea = "Rice farming, eco-tourism",
                         Languages = "English, Chinese",
                         Rating = 4.5,
@@ -3242,19 +3242,19 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000006"),
                         Bio = "An expert in organic farming and sustainable tourism.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9349),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9531),
                         ExpertiseArea = "Tea plantations, eco-farms",
                         Languages = "English, Korean",
                         Rating = 4.7999999999999998,
                         TourCompanyId = new Guid("e33545b1-c97e-412f-b844-17b15cd28b74"),
-                        UpdateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9350),
+                        UpdateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9532),
                         UserId = new Guid("cccccccc-cccc-cccc-cccc-cccccccccccc")
                     },
                     new
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000007"),
                         Bio = "Combining tourism and local culture for unique experiences.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9353),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9538),
                         ExpertiseArea = "Cultural farming, organic coffee",
                         Languages = "English, Japanese",
                         Rating = 4.5999999999999996,
@@ -3265,19 +3265,19 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000008"),
                         Bio = "Bringing sustainable travel to the next level.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9361),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9544),
                         ExpertiseArea = "Tropical fruit farms, eco-friendly tours",
                         Languages = "English, Thai",
                         Rating = 4.7000000000000002,
                         TourCompanyId = new Guid("e33545b1-c97e-412f-b844-17b15cd28b74"),
-                        UpdateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9361),
+                        UpdateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9545),
                         UserId = new Guid("870dd1ec-c340-41ee-9088-0f3612f510cd")
                     },
                     new
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000009"),
                         Bio = "Guiding farm tours with an educational approach.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9367),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9550),
                         ExpertiseArea = "Dairy farming, vineyard tours",
                         Languages = "English, Portuguese",
                         Rating = 4.5,
@@ -3288,12 +3288,12 @@ namespace Data.Migrations
                     {
                         GuideId = new Guid("10000000-0000-0000-0000-000000000010"),
                         Bio = "Committed to authentic rural tourism experiences.",
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9370),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9558),
                         ExpertiseArea = "Olive farming, agritourism",
                         Languages = "English, Italian",
                         Rating = 4.9000000000000004,
                         TourCompanyId = new Guid("e33545b1-c97e-412f-b844-17b15cd28b74"),
-                        UpdateDate = new DateTime(2025, 3, 27, 19, 5, 46, 725, DateTimeKind.Utc).AddTicks(9371),
+                        UpdateDate = new DateTime(2025, 3, 27, 22, 12, 12, 313, DateTimeKind.Utc).AddTicks(9558),
                         UserId = new Guid("64454a5e-9883-4548-9a9d-d7986bf6b3ad")
                     });
             });
@@ -3353,7 +3353,7 @@ namespace Data.Migrations
                     new
                     {
                         PackageId = new Guid("32ba5585-d88d-4c07-8c3a-5c3f846cd138"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9888),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3374),
                         Description = "Tour du lịch Hạ Long 3 ngày 2 đêm với nhiều hoạt động thú vị.",
                         Durations = 3.0,
                         DurationsType = 2,
@@ -3366,7 +3366,7 @@ namespace Data.Migrations
                     new
                     {
                         PackageId = new Guid("7874fc31-cdae-4cf7-9aee-b802ed19ed58"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9892),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3380),
                         Description = "Tour 4 ngày 3 đêm tham quan các điểm nổi bật như Bà Nà Hills, Hội An.",
                         Durations = 4.0,
                         DurationsType = 2,
@@ -3380,7 +3380,7 @@ namespace Data.Migrations
                     new
                     {
                         PackageId = new Guid("7e5d0a21-9f4b-4c2a-ac11-aaae96fcec31"),
-                        CreateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9895),
+                        CreateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3384),
                         Description = "Tour khám phá Sapa, Mộc Châu 5 ngày 4 đêm, thích hợp cho người yêu thiên nhiên.",
                         Durations = 5.0,
                         DurationsType = 2,
@@ -3390,12 +3390,12 @@ namespace Data.Migrations
                         StatusApproval = 2,
                         StatusOperating = 1,
                         TouristFacilityId = new Guid("d9e2de12-d4bc-436a-9209-9f1de3ef185c"),
-                        UpdateDate = new DateTime(2025, 3, 27, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9895)
+                        UpdateDate = new DateTime(2025, 3, 27, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3384)
                     },
                     new
                     {
                         PackageId = new Guid("a649b3b4-10a2-4225-a229-be4d66f29552"),
-                        CreateDate = new DateTime(2025, 3, 22, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9898),
+                        CreateDate = new DateTime(2025, 3, 22, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3389),
                         Description = "Tour 3 ngày 2 đêm khám phá chợ nổi Cái Răng, vườn trái cây, và cuộc sống người dân.",
                         Durations = 3.0,
                         DurationsType = 2,
@@ -3408,7 +3408,7 @@ namespace Data.Migrations
                     new
                     {
                         PackageId = new Guid("321c5b3a-d096-4406-bd11-fbfbd4436fc5"),
-                        CreateDate = new DateTime(2025, 3, 17, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9905),
+                        CreateDate = new DateTime(2025, 3, 17, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3398),
                         Description = "Tour 4 ngày 3 đêm tận hưởng vẻ đẹp của bãi biển Phú Quốc, lặn san hô, thưởng thức hải sản.",
                         Durations = 4.0,
                         DurationsType = 2,
@@ -3418,7 +3418,7 @@ namespace Data.Migrations
                         StatusApproval = 1,
                         StatusOperating = 1,
                         TouristFacilityId = new Guid("d9e2de12-d4bc-436a-9209-9f1de3ef185c"),
-                        UpdateDate = new DateTime(2025, 3, 25, 19, 5, 46, 721, DateTimeKind.Utc).AddTicks(9905)
+                        UpdateDate = new DateTime(2025, 3, 25, 22, 12, 12, 306, DateTimeKind.Utc).AddTicks(3398)
                     });
             });
 
@@ -3511,96 +3511,96 @@ namespace Data.Migrations
                 b.HasData(
                     new
                     {
-                        IssueId = new Guid("727ce674-15f2-4626-85f9-b9efef4312da"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7343),
+                        IssueId = new Guid("27a39db8-311e-488f-87be-249fc2736415"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(469),
                         IssueDescription = "Người dùng không thể đăng nhập dù đã nhập đúng tài khoản và mật khẩu.",
                         IssueType = 3,
                         SolutionContent = "1. Kiểm tra xem tài khoản có bị khóa hay không. \n2. Hướng dẫn người dùng đặt lại mật khẩu. \n3. Kiểm tra lỗi hệ thống xác thực nếu sự cố vẫn tiếp diễn."
                     },
                     new
                     {
-                        IssueId = new Guid("5ede55bf-a5b4-430d-9b58-6e3db08d6384"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7346),
+                        IssueId = new Guid("39c1a6d1-cfd8-43d3-9b35-2ee811c41661"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(475),
                         IssueDescription = "Lỗi không thể thêm sản phẩm vào giỏ hàng.",
                         IssueType = 0,
                         SolutionContent = "1. Kiểm tra lại logic xử lý thêm sản phẩm vào giỏ hàng. \n2. Xem xét console log hoặc error log để xác định lỗi cụ thể. \n3. Cập nhật hoặc sửa lỗi trong mã nguồn nếu cần thiết."
                     },
                     new
                     {
-                        IssueId = new Guid("8592c930-e263-4b73-a7a4-ae1f7dd3a846"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7356),
+                        IssueId = new Guid("766323a7-c1d6-4061-9a2c-953ff4072032"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(477),
                         IssueDescription = "Trang dashboard tải rất chậm, mất hơn 10 giây để hiển thị dữ liệu.",
                         IssueType = 1,
                         SolutionContent = "1. Kiểm tra truy vấn SQL xem có truy vấn nặng không. \n2. Sử dụng caching để giảm tải dữ liệu truy vấn lặp lại. \n3. Tối ưu code frontend/backend để giảm thời gian tải trang."
                     },
                     new
                     {
-                        IssueId = new Guid("e8c48980-9164-4f74-acdb-35a2938d1478"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7358),
+                        IssueId = new Guid("0e924d10-7259-47ce-a1f5-7eeb6506ab30"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(479),
                         IssueDescription = "API kết nối với hệ thống thanh toán báo lỗi 500 Internal Server Error.",
                         IssueType = 2,
                         SolutionContent = "1. Xác minh API key và endpoint có chính xác không. \n2. Kiểm tra log server để biết nguyên nhân lỗi. \n3. Liên hệ với nhà cung cấp API để kiểm tra nếu cần."
                     },
                     new
                     {
-                        IssueId = new Guid("3f3a419a-62c4-4f99-a5f8-19be058dec6b"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7359),
+                        IssueId = new Guid("3f98cdb9-dd5e-4332-abe7-352f2c9256a0"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(481),
                         IssueDescription = "Tài khoản bị khóa do nhập sai mật khẩu nhiều lần.",
                         IssueType = 4,
                         SolutionContent = "1. Kiểm tra trạng thái tài khoản trong hệ thống. \n2. Nếu bị khóa, hướng dẫn người dùng xác thực email hoặc liên hệ hỗ trợ. \n3. Cung cấp tùy chọn mở khóa tài khoản nếu hợp lệ."
                     },
                     new
                     {
-                        IssueId = new Guid("e2436702-fa26-4822-ad01-31410c75adab"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7361),
+                        IssueId = new Guid("bddf3348-c8a8-462a-a81d-d1faa6688f11"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(483),
                         IssueDescription = "Người dùng không thể truy cập trang quản lý mặc dù có quyền admin.",
                         IssueType = 5,
                         SolutionContent = "1. Kiểm tra xem quyền truy cập đã được cấp đúng chưa. \n2. Cập nhật phân quyền nếu cần thiết. \n3. Kiểm tra lại mã nguồn hoặc chính sách bảo mật."
                     },
                     new
                     {
-                        IssueId = new Guid("c865121b-58a4-4e54-82de-2713f7cf7f2f"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7363),
+                        IssueId = new Guid("0a11874c-5b7a-4bdf-8fb4-7b078ba957f6"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(485),
                         IssueDescription = "Thanh toán không thành công do lỗi ngân hàng.",
                         IssueType = 6,
                         SolutionContent = "1. Kiểm tra xem số dư tài khoản của khách hàng có đủ không. \n2. Hướng dẫn thử lại hoặc sử dụng phương thức thanh toán khác. \n3. Kiểm tra log giao dịch để xác minh nguyên nhân."
                     },
                     new
                     {
-                        IssueId = new Guid("027a76c8-55c6-4e59-9af3-81d6fb3f1bdd"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7364),
+                        IssueId = new Guid("5065888a-7e45-4097-bd06-efa57de5c8d2"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(488),
                         IssueDescription = "Người dùng yêu cầu hoàn tiền do giao dịch lỗi.",
                         IssueType = 7,
                         SolutionContent = "1. Xác minh giao dịch và lý do hoàn tiền. \n2. Thực hiện hoàn tiền theo chính sách công ty. \n3. Gửi thông báo cho người dùng về trạng thái hoàn tiền."
                     },
                     new
                     {
-                        IssueId = new Guid("0c5f7c3d-aa17-482a-a5b2-d53dc263dc12"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7366),
+                        IssueId = new Guid("c93bc9e4-e404-4421-aaf8-32fddfd26b35"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(489),
                         IssueDescription = "Người dùng bị trừ sai số tiền khi thanh toán.",
                         IssueType = 8,
                         SolutionContent = "1. Kiểm tra lịch sử giao dịch và xác minh số tiền bị trừ. \n2. Nếu lỗi thuộc về hệ thống, tiến hành hoàn tiền cho khách hàng. \n3. Sửa lỗi hệ thống nếu có để tránh tái diễn."
                     },
                     new
                     {
-                        IssueId = new Guid("d635d49d-80ea-4992-928c-59bc7f5fd361"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7368),
+                        IssueId = new Guid("be3aa3f1-ffc9-429a-917f-540596e1df58"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(493),
                         IssueDescription = "Cần thêm tính năng xuất báo cáo sang Excel.",
                         IssueType = 9,
                         SolutionContent = "1. Ghi nhận yêu cầu và đưa vào backlog. \n2. Xác định mức độ ưu tiên của tính năng. \n3. Đưa vào kế hoạch phát triển nếu phù hợp."
                     },
                     new
                     {
-                        IssueId = new Guid("ec0aba68-dac2-4f51-8070-ca4324f67a97"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7370),
+                        IssueId = new Guid("fe28064c-50b5-48d6-a3ea-2b5aac87f54e"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(495),
                         IssueDescription = "Người dùng yêu cầu cập nhật thông tin cá nhân (email, số điện thoại).",
                         IssueType = 10,
                         SolutionContent = "1. Xác minh danh tính người yêu cầu. \n2. Cập nhật thông tin theo yêu cầu nếu hợp lệ. \n3. Gửi xác nhận thay đổi cho người dùng."
                     },
                     new
                     {
-                        IssueId = new Guid("d337b82d-665b-4efc-99c6-006b8556b1ce"),
-                        CreatedDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7390),
+                        IssueId = new Guid("72b61dcd-3d9b-4147-a4ac-9957ca454107"),
+                        CreatedDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(497),
                         IssueDescription = "Vấn đề khác không thuộc các danh mục trên.",
                         IssueType = 11,
                         SolutionContent = "1. Xác minh chi tiết vấn đề. \n2. Chuyển đến bộ phận phù hợp để xử lý. \n3. Phản hồi cho người dùng về cách giải quyết."
@@ -3665,7 +3665,7 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Việt Thắng",
                         IsResolved = false,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7091),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(340),
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
                     new
@@ -3675,7 +3675,7 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Việt Thắng",
                         IsResolved = false,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7117),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(359),
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
                     new
@@ -3685,7 +3685,7 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Việt Thắng",
                         IsResolved = false,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7119),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(362),
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
                     new
@@ -3695,9 +3695,9 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Văn Anh",
                         IsResolved = true,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7121),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(364),
                         ResponeBy = new Guid("b8c777a9-55b9-4b3d-860a-d7b56e4c24b7"),
-                        ResponseDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7125),
+                        ResponseDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(367),
                         ResponseMessage = "Bạn thực hiện đăng nhập lại vào hệ thống tài khoản đã được kích hoạt lại.",
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
@@ -3708,9 +3708,9 @@ namespace Data.Migrations
                         Fullname = "Lê Văn Bình",
                         IsResolved = true,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7129),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(372),
                         ResponeBy = new Guid("b8c777a9-55b9-4b3d-860a-d7b56e4c24b7"),
-                        ResponseDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7130),
+                        ResponseDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(373),
                         ResponseMessage = "Bạn thực hiện đăng nhập lại vào hệ thống tài khoản đã được kích hoạt lại.",
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
@@ -3721,9 +3721,9 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Thị Lan Anh",
                         IsResolved = true,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7140),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(381),
                         ResponeBy = new Guid("b8c777a9-55b9-4b3d-860a-d7b56e4c24b7"),
-                        ResponseDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7141),
+                        ResponseDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(382),
                         ResponseMessage = "Bạn thực hiện đăng nhập lại vào hệ thống tài khoản đã được kích hoạt lại.",
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
@@ -3734,9 +3734,9 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Thị Lan Anh",
                         IsResolved = true,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7143),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(410),
                         ResponeBy = new Guid("b8c777a9-55b9-4b3d-860a-d7b56e4c24b7"),
-                        ResponseDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7144),
+                        ResponseDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(412),
                         ResponseMessage = "Bạn thực hiện đăng nhập lại vào hệ thống tài khoản đã được kích hoạt lại.",
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     },
@@ -3747,12 +3747,85 @@ namespace Data.Migrations
                         Fullname = "Nguyễn Thị Lan Anh",
                         IsResolved = true,
                         IssueType = 3,
-                        RequestDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7146),
+                        RequestDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(415),
                         ResponeBy = new Guid("b8c777a9-55b9-4b3d-860a-d7b56e4c24b7"),
-                        ResponseDate = new DateTime(2025, 3, 28, 2, 5, 46, 721, DateTimeKind.Local).AddTicks(7147),
+                        ResponseDate = new DateTime(2025, 3, 28, 5, 12, 12, 306, DateTimeKind.Local).AddTicks(416),
                         ResponseMessage = "Bạn thực hiện đăng nhập lại vào hệ thống tài khoản đã được kích hoạt lại.",
                         SupportMessage = "Tài khoản của em đăng nhập vào hệ thống không được do tài khoản đã bị khóa! Anh chị hỗ trợ e mở lại tài khoản ạ!"
                     });
+            });
+
+            modelBuilder.Entity("Data.Models.VNPayPaymentResponse", b =>
+            {
+                b.Property<Guid>("ResponseId")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("uniqueidentifier");
+
+                b.Property<decimal>("Amount")
+                    .HasColumnType("decimal(18,2)");
+
+                b.Property<string>("BankCode")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("BankTranNo")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("CardType")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<Guid?>("OrderDetailOrderId")
+                    .HasColumnType("uniqueidentifier");
+
+                b.Property<Guid?>("OrderDetailProductId")
+                    .HasColumnType("uniqueidentifier");
+
+                b.Property<Guid?>("OrderId")
+                    .HasColumnType("uniqueidentifier");
+
+                b.Property<string>("OrderInfo")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<DateTime>("PayDate")
+                    .HasColumnType("datetime2");
+
+                b.Property<string>("ResponseCode")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("SecureHash")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("TmnCode")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("TransactionNo")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("TransactionStatus")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("TxnRef")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<int>("TypePayment")
+                    .HasColumnType("int");
+
+                b.HasKey("ResponseId");
+
+                b.HasIndex("OrderId");
+
+                b.HasIndex("OrderDetailOrderId", "OrderDetailProductId");
+
+                b.ToTable("VNPayPaymentResponse", (string)null);
             });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -4344,6 +4417,20 @@ namespace Data.Migrations
                 b.Navigation("ResponeAccount");
             });
 
+            modelBuilder.Entity("Data.Models.VNPayPaymentResponse", b =>
+            {
+                b.HasOne("Data.Models.Order", "Order")
+                    .WithMany("VNPayPaymentResponses")
+                    .HasForeignKey("OrderId")
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                b.HasOne("Data.Models.OrderDetail", null)
+                    .WithMany("VNPayPaymentResponses")
+                    .HasForeignKey("OrderDetailOrderId", "OrderDetailProductId");
+
+                b.Navigation("Order");
+            });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
             {
                 b.HasOne("Data.Models.Account", null)
@@ -4448,6 +4535,13 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Models.Order", b =>
             {
                 b.Navigation("OrderDetails");
+
+                b.Navigation("VNPayPaymentResponses");
+            });
+
+            modelBuilder.Entity("Data.Models.OrderDetail", b =>
+            {
+                b.Navigation("VNPayPaymentResponses");
             });
 
             modelBuilder.Entity("Data.Models.Product", b =>
