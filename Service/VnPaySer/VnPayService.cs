@@ -47,6 +47,52 @@ namespace Service.VnPaySer
             var paymentUrl = vnpay.CreateRequestUrl(baseUrl, hashSecret);
             return await _configRepository.GetConfigValueAsync("Url") + paymentUrl;
         }
+        //public async Task<Data.Models.VNPayPaymentResponse> PaymentExecute(IQueryCollection collections)
+        //{
+        //    var vnpay = new VnPayLibrary();
+        //    foreach (var (key, value) in collections)
+        //    {
+        //        if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
+        //        {
+        //            vnpay.AddResponseData(key, value.ToString());
+        //        }
+        //    }
+
+        //    var vnp_TxnRef = vnpay.GetResponseData("vnp_TxnRef");
+        //    var vnp_Amount = decimal.Parse(vnpay.GetResponseData("vnp_Amount")) / 100;
+        //    var vnp_BankCode = vnpay.GetResponseData("vnp_BankCode");
+        //    var vnp_BankTranNo = vnpay.GetResponseData("vnp_BankTranNo");
+        //    var vnp_CardType = vnpay.GetResponseData("vnp_CardType");
+        //    var vnp_OrderInfo = vnpay.GetResponseData("vnp_OrderInfo");
+        //    var vnp_OrderType = vnpay.GetResponseData("vnp_OrderType");
+        //    var vnp_PayDate = DateTime.ParseExact(vnpay.GetResponseData("vnp_PayDate"), "yyyyMMddHHmmss", null);
+        //    var vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+        //    var vnp_TmnCode = vnpay.GetResponseData("vnp_TmnCode");
+        //    var vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
+        //    var vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
+        //    var vnp_SecureHash = collections["vnp_SecureHash"];
+        //    PaymentType typePayment = (PaymentType)(vnp_OrderType == "0" ? TypePayment.TourPayment : TypePayment.OrderPayment);
+
+        //    return new Data.Models.VNPayPaymentResponse
+        //    {
+        //        ResponseId = Guid.NewGuid(),
+        //        OrderId = Guid.Parse(vnp_OrderType),
+        //        TxnRef = vnp_TxnRef,
+        //        Amount = vnp_Amount,
+        //        BankCode = vnp_BankCode,
+        //        BankTranNo = vnp_BankTranNo,
+        //        CardType = vnp_CardType,
+        //        OrderInfo = vnp_OrderInfo,
+        //        PayDate = vnp_PayDate,
+        //        ResponseCode = vnp_ResponseCode,
+        //        TmnCode = vnp_TmnCode,
+        //        TransactionNo = vnp_TransactionNo,
+        //        TransactionStatus = vnp_TransactionStatus,
+        //        SecureHash = vnp_SecureHash,
+        //        TypePayment = (TypePayment)typePayment
+        //    };
+        //}
+
         public async Task<Data.Models.VNPayPaymentResponse> PaymentExecute(IQueryCollection collections)
         {
             var vnpay = new VnPayLibrary();
@@ -76,7 +122,7 @@ namespace Service.VnPaySer
             return new Data.Models.VNPayPaymentResponse
             {
                 ResponseId = Guid.NewGuid(),
-                OrderId = Guid.Parse(vnp_OrderType),
+                OrderId = Guid.Parse(vnp_OrderInfo),
                 TxnRef = vnp_TxnRef,
                 Amount = vnp_Amount,
                 BankCode = vnp_BankCode,
@@ -92,6 +138,7 @@ namespace Service.VnPaySer
                 TypePayment = (TypePayment)typePayment
             };
         }
+
 
     }
 }
