@@ -68,5 +68,25 @@ namespace ATO_API.Controllers
             }
         }
 
+        //[HttpGet("get-tour-company/{TourCompanyId}")]
+        //[ProducesResponseType(typeof(TourCompanyDTO_Guest), StatusCodes.Status200OK)]
+        //[ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        //public async Task<IActionResult> GetTourCompany(Guid TourCompanyId)
+        //{
+        //    try
+        //    {
+        //        Data.Models.TourCompany response = await _tourCompanyService.GetTourCompany_Admin(TourCompanyId);
+        //        TourCompanyDTO_Guest responseResult = _mapper.Map<TourCompanyDTO_Guest>(response);
+        //        return Ok(responseResult);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new ResponseVM
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        });
+        //    }
+        //}
     }
 }
