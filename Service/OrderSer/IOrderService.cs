@@ -1,4 +1,5 @@
 ﻿using Data.DTO.Request;
+using Data.DTO.Respone;
 using Data.Models;
 using System;
 using System.Collections.Generic;
@@ -20,5 +21,6 @@ namespace Service.OrderSer
         Task ClearCart(Guid userId);
         Task<List<OrderDetail_Cart_Respone>> GetCart(Guid userId);
         Task AddOrderPayment(VNPayPaymentResponse checkResponse);
+        Task UpdateOrderShipping(Guid orderId, ShippingOrderResponse shippingResponse);
     }
 }

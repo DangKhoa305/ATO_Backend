@@ -24,6 +24,7 @@ using Service.EmailSer;
 using Service.OrderSer;
 using Service.ProductSer;
 using Service.Repository;
+using Service.ShippingSer;
 using Service.SystemConfigSer;
 using Service.TourCompanySer;
 using Service.TourGuideSer;
@@ -194,6 +195,8 @@ builder.Services.AddScoped<IRepository<OrderDetail>, Repository<OrderDetail>>();
 //vnpay 
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IRepository<VNPayPaymentResponse>, Repository<VNPayPaymentResponse>>();
+//ship 
+builder.Services.AddScoped<IShippingService, ShippingService>();
 // app
 var app = builder.Build();
 

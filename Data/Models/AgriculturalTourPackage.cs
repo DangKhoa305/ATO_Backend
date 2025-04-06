@@ -21,8 +21,14 @@ namespace Data.Models
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public Guid TourCompanyId { get; set; }
+        public StatusActive StatusActive { get; set; }
         public virtual TourCompany? TourCompany { get; set; }
         public virtual ICollection<TourDestination>? TourDestinations { get; set; }
         public virtual ICollection<TourGuide>? TourGuides { get; set; }
+    }
+    public enum StatusActive
+    {
+        active = 0,
+        inactive = 1
     }
 }

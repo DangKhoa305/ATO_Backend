@@ -1,8 +1,11 @@
 ﻿using Data.DTO.Request;
+using Data.DTO.Respone;
 using Data.Migrations;
 using Data.Models;
+using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Nest;
 using Service.Repository;
 using StackExchange.Redis;
 using System;
@@ -11,23 +14,24 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Service.OrderSer
 {
     public class OrderService : IOrderService
     {
-        private readonly IRepository<Data.Models.Order> _orderRepository;
-        private readonly IRepository<Data.Models.VNPayPaymentResponse> _VNPayPaymentResponseRepository;
-        private readonly IRepository<OrderDetail> _orderDetailRepository;
-        private readonly IRepository<Product> _productRepository;
+        private readonly Service.Repository.IRepository<Data.Models.Order> _orderRepository;
+        private readonly Service.Repository.IRepository<Data.Models.VNPayPaymentResponse> _VNPayPaymentResponseRepository;
+        private readonly Service.Repository.IRepository<OrderDetail> _orderDetailRepository;
+        private readonly Service.Repository.IRepository<Product> _productRepository;
         private readonly IConnectionMultiplexer _redis;
         private readonly StackExchange.Redis.IDatabase _db;
         public OrderService(
-            IRepository<Data.Models.Order> orderRepository,
-            IRepository<OrderDetail> orderDetailRepository,
+            Service.Repository.IRepository<Data.Models.Order> orderRepository,
+            Service.Repository.IRepository<OrderDetail> orderDetailRepository,
             IConnectionMultiplexer redis,
-            IRepository<Product> productRepository,
-            IRepository<Data.Models.VNPayPaymentResponse> vNPayPaymentResponseRepository)
+            Service.Repository.IRepository<Product> productRepository,
+            Service.Repository.IRepository<Data.Models.VNPayPaymentResponse> vNPayPaymentResponseRepository)
         {
             _orderRepository = orderRepository;
             _orderDetailRepository = orderDetailRepository;
@@ -44,6 +48,10 @@ namespace Service.OrderSer
                 order.OrderId = Guid.NewGuid();
                 order.OrderDate = DateTime.UtcNow;
                 order.StatusOrder = StatusOrder.Processing;
+                if (order.PaymentType == PaymentType.Transfer)
+                {
+                    order.PaymentStatus = PaymentStatus.UnPaid;
+                }
                 order.CreateDate = DateTime.UtcNow;
                 order.TotalAmount = (double)order.OrderDetails.Sum(od => od.Quantity * od.UnitPrice);
                 foreach (var item in order.OrderDetails)
@@ -155,6 +163,10 @@ namespace Service.OrderSer
             try
             {
                 await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
+                var order = await _orderRepository.Query()
+                    .SingleOrDefaultAsync(x => x.OrderId == checkResponse.OrderId);
+                if (checkResponse.TransactionStatus == "00") order.PaymentStatus = PaymentStatus.Paid;
+                _orderRepository.UpdateAsync(order);
             }
             catch (Exception)
             {
@@ -162,5 +174,15 @@ namespace Service.OrderSer
             }
         }
 
+        public async Task UpdateOrderShipping(Guid orderId, ShippingOrderResponse shippingResponse)
+        {
+            var order = await _orderRepository.Query()
+                    .SingleOrDefaultAsync(x => x.OrderId == orderId);
+            if (order == null)
+                throw new Exception("Order not found");
+
+            order.ShippingCode = shippingResponse.OrderCode;
+            _orderRepository.UpdateAsync(order);
+        }
     }
 }

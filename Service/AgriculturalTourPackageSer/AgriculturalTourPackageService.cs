@@ -134,7 +134,43 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
-
+        public async Task<List<AgriculturalTourPackage>> GetListAgriculturalTourPackages_Guest()
+        {
+            try
+            {
+                return await _agriculturalTourPackageRepository.Query()
+                    .Where(x => x.StatusActive == StatusActive.active)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<AgriculturalTourPackage> GetAgriculturalTourPackage_Guest(Guid TourId)
+        {
+            try
+            {
+                return await _agriculturalTourPackageRepository.Query()
+                    .Include(x => x.TourDestinations.Where(x => x.StatusApproval == StatusApproval.Approved))
+                        .ThenInclude(b => b.TourismPackage)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.Driver)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.Accommodation)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.Activity)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.TourGuides)
+                    .Include(x => x.TourGuides)
+                        .ThenInclude(b => b.Account)
+                    .SingleOrDefaultAsync(x => x.TourId == TourId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
         public async Task<TourDestination> GetTourDestination(Guid TourDestinationId)
         {
             try
