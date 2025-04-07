@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Service.ShippingSer.ShippingService;
 
 namespace Service.ShippingSer
 {
@@ -12,5 +13,11 @@ namespace Service.ShippingSer
     {
         Task<ShippingOrderResponse> CreateShippingOrder(ShippingOrderRequest request);
         Task<ShippingTrackingResponse> TrackShippingOrder(string orderCode);
+        Task<ShippingFeeResponse> CalculateShippingFee(ShippingFeeRequest request);
+        Task<ProvinceResponse> GetProvinces();
+        Task<DistrictResponse> GetDistricts(int provinceId);
+        Task<WardResponse> GetWards(int districtId);
+        Task<BaseResponse> CancelOrder(string orderCode);
+        Task<string> PrintShippingLabel(string orderCode);
     }
 }
