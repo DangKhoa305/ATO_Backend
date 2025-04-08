@@ -1,5 +1,4 @@
-﻿using Data.Migrations;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,5 +25,6 @@ namespace Data.Models
         public virtual TourGuide? TourGuide { get; set; }
         public virtual ICollection<UserSupport>? UserSupports { get; set; }
         public virtual ICollection<Order>? Orders { get; set; }
+        public virtual ICollection<BookingAgriculturalTour>? BookingAgriculturalTours { get; set; }
     }
 }

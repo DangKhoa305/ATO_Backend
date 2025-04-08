@@ -19,6 +19,7 @@ using Service.AccommodationSer;
 using Service.AccountSer;
 using Service.AgriculturalTourPackageSer;
 using Service.BlogSer;
+using Service.BookingSer;
 using Service.DriverSer;
 using Service.EmailSer;
 using Service.OrderSer;
@@ -196,7 +197,10 @@ builder.Services.AddScoped<IRepository<OrderDetail>, Repository<OrderDetail>>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IRepository<VNPayPaymentResponse>, Repository<VNPayPaymentResponse>>();
 //ship 
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<IShippingService, ShippingService>();
+//booking 
+builder.Services.AddScoped<IBookingService, BookingService>();
 // app
 var app = builder.Build();
 

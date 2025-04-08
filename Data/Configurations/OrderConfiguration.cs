@@ -27,11 +27,15 @@ namespace Data.Configurations
             //un requi
             builder.Property(x => x.UpdateDate).IsRequired(false);
             builder.Property(x => x.CancelDate).IsRequired(false);
+            builder.Property(x => x.BookingId).IsRequired(false);
 
             #region config relation
             builder.HasOne(x => x.Account)
                .WithMany(c => c.Orders)
                .HasForeignKey(x => x.CustomerId);
+            builder.HasOne(x => x.BookingAgriculturalTour)
+              .WithMany(c => c.Orders)
+              .HasForeignKey(x => x.BookingId);
             #endregion
         }
     }

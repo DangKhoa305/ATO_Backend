@@ -19,7 +19,14 @@ namespace Data.Configurations
             builder.Property(x => x.UserId).IsRequired();
             builder.Property(x => x.TouristFacilityName).IsRequired();
             builder.Property(x => x.CreateDate).IsRequired();
+
             //un requi
+            builder.Property(x => x.phone).IsRequired(false);
+            builder.Property(x => x.ward_name).IsRequired(false);
+            builder.Property(x => x.district_name).IsRequired(false);
+            builder.Property(x => x.province_name).IsRequired(false);
+            builder.Property(x => x.ward_code).IsRequired(false);
+            builder.Property(x => x.district_id).IsRequired(false);
             builder.Property(x => x.Address).IsRequired(false);
             builder.Property(x => x.ContactInfor).IsRequired(false);
             builder.Property(x => x.Description).IsRequired(false);

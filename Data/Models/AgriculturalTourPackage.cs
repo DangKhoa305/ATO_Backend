@@ -25,6 +25,7 @@ namespace Data.Models
         public virtual TourCompany? TourCompany { get; set; }
         public virtual ICollection<TourDestination>? TourDestinations { get; set; }
         public virtual ICollection<TourGuide>? TourGuides { get; set; }
+        public virtual ICollection<BookingAgriculturalTour>? BookingAgriculturalTours { get; set; }
     }
     public enum StatusActive
     {

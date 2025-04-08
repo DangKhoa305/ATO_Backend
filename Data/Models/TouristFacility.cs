@@ -13,6 +13,14 @@ namespace Data.Models
         public Guid UserId { get; set; }
         public string TouristFacilityName { get; set; }
         public string? Address { get; set; }
+        // thong tin ship
+        public string? phone { get; set; }
+        public string? ward_name { get; set; }
+        public string? district_name { get; set; }
+        public string? province_name { get; set; }
+        public string? ward_code { get; set; }
+        public int? district_id { get; set; }
+
         public string? Description { get; set; }
         public string? ContactInfor { get; set; }
         public string? EmailTouristFacility { get; set; }

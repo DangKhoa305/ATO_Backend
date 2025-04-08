@@ -102,12 +102,14 @@ namespace ATO_API.Config
                 // TourismPackage
                 config.CreateMap<TourismPackage, TourismPackageRespone>();
                 config.CreateMap<TourismPackage, TourismPackageRespone_Guest>();
+                config.CreateMap<TourismPackage, TourismPackageRespone_TC>();
                 config.CreateMap<TourismPackageRequest, TourismPackage>();
                 // Activity
                 config.CreateMap<Activity, ActivityRespone>();
                 config.CreateMap<ActivityRequest, Activity>();
                 config.CreateMap<Activity, Activity_OCOPProductActivityRespone>();
                 config.CreateMap<Activity, AgriculturalTourPackage_TourDestination_Activity_Respone>();
+                config.CreateMap<Activity, ActivityRespone_TC>();
                 // DriverRespone
                 config.CreateMap<Driver, DriverRespone>();
                 config.CreateMap<DriverRequest, Driver>();
@@ -130,6 +132,9 @@ namespace ATO_API.Config
                 config.CreateMap<OrderDetailRequest, OrderDetail>();
                 // VNPayPaymentResponse
                 config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponseDTO>();
+                // BookingAgriculturalTour
+                config.CreateMap<BookingAgriculturalTour, BookingAgriculturalTourRespone>();
+                config.CreateMap<BookingAgriculturalTourRequest, BookingAgriculturalTour>();
             });
 
             return mapperConfig.CreateMapper();

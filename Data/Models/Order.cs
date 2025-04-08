@@ -21,6 +21,8 @@ namespace Data.Models
         public DateTime? UpdateDate { get; set; }
         public string? ShippingCode { get; set; }
         public virtual Account? Account { get; set; }
+        public Guid? BookingId { get; set; }
+        public virtual BookingAgriculturalTour? BookingAgriculturalTour { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<VNPayPaymentResponse> VNPayPaymentResponses { get; set; }
     }

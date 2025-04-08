@@ -18,6 +18,7 @@ namespace Data.Configurations
             builder.HasKey(x => x.ResponseId);
             builder.Property(x => x.TxnRef).IsRequired();
             builder.Property(x => x.OrderId).IsRequired(false);
+            builder.Property(x => x.BookingId).IsRequired(false);
             builder.Property(x => x.BankCode).IsRequired();
             builder.Property(x => x.Amount).IsRequired();
             builder.Property(x => x.BankTranNo).IsRequired();
@@ -34,6 +35,10 @@ namespace Data.Configurations
             builder.HasOne(x => x.Order)
                       .WithMany(c => c.VNPayPaymentResponses)
                       .HasForeignKey(x => x.OrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(x => x.BookingAgriculturalTour)
+                      .WithMany(c => c.VNPayPaymentResponses)
+                      .HasForeignKey(x => x.BookingId)
                       .OnDelete(DeleteBehavior.Cascade);
             #endregion
         }

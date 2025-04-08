@@ -10,6 +10,7 @@ namespace Data.Models
     {
         public Guid ResponseId { get; set; }
         public Guid? OrderId { get; set; }
+        public Guid? BookingId { get; set; }
         public string TxnRef { get; set; }
         public decimal Amount { get; set; }
         public string BankCode { get; set; }
@@ -25,10 +26,12 @@ namespace Data.Models
 
         public TypePayment TypePayment { get; set; }
         public virtual Order? Order { get; set; }
+        public virtual BookingAgriculturalTour? BookingAgriculturalTour { get; set; }
     }
     public enum TypePayment
     {
-        TourPayment =0,
-        OrderPayment=1
+        TourPayment = 0,
+        OrderPayment = 1,
+        Refunded = 2,
     }
 }
