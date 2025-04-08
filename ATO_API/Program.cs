@@ -201,6 +201,8 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<IShippingService, ShippingService>();
 //booking 
 builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<IRepository<BookingAgriculturalTour>, Repository<BookingAgriculturalTour>>();
+
 // app
 var app = builder.Build();
 
