@@ -216,19 +216,13 @@ namespace Service.ShippingSer
         {
             public int Code { get; set; }
             public string Message { get; set; }
-            public ShippingOrderData Data { get; set; }
+            public string order_code { get; set; }
+            public string expected_delivery_time { get; set; }
+            public decimal total_fee { get; set; }
+            public decimal insurance { get; set; }
+            public decimal cod_fee { get; set; }
         }
 
-        public class ShippingOrderData
-        {
-            public string OrderCode { get; set; }
-            public string ExpectedDeliveryTime { get; set; }
-            public decimal TotalFee { get; set; }
-            public decimal InsuranceFee { get; set; }
-            public decimal CodFee { get; set; }
-            public int Status { get; set; }
-            public string StatusName { get; set; }
-        }
 
         public class ShippingTrackingResponse
         {

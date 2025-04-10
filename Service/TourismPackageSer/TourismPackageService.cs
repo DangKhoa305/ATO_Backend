@@ -103,6 +103,19 @@ namespace Service.TourismPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+        public async Task<List<TourismPackage>> GetListTourism_TC()
+        {
+            try
+            {
+                return await _tourismPackageRepository.Query()
+                    .Where(x => x.StatusOperating == StatusOperating.Active)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
 
         public async Task<TourismPackage> GetTourismPackage(Guid PackageId)
         {
@@ -110,6 +123,20 @@ namespace Service.TourismPackageSer
             {
                 return await _tourismPackageRepository.Query()
                     .Include(b => b.Activities)
+                    .ThenInclude(b => b.Products)
+                    .SingleOrDefaultAsync(x => x.PackageId == PackageId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+        public async Task<TourismPackage> GetTourismPackage_TC(Guid PackageId)
+        {
+            try
+            {
+                return await _tourismPackageRepository.Query()
+                    .Include(b => b.Activities.Where(x => x.StatusApproval == StatusApproval.Approved))
                     .ThenInclude(b => b.Products)
                     .SingleOrDefaultAsync(x => x.PackageId == PackageId);
             }
@@ -140,7 +167,7 @@ namespace Service.TourismPackageSer
                 existingActivity.BreakTimeInMinutesType = responseResult.BreakTimeInMinutesType;
                 existingActivity.PackageId = responseResult.PackageId;
                 existingActivity.UpdateDate = DateTime.UtcNow;
-                existingActivity.Products.Clear();
+                existingActivity.Products?.Clear();
                 if (existingActivity.Products != null)
                 {
                     var ProductIds = existingActivity.Products.Select(tg => tg.ProductId).ToList();
