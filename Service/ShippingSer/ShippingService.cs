@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Service.ShippingSer
@@ -46,14 +47,26 @@ namespace Service.ShippingSer
                     throw new Exception($"GHN API Error: {responseContent}");
                 }
 
-                return await response.Content.ReadFromJsonAsync<ShippingOrderResponse>();
+                var jsonResponse = JsonDocument.Parse(responseContent);
+                var root = jsonResponse.RootElement;
+                var data = root.GetProperty("data");
+
+                return new ShippingOrderResponse
+                {
+                    Code = root.GetProperty("code").GetInt32(),
+                    Message = root.GetProperty("message").GetString(),
+                    order_code = data.GetProperty("order_code").GetString(),
+                    expected_delivery_time = data.GetProperty("expected_delivery_time").GetString(),
+                    total_fee = data.GetProperty("total_fee").GetDecimal(),
+                    insurance = data.GetProperty("fee").GetProperty("insurance").GetDecimal(),
+                    cod_fee = data.GetProperty("fee").GetProperty("cod_fee").GetDecimal()
+                };
             }
             catch (Exception ex)
             {
                 throw new Exception($"Create shipping order failed: {ex.Message}", ex);
             }
         }
-
         public async Task<ShippingTrackingResponse> TrackShippingOrder(string orderCode)
         {
             try
@@ -66,12 +79,77 @@ namespace Service.ShippingSer
                     throw new Exception($"GHN Tracking API Error: {responseContent}");
                 }
 
-                return await response.Content.ReadFromJsonAsync<ShippingTrackingResponse>();
+                var jsonResponse = JsonDocument.Parse(responseContent);
+                var root = jsonResponse.RootElement;
+                var data = root.GetProperty("data");
+
+                // Handle string status
+                var statusString = data.GetProperty("status").GetString();
+                int status = ConvertStatusToInt(statusString);
+                var statusName = GetStatusName(status);
+
+                return new ShippingTrackingResponse
+                {
+                    Code = root.GetProperty("code").GetInt32(),
+                    Message = root.GetProperty("message").GetString(),
+                    Data = new TrackingData
+                    {
+                        OrderCode = orderCode,
+                        Status = status,
+                        StatusName = statusName,
+                        CreatedDate = DateTime.Parse(data.GetProperty("created_date").GetString()),
+                        LastUpdateDate = data.TryGetProperty("updated_date", out var updateDate) ?
+                            DateTime.Parse(updateDate.GetString()) : null
+                    }
+                };
             }
             catch (Exception ex)
             {
                 throw new Exception($"Track shipping order failed: {ex.Message}", ex);
             }
+        }
+
+        private int ConvertStatusToInt(string status)
+        {
+            return status?.ToLower() switch
+            {
+                "ready_to_pick" => 1,
+                "picking" => 2,
+                "picked" => 2,
+                "delivering" => 4,
+                "delivered" => 5,
+                "delivery_failed" => 10,
+                "cancel" => -1,
+                "return" => 8,
+                "returned" => 9,
+                "lost" => 13,
+                "damage" => 13,
+                "waiting_to_return" => 20,
+                _ => 0
+            };
+        }
+        private string GetStatusName(int status)
+        {
+            return status switch
+            {
+                -1 => "Đơn hàng đã hủy",
+                1 => "Chờ lấy hàng",
+                2 => "Đã lấy hàng",
+                3 => "Đang vận chuyển",
+                4 => "Đang giao hàng",
+                5 => "Đã giao hàng",
+                6 => "Đã đối soát",
+                7 => "Không lấy được hàng",
+                8 => "Hoàn hàng",
+                9 => "Đã hoàn hàng",
+                10 => "Không giao được hàng",
+                11 => "Đã điều chỉnh COD",
+                12 => "Đã điều chỉnh phí",
+                13 => "Đơn hàng bị lỗi",
+                20 => "Đang duyệt hoàn",
+                21 => "Đã duyệt hoàn",
+                _ => "Không xác định"
+            };
         }
         public async Task<ShippingFeeResponse> CalculateShippingFee(ShippingFeeRequest request)
         {

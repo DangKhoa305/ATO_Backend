@@ -363,7 +363,10 @@ namespace ATO_API.Controllers.Tourist
                 {
                     return BadRequest(new ResponseVM { Status = false, Message = "Request body cannot be null" });
                 }
-
+                if (request.client_order_code == null)
+                {
+                    return BadRequest(new ResponseVM { Status = false, Message = "Order Id cannot be null" });
+                }
                 // Validate required fields according to GHN API
                 if (string.IsNullOrEmpty(request.from_name) ||
                     string.IsNullOrEmpty(request.from_phone) ||
@@ -399,6 +402,7 @@ namespace ATO_API.Controllers.Tourist
                 }
 
                 var shipping = await _shippingService.CreateShippingOrder(request);
+                await _orderService.UpdateShipCode(Guid.Parse(request.client_order_code), shipping.order_code);
                 return Ok(shipping);
             }
             catch (Exception ex)
@@ -407,14 +411,15 @@ namespace ATO_API.Controllers.Tourist
             }
         }
 
-        [HttpGet("track-shipping/{orderCode}")]
+        [HttpGet("track-shipping/{OrderId}")]
         [ProducesResponseType(typeof(ShippingTrackingResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> TrackShipping(string orderCode)
+        public async Task<IActionResult> TrackShipping(Guid OrderId)
         {
             try
             {
-                var tracking = await _shippingService.TrackShippingOrder(orderCode);
+                var response = await _orderService.GetOrderDetails(OrderId);
+                var tracking = await _shippingService.TrackShippingOrder(response.ShipCode);
                 return Ok(tracking);
             }
             catch (Exception ex)
