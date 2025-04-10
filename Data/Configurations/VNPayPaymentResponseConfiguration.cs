@@ -35,11 +35,11 @@ namespace Data.Configurations
             builder.HasOne(x => x.Order)
                       .WithMany(c => c.VNPayPaymentResponses)
                       .HasForeignKey(x => x.OrderId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.ClientSetNull);
             builder.HasOne(x => x.BookingAgriculturalTour)
                       .WithMany(c => c.VNPayPaymentResponses)
                       .HasForeignKey(x => x.BookingId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.ClientSetNull);
             #endregion
         }
     }

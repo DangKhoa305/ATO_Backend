@@ -27,9 +27,11 @@ namespace Data.Configurations
             builder.HasOne(x => x.Customer)
                .WithMany(c => c.BookingAgriculturalTours)
                .HasForeignKey(x => x.CustomerId);
+
             builder.HasOne(x => x.AgriculturalTourPackage)
               .WithMany(c => c.BookingAgriculturalTours)
-              .HasForeignKey(x => x.TourId);
+              .HasForeignKey(x => x.TourId)
+              .OnDelete(DeleteBehavior.Restrict);
             #endregion
         }
     }
