@@ -28,7 +28,7 @@ namespace ATO_API.Controllers.Tourist
             _mapper = mapper;
             _feedbackService = feedbackService;
         }
-        [HttpGet("get-list-feedbacks/{ProductId}")]
+        [HttpGet("get-list-product-feedbacks/{ProductId}")]
         [ProducesResponseType(typeof(List<FeedbackRespone>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetFeedBacksByProductId(Guid ProductId)
@@ -50,7 +50,7 @@ namespace ATO_API.Controllers.Tourist
                 });
             }
         }
-        [HttpGet("get-list-feedbacks/{TourId}")]
+        [HttpGet("get-list-tour-feedbacks/{TourId}")]
         [ProducesResponseType(typeof(List<FeedbackRespone>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetFeedBacksByTourId(Guid TourId)

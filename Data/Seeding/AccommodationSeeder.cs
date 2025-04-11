@@ -129,6 +129,17 @@ namespace Data.Seeding
                     Star = 3,
                     Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(6).jpg?alt=media&token=ac993bc9-7dcc-485a-aa6a-b9ea4815b7bd" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
+                },
+                new Accommodation
+                {
+                    AccommodationId = Guid.Parse("10000000-0000-0000-0000-000000000011"),
+                    AccommodationName = "Khách sạn TherHouse",
+                    AccommodationDescription = "Khách sạn trung tâm, giá hợp lý.",
+                    Address = "38 Phan Đình Giót, TT. Mộc Châu, Mộc Châu, Sơn La",
+                    PhoneNumber = "0966 124 194",
+                    Star = 5,
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Hostel%2Funnamed.webp?alt=media&token=76609c66-a696-4481-aa4f-d05fe8e15631" },
+                    TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 }
             );
         }

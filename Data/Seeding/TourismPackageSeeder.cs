@@ -20,79 +20,171 @@ namespace Data.Seeding
         {
 
             modelBuilder.Entity<TourismPackage>().HasData(
+            #region CTCP TRUYỀN THÔNG & DU LỊCH MỘC CHÂU MỘC
                 new TourismPackage
                 {
-                    PackageId = Guid.Parse("32BA5585-D88D-4C07-8C3A-5C3F846CD138"),
+                    PackageId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
-                    PackageName = "Hành trình khám phá Hạ Long",
-                    Description = "Tour du lịch Hạ Long 3 ngày 2 đêm với nhiều hoạt động thú vị.",
+                    PackageName = "Khám phá nông nghiệp Mộc Châu",
+                    Description = "Trải nghiệm làm nông dân tại nông trại: hái dâu, vắt sữa bò, tham quan vườn rau hữu cơ, dùng bữa trưa đặc sản.",
                     Price = 3500000,
-                    Durations = 3,
-                    CreateDate = DateTime.UtcNow,
-                    UpdateDate = null,
-                    StatusApproval = StatusApproval.Processing,
-                    ReplyRequest = null,
+                    Durations = 6,
                     DurationsType = TimeType.hour,
-                    StatusOperating = StatusOperating.Inactive
-                },
-                new TourismPackage
-                {
-                    PackageId = Guid.Parse("7874FC31-CDAE-4CF7-9AEE-B802ED19ED58"),
-                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
-                    PackageName = "Trải nghiệm du lịch Đà Nẵng",
-                    Description = "Tour 4 ngày 3 đêm tham quan các điểm nổi bật như Bà Nà Hills, Hội An.",
-                    Price = 5000000,
-                    Durations = 4,
                     CreateDate = DateTime.UtcNow,
-                    StatusApproval = StatusApproval.Processing,
-                    ReplyRequest = "",
-                    DurationsType = TimeType.hour,
-                    StatusOperating = StatusOperating.Inactive
-                },
-                new TourismPackage
-                {
-                    PackageId = Guid.Parse("7E5D0A21-9F4B-4C2A-AC11-AAAE96FCEC31"),
-                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
-                    PackageName = "Khám phá vùng Tây Bắc",
-                    Description = "Tour khám phá Sapa, Mộc Châu 5 ngày 4 đêm, thích hợp cho người yêu thiên nhiên.",
-                    Price = 6000000,
-                    Durations = 5,
-                    CreateDate = DateTime.UtcNow,
-                    UpdateDate = DateTime.UtcNow,
-                    StatusApproval = StatusApproval.Reject,
-                    ReplyRequest = "Chưa đáp ứng yêu cầu về an toàn.",
-                    DurationsType = TimeType.hour,
-                    StatusOperating = StatusOperating.Inactive
-                },
-                new TourismPackage
-                {
-                    PackageId = Guid.Parse("A649B3B4-10A2-4225-A229-BE4D66F29552"),
-                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
-                    PackageName = "Trải nghiệm miền Tây sông nước",
-                    Description = "Tour 3 ngày 2 đêm khám phá chợ nổi Cái Răng, vườn trái cây, và cuộc sống người dân.",
-                    Price = 3200000,
-                    Durations = 3,
-                    CreateDate = DateTime.UtcNow.AddDays(-5),
                     StatusApproval = StatusApproval.Approved,
-                    ReplyRequest = null,
-                    DurationsType = TimeType.hour,
                     StatusOperating = StatusOperating.Active
                 },
                 new TourismPackage
                 {
-                    PackageId = Guid.Parse("321C5B3A-D096-4406-BD11-FBFBD4436FC5"),
+                    PackageId = Guid.Parse("B07F1613-0A7D-4BBF-8A2F-8F5F3A4E118C"),
                     TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
-                    PackageName = "Du lịch Phú Quốc - Thiên đường biển đảo",
-                    Description = "Tour 4 ngày 3 đêm tận hưởng vẻ đẹp của bãi biển Phú Quốc, lặn san hô, thưởng thức hải sản.",
-                    Price = 7000000,
+                    PackageName = "Tour hái chè và thưởng trà OCOP",
+                    Description = "Tham quan đồi chè xanh mướt, trải nghiệm hái chè, quy trình chế biến chè thủ công và thưởng thức trà OCOP Mộc Châu.",
+                    Price = 2800000,
                     Durations = 4,
-                    CreateDate = DateTime.UtcNow.AddDays(-10),
-                    UpdateDate = DateTime.UtcNow.AddDays(-2),
-                    StatusApproval = StatusApproval.Processing,
-                    ReplyRequest = "",
                     DurationsType = TimeType.hour,
-                    StatusOperating = StatusOperating.Inactive
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("9115F3C1-F621-464D-9C4A-71D67FE65A22"),
+                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+                    PackageName = "Một ngày làm nông dân OCOP",
+                    Description = "Trải nghiệm canh tác nông nghiệp sạch: chăm vườn rau, thu hoạch cà chua, nấm và tìm hiểu quy trình đóng gói sản phẩm OCOP.",
+                    Price = 3200000,
+                    Durations = 1,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("C2D2AD88-BF20-4AC9-9E2C-0B1B5FE502AD"),
+                    TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+                    PackageName = "Du lịch thiện nguyện & nông nghiệp xanh",
+                    Description = "Kết hợp hoạt động từ thiện tại bản làng với trải nghiệm trồng cây xanh, chăm sóc vườn hoa và chế biến thực phẩm từ nông sản địa phương.",
+                    Price = 4000000,
+                    Durations = 2,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+            #endregion
+            #region Du Lịch Sinh Thái Thác Bản Giốc
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("20000000-0000-0000-0000-000000000001"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
+                    PackageName = "Một ngày làm nông dân vùng biên",
+                    Description = "Tham gia gieo trồng rau hữu cơ, thu hoạch nông sản, học cách chăm sóc trâu bò, và dùng cơm trưa với người dân bản địa.",
+                    Price = 1200000,
+                    Durations = 1,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("20000000-0000-0000-0000-000000000002"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
+                    PackageName = "Trải nghiệm thu hoạch mùa vụ",
+                    Description = "Tham gia thu hoạch lúa, ngô, khoai hoặc rau theo mùa; tìm hiểu quy trình chế biến thực phẩm sạch tại trang trại.",
+                    Price = 950000,
+                    Durations = 6,
+                    DurationsType = TimeType.hour,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("20000000-0000-0000-0000-000000000003"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
+                    PackageName = "Khám phá nông nghiệp và văn hóa địa phương",
+                    Description = "Kết hợp hoạt động nông nghiệp với giao lưu văn hóa dân tộc Tày - Nùng, thưởng thức các món ăn truyền thống và xem múa hát dân gian.",
+                    Price = 1800000,
+                    Durations = 2,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("20000000-0000-0000-0000-000000000004"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
+                    PackageName = "Du lịch canh tác hữu cơ kết hợp nghỉ dưỡng",
+                    Description = "Tham gia làm vườn, chăm sóc cây trồng không hóa chất, nghỉ dưỡng tại homestay chuẩn sinh thái ngay chân núi.",
+                    Price = 2500000,
+                    Durations = 2,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+
+            #endregion
+            #region Sa Pa Eco Farm Tour
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("30000000-0000-0000-0000-000000000001"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000002"),
+                    PackageName = "Một ngày làm nông dân H'Mông",
+                    Description = "Tham gia trồng rau trên ruộng bậc thang, hái thuốc nam, nấu ăn cùng người bản địa H’Mông tại bản Cát Cát.",
+                    Price = 1450000,
+                    Durations = 1,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("30000000-0000-0000-0000-000000000002"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000002"),
+                    PackageName = "Hành trình khám phá bản làng và nông nghiệp hữu cơ",
+                    Description = "Đi bộ xuyên bản Cát Cát, tham quan mô hình trồng dược liệu và rau sạch, trải nghiệm làm giấy thủ công truyền thống.",
+                    Price = 1650000,
+                    Durations = 8,
+                    DurationsType = TimeType.hour,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("30000000-0000-0000-0000-000000000003"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000002"),
+                    PackageName = "Farmstay Sa Pa 2N1Đ",
+                    Description = "Nghỉ dưỡng tại homestay trong thung lũng Mường Hoa, tham gia thu hoạch rau, chế biến món ăn dân tộc và giao lưu văn nghệ.",
+                    Price = 2700000,
+                    Durations = 2,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
+                },
+                new TourismPackage
+                {
+                    PackageId = Guid.Parse("30000000-0000-0000-0000-000000000004"),
+                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000002"),
+                    PackageName = "Chợ phiên & nông nghiệp vùng cao",
+                    Description = "Kết hợp tham quan chợ phiên Sa Pa với trải nghiệm gieo trồng, hái rau và học chế biến món ăn đặc sản.",
+                    Price = 1100000,
+                    Durations = 1,
+                    DurationsType = TimeType.day,
+                    CreateDate = DateTime.UtcNow,
+                    StatusApproval = StatusApproval.Approved,
+                    StatusOperating = StatusOperating.Active
                 }
+
+                #endregion
+
             );
 
 

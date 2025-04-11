@@ -94,11 +94,7 @@ namespace ATO_API.Controllers.Tourist
                 var response = await _bookingService.AddBookTour(responseResult);
                 DateTime timecreate = DateTime.UtcNow;
                 var paymentUrl = await _vnPayService.CreatePaymentUrlAsync(HttpContext, response.BookingId, response.TotalAmmount, timecreate, TypePayment.TourPayment);
-                return Ok(new ResponseVM
-                {
-                    Status = true,
-                    Message = "Tạo đơn thành công!",
-                });
+                return Ok(paymentUrl);
             }
             catch (Exception ex)
             {

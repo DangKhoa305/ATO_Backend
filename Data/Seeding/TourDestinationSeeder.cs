@@ -21,63 +21,87 @@ namespace Data.Seeding
             modelBuilder.Entity<TourDestination>().HasData(
                 new TourDestination
                 {
-                    TourDestinationId = Guid.Parse("10000000-0000-0000-0000-000000000004"),
-                    Title = "Lái xe",
-                    Description = "Mô tả lái xe",
+                    TourDestinationId = Guid.Parse("64000000-0000-0000-0000-000000000004"),
+                    Title = "Di chuyển đến Mộc Châu",
+                    Description = "Xe 45 chỗ đón khách tại điểm hẹn và di chuyển đến Mộc Châu",
                     CreateDate = DateTime.UtcNow,
-                    StartTime = new DateTime(2025, 6, 10, 9, 30, 0),
-                    EndTime = new DateTime(2025, 6, 10, 10, 30, 0),
+                    StartTime = new DateTime(2025, 5, 10, 6, 0, 0),
+                    EndTime = new DateTime(2025, 5, 10, 8, 0, 0),
                     VisitOrder = 1,
-                    TypeActivity = TypeActivity.Destination,
+                    TypeActivity = TypeActivity.Drive,
                     StatusApproval = StatusApproval.Approved,
-                    TourId = Guid.Parse("72985040-386D-43AC-833D-1C2CC36CBD17"),
-                    DriverId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
+                    TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4"),
+                    DriverId = Guid.Parse("10000000-0000-0000-0000-000000000005")
                 },
                 new TourDestination
                 {
-                    TourDestinationId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
-                    Title = "Khách sạn",
-                    Description = "Mô tả khách sạn.",
+                    TourDestinationId = Guid.Parse("64000000-0000-0000-0000-000000000001"),
+                    Title = "Tham quan nông trại dâu tây",
+                    Description = "Tham quan và trải nghiệm tại nông trại dâu tây Bản Áng",
                     CreateDate = DateTime.UtcNow,
-                    StartTime = new DateTime(2025, 6, 10, 9, 30, 0),
-                    EndTime = new DateTime(2025, 6, 10, 10, 30, 0),
-                    VisitOrder = 3,
-                    TypeActivity = TypeActivity.Accommodation,
-                    StatusApproval = StatusApproval.Approved,
-                    TourId = Guid.Parse("72985040-386D-43AC-833D-1C2CC36CBD17"),
-                    AccommodationId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
-                },
-                new TourDestination
-                {
-                    TourDestinationId = Guid.Parse("10000000-0000-0000-0000-000000000003"),
-                    Title = "Cảng Tuần Châu",
-                    Description = "Khởi hành từ bến cảng nổi tiếng của Hạ Long.",
-                    CreateDate = DateTime.UtcNow,
-                    StartTime = new DateTime(2025, 6, 10, 9, 30, 0),
-                    EndTime = new DateTime(2025, 6, 10, 10, 30, 0),
-                    VisitOrder = 1,
-                    TypeActivity = TypeActivity.Destination,
-                    StatusApproval = StatusApproval.Approved,
-                    TourId = Guid.Parse("72985040-386D-43AC-833D-1C2CC36CBD17"),
-                    TourismPackageId = Guid.Parse("32BA5585-D88D-4C07-8C3A-5C3F846CD138"),
-                    ActivityId = Guid.Parse("60F2DCDD-7257-4CE4-8ABD-FC01E4EAE546"),
-                },
-                new TourDestination
-                {
-                    TourDestinationId = Guid.Parse("10000000-0000-0000-0000-000000000002"),
-                    Title = "Cảng Tuần Châu",
-                    Description = "Khởi hành từ bến cảng nổi tiếng của Hạ Long.",
-                    CreateDate = DateTime.UtcNow,
-                    StartTime = new DateTime(2025, 6, 10, 9, 30, 0),
-                    EndTime = new DateTime(2025, 6, 10, 10, 30, 0),
+                    StartTime = new DateTime(2025, 5, 10, 8, 15, 0),
+                    EndTime = new DateTime(2025, 5, 10, 9, 45, 0),
                     VisitOrder = 2,
                     TypeActivity = TypeActivity.Destination,
                     StatusApproval = StatusApproval.Approved,
-                    TourId = Guid.Parse("72985040-386D-43AC-833D-1C2CC36CBD17"),
-                    TourismPackageId = Guid.Parse("32BA5585-D88D-4C07-8C3A-5C3F846CD138"),
-                    ActivityId = Guid.Parse("60F2DCDD-7257-4CE4-8ABD-FC01E4EAE546"),
+                    TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4")
+                },
+                new TourDestination
+                {
+                    TourDestinationId = Guid.Parse("64000000-0000-0000-0000-000000000002"),
+                    Title = "Trải nghiệm tại trang trại bò sữa",
+                    Description = "Tham quan và trải nghiệm tại trang trại bò sữa Dairy Farm",
+                    CreateDate = DateTime.UtcNow,
+                    StartTime = new DateTime(2025, 5, 10, 10, 0, 0),
+                    EndTime = new DateTime(2025, 5, 10, 11, 15, 0),
+                    VisitOrder = 3,
+                    TypeActivity = TypeActivity.Destination,
+                    StatusApproval = StatusApproval.Approved,
+                    TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4")
+                },
+                new TourDestination
+                {
+                    TourDestinationId = Guid.Parse("64000000-0000-0000-0000-000000000003"),
+                    Title = "Khám phá vườn rau hữu cơ",
+                    Description = "Tham quan và trải nghiệm tại trang trại rau hữu cơ Mộc Châu Xanh",
+                    CreateDate = DateTime.UtcNow,
+                    StartTime = new DateTime(2025, 5, 10, 11, 30, 0),
+                    EndTime = new DateTime(2025, 5, 10, 12, 45, 0),
+                    VisitOrder = 4,
+                    TypeActivity = TypeActivity.Destination,
+                    StatusApproval = StatusApproval.Approved,
+                    TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4")
+                },
+                new TourDestination
+                {
+                    TourDestinationId = Guid.Parse("64000000-0000-0000-0000-000000000006"),
+                    Title = "Nghỉ trưa tại khách sạn TherHouse",
+                    Description = "Nghỉ ngơi và dùng bữa trưa tại khách sạn 5 sao TherHouse, trung tâm Mộc Châu",
+                    CreateDate = DateTime.UtcNow,
+                    StartTime = new DateTime(2025, 5, 10, 13, 0, 0),
+                    EndTime = new DateTime(2025, 5, 10, 14, 30, 0),
+                    VisitOrder = 5,
+                    TypeActivity = TypeActivity.Accommodation,
+                    StatusApproval = StatusApproval.Approved,
+                    TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4"),
+                    AccommodationId = Guid.Parse("10000000-0000-0000-0000-000000000011")
+                },
+                new TourDestination
+                {
+                    TourDestinationId = Guid.Parse("64000000-0000-0000-0000-000000000005"),
+                    Title = "Di chuyển giữa các điểm tham quan",
+                    Description = "Di chuyển giữa các điểm tham quan trong khu vực Mộc Châu",
+                    CreateDate = DateTime.UtcNow,
+                    StartTime = new DateTime(2025, 5, 10, 8, 0, 0),
+                    EndTime = new DateTime(2025, 5, 10, 14, 30, 0),
+                    VisitOrder = 6,
+                    TypeActivity = TypeActivity.Drive,
+                    StatusApproval = StatusApproval.Approved,
+                    TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4"),
+                    DriverId = Guid.Parse("10000000-0000-0000-0000-000000000005")
                 }
             );
+
         }
 
     }

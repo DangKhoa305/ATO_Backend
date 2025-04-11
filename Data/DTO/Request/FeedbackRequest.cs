@@ -11,6 +11,8 @@ namespace Data.DTO.Request
         public Guid? ProductId { get; set; }
         public Guid? TourId { get; set; }
         public string Content { get; set; }
+        public List<string>? Imgs { get; set; }
+
         public int Rating { get; set; }
     }
 }

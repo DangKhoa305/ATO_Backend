@@ -17,8 +17,8 @@ namespace Service.ShippingSer
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
-        private const string TOKEN = "c62d9d37-10c1-11f0-bdae-1aa8773b35dc";
-        private const int SHOP_ID = 5717558;
+        private const string TOKEN = "694d5427-13a5-11f0-8686-8669292be81e";
+        private const int SHOP_ID = 5722523;
 
         public ShippingService(HttpClient httpClient, IConfiguration configuration)
         {

@@ -118,7 +118,24 @@ namespace Data.Seeding
                    ConfigKey = "PaymentBackReturnUrl",
                    ConfigValue = "https://localhost:5001/api/tourist/order/return_order",
                    CreateDate = DateTime.UtcNow
-               }
+               },
+                new SystemConfigurations()
+                {
+                    ConfigId = 13,
+                    ConfigType = ConfigType.VnPayConfig,
+                    ConfigKey = "BookingUrl",
+                    ConfigValue = "https://localhost:5001/api/tourist/book-tour/return_book",
+                    CreateDate = DateTime.UtcNow
+                },
+                new SystemConfigurations()
+                {
+                    ConfigId = 14,
+                    ConfigType = ConfigType.VnPayConfig,
+                    ConfigKey = "OrderUrl",
+                    ConfigValue = "https://localhost:5001/api/tourist/order/return_order",
+                    CreateDate = DateTime.UtcNow
+                }
+
            );
         }
 

@@ -38,7 +38,8 @@ namespace Service.VnPaySer
 
             vnpay.AddRequestData("vnp_OrderInfo", "" + codePayment);
             vnpay.AddRequestData("vnp_OrderType", TypePayment.ToString());
-            vnpay.AddRequestData("vnp_ReturnUrl", await _configRepository.GetConfigValueAsync("PaymentBackReturnUrl"));
+
+            vnpay.AddRequestData("vnp_ReturnUrl", TypePayment == TypePayment.OrderPayment ? await _configRepository.GetConfigValueAsync("OrderUrl") : await _configRepository.GetConfigValueAsync("BookingUrl"));
 
             vnpay.AddRequestData("vnp_TxnRef", tick);
 

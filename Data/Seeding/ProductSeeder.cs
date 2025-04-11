@@ -25,7 +25,6 @@ namespace Data.Seeding
                    ProductName = "[OCOP - 500 gr] Viên Tinh Nghệ Mật Ong Hoàng Mai Nguyên Chất - Hỗ Trợ Giảm Đau Dạ Dày, Làm Đẹp Da, Lưu Thông Máu",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F51c69bc2dd52e99cedbea5ae436d8172.mp4?alt=media&token=0321ec29-4610-42b8-a908-44fb85efbac1",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7r98o-lmyybsw1u1274a%40resize_w900_nl.webp?alt=media&token=8df7ec0c-528c-4420-b9d8-1aa642cf458b",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7r98o-ln887g33oi54f0%40resize_w900_nl.webp?alt=media&token=e4a624c3-296d-4553-812e-c17832510225",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7r98o-lnq49wxk2v7ea0%40resize_w900_nl.webp?alt=media&token=b6600b96-94ef-473e-ba86-72a4f5568635",
@@ -54,7 +53,6 @@ namespace Data.Seeding
                    ProductName = "[OCOP] Tinh Bột Sắn Ta Dây Nguyên Chất 100% Vị Chanh Leo 500g - Thanh Nhiệt, Giải Độc, Mát Gan, Đẹp Da - Làm Thủ Công",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fvn-11134207-7ras8-m2faqlwlhj90fe%40resize_w900_nl.webp?alt=media&token=bddafaae-310a-421f-ac7d-ba10a052b63a",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-1.webp?alt=media&token=4d8cfdbb-9f89-4e0b-9026-eeb3b551ea0c",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-2.webp?alt=media&token=bad36b93-8f59-4463-8622-b0a7ea89821e",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F2-3.webp?alt=media&token=d111fa72-4b38-4bfc-9c7b-9b5111eadb07",
@@ -80,7 +78,6 @@ namespace Data.Seeding
                    ProductName = "[BÁN SỈ] Cơm cháy 300g- 600g siêu ruốc chà bông ròn ngon Cố Đô, ocop 4 sao đặc sản Ninh Bình",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F3-1.mp4?alt=media&token=37fe4454-a6ed-4f76-a68e-784edb1b2089",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F32.webp?alt=media&token=1b2c7198-56da-46dc-bef8-c1371e4bbd16",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F33.webp?alt=media&token=feac05a6-f278-4bae-85ab-4a9453decd2a",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F34.webp?alt=media&token=153f06d6-d1ee-4781-a17a-b43c0028fbea",
@@ -110,7 +107,6 @@ namespace Data.Seeding
                    ProductName = "Dầu gội dược liệu Glow THỦY TÙNG 400ml, dầu gội thảo dược, dầu gội bồ kết OCOP 4 sao | Phan Nam FOOD",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F41.png?alt=media&token=a06f9212-5073-41f6-9cc9-79311b9eb056",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F42.webp?alt=media&token=fb9ba94c-fdec-47fb-b782-f145d2b611e7",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F43.webp?alt=media&token=4b849fd1-6be9-4fa5-846c-c1865071899d",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F44.webp?alt=media&token=d50897e6-af7d-47bd-bc4b-e8e196dd65af",
@@ -166,7 +162,6 @@ namespace Data.Seeding
                    ProductName = "Ống rượu tre Việt Nam - Sản phẩm đạt chứng nhận Ocop 3 Sao [ Quà Tết Hot 2024 ]",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F61.mp4?alt=media&token=9fde074e-3db4-4035-9816-923ff1caef9b",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F62.webp?alt=media&token=5e7d93e8-e10e-47e1-be82-573a9436bdca",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F63.webp?alt=media&token=7b8fd32b-486b-4fec-bb89-ec59959708d0",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F64.webp?alt=media&token=d7b0593b-a8a7-44de-917a-35e3699f5cd1",
@@ -193,9 +188,8 @@ namespace Data.Seeding
                    ProductName = "[OCOP QUẢNG TRỊ] Bột tía tô sấy lạnh Trần Lan [Hộp 150gr]",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F71.png?alt=media&token=e0442041-c3de-4760-9c8e-63d59580a5be",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F72.webp?alt=media&token=b0fa1e0c-85fb-455e-99c2-66578c832e4b",
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F73.webp?alt=media&token=98568704-49be-4377-beb7-5598f453c2b4",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F72.webp?alt=media&token=b0fa1e0c-85fb-455e-99c2-66578c832e4b",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F74.webp?alt=media&token=01e37117-b3c5-47eb-8fdd-956c7b8cfa6e",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F75.webp?alt=media&token=13fdd758-187b-44b8-9b9f-e9fb47148524",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F76.webp?alt=media&token=be498a71-dc12-42a0-bebd-844b732aa1c8",
@@ -220,7 +214,6 @@ namespace Data.Seeding
                    ProductName = "Nhang trầm hương cao cấp [1Kg] sạch chuẩn sản phẩm OCOP, ISO 9001 - Xưởng Mộc Việt",
                    Imgs = new List<string>()
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F81.mp4?alt=media&token=1361932f-6380-4f8f-a8d1-31881efc4ebf",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F82.webp?alt=media&token=b855f4ab-4b51-43ea-af26-e0deb629f97c",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F83.webp?alt=media&token=15012cad-7f6f-4cae-842c-c1e8e35d0c89",
                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2F84.webp?alt=media&token=0576465d-964e-4ffc-93fa-54f410c761e7",
@@ -239,7 +232,123 @@ namespace Data.Seeding
                    Manufacturer = "Xưởng Mộc Việt",
                    AddressManufacturer = "Hà Xá - Triệu Ái - Triệu Phong - Quảng Trị",
                    StatusApproval = StatusApproval.Approved
+               },
+               new Product
+               {
+                   ProductId = Guid.Parse("E5C3D8D2-6FC1-41F0-A2C9-28D3DDBBFA55"),
+                   ProductName = "Mứt dâu tây Mộc Châu",
+                   Imgs = new List<string>
+                    {
+                        "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F1.jpg?alt=media&token=b474731f-3c05-418e-ac71-9e7bd36f85d2",
+                        "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F2.jpg?alt=media&token=7b48babb-d847-4333-ad7f-332c2c051698",
+                        "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F3.jpg?alt=media&token=1316b40a-1b2d-4160-a798-905976414bdc"
+                    },
+                   Price = 95000,
+                   Description = "Mứt dâu tây thủ công được làm từ những quả dâu tươi được hái tại nông trại trong tour tham quan.",
+                   Additional = "Không chất bảo quản, đóng lọ thủy tinh cao cấp.",
+                   NutritionType = "Vitamin C, Chất xơ",
+                   Age = "Từ 3 tuổi trở lên",
+                   Ingredient = "Dâu tây tươi, đường mía, nước cốt chanh",
+                   Volume = "250g",
+                   Origin = "Mộc Châu, Sơn La",
+                   Manufacturer = "Hợp tác xã Nông sản Dâu Mộc Châu",
+                   AddressManufacturer = "Bản Áng, Mộc Châu, Sơn La",
+                   UnitProduct = UnitProduct.g,
+                   ProductCategory = ProductCategory.Food,
+                   CreateDate = DateTime.UtcNow,
+                   UpdateDate = null,
+                   StatusApproval = StatusApproval.Approved,
+                   ReplyRequest = null,
+                   TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+
+               },
+               new Product
+               {
+                   ProductId = Guid.Parse("23C7F3C2-5915-4F10-B937-6A34DA949A17"),
+                   ProductName = "Sữa tươi thanh trùng Mộc Châu",
+                   Imgs = new List<string>
+                    {
+                    "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F4.jpg?alt=media&token=cc2b259e-55e1-4ee8-bd6e-7f619a3ca9b9",
+                    "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F5.jpg?alt=media&token=b4c42af8-a554-496f-933f-ee72eaa99ad7"
+                    },
+                   Price = 45000,
+                   Description = "Sữa tươi nguyên chất, thu hoạch và chế biến trực tiếp từ trang trại bò sữa Mộc Châu.",
+                   Additional = "Không đường, không chất bảo quản, giữ lạnh ở 4°C.",
+                   NutritionType = "Canxi, Vitamin D, Protein",
+                   Age = "Từ 1 tuổi trở lên",
+                   Ingredient = "100% sữa bò tươi",
+                   Volume = "1L",
+                   Origin = "Mộc Châu, Sơn La",
+                   Manufacturer = "Trang trại bò sữa Mộc Châu",
+                   AddressManufacturer = "Dairy Farm, Mộc Châu",
+                   UnitProduct = UnitProduct.ml,
+                   ProductCategory = ProductCategory.Orther,
+                   CreateDate = DateTime.UtcNow,
+                   UpdateDate = null,
+                   StatusApproval = StatusApproval.Approved,
+                   ReplyRequest = null,
+                   TouristFacilityId = Guid.Parse("D8C8E1D5-2CEB-413D-A5C7-342F7D2B9D63"),
+
+               },
+               new Product
+               {
+                   ProductId = Guid.Parse("9A8BA610-2FB7-4B75-A482-328D76DC1D18"),
+                   ProductName = "Rau cải ngọt hữu cơ Mộc Châu",
+                   Imgs = new List<string>
+                    {
+                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F6.jpg?alt=media&token=2579c65f-9b67-42f3-a052-3c1fc19c509f",
+                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F7.jpg?alt=media&token=8532128f-6b27-4059-a04b-e912b62f0556",
+                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F8.jpg?alt=media&token=d1f4592d-ea8d-42a2-b975-ef99493f8f33"
+                    },
+                   Price = 25000,
+                   Description = "Rau cải ngọt được trồng theo phương pháp hữu cơ chuẩn OCOP tại trang trại rau Mộc Châu Xanh.",
+                   Additional = "Không thuốc trừ sâu, không hóa chất, thu hoạch trong ngày.",
+                   NutritionType = "Vitamin A, Vitamin C, Sắt",
+                   Age = "Tất cả mọi người",
+                   Ingredient = "100% rau cải ngọt hữu cơ",
+                   Volume = "500g",
+                   Origin = "Mộc Châu, Sơn La",
+                   Manufacturer = "Trang trại rau hữu cơ Mộc Châu Xanh",
+                   AddressManufacturer = "Mộc Châu Xanh, Mộc Châu",
+                   UnitProduct = UnitProduct.g,
+                   ProductCategory = ProductCategory.Orther,
+                   CreateDate = DateTime.UtcNow,
+                   UpdateDate = null,
+                   StatusApproval = StatusApproval.Approved,
+                   ReplyRequest = null,
+                   TouristFacilityId = Guid.Parse("D8C8E1D5-2CEB-413D-A5C7-342F7D2B9D63"),
+
+               },
+               new Product
+               {
+                   ProductId = Guid.Parse("D56F8C35-68B1-4C42-95F5-D0E4A5D89988"),
+                   ProductName = "Món ăn đặc sản Mộc Châu",
+                   Imgs = new List<string>
+                   {
+                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F9.jpg?alt=media&token=fe337e6e-fe5f-43d7-8a94-622137e2dd3f",
+                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F10.jpg?alt=media&token=2d61b4e2-0451-467a-9ca8-ef26a6cb603f",
+                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F11.jpg?alt=media&token=28e3c536-92a5-4dd8-9dda-c70f3e8b34c0"
+                   },
+                   Price = 200000,
+                   Description = "Bữa trưa gồm các món ăn đặc sản như bê chao, cá suối, rau rừng, và sữa chua Mộc Châu, tất cả đều làm từ nguyên liệu tươi ngon và sạch.",
+                   Additional = "Các món ăn đều sử dụng nguyên liệu từ Mộc Châu, mang lại hương vị tươi ngon và đậm đà.",
+                   NutritionType = "Protein, Vitamin C, Vitamin A",
+                   Age = "Từ 12 tuổi trở lên",
+                   Ingredient = "Bê chao, cá suối, rau rừng, sữa chua Mộc Châu",
+                   Volume = "Một suất ăn",
+                   Origin = "Mộc Châu, Sơn La",
+                   Manufacturer = "Nhà hàng Truyền thống Bản Áng",
+                   AddressManufacturer = "Bản Áng, Mộc Châu",
+                   UnitProduct = UnitProduct.g,
+                   ProductCategory = ProductCategory.Food,
+                   CreateDate = DateTime.UtcNow,
+                   UpdateDate = null,
+                   StatusApproval = StatusApproval.Approved,
+                   ReplyRequest = null,
+                   TouristFacilityId = Guid.Parse("D8C8E1D5-2CEB-413D-A5C7-342F7D2B9D63"),
                }
+
+
            );
         }
 

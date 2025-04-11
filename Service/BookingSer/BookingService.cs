@@ -76,6 +76,7 @@ namespace Service.BookingSer
                 {
                     order.OrderId = Guid.NewGuid();
                     order.BookingId = bookingAgriculturalTour.BookingId;
+                    order.CustomerId = bookingAgriculturalTour.CustomerId;
                     order.OrderDate = DateTime.UtcNow;
                     order.StatusOrder = StatusOrder.Processing;
                     order.CreateDate = DateTime.UtcNow;
@@ -86,9 +87,10 @@ namespace Service.BookingSer
                     order.TotalAmount = (double)order.OrderDetails.Sum(od => od.Quantity * od.UnitPrice);
                 }
                 bookingAgriculturalTour.TotalAmmount =
-                    (decimal)((double)bookingAgriculturalTour.Orders
-                    .Where(x => x.PaymentType == PaymentType.Transfer)
-                    .Sum(od => od.TotalAmount) + tour.Price);
+                    (decimal)(bookingAgriculturalTour.Orders
+                        .Where(x => x.PaymentType == PaymentType.Transfer)
+                        .Sum(od => od.TotalAmount)
+                    + (tour.Price * bookingAgriculturalTour.NumberOfPeople));
                 await _bookingAgriculturalTourRepository.AddRangeAsync(bookingAgriculturalTour);
                 return bookingAgriculturalTour;
             }
@@ -107,6 +109,8 @@ namespace Service.BookingSer
                         .ThenInclude(y => y.OrderDetails)
                             .ThenInclude(z => z.Product)
                     .Include(y => y.VNPayPaymentResponses)
+                    .Include(x => x.AgriculturalTourPackage)
+                        .ThenInclude(x => x.TourDestinations)
                     .SingleOrDefaultAsync(x => x.BookingId == BookingId);
             }
             catch (Exception)
@@ -121,6 +125,7 @@ namespace Service.BookingSer
             {
 
                 return await _bookingAgriculturalTourRepository.Query()
+                    .Include(x => x.AgriculturalTourPackage)
                     .Include(x => x.VNPayPaymentResponses)
                     .Where(x => x.CustomerId == UserId)
                     .ToListAsync();

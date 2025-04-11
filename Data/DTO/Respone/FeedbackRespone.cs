@@ -14,6 +14,7 @@ namespace Data.DTO.Respone
         public Guid UserId { get; set; }
         public string Content { get; set; }
         public int Rating { get; set; }
+        public List<string>? Imgs { get; set; }
         public DateTime CreateTime { get; set; }
         public virtual Account_FeedbackRespone? Account { get; set; }
     }

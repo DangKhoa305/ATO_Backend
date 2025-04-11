@@ -13,6 +13,7 @@ namespace Data.Models
         public Guid? ProductId { get; set; }
         public Guid? TourId { get; set; }
         public string Content { get; set; }
+        public List<string>? Imgs { get; set; }
         public int Rating { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime? UpdateTime { get; set; }
