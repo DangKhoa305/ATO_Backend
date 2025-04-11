@@ -44,6 +44,7 @@ namespace ATO_API.Config
                 config.CreateMap<CreateAccountRequest, Account>();
                 config.CreateMap<CreateAccountRequest_GT, Account>();
                 config.CreateMap<Account, TourGuideRespone_Account>();
+                config.CreateMap<Account, Account_FeedbackRespone>();
                 // TouristFacility
                 config.CreateMap<TouristFacility, TouristFacilityDTO>();
                 config.CreateMap<Account, TouristFacilityDTO_UserRespone>();
@@ -135,6 +136,9 @@ namespace ATO_API.Config
                 // BookingAgriculturalTour
                 config.CreateMap<BookingAgriculturalTour, BookingAgriculturalTourRespone>();
                 config.CreateMap<BookingAgriculturalTourRequest, BookingAgriculturalTour>();
+                // Feedback
+                config.CreateMap<Feedback, FeedbackRespone>();
+                config.CreateMap<FeedbackRequest, Feedback>();
             });
 
             return mapperConfig.CreateMapper();

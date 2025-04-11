@@ -22,6 +22,7 @@ using Service.BlogSer;
 using Service.BookingSer;
 using Service.DriverSer;
 using Service.EmailSer;
+using Service.FeedbackSer;
 using Service.OrderSer;
 using Service.ProductSer;
 using Service.Repository;
@@ -202,7 +203,9 @@ builder.Services.AddScoped<IShippingService, ShippingService>();
 //booking 
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IRepository<BookingAgriculturalTour>, Repository<BookingAgriculturalTour>>();
-
+//Feedback 
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+builder.Services.AddScoped<IRepository<Feedback>, Repository<Feedback>>();
 // app
 var app = builder.Build();
 

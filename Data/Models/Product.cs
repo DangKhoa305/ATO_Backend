@@ -36,6 +36,8 @@ namespace Data.Models
         public virtual ICollection<OCOPSell>? OCOPSells { get; set; }
         public virtual ICollection<Activity>? Activities { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
+        public virtual ICollection<Feedback>? Feedbacks { get; set; }
+
     }
     public enum ProductCategory
     {
