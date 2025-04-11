@@ -7,10 +7,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Nest;
 using Service.AccountSer;
 using Service.DriverSer;
 using Service.OrderSer;
+using Service.ShipAddressSer;
 using Service.ShippingSer;
+using Service.TouristFacilitySer;
 using Service.VnPaySer;
 using StackExchange.Redis;
 using System.Net.Http;
@@ -31,13 +34,17 @@ namespace ATO_API.Controllers.Tourist
         private readonly IVnPayService _vnPayService;
         private readonly IConfiguration _configuration;
         private readonly IShippingService _shippingService;
+        private readonly IShipAddressService _shipAddressService;
+        private readonly ITouristFacilityService _touristFacilityService;
         public OrderController(
             IMapper mapper,
             IOrderService orderService,
             IConnectionMultiplexer redis,
             IVnPayService vnPayService,
             IConfiguration configuration,
-            IShippingService shippingService
+            IShippingService shippingService,
+            IShipAddressService shipAddressService,
+             ITouristFacilityService touristFacilityService
            )
         {
             _mapper = mapper;
@@ -46,6 +53,8 @@ namespace ATO_API.Controllers.Tourist
             _vnPayService = vnPayService;
             _configuration = configuration;
             _shippingService = shippingService;
+            _shipAddressService = shipAddressService;
+            _touristFacilityService = touristFacilityService;
         }
         [HttpGet("get-list-orders")]
         [ProducesResponseType(typeof(List<OrderRespone>), StatusCodes.Status200OK)]
@@ -367,41 +376,63 @@ namespace ATO_API.Controllers.Tourist
                 {
                     return BadRequest(new ResponseVM { Status = false, Message = "Order Id cannot be null" });
                 }
-                // Validate required fields according to GHN API
-                if (string.IsNullOrEmpty(request.from_name) ||
-                    string.IsNullOrEmpty(request.from_phone) ||
-                    string.IsNullOrEmpty(request.from_address) ||
-                    string.IsNullOrEmpty(request.from_ward_name) ||
-                    string.IsNullOrEmpty(request.from_district_name) ||
-                    string.IsNullOrEmpty(request.from_province_name) ||
-                    string.IsNullOrEmpty(request.to_name) ||
-                    string.IsNullOrEmpty(request.to_phone) ||
-                    string.IsNullOrEmpty(request.to_address) ||
-                    string.IsNullOrEmpty(request.to_ward_code) ||
-                    request.to_district_id <= 0)
-                {
-                    return BadRequest(new ResponseVM { Status = false, Message = "Missing required shipping information" });
-                }
-
-                // Validate items
-                if (request.items == null || !request.items.Any())
-                {
-                    return BadRequest(new ResponseVM { Status = false, Message = "Order must contain at least one item" });
-                }
-
-                // Validate weight and dimensions
-                if (request.weight <= 0 || request.length <= 0 || request.width <= 0 || request.height <= 0)
-                {
-                    return BadRequest(new ResponseVM { Status = false, Message = "Invalid package dimensions or weight" });
-                }
-
                 // Validate insurance value (max 10,000,000 VND according to GHN)
                 if (request.insurance_value > 10000000)
                 {
                     return BadRequest(new ResponseVM { Status = false, Message = "Insurance value cannot exceed 10,000,000 VND" });
                 }
-
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var shipToUser = await _shipAddressService.GetShipAddressDetails(request.ShipAddressId);
+                request.to_name = shipToUser.ToName;
+                request.to_phone = shipToUser.ToPhone;
+                request.to_address = shipToUser.ToAddress;
+                request.to_ward_code = shipToUser.ToWardCode;
+                request.to_district_id = shipToUser.ToDistrictId;
                 var shipping = await _shippingService.CreateShippingOrder(request);
+                var order = await _orderService.GetOrderDetails(Guid.Parse(request.client_order_code));
+                Guid TouristFacilityId = Guid.NewGuid();
+                foreach (var item in order.OrderDetails)
+                {
+                    request.items.Add(new ShippingOrderItem
+                    {
+                        name = item.Product.ProductName,
+                        code = item.Product.ProductId.ToString(),
+                        quantity = item.Quantity,
+                        price = item.UnitPrice,
+                        length = 15,
+                        weight = 15,
+                        height = 15,
+                        width = 15,
+                        category = new Category
+                        {
+                            level1 = item.Product.ProductCategory.ToString()
+                        }
+
+                    });
+                    TouristFacilityId = item.Product.TouristFacilityId;
+                }
+                var faci = await _touristFacilityService.GetTouristFacilities_Guest(TouristFacilityId);
+                request.from_name = faci.TouristFacilityName;
+                request.from_phone = faci.phone;
+                request.from_address = faci.Address;
+                request.from_ward_name = faci.ward_name;
+                request.from_district_name = faci.district_name;
+                request.from_province_name = faci.province_name;
+                request.from_ward_code = faci.ward_code;
+                request.to_district_id = (int)faci.district_id;
+                request.return_phone = faci.phone;
+                request.return_address = faci.Address;
+                request.return_district_id = faci.district_id;
+                request.return_ward_code = faci.ward_code;
+
+                request.pick_shift = [2];
+                request.pick_station_id = 1444;
+                request.deliver_station_id = null;
+                request.payment_type_id = 2;
+                request.service_type_id = 2;
+                request.service_id = 0;
+                request.coupon = "";
+                request.note = "nothing";
                 await _orderService.UpdateShipCode(Guid.Parse(request.client_order_code), shipping.order_code);
                 return Ok(shipping);
             }

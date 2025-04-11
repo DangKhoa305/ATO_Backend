@@ -139,6 +139,9 @@ namespace ATO_API.Config
                 // Feedback
                 config.CreateMap<Feedback, FeedbackRespone>();
                 config.CreateMap<FeedbackRequest, Feedback>();
+                // ShipAddress
+                config.CreateMap<ShipAddress, ShipAddressRespone>();
+                config.CreateMap<ShipAddressRequest, ShipAddress>();
             });
 
             return mapperConfig.CreateMapper();

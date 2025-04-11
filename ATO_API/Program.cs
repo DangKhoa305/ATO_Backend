@@ -26,6 +26,7 @@ using Service.FeedbackSer;
 using Service.OrderSer;
 using Service.ProductSer;
 using Service.Repository;
+using Service.ShipAddressSer;
 using Service.ShippingSer;
 using Service.SystemConfigSer;
 using Service.TourCompanySer;
@@ -206,6 +207,9 @@ builder.Services.AddScoped<IRepository<BookingAgriculturalTour>, Repository<Book
 //Feedback 
 builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 builder.Services.AddScoped<IRepository<Feedback>, Repository<Feedback>>();
+//ShipAddress 
+builder.Services.AddScoped<IShipAddressService, ShipAddressService>();
+builder.Services.AddScoped<IRepository<ShipAddress>, Repository<ShipAddress>>();
 // app
 var app = builder.Build();
 

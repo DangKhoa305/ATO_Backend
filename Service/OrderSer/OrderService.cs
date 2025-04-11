@@ -132,6 +132,7 @@ namespace Service.OrderSer
                 return await _orderRepository.Query()
                     .Include(x => x.OrderDetails)
                         .ThenInclude(y => y.Product)
+                            .ThenInclude(y => y.TouristFacility)
                     .Include(x => x.OrderDetails)
                     .Include(y => y.VNPayPaymentResponses)
                     .SingleOrDefaultAsync(x => x.OrderId == OrderId);

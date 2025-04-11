@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,6 +64,7 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new VNPayPaymentResponseConfiguration());
             modelBuilder.ApplyConfiguration(new BookingAgriculturalTourConfiguration());
             modelBuilder.ApplyConfiguration(new FeedbackConfiguration());
+            modelBuilder.ApplyConfiguration(new ShipAddressConfiguration());
             #endregion
             #region config FK for generate account and role,...
             modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
@@ -163,6 +165,7 @@ namespace Data.ArmsContext
         public DbSet<VNPayPaymentResponse> VNPayPaymentResponses { get; set; }
         public DbSet<BookingAgriculturalTour> BookingAgriculturalTours { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<ShipAddress> ShipAddresses { get; set; }
 
         #endregion
     }
