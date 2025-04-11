@@ -66,6 +66,8 @@ namespace Data.DTO.Respone
         public double BreakTimeInMinutes { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public virtual ICollection<ProductDTO_Guest>? Products { get; set; }
+
     }
     public class AgriculturalTourPackageRespone_Guest
     {
