@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -121,17 +120,24 @@ namespace Data.ArmsContext
 
             // seeding data
             #region seeding data
+            // Seed các bảng cơ bản trước
             new AccountSeeder(modelBuilder).Seed();
             new AboutSeeder(modelBuilder).Seed();
             new BlogSeeder(modelBuilder).Seed();
+            new SystemConfigurationsSeeder(modelBuilder).Seed();
+
+            // Seed các bảng liên quan đến Tourist Facility
             new TourCompanySeeder(modelBuilder).Seed();
             new TouristFacilitySeeder(modelBuilder).Seed();
-            new UserSupportSeeder(modelBuilder).Seed();
-            new UserIssueSeeder(modelBuilder).Seed();
-            new SystemConfigurationsSeeder(modelBuilder).Seed();
+
+            // Seed các bảng phụ thuộc vào Tourist Facility
             new ProductSeeder(modelBuilder).Seed();
             new OCOPSellSeeder(modelBuilder).Seed();
             new CertificationSeeder(modelBuilder).Seed();
+
+            // Seed các bảng khác
+            new UserSupportSeeder(modelBuilder).Seed();
+            new UserIssueSeeder(modelBuilder).Seed();
             new TourismPackageSeeder(modelBuilder).Seed();
             new ActivitySeeder(modelBuilder).Seed();
             new AgriculturalTourPackageSeeder(modelBuilder).Seed();

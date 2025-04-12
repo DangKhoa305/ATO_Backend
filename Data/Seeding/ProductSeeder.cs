@@ -287,7 +287,7 @@ namespace Data.Seeding
                    UpdateDate = null,
                    StatusApproval = StatusApproval.Approved,
                    ReplyRequest = null,
-                   TouristFacilityId = Guid.Parse("D8C8E1D5-2CEB-413D-A5C7-342F7D2B9D63"),
+                   TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
 
                },
                new Product
@@ -316,7 +316,7 @@ namespace Data.Seeding
                    UpdateDate = null,
                    StatusApproval = StatusApproval.Approved,
                    ReplyRequest = null,
-                   TouristFacilityId = Guid.Parse("D8C8E1D5-2CEB-413D-A5C7-342F7D2B9D63"),
+                   TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
 
                },
                new Product
@@ -345,7 +345,7 @@ namespace Data.Seeding
                    UpdateDate = null,
                    StatusApproval = StatusApproval.Approved,
                    ReplyRequest = null,
-                   TouristFacilityId = Guid.Parse("D8C8E1D5-2CEB-413D-A5C7-342F7D2B9D63"),
+                   TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
                }
 
 
