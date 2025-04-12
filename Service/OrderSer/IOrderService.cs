@@ -25,5 +25,6 @@ namespace Service.OrderSer
         Task<List<Data.Models.Order>> ListOrders_AFTO(Guid UserId);
         Task UpdateOrderStatus(Guid orderId, PaymentType refunded, int paymentStatus, StatusOrder canceled);
         Task<bool> UpdateShipCode(Guid OrderId, string ShipCode);
+        Task AcceptOrder(OrderAcceptRequest orderAcceptRequest);
     }
 }

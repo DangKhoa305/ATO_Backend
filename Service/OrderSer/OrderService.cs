@@ -234,5 +234,12 @@ namespace Service.OrderSer
             _orderRepository.UpdateAsync(order);
         }
 
+        public async Task AcceptOrder(OrderAcceptRequest orderAcceptRequest)
+        {
+            var order = await _orderRepository.Query()
+                   .SingleOrDefaultAsync(x => x.OrderId == orderAcceptRequest.OrderId);
+            order.StatusOrder = orderAcceptRequest.StatusOrder;
+            await _orderRepository.UpdateAsync(order);
+        }
     }
 }

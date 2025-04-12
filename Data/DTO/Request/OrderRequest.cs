@@ -14,6 +14,11 @@ namespace Data.DTO.Request
         public PaymentStatus PaymentStatus { get; set; }
         public virtual ICollection<OrderDetailRequest> OrderDetails { get; set; }
     }
+    public class OrderAcceptRequest
+    {
+        public Guid OrderId { get; set; }
+        public StatusOrder StatusOrder { get; set; }
+    }
     public class OrderDetailRequest
     {
         public Guid ProductId { get; set; }
