@@ -1,4 +1,6 @@
-﻿using Data.Models;
+﻿using Data.DTO.Request;
+using Data.DTO.Respone;
+using Data.Models;
 using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1.X509;
@@ -98,6 +100,14 @@ namespace Service.BookingSer
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
+        }
+
+        public async Task BookingAccept(BookingAccept bookingAccept)
+        {
+            var booking = await _bookingAgriculturalTourRepository.Query()
+       .SingleOrDefaultAsync(x => x.BookingId == bookingAccept.BookingId);
+            booking.StatusBooking = bookingAccept.StatusBooking;
+            await _bookingAgriculturalTourRepository.UpdateAsync(booking);
         }
 
         public async Task<BookingAgriculturalTour> GetBookTourDetails(Guid BookingId)

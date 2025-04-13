@@ -100,7 +100,7 @@ namespace ATO_API.Controllers.AFTO
         [HttpPost("accept-order")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AddOrder([FromBody] OrderAcceptRequest OrderAcceptRequest)
+        public async Task<IActionResult> AcceptOrder([FromBody] OrderAcceptRequest OrderAcceptRequest)
         {
             try
             {
@@ -224,7 +224,6 @@ namespace ATO_API.Controllers.AFTO
                 {
                     return BadRequest(new ResponseVM { Status = false, Message = "Insurance value cannot exceed 10,000,000 VND" });
                 }
-                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 var shipToUser = await _shipAddressService.GetShipAddressDetails(request.ShipAddressId);
                 request.to_name = shipToUser.ToName;
                 request.to_phone = shipToUser.ToPhone;

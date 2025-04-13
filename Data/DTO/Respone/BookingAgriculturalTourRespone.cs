@@ -20,4 +20,9 @@ namespace Data.DTO.Respone
         public virtual ICollection<OrderRespone>? Orders { get; set; }
         public virtual ICollection<VNPayPaymentResponseDTO>? VNPayPaymentResponses { get; set; }
     }
+    public class BookingAccept
+    {
+        public Guid BookingId { get; set; }
+        public StatusBooking StatusBooking { get; set; }
+    }
 }

@@ -145,6 +145,7 @@ namespace Data.ArmsContext
             new TourDestinationSeeder(modelBuilder).Seed();
             new DriverSeeder(modelBuilder).Seed();
             new AccommodationSeeder(modelBuilder).Seed();
+            new ShipAddressSeeder(modelBuilder).Seed();
             #endregion
 
         }

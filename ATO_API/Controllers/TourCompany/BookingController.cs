@@ -81,6 +81,24 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
-
+        [HttpPost("accept-booking")]
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> BookingAccept([FromBody] BookingAccept BookingAccept)
+        {
+            try
+            {
+                await _bookingService.BookingAccept(BookingAccept);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
     }
 }

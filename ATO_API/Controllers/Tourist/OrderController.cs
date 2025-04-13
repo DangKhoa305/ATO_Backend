@@ -256,7 +256,7 @@ namespace ATO_API.Controllers.Tourist
                     });
                 }
                 var PaymentStatus = refundResult.Success ? 3 : 2;
-                await _orderService.UpdateOrderStatus(orderId, PaymentType.Refunded, PaymentStatus, StatusOrder.Canceled);
+                await _orderService.UpdateOrderStatus(orderId, PaymentType.Refunded, PaymentStatus, StatusOrder.RejecOrder);
                 await _orderService.AddOrderPayment(refundResult.Response);
                 return Ok(new ResponseVM
                 {

@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.DTO.Respone;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace Service.BookingSer
         Task<Data.Models.BookingAgriculturalTour> AddBookTour(BookingAgriculturalTour bookingAgriculturalTour);
         Task AddBookPayment(VNPayPaymentResponse checkResponse);
         Task<List<BookingAgriculturalTour>> ListTourBookingTour_TourCompany(Guid UserId);
+        Task BookingAccept(BookingAccept bookingAccept);
     }
 }
