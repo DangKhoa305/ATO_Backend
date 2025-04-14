@@ -1004,17 +1004,17 @@ namespace Data.Seeding
                          {
                              ["ProductId"] = Guid.Parse("D56F8C35-68B1-4C42-95F5-D0E4A5D89988"),
                              ["ActivityId"] = Guid.Parse("F47A6C1C-9D25-41A2-93AF-E2C18F22BFA7")
+                         },
+                         new Dictionary<string, object>
+                         {
+                             ["ProductId"] = Guid.Parse("D56F8C35-68B1-4C42-95F5-D0E4A5D89988"),
+                             ["ActivityId"] = Guid.Parse("60F2DCDD-7257-4CE4-8ABD-FC01E4EAE546")
+                         },
+                         new Dictionary<string, object>
+                         {
+                             ["ProductId"] = Guid.Parse("9A8BA610-2FB7-4B75-A482-328D76DC1D18"),
+                             ["ActivityId"] = Guid.Parse("60F2DCDD-7257-4CE4-8ABD-FC01E4EAE546")
                          }
-                         //new Dictionary<string, object>
-                         //{
-                         //    ["ProductId"] = Guid.Parse(""),
-                         //    ["ActivityId"] = Guid.Parse("")
-                         //},
-                         //new Dictionary<string, object>
-                         //{
-                         //    ["ProductId"] = Guid.Parse(""),
-                         //    ["ActivityId"] = Guid.Parse("")
-                         //},
                          //new Dictionary<string, object>
                          //{
                          //    ["ProductId"] = Guid.Parse(""),

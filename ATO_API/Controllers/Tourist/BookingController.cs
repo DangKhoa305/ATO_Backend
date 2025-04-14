@@ -16,7 +16,6 @@ namespace ATO_API.Controllers.Tourist
 {
     [Route("api/tourist/book-tour")]
     [ApiController]
-    [Authorize(Roles = "Tourists")]
     public class BookingController : ControllerBase
     {
         private readonly IOrderService _orderService;
@@ -39,6 +38,7 @@ namespace ATO_API.Controllers.Tourist
             _bookingService = bookingService;
         }
         [HttpGet("get-list-book-tours")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(List<BookingAgriculturalTourRespone>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetBookeds()
@@ -62,6 +62,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpGet("get-book-tour/{BookingId}")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(BookingAgriculturalTourRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetBookTourDetails(Guid BookingId)
@@ -82,6 +83,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpPost("add-book-tour")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddBookTour([FromBody] BookingAgriculturalTourRequest BookingAgriculturalTour)

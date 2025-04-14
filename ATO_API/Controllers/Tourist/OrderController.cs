@@ -25,7 +25,6 @@ namespace ATO_API.Controllers.Tourist
 {
     [Route("api/tourist/order")]
     [ApiController]
-    [Authorize(Roles = "Tourists")]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
@@ -57,6 +56,7 @@ namespace ATO_API.Controllers.Tourist
             _touristFacilityService = touristFacilityService;
         }
         [HttpGet("get-list-orders")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(List<OrderRespone>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetDrivers()
@@ -80,6 +80,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpGet("get-order/{OrderId}")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(OrderRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetDriver(Guid OrderId)
@@ -100,6 +101,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpPost("add-order")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddOrder([FromBody] OrderRequest OrderRequest)
@@ -182,6 +184,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpGet("get-cart")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(List<OrderDetail_Cart_Respone>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetCart()
@@ -200,6 +203,7 @@ namespace ATO_API.Controllers.Tourist
             }
         }
         [HttpPost("refund-order/{orderId}")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> RefundOrder(Guid orderId)
@@ -361,6 +365,8 @@ namespace ATO_API.Controllers.Tourist
         }
 
         [HttpPost("create-shipping")]
+        [Authorize(Roles = "Tourists")]
+
         [ProducesResponseType(typeof(ShippingOrderResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
@@ -443,6 +449,7 @@ namespace ATO_API.Controllers.Tourist
         }
 
         [HttpGet("track-shipping/{OrderId}")]
+        [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(ShippingTrackingResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> TrackShipping(Guid OrderId)

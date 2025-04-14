@@ -53,7 +53,7 @@ namespace Service.BookingSer
 
                 var tour = await _bookingAgriculturalTourRepository.Query()
                     .SingleOrDefaultAsync(x => x.BookingId == checkResponse.BookingId);
-                if (checkResponse.TransactionStatus == "00" && checkResponse.TypePayment != TypePayment.Refunded)
+                if (checkResponse.TransactionStatus == "00")
                     tour.PaymentStatus = PaymentStatus.Paid;
                 tour.StatusBooking = StatusBooking.Completed;
                 _bookingAgriculturalTourRepository.UpdateAsync(tour);
