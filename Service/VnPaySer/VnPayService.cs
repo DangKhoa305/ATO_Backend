@@ -78,7 +78,7 @@ namespace Service.VnPaySer
             return new Data.Models.VNPayPaymentResponse
             {
                 ResponseId = Guid.NewGuid(),
-                OrderId = vnp_OrderType == "0" ? Guid.Parse(vnp_OrderInfo) : null,
+                OrderId = vnp_OrderType == "1" ? Guid.Parse(vnp_OrderInfo) : null,
                 BookingId = vnp_OrderType != "0" ? Guid.Parse(vnp_OrderInfo) : null,
                 TxnRef = vnp_TxnRef,
                 Amount = vnp_Amount,
@@ -165,7 +165,7 @@ namespace Service.VnPaySer
                             TransactionStatus = "Refund",
                             SecureHash = responseData["vnp_SecureHash"],
                             PayDate = DateTime.Now,
-                            TypePayment = vNPayPaymentResponse.TypePayment
+                            TypePayment = TypePayment.Refunded
                         };
 
                         return (responseData["vnp_ResponseCode"] == "00", refundResponse);

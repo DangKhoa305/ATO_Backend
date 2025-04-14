@@ -33,6 +33,7 @@ namespace Data.DTO.Respone
         public DateTime? UpdateDate { get; set; }
         public StatusApproval StatusApproval { get; set; }
         public string? ReplyRequest { get; set; }
+        public List<string>? Imgs { get; set; }
         //FK
         public Guid? TouristFacilityId { get; set; }
         public virtual TouristFacilityDTO_Certfication? TouristFacility { get; set; }

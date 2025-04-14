@@ -23,12 +23,14 @@ namespace ATO_API.Controllers.Tourist
             _mapper = mapper;
         }
 
-        [HttpGet("list-ship-addresses/{accountId}")]
-        public async Task<ActionResult<List<ShipAddressRespone>>> GetShipAddresses(Guid accountId)
+        [HttpGet("list-ship-addresses")]
+        public async Task<ActionResult<List<ShipAddressRespone>>> GetShipAddresses()
         {
             try
             {
-                var addresses = await _shipAddressService.GetShipAddresses(accountId);
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+                var addresses = await _shipAddressService.GetShipAddresses(Guid.Parse(userId));
                 var responseResult = _mapper.Map<List<ShipAddressRespone>>(addresses);
 
                 return Ok(addresses);
