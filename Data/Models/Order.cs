@@ -15,6 +15,7 @@ namespace Data.Models
         public StatusOrder StatusOrder { get; set; }
         public PaymentType PaymentType { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
+        public Guid ShipAddressId { get; set; }
         public DateTime? CancelDate { get; set; }
         public double TotalAmount { get; set; }
         public DateTime CreateDate { get; set; }

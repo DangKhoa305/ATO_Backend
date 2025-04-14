@@ -260,6 +260,127 @@ namespace Data.Seeding
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
                    SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("E5C3D8D2-6FC1-41F0-A2C9-28D3DDBBFA55"),
+                   ManufacturingDate = DateTime.Parse("2024-03-01"),
+                   ExpiryDate = DateTime.Parse("2026-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("E5C3D8D2-6FC1-41F0-A2C9-28D3DDBBFA55"),
+                   ManufacturingDate = DateTime.Parse("2024-05-01"),
+                   ExpiryDate = DateTime.Parse("2026-09-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("E5C3D8D2-6FC1-41F0-A2C9-28D3DDBBFA55"),
+                   ManufacturingDate = DateTime.Parse("2025-03-01"),
+                   ExpiryDate = DateTime.Parse("2027-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               }
+               ,
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("23C7F3C2-5915-4F10-B937-6A34DA949A17"),
+                   ManufacturingDate = DateTime.Parse("2024-03-01"),
+                   ExpiryDate = DateTime.Parse("2026-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("23C7F3C2-5915-4F10-B937-6A34DA949A17"),
+                   ManufacturingDate = DateTime.Parse("2024-05-01"),
+                   ExpiryDate = DateTime.Parse("2026-09-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("23C7F3C2-5915-4F10-B937-6A34DA949A17"),
+                   ManufacturingDate = DateTime.Parse("2025-03-01"),
+                   ExpiryDate = DateTime.Parse("2027-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("9A8BA610-2FB7-4B75-A482-328D76DC1D18"),
+                   ManufacturingDate = DateTime.Parse("2024-03-01"),
+                   ExpiryDate = DateTime.Parse("2026-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("9A8BA610-2FB7-4B75-A482-328D76DC1D18"),
+                   ManufacturingDate = DateTime.Parse("2024-05-01"),
+                   ExpiryDate = DateTime.Parse("2026-09-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("9A8BA610-2FB7-4B75-A482-328D76DC1D18"),
+                   ManufacturingDate = DateTime.Parse("2025-03-01"),
+                   ExpiryDate = DateTime.Parse("2027-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("D56F8C35-68B1-4C42-95F5-D0E4A5D89988"),
+                   ManufacturingDate = DateTime.Parse("2024-03-01"),
+                   ExpiryDate = DateTime.Parse("2026-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("D56F8C35-68B1-4C42-95F5-D0E4A5D89988"),
+                   ManufacturingDate = DateTime.Parse("2024-05-01"),
+                   ExpiryDate = DateTime.Parse("2026-09-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
+               },
+               new OCOPSell()
+               {
+                   OCOPSellId = Guid.NewGuid(),
+                   SellVolume = 1000,
+                   ProductId = Guid.Parse("D56F8C35-68B1-4C42-95F5-D0E4A5D89988"),
+                   ManufacturingDate = DateTime.Parse("2025-03-01"),
+                   ExpiryDate = DateTime.Parse("2027-03-01"),
+                   CreateDate = DateTime.UtcNow,
+                   SalePrice = 100000,
                }
            );
         }
