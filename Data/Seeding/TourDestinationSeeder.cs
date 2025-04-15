@@ -43,6 +43,8 @@ namespace Data.Seeding
                     EndTime = new DateTime(2025, 5, 10, 9, 45, 0),
                     VisitOrder = 2,
                     TypeActivity = TypeActivity.Destination,
+                    ActivityId = Guid.Parse("60F2DCDD-7257-4CE4-8ABD-FC01E4EAE546"),
+                    TourismPackageId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4"),
                     StatusApproval = StatusApproval.Approved,
                     TourId = Guid.Parse("64FAD407-A8BB-4B84-923F-65A9131D77E4")
                 },

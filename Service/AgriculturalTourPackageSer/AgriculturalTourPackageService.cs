@@ -216,8 +216,9 @@ namespace Service.AgriculturalTourPackageSer
                 existing.Durations = updatedTour.Durations;
                 existing.DurationsType = updatedTour.DurationsType;
                 existing.UpdateDate = DateTime.UtcNow;
+                existing.Imgs = updatedTour.Imgs;
                 existing.TourGuides.Clear();
-                if (updatedTour.TourGuides != null)
+                if (updatedTour.TourGuides == null)
                 {
 
                     // Lấy danh sách các GuideId từ updatedTour

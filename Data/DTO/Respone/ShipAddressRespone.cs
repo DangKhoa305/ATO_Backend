@@ -13,6 +13,8 @@ namespace Data.DTO.Respone
         public string ToName { get; set; }
         public string ToPhone { get; set; }
         public string ToWardCode { get; set; }
+        public string? ToWardName { get; set; }
         public int ToDistrictId { get; set; }
+        public int ToDistrictName { get; set; }
     }
 }

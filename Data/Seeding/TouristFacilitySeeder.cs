@@ -38,13 +38,13 @@ IMPLEMENT_OLECREATE(<<class>>, <<external_name>>,
                     CreateDate = new DateTime(2025, 1, 22, 3, 38, 59, 419, DateTimeKind.Local).AddTicks(3253),
                     Website = "www.mocchaumoc.com",
                     LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/TouristFacility%2F1.png?alt=media&token=f86dba4c-f25c-4c65-adc9-c2e662b1deb5",
-                    EmailTouristFacility = " dulichmocchaumoc@gmail.com",
+                    EmailTouristFacility = "dulichmocchaumoc@gmail.com",
                     phone = "0987654321",
-                    ward_code = "05056",
-                    ward_name = "Thị trấn Mộc Châu",
-                    district_id = 1443,
-                    district_name = "Huyện Mộc Châu",
-                    province_name = "Tỉnh Sơn La"
+                    ward_code = "21211",
+                    ward_name = "Phường 14",
+                    district_id = 1454,
+                    district_name = "Quận 10",
+                    province_name = "TP Hồ Chí Minh"
                 },
                 new TouristFacility()
                 {

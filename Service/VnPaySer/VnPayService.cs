@@ -80,7 +80,7 @@ namespace Service.VnPaySer
                 var vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
                 var vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
                 var vnp_SecureHash = collections["vnp_SecureHash"];
-                PaymentType typePayment = PaymentType.Transfer;
+                TypePayment TypePayment = TypePayment.OrderPayment;
 
                 return new Data.Models.VNPayPaymentResponse
                 {
@@ -98,7 +98,7 @@ namespace Service.VnPaySer
                     TransactionNo = vnp_TransactionNo,
                     TransactionStatus = vnp_TransactionStatus,
                     SecureHash = vnp_SecureHash,
-                    TypePayment = (TypePayment)typePayment
+                    TypePayment = TypePayment
                 };
             }
             catch (Exception)
@@ -133,7 +133,7 @@ namespace Service.VnPaySer
                 var vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
                 var vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
                 var vnp_SecureHash = collections["vnp_SecureHash"];
-                PaymentType typePayment = PaymentType.Transfer;
+                TypePayment TypePayment = TypePayment.OrderPayment;
 
                 return new Data.Models.VNPayPaymentResponse
                 {
@@ -151,7 +151,7 @@ namespace Service.VnPaySer
                     TransactionNo = vnp_TransactionNo,
                     TransactionStatus = vnp_TransactionStatus,
                     SecureHash = vnp_SecureHash,
-                    TypePayment = (TypePayment)typePayment
+                    TypePayment = TypePayment
                 };
             }
             catch (Exception)

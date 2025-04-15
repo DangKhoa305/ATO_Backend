@@ -9,6 +9,7 @@ namespace Data.DTO.Request
 {
     public class OrderRequest
     {
+        public double TotalAmount { get; set; }
         public Guid ShipAddressId { get; set; }
         public OrderType OrderType { get; set; }
         public PaymentType PaymentType { get; set; }

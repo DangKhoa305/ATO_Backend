@@ -149,7 +149,7 @@ namespace Service.OrderSer
             {
 
                 return await _orderRepository.Query()
-                    .Where(x => x.CustomerId == UserId)
+                    .Where(x => x.CustomerId == UserId && x.BookingId == null)
                     .ToListAsync();
             }
             catch (Exception)

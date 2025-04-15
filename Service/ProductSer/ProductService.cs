@@ -261,7 +261,7 @@ namespace Service.ProductSer
                 existingCertification.IssuingOrganization = certification.IssuingOrganization;
                 existingCertification.UpdateDate = DateTime.UtcNow;
                 existingCertification.StatusApproval = StatusApproval.Update;
-
+                existingCertification.Imgs = certification.Imgs;
                 await _certificationRepository.UpdateAsync(existingCertification);
 
                 return true;
