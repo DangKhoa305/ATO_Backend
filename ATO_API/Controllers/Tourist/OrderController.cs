@@ -83,7 +83,7 @@ namespace ATO_API.Controllers.Tourist
         [Authorize(Roles = "Tourists")]
         [ProducesResponseType(typeof(OrderRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetDriver(Guid OrderId)
+        public async Task<IActionResult> GetOrder(Guid OrderId)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace ATO_API.Controllers.Tourist
             try
             {
                 var queryParams = Request.Query;
-                var checkResponse = await _vnPayService.PaymentExecute(queryParams);
+                var checkResponse = await _vnPayService.PaymentExecuteOrder(queryParams);
                 await _orderService.AddOrderPayment(checkResponse);
                 var queryString = new StringBuilder();
                 foreach (var param in queryParams)

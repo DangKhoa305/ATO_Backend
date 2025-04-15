@@ -1,7 +1,9 @@
 ﻿using Data.Migrations;
 using Data.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Service.Repository;
 using Service.SystemConfigSer;
 using System;
 using System.Collections.Generic;
@@ -15,10 +17,12 @@ namespace Service.VnPaySer
     public class VnPayService : IVnPayService
     {
         private readonly ISystemConfigurationsService _configRepository;
+        private readonly IRepository<Order> _orderRepository;
 
-        public VnPayService(ISystemConfigurationsService configRepository)
+        public VnPayService(ISystemConfigurationsService configRepository, IRepository<Order> orderRepository)
         {
             _configRepository = configRepository;
+            _orderRepository = orderRepository;
         }
 
         public async Task<string> CreatePaymentUrlAsync(HttpContext context, Guid codePayment, decimal fee, DateTime dateCreate, TypePayment TypePayment)
@@ -51,49 +55,110 @@ namespace Service.VnPaySer
         }
         public async Task<Data.Models.VNPayPaymentResponse> PaymentExecute(IQueryCollection collections)
         {
-            var vnpay = new VnPayLibrary();
-            foreach (var (key, value) in collections)
+            try
             {
-                if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
+
+                var vnpay = new VnPayLibrary();
+                foreach (var (key, value) in collections)
                 {
-                    vnpay.AddResponseData(key, value.ToString());
+                    if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
+                    {
+                        vnpay.AddResponseData(key, value.ToString());
+                    }
                 }
+                var vnp_OrderInfo = vnpay.GetResponseData("vnp_OrderInfo");
+
+                var vnp_TxnRef = vnpay.GetResponseData("vnp_TxnRef");
+                var vnp_Amount = decimal.Parse(vnpay.GetResponseData("vnp_Amount")) / 100;
+                var vnp_BankCode = vnpay.GetResponseData("vnp_BankCode");
+                var vnp_BankTranNo = vnpay.GetResponseData("vnp_BankTranNo");
+                var vnp_CardType = vnpay.GetResponseData("vnp_CardType");
+                var vnp_OrderType = vnpay.GetResponseData("vnp_OrderType");
+                var vnp_PayDate = DateTime.ParseExact(vnpay.GetResponseData("vnp_PayDate"), "yyyyMMddHHmmss", null);
+                var vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+                var vnp_TmnCode = vnpay.GetResponseData("vnp_TmnCode");
+                var vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
+                var vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
+                var vnp_SecureHash = collections["vnp_SecureHash"];
+                PaymentType typePayment = PaymentType.Transfer;
+
+                return new Data.Models.VNPayPaymentResponse
+                {
+                    ResponseId = Guid.NewGuid(),
+                    BookingId = Guid.Parse(vnp_OrderInfo),
+                    TxnRef = vnp_TxnRef,
+                    Amount = vnp_Amount,
+                    BankCode = vnp_BankCode,
+                    BankTranNo = vnp_BankTranNo,
+                    CardType = vnp_CardType,
+                    OrderInfo = vnp_OrderInfo,
+                    PayDate = vnp_PayDate,
+                    ResponseCode = vnp_ResponseCode,
+                    TmnCode = vnp_TmnCode,
+                    TransactionNo = vnp_TransactionNo,
+                    TransactionStatus = vnp_TransactionStatus,
+                    SecureHash = vnp_SecureHash,
+                    TypePayment = (TypePayment)typePayment
+                };
             }
-
-            var vnp_TxnRef = vnpay.GetResponseData("vnp_TxnRef");
-            var vnp_Amount = decimal.Parse(vnpay.GetResponseData("vnp_Amount")) / 100;
-            var vnp_BankCode = vnpay.GetResponseData("vnp_BankCode");
-            var vnp_BankTranNo = vnpay.GetResponseData("vnp_BankTranNo");
-            var vnp_CardType = vnpay.GetResponseData("vnp_CardType");
-            var vnp_OrderInfo = vnpay.GetResponseData("vnp_OrderInfo");
-            var vnp_OrderType = vnpay.GetResponseData("vnp_OrderType");
-            var vnp_PayDate = DateTime.ParseExact(vnpay.GetResponseData("vnp_PayDate"), "yyyyMMddHHmmss", null);
-            var vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
-            var vnp_TmnCode = vnpay.GetResponseData("vnp_TmnCode");
-            var vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
-            var vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
-            var vnp_SecureHash = collections["vnp_SecureHash"];
-            PaymentType typePayment = (PaymentType)(vnp_OrderType == "0" ? TypePayment.TourPayment : TypePayment.OrderPayment);
-
-            return new Data.Models.VNPayPaymentResponse
+            catch (Exception)
             {
-                ResponseId = Guid.NewGuid(),
-                OrderId = vnp_OrderType == "1" ? Guid.Parse(vnp_OrderInfo) : null,
-                BookingId = vnp_OrderType != "0" ? Guid.Parse(vnp_OrderInfo) : null,
-                TxnRef = vnp_TxnRef,
-                Amount = vnp_Amount,
-                BankCode = vnp_BankCode,
-                BankTranNo = vnp_BankTranNo,
-                CardType = vnp_CardType,
-                OrderInfo = vnp_OrderInfo,
-                PayDate = vnp_PayDate,
-                ResponseCode = vnp_ResponseCode,
-                TmnCode = vnp_TmnCode,
-                TransactionNo = vnp_TransactionNo,
-                TransactionStatus = vnp_TransactionStatus,
-                SecureHash = vnp_SecureHash,
-                TypePayment = (TypePayment)typePayment
-            };
+
+                throw;
+            }
+        }
+        public async Task<Data.Models.VNPayPaymentResponse> PaymentExecuteOrder(IQueryCollection collections)
+        {
+            try
+            {
+
+                var vnpay = new VnPayLibrary();
+                foreach (var (key, value) in collections)
+                {
+                    if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
+                    {
+                        vnpay.AddResponseData(key, value.ToString());
+                    }
+                }
+                var vnp_OrderInfo = vnpay.GetResponseData("vnp_OrderInfo");
+
+                var vnp_TxnRef = vnpay.GetResponseData("vnp_TxnRef");
+                var vnp_Amount = decimal.Parse(vnpay.GetResponseData("vnp_Amount")) / 100;
+                var vnp_BankCode = vnpay.GetResponseData("vnp_BankCode");
+                var vnp_BankTranNo = vnpay.GetResponseData("vnp_BankTranNo");
+                var vnp_CardType = vnpay.GetResponseData("vnp_CardType");
+                var vnp_PayDate = DateTime.ParseExact(vnpay.GetResponseData("vnp_PayDate"), "yyyyMMddHHmmss", null);
+                var vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+                var vnp_TmnCode = vnpay.GetResponseData("vnp_TmnCode");
+                var vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
+                var vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
+                var vnp_SecureHash = collections["vnp_SecureHash"];
+                PaymentType typePayment = PaymentType.Transfer;
+
+                return new Data.Models.VNPayPaymentResponse
+                {
+                    ResponseId = Guid.NewGuid(),
+                    OrderId = Guid.Parse(vnp_OrderInfo),
+                    TxnRef = vnp_TxnRef,
+                    Amount = vnp_Amount,
+                    BankCode = vnp_BankCode,
+                    BankTranNo = vnp_BankTranNo,
+                    CardType = vnp_CardType,
+                    OrderInfo = vnp_OrderInfo,
+                    PayDate = vnp_PayDate,
+                    ResponseCode = vnp_ResponseCode,
+                    TmnCode = vnp_TmnCode,
+                    TransactionNo = vnp_TransactionNo,
+                    TransactionStatus = vnp_TransactionStatus,
+                    SecureHash = vnp_SecureHash,
+                    TypePayment = (TypePayment)typePayment
+                };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public async Task<(bool Success, VNPayPaymentResponse Response)> ProcessRefundAsync(VNPayPaymentResponse vNPayPaymentResponse, decimal amount, string orderInfo, string returnUrl)
         {

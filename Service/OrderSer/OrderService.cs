@@ -56,7 +56,7 @@ namespace Service.OrderSer
                     order.PaymentStatus = PaymentStatus.UnPaid;
                 }
                 order.CreateDate = DateTime.UtcNow;
-                order.TotalAmount = (double)order.OrderDetails.Sum(od => od.Quantity * od.UnitPrice);
+                order.TotalAmount = (double)order.TotalAmount;
                 foreach (var item in order.OrderDetails)
                 {
                     item.OrderId = order.OrderId;

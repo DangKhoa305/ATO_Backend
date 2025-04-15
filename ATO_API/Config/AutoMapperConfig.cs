@@ -126,7 +126,14 @@ namespace ATO_API.Config
                 config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone_Guest>();
                 config.CreateMap<TourDestinationRequest, TourDestination>();
                 // Order
-                config.CreateMap<Order, OrderRespone>();
+                config.CreateMap<Order, OrderRespone>()
+                    .ForMember(dest => dest.TotalAmountProducts,
+                        opt => opt.MapFrom(src =>
+                            src.OrderDetails.Sum(od => od.UnitPrice * od.Quantity)))
+                    .ForMember(dest => dest.TotalShip,
+                        opt => opt.MapFrom(src =>
+                            src.TotalAmount - (double)src.OrderDetails.Sum(od => od.UnitPrice * od.Quantity)));
+
                 config.CreateMap<OrderRequest, Order>();
                 // OrderDetail
                 config.CreateMap<OrderDetail, OrderDetailRespone>();

@@ -1,61 +1,165 @@
-﻿using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Data.DTO.Request;
+using Data.DTO.Respone;
+using Data.Models;
+using System.ComponentModel;
+using System.Reflection;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Data.DTO.Respone
+namespace ATO_API.Config
 {
-    public class OrderRespone
+    public class AutoMapperConfig : Profile
     {
-        public Guid OrderId { get; set; }
-        public DateTime OrderDate { get; set; }
-        public OrderType OrderType { get; set; }
-        public StatusOrder StatusOrder { get; set; }
-        public PaymentType PaymentType { get; set; }
-        public PaymentStatus PaymentStatus { get; set; }
-        public Guid ShipAddressId { get; set; }
-        public DateTime? CancelDate { get; set; }
-        public double TotalAmount { get; set; }
-        public DateTime CreateDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public virtual ICollection<OrderDetailRespone> OrderDetails { get; set; }
-        public virtual ICollection<VNPayPaymentResponseDTO> VNPayPaymentResponses { get; set; }
-    }
-    public class OrderDetailRespone
-    {
-        public Guid OrderId { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public virtual ProductDTO_Order? Product { get; set; }
-    }
-    public class ProductDTO_Order
-    {
-        public Guid ProductId { get; set; }
-        public string ProductName { get; set; }
-        public List<string>? Imgs { get; set; }
-        public string? Description { get; set; }
-        public UnitProduct? UnitProduct { get; set; }
-        public ProductCategory ProductCategory { get; set; }
-    }
-    public class VNPayPaymentResponseDTO
-    {
-        public Guid ResponseId { get; set; }
-        public Guid? OrderId { get; set; }
-        public string TxnRef { get; set; }
-        public decimal Amount { get; set; }
-        public string BankCode { get; set; }
-        public string BankTranNo { get; set; }
-        public string CardType { get; set; }
-        public string OrderInfo { get; set; }
-        public DateTime PayDate { get; set; }
-        public string ResponseCode { get; set; }
-        public string TmnCode { get; set; }
-        public string TransactionNo { get; set; }
-        public string TransactionStatus { get; set; }
-        public string SecureHash { get; set; }
+        public static IMapper Initialize()
+        {
+            var mapperConfig = new MapperConfiguration(config =>
+            {
+                // blog mapper
+                config.CreateMap<Blog, Blog_Guest_DTO>()
+                .ForMember(dest => dest.TouristFacilityId, opt => opt.MapFrom(src => src.Account.TouristFacility.TouristFacilityId))
+                .ForMember(dest => dest.TourCompanyId, opt => opt.MapFrom(src => src.Account.TourCompany.TourCompanyId))
+                 .ForMember(dest => dest.CreateByName, opt => opt.MapFrom(src =>
+                    src.Account.TourCompany != null ? src.Account.TourCompany.CompanynName :
+                    src.Account.TouristFacility != null ? src.Account.TouristFacility.TouristFacilityName : "Hệ thống ATOS"
+                ));
+                config.CreateMap<Blog, Blog_CM_DTO>()
+                .ForMember(dest => dest.TouristFacilityId, opt => opt.MapFrom(src => src.Account.TouristFacility.TouristFacilityId))
+                .ForMember(dest => dest.TourCompanyId, opt => opt.MapFrom(src => src.Account.TourCompany.TourCompanyId))
+                 .ForMember(dest => dest.CreateByName, opt => opt.MapFrom(src =>
+                    src.Account.TourCompany != null ? src.Account.TourCompany.CompanynName :
+                    src.Account.TouristFacility != null ? src.Account.TouristFacility.TouristFacilityName : "Hệ thống ATOS"
+                ));
+                config.CreateMap<BlogCreateRequest, Blog>();
+                config.CreateMap<BlogUpdateRequest, Blog>();
+                // user support
+                config.CreateMap<UserSupportRequest, UserSupport>();
+                config.CreateMap<UserSupport, UserSupportDetails>()
+                .ForMember(dest => dest.ResponeBy, opt => opt.MapFrom(src => src.ResponeAccount.Fullname))
+                .ForMember(dest => dest.IssueTypeDescription, opt => opt.MapFrom(src => GetEnumDescription(src.IssueType)));
+                // manage users 
+                config.CreateMap<Account, UserRespone>();
+                config.CreateMap<Account, UserUnassignedTourCompany>();
+                config.CreateMap<TourCompany, UserRespone_TourCompany>();
+                config.CreateMap<TouristFacility, UserRespone_TouristFacility>();
+                config.CreateMap<TourGuide, UserRespone_TourGuide>();
+                config.CreateMap<CreateAccountRequest, Account>();
+                config.CreateMap<CreateAccountRequest_GT, Account>();
+                config.CreateMap<Account, TourGuideRespone_Account>();
+                config.CreateMap<Account, Account_FeedbackRespone>();
+                // TouristFacility
+                config.CreateMap<TouristFacility, TouristFacilityDTO>();
+                config.CreateMap<Account, TouristFacilityDTO_UserRespone>();
+                config.CreateMap<CreateTouristFacilityRequest, TouristFacility>();
+                config.CreateMap<UpdateTouristFacilityRequest, TouristFacility>();
+                config.CreateMap<TouristFacility, TouristFacilityDTO_Certfication>();
+                config.CreateMap<TouristFacility, TouristFacilityDTO_Guest>();
+                config.CreateMap<TouristFacility, ProductDTO_TouristFacility>();
+                // TourCompany
+                config.CreateMap<TourCompany, TourCompanyDTO>();
+                config.CreateMap<TourCompany, TourCompanyDTO_Guest>();
+                config.CreateMap<Account, TourCompanyDTO_UserRespone>();
+                config.CreateMap<CreateTourCompanyRequest, TourCompany>();
+                config.CreateMap<UpdateTourCompanyRequest, TourCompany>();
+                // product
+                config.CreateMap<Product, ProductDTO>();
+                config.CreateMap<Product, ProductDTO_Order>();
+                config.CreateMap<Product, Product_ActivityRespone>();
+                config.CreateMap<Product_ActivityResquest, Product>();
+                config.CreateMap<Product, ProductDTO_CM>();
+                config.CreateMap<CreateProductDTO, Product>();
+                config.CreateMap<UpdateProductDTO, Product>();
+                config.CreateMap<ApprovelProductDTO, Product>();
+                config.CreateMap<Product, Product_OCOPProductActivityRespone>();
+                config.CreateMap<Product, ProductDTO_Guest>()
+                .ForMember(dest => dest.Price,
+                    opt => opt.MapFrom(src =>
+                        src.OCOPSells != null && src.OCOPSells.Any()
+                            ? src.OCOPSells
+                                .OrderBy(s => s.ExpiryDate)
+                                .First().SalePrice
+                            : src.Price))
+                .ForMember(dest => dest.SellVolume,
+                    opt => opt.MapFrom(src =>
+                        src.OCOPSells != null
+                            ? src.OCOPSells
+                                .Where(s => s.ExpiryDate == null || s.ExpiryDate > DateTime.UtcNow)
+                                .Sum(s => s.SellVolume)
+                            : 0));
 
-        public TypePayment TypePayment { get; set; }
+                // OCOPSell
+                config.CreateMap<OCOPSell, OCOPSellDTO>();
+                config.CreateMap<CreateOCOPSellDTO, OCOPSell>();
+                config.CreateMap<UpdateOCOPSellDTO, OCOPSell>();
+                // Certification
+                config.CreateMap<Certification, CertificationRespone>();
+                config.CreateMap<CreateCertificationDTO, Certification>();
+                config.CreateMap<UpdateCertificationDTO, Certification>();
+                config.CreateMap<ApprovelCertificationDTO, Certification>();
+                config.CreateMap<Certification, CertificationRespone_CM>();
+                config.CreateMap<Certification, CertificationRespone_Guest>();
+                // TourGuide
+                config.CreateMap<TourGuide, TourGuideRespone>();
+                config.CreateMap<TourGuide, AgriculturalTourPackage_TourGuide_Respone>();
+                config.CreateMap<AgriculturalTourPackageRequest_TourGuides, TourGuide>();
+                // TourismPackage
+                config.CreateMap<TourismPackage, TourismPackageRespone>();
+                config.CreateMap<TourismPackage, TourismPackageRespone_Guest>();
+                config.CreateMap<TourismPackage, TourismPackageRespone_TC>();
+                config.CreateMap<TourismPackageRequest, TourismPackage>();
+                // Activity
+                config.CreateMap<Activity, ActivityRespone>();
+                config.CreateMap<ActivityRequest, Activity>();
+                config.CreateMap<Activity, Activity_OCOPProductActivityRespone>();
+                config.CreateMap<Activity, AgriculturalTourPackage_TourDestination_Activity_Respone>();
+                config.CreateMap<Activity, ActivityRespone_TC>();
+                // DriverRespone
+                config.CreateMap<Driver, DriverRespone>();
+                config.CreateMap<DriverRequest, Driver>();
+                // Accommodation
+                config.CreateMap<Accommodation, AccommodationRespone>();
+                config.CreateMap<AccommodationRequest, Accommodation>();
+                // AgriculturalTourPackage
+                config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone>();
+                config.CreateMap<AgriculturalTourPackageRequest, AgriculturalTourPackage>();
+                config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone_Guest>();
+                // TourDestination
+                config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone>();
+                config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone_Guest>();
+                config.CreateMap<TourDestinationRequest, TourDestination>();
+                // Order
+                config.CreateMap<Order, OrderRespone>()
+                    .ForMember(dest => dest.TotalAmountProducts,
+                        opt => opt.MapFrom(src =>
+                            src.OrderDetails.Sum(od => od.UnitPrice * od.Quantity)))
+                    .ForMember(dest => dest.TotalShip,
+                        opt => opt.MapFrom(src =>
+                            src.TotalAmount - (double)src.OrderDetails.Sum(od => od.UnitPrice * od.Quantity)));
+
+                config.CreateMap<OrderRequest, Order>();
+                // OrderDetail
+                config.CreateMap<OrderDetail, OrderDetailRespone>();
+                config.CreateMap<OrderDetailRequest, OrderDetail>();
+                // VNPayPaymentResponse
+                config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponseDTO>();
+                // BookingAgriculturalTour
+                config.CreateMap<BookingAgriculturalTour, BookingAgriculturalTourRespone>();
+                config.CreateMap<BookingAgriculturalTourRequest, BookingAgriculturalTour>();
+                // Feedback
+                config.CreateMap<Feedback, FeedbackRespone>();
+                config.CreateMap<FeedbackRequest, Feedback>();
+                // ShipAddress
+                config.CreateMap<ShipAddress, ShipAddressRespone>();
+                config.CreateMap<ShipAddressRequest, ShipAddress>();
+            });
+
+            return mapperConfig.CreateMapper();
+        }
+        public static string GetEnumDescription(Enum value)
+        {
+            var field = value.GetType().GetField(value.ToString());
+            var attribute = field?.GetCustomAttribute<DescriptionAttribute>();
+            return attribute?.Description ?? value.ToString();
+        }
     }
 }
+
