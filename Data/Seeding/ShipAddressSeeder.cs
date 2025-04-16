@@ -38,7 +38,7 @@ namespace Data.Seeding
                     ToName = "Trần Thị Bình",
                     ToAddress = "45 Nguyễn Huệ, Phường Bến Thành",
                     ToPhone = "0912345678",
-                    ToWardCode = "20308",
+                    ToWardCode = "20211",
                     ToDistrictId = 1443,
                     AccountId = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F0")
                 },
@@ -49,7 +49,7 @@ namespace Data.Seeding
                     ToName = "Lê Hoàng Cường",
                     ToAddress = "789 Điện Biên Phủ, Phường Đa Kao",
                     ToPhone = "0923456789",
-                    ToWardCode = "20405",
+                    ToWardCode = "20314",
                     ToDistrictId = 1444,
                     AccountId = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F0")
                 }

@@ -1,7 +1,12 @@
-﻿using Data.DTO.Request;
+﻿using Azure;
+using Data.DTO.Request;
 using Data.DTO.Respone;
+using Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Nest;
+using Org.BouncyCastle.Bcpg.Sig;
+using Service.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +14,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Service.ShippingSer
@@ -17,10 +23,11 @@ namespace Service.ShippingSer
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
+        private readonly Service.Repository.IRepository<ShipAddress> _shipAddressRepository;
         private const string TOKEN = "694d5427-13a5-11f0-8686-8669292be81e";
         private const int SHOP_ID = 5722523;
 
-        public ShippingService(HttpClient httpClient, IConfiguration configuration)
+        public ShippingService(HttpClient httpClient, IConfiguration configuration, Service.Repository.IRepository<ShipAddress> shipAddressRepository)
         {
             _httpClient = httpClient;
             _configuration = configuration;
@@ -33,6 +40,7 @@ namespace Service.ShippingSer
             _httpClient.DefaultRequestHeaders.Add("Token", TOKEN);
             _httpClient.DefaultRequestHeaders.Add("ShopId", SHOP_ID.ToString());
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _shipAddressRepository = shipAddressRepository;
         }
 
         public async Task<ShippingOrderResponse> CreateShippingOrder(ShippingOrderRequest request)
@@ -157,8 +165,8 @@ namespace Service.ShippingSer
             {
                 var feeRequest = new
                 {
-                    from_district_id = 1454, // Hardcoded district ID for testing
-                    from_ward_code = "21211", // Hardcoded ward code for testing
+                    from_district_id = 1454,
+                    from_ward_code = "21211",
                     to_district_id = request.ToDistrictId,
                     to_ward_code = request.ToWardCode,
                     height = request.Height,
@@ -183,6 +191,84 @@ namespace Service.ShippingSer
             {
                 throw new Exception($"Calculate shipping fee failed: {ex.Message}", ex);
             }
+        }
+        public async Task<ShipAddressRespone> GetShipAddressDetails(Guid shipAddressId)
+        {
+            var details = await _shipAddressRepository.GetByIdAsync(shipAddressId);
+            var (districtName, wardName) = await GetDistrictAndWardName(details.ToDistrictId, details.ToWardCode);
+
+            return (new ShipAddressRespone
+            {
+                ToName = details.ToName,
+                DefaultAddress = details.DefaultAddress,
+                ShipAddressId = details.ShipAddressId,
+                ToDistrictId = details.ToDistrictId,
+                ToDistrictName = districtName,
+                ToWardCode = details.ToWardCode,
+                ToWardName = wardName,
+                ToPhone = details.ToPhone
+            });
+        }
+
+        public async Task<List<ShipAddressRespone>> GetShipAddresses(Guid accountId)
+        {
+            var shipAddresses = await _shipAddressRepository.Query()
+                .Where(x => x.AccountId == accountId)
+                .ToListAsync();
+
+            var result = new List<ShipAddressRespone>();
+
+            foreach (var item in shipAddresses)
+            {
+                var (districtName, wardName) = await GetDistrictAndWardName(item.ToDistrictId, item.ToWardCode);
+
+                result.Add(new ShipAddressRespone
+                {
+                    ToName = item.ToName,
+                    DefaultAddress = item.DefaultAddress,
+                    ShipAddressId = item.ShipAddressId,
+                    ToDistrictId = item.ToDistrictId,
+                    ToDistrictName = districtName,
+                    ToWardCode = item.ToWardCode,
+                    ToWardName = wardName,
+                    ToPhone = item.ToPhone
+                });
+            }
+
+            return result;
+        }
+
+        private async Task<(string districtName, string wardName)> GetDistrictAndWardName(int districtId, string wardCode)
+        {
+            var provinces = await GetProvinces();
+
+            foreach (var province in provinces.Data)
+            {
+                var districtResponse = await GetDistricts(province.ProvinceID);
+                var district = districtResponse.Data.FirstOrDefault(x => x.DistrictID == districtId);
+
+                if (district != null)
+                {
+                    var wardResponse = await GetWards(districtId);
+                    var ward = wardResponse.Data.FirstOrDefault(w => w.WardCode == wardCode);
+
+                    return (district.DistrictName, ward?.WardName ?? string.Empty);
+                }
+            }
+
+            return (string.Empty, string.Empty);
+        }
+
+        public class DistrictDto
+        {
+            public int DistrictID { get; set; }
+            public string DistrictName { get; set; }
+        }
+
+        public class WardDto
+        {
+            public string WardCode { get; set; }
+            public string WardName { get; set; }
         }
 
         // Get provinces

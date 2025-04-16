@@ -19,5 +19,7 @@ namespace Service.ShippingSer
         Task<WardResponse> GetWards(int districtId);
         Task<BaseResponse> CancelOrder(string orderCode);
         Task<string> PrintShippingLabel(string orderCode);
+        Task<ShipAddressRespone> GetShipAddressDetails(Guid shipAddressId);
+        Task<List<ShipAddressRespone>> GetShipAddresses(Guid accountId);
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.ShipAddressSer;
+using Service.ShippingSer;
 
 namespace ATO_API.Controllers.Tourist
 {
@@ -16,11 +17,13 @@ namespace ATO_API.Controllers.Tourist
     public class ShipAddressController : ControllerBase
     {
         private readonly IShipAddressService _shipAddressService;
+        private readonly IShippingService _shippingService;
         private readonly IMapper _mapper;
-        public ShipAddressController(IShipAddressService shipAddressService, IMapper mapper)
+        public ShipAddressController(IShipAddressService shipAddressService, IMapper mapper, IShippingService shippingService)
         {
             _shipAddressService = shipAddressService;
             _mapper = mapper;
+            _shippingService = shippingService;
         }
 
         [HttpGet("list-ship-addresses")]
@@ -30,8 +33,7 @@ namespace ATO_API.Controllers.Tourist
             {
                 var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-                var addresses = await _shipAddressService.GetShipAddresses(Guid.Parse(userId));
-                var responseResult = _mapper.Map<List<ShipAddressRespone>>(addresses);
+                var addresses = await _shippingService.GetShipAddresses(Guid.Parse(userId));
 
                 return Ok(addresses);
             }
@@ -46,8 +48,7 @@ namespace ATO_API.Controllers.Tourist
         {
             try
             {
-                var address = await _shipAddressService.GetShipAddressDetails(shipAddressId);
-                var responseResult = _mapper.Map<List<ShipAddressRespone>>(address);
+                var address = await _shippingService.GetShipAddressDetails(shipAddressId);
 
                 if (address == null)
                     return NotFound("Shipping address not found");

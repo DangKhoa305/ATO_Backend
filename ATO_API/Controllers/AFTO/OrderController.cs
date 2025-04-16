@@ -163,6 +163,23 @@ namespace ATO_API.Controllers.AFTO
                 return StatusCode(500, new ResponseVM { Status = false, Message = ex.Message });
             }
         }
+        [HttpGet("ship-address-details/{shipAddressId}")]
+        public async Task<ActionResult<ShipAddressRespone>> GetShipAddressDetails(Guid shipAddressId)
+        {
+            try
+            {
+                var address = await _shippingService.GetShipAddressDetails(shipAddressId);
+
+                if (address == null)
+                    return NotFound("Shipping address not found");
+
+                return Ok(address);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpPost("calculate-shipping-fee")]
         [ProducesResponseType(typeof(ShippingFeeResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
