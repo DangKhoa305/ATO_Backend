@@ -33,25 +33,20 @@ namespace Service.AgriculturalTourPackageSer
         {
             try
             {
-                TourCompany TourCompany = await _tourCompanyRepository.Query()
-                    .SingleOrDefaultAsync(x => x.UserId == UserId);
+                var TourCompany = await _tourCompanyRepository.Query().SingleOrDefaultAsync(x => x.UserId == UserId);
+                var tourGuides = newTour.TourGuides?.ToArray().ToList();
+                var tourDestinations = newTour.TourDestinations?.ToArray().ToList();
+
                 newTour.TourId = Guid.NewGuid();
                 newTour.CreateDate = DateTime.UtcNow;
-                newTour.TourCompanyId = TourCompany.TourCompanyId;
-                if (newTour.TourGuides != null && newTour.TourGuides.Any())
-                {
-                    // Lấy các đối tượng TourGuide từ database dựa trên danh sách id
-                    var tourGuideIds = newTour.TourGuides.Select(tg => tg.GuideId).ToList();
+                newTour.TourCompanyId = TourCompany!.TourCompanyId;
+                newTour.TourGuides?.Clear();
+                newTour.TourDestinations?.Clear();
 
-                    var tourGuides = await _tourGuideRepository.Query()
-                        .Where(tg => tourGuideIds.Contains(tg.GuideId))
-                        .ToListAsync();
-
-
-                    // Gán các đối tượng TourGuide vào collection của AgriculturalTourPackage
-                    newTour.TourGuides = tourGuides;
-                }
                 await _agriculturalTourPackageRepository.AddRangeAsync(newTour);
+
+                await AddTourDestinations(tourDestinations, newTour.TourId);
+                await AddTourGuides(tourGuides?.Select(x => x.GuideId).ToList(), newTour.TourId);
                 return true;
             }
             catch (Exception ex)
@@ -60,13 +55,48 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+        public async Task<bool> UpdateAgriculturalTourPackage(Guid TourId, AgriculturalTourPackage updatedTour)
+        {
+            try
+            {
+                var existing = await _agriculturalTourPackageRepository.Query()
+                    .Include(x => x.TourGuides)
+                    .SingleOrDefaultAsync(x => x.TourId == TourId);
 
+                if (existing == null)
+                    throw new Exception("Không tìm thấy gói du lịch!");
+
+                existing.PackageName = updatedTour.PackageName;
+                existing.Description = updatedTour.Description;
+                existing.Imgs = updatedTour.Imgs;
+                existing.PriceOfAdults = updatedTour.PriceOfAdults;
+                existing.PriceOfChildren = updatedTour.PriceOfChildren;
+                existing.ChildTicketAge = updatedTour.ChildTicketAge;
+                existing.Slot = updatedTour.Slot;
+                existing.StartTime = updatedTour.StartTime;
+                existing.EndTime = updatedTour.EndTime;
+                existing.Durations = updatedTour.Durations;
+                existing.DurationsType = updatedTour.DurationsType;
+                existing.UpdateDate = DateTime.UtcNow;
+                existing.Imgs = updatedTour.Imgs;
+                existing.TourGuides?.Clear();
+                existing.TourDestinations?.Clear();
+                await _agriculturalTourPackageRepository.UpdateRangeAsync(existing);
+
+                await AddTourDestinations(updatedTour.TourDestinations, TourId);
+                await AddTourGuides(updatedTour.TourGuides?.Select(x => x.GuideId).ToList(), TourId);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
         public async Task<bool> CreateTourDestination(TourDestination newTourDestination, Guid TourId)
         {
             try
             {
-                AgriculturalTourPackage AgriculturalTourPackage = await _agriculturalTourPackageRepository.Query()
-                    .SingleOrDefaultAsync(x => x.TourId == TourId);
                 newTourDestination.TourDestinationId = Guid.NewGuid();
                 newTourDestination.CreateDate = DateTime.UtcNow;
                 newTourDestination.TourId = TourId;
@@ -80,10 +110,10 @@ namespace Service.AgriculturalTourPackageSer
                         .Where(tg => tourGuideIds.Contains(tg.GuideId))
                         .ToListAsync();
 
-
                     // Gán các đối tượng TourGuide vào collection của AgriculturalTourPackage
                     newTourDestination.TourGuides = tourGuides;
                 }
+
                 await _tourDestinationRepository.AddAsync(newTourDestination);
                 return true;
             }
@@ -93,7 +123,6 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
-
         public async Task<AgriculturalTourPackage> GetAgriculturalTourPackage(Guid TourId)
         {
             try
@@ -119,7 +148,6 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
-
         public async Task<List<AgriculturalTourPackage>> GetListAgriculturalTourPackages(Guid UserId)
         {
             try
@@ -127,6 +155,8 @@ namespace Service.AgriculturalTourPackageSer
                 TourCompany TourCompany = await _tourCompanyRepository.Query()
                     .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _agriculturalTourPackageRepository.Query()
+                                        .Include(x => x.TourGuides)
+.Include(x => x.TourDestinations)
                     .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
                     .ToListAsync();
             }
@@ -192,65 +222,9 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
-
-        public async Task<bool> UpdateAgriculturalTourPackage(Guid TourId, AgriculturalTourPackage updatedTour)
-        {
-            try
-            {
-                AgriculturalTourPackage existing = await _agriculturalTourPackageRepository.Query()
-                    .Include(x => x.TourGuides)
-                    .SingleOrDefaultAsync(x => x.TourId == TourId);
-
-                if (existing == null)
-                {
-                    throw new Exception("Không tìm thấy gói du lịch!");
-                }
-
-                existing.PackageName = updatedTour.PackageName;
-                existing.Description = updatedTour.Description;
-                existing.Imgs = updatedTour.Imgs;
-                existing.PriceOfAdults = updatedTour.PriceOfAdults;
-                existing.PriceOfChildren = updatedTour.PriceOfChildren;
-                existing.ChildTicketAge = updatedTour.ChildTicketAge;
-                existing.Slot = updatedTour.Slot;
-                existing.StartTime = updatedTour.StartTime;
-                existing.EndTime = updatedTour.EndTime;
-                existing.Durations = updatedTour.Durations;
-                existing.DurationsType = updatedTour.DurationsType;
-                existing.UpdateDate = DateTime.UtcNow;
-                existing.Imgs = updatedTour.Imgs;
-                existing.TourGuides.Clear();
-                if (updatedTour.TourGuides == null)
-                {
-
-                    // Lấy danh sách các GuideId từ updatedTour
-                    var tourGuideIds = updatedTour.TourGuides.Select(tg => tg.GuideId).ToList();
-
-                    // Truy vấn lấy các TourGuide tương ứng từ database
-                    var tourGuides = await _tourGuideRepository.Query()
-                        .Where(tg => tourGuideIds.Contains(tg.GuideId))
-                        .ToListAsync();
-
-                    // Thêm lại các TourGuide mới vào collection của existing
-                    foreach (var tg in tourGuides)
-                    {
-                        existing.TourGuides.Add(tg);
-                    }
-                }
-
-                await _agriculturalTourPackageRepository.UpdateRangeAsync(existing);
-
-                return true;
-            }
-            catch (Exception)
-            {
-                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
-            }
-        }
-
         public async Task<bool> UpdateTourDestination(Guid TourDestinationId, TourDestination updatedTour)
         {
-            TourDestination existing = await _tourDestinationRepository.Query()
+            var existing = await _tourDestinationRepository.Query()
                     .Include(x => x.TourGuides)
                 .SingleOrDefaultAsync(x => x.TourDestinationId == TourDestinationId);
 
@@ -295,5 +269,35 @@ namespace Service.AgriculturalTourPackageSer
 
             return true;
         }
+
+        #region private 
+        private async Task AddTourDestinations(ICollection<TourDestination>? destinations, Guid tourId)
+        {
+            if (destinations is null) return;
+            foreach (var des in destinations)
+            {
+                await CreateTourDestination(des, tourId);
+            }
+        }
+
+        private async Task AddTourGuides(List<Guid>? tourGuideIds, Guid tourId)
+        {
+            if (tourGuideIds is null) return;
+
+            var pack = await _agriculturalTourPackageRepository.Query().SingleOrDefaultAsync(x => x.TourId == tourId);
+            if (pack is null) return;
+
+            var tourGuides = await _tourGuideRepository.Query()
+                .Where(tg => tourGuideIds.Contains(tg.GuideId))
+                .ToListAsync();
+
+            pack.TourGuides = tourGuides;
+            await _agriculturalTourPackageRepository.UpdateRangeAsync(pack);
+        }
+
+
+
+        #endregion
+
     }
 }

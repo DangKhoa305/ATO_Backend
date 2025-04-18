@@ -56,6 +56,7 @@ namespace Service.TourGuideSer
                 TourCompany TourCompany = await _tourCompanyRepository.Query()
        .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _tourGuideRepository.Query()
+                    .AsNoTracking()
                        .Include(b => b.Account)
                        .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
                        .ToListAsync();
