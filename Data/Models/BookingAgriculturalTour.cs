@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,8 @@ namespace Data.Models
         public Guid TourId { get; set; }
         public Guid CustomerId { get; set; }
         public DateTime BookingDate { get; set; }
-        public int NumberOfPeople { get; set; }
+        public int NumberOfAdults { get; set; }
+        public int? NumberOfChildren { get; set; }
         public decimal TotalAmmount { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public StatusBooking StatusBooking { get; set; }

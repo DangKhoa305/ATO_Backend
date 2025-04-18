@@ -45,3 +45,64 @@ services:
 networks:
   app-network:
     driver: bridge
+# version: '3.4'
+
+# services:
+#   ato_api:
+#     image: ${DOCKER_REGISTRY-}atoapi
+#     container_name: atoapi
+#     build:
+#       context: .
+#       dockerfile: ATO_API/Dockerfile
+#     ports:
+#       - "5000:5000"
+#       - "5001:5001"
+#     environment:
+#       - ASPNETCORE_HTTP_PORTS=5000
+#       - ASPNETCORE_HTTPS_PORTS=5001
+#       - CONNECTIONSTRINGS__DefaultConnection=Server=atodatabase;Database=ATO_Database;User Id=sa;Password=ATO123456;TrustServerCertificate=True;
+#     deploy:
+#       resources:
+#         limits:
+#           cpus: '0.50'
+#           memory: 512M
+#     depends_on:
+#       - atodatabase
+#     networks:
+#       - app-network
+
+#   atodatabase:
+#     image: mcr.microsoft.com/mssql/server:2019-latest
+#     container_name: atodatabase
+#     restart: unless-stopped
+#     environment:
+#       - ACCEPT_EULA=Y
+#       - MSSQL_PID=Express
+#       - SA_PASSWORD=ATO123456
+#       - MSSQL_DB=ATO_Database
+#     deploy:
+#       resources:
+#         limits:
+#           cpus: '0.70'
+#           memory: 800M
+#     ports:
+#       - "1433:1433"
+#     networks:
+#       - app-network
+
+#   ato.cache:
+#     image: redis:alpine
+#     restart: unless-stopped
+#     deploy:
+#       resources:
+#         limits:
+#           cpus: '0.30'
+#           memory: 256M
+#     ports:
+#       - '6379:6379'
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     driver: bridge

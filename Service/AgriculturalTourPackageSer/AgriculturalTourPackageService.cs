@@ -209,7 +209,9 @@ namespace Service.AgriculturalTourPackageSer
                 existing.PackageName = updatedTour.PackageName;
                 existing.Description = updatedTour.Description;
                 existing.Imgs = updatedTour.Imgs;
-                existing.Price = updatedTour.Price;
+                existing.PriceOfAdults = updatedTour.PriceOfAdults;
+                existing.PriceOfChildren = updatedTour.PriceOfChildren;
+                existing.ChildTicketAge = updatedTour.ChildTicketAge;
                 existing.Slot = updatedTour.Slot;
                 existing.StartTime = updatedTour.StartTime;
                 existing.EndTime = updatedTour.EndTime;

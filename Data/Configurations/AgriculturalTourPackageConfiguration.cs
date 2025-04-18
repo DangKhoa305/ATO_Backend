@@ -20,7 +20,8 @@ namespace Data.Configurations
             builder.Property(x => x.Description).IsRequired(false);
             builder.Property(x => x.Imgs).IsRequired(false);
             builder.Property(x => x.Slot).IsRequired();
-            builder.Property(x => x.Price).IsRequired();
+            builder.Property(x => x.PriceOfAdults).IsRequired();
+            builder.Property(x => x.PriceOfChildren).IsRequired();
             builder.Property(x => x.StartTime).IsRequired();
             builder.Property(x => x.EndTime).IsRequired();
             builder.Property(x => x.Durations).IsRequired();

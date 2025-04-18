@@ -10,7 +10,8 @@ namespace Data.DTO.Request
     public class BookingAgriculturalTourRequest
     {
         public Guid TourId { get; set; }
-        public int NumberOfPeople { get; set; }
+        public int NumberOfAdults { get; set; }
+        public int? NumberOfChildren { get; set; }
         public virtual ICollection<OrderRequest>? Orders { get; set; }
     }
 }

@@ -18,7 +18,8 @@ namespace Data.Configurations
             // requi
             builder.Property(x => x.TourId).IsRequired();
             builder.Property(x => x.CustomerId).IsRequired();
-            builder.Property(x => x.NumberOfPeople).IsRequired();
+            builder.Property(x => x.NumberOfAdults).IsRequired();
+            builder.Property(x => x.NumberOfChildren).IsRequired(false);
             builder.Property(x => x.TotalAmmount).IsRequired();
             builder.Property(x => x.PaymentStatus).IsRequired();
             builder.Property(x => x.StatusBooking).IsRequired();

@@ -14,7 +14,9 @@ namespace Data.DTO.Respone
         public string? Description { get; set; }
         public List<string>? Imgs { get; set; }
         public int Slot { get; set; }
-        public double Price { get; set; }
+        public double PriceOfAdults { get; set; }
+        public double PriceOfChildren { get; set; }
+        public string? ChildTicketAge { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public double Durations { get; set; }
@@ -76,7 +78,9 @@ namespace Data.DTO.Respone
         public string? Description { get; set; }
         public List<string>? Imgs { get; set; }
         public int Slot { get; set; }
-        public double Price { get; set; }
+        public double PriceOfAdults { get; set; }
+        public double PriceOfChildren { get; set; }
+        public string? ChildTicketAge { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public double Durations { get; set; }
