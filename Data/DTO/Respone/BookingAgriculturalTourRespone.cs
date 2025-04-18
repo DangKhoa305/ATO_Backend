@@ -12,10 +12,12 @@ namespace Data.DTO.Respone
         public Guid BookingId { get; set; }
         public Guid TourId { get; set; }
         public DateTime BookingDate { get; set; }
-        public int NumberOfPeople { get; set; }
+        public int NumberOfAdults { get; set; }
+        public int? NumberOfChildren { get; set; }
         public decimal TotalAmmount { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public StatusBooking StatusBooking { get; set; }
+        public virtual UserRespone? Customer { get; set; }
         public virtual AgriculturalTourPackageRespone_Guest? AgriculturalTourPackage { get; set; }
         public virtual ICollection<OrderRespone>? Orders { get; set; }
         public virtual ICollection<VNPayPaymentResponseDTO>? VNPayPaymentResponses { get; set; }

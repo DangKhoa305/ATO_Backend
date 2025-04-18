@@ -73,61 +73,13 @@ namespace Service.BookingSer
             {
                 var tour = _agriculturalTourPackageRepository.Query()
                     .FirstOrDefault(x => x.TourId == bookingAgriculturalTour.TourId);
+                if (tour?.Slot <= 0) throw new Exception("Hết vé!");
                 bookingAgriculturalTour.BookingId = Guid.NewGuid();
                 bookingAgriculturalTour.BookingDate = DateTime.UtcNow;
                 bookingAgriculturalTour.PaymentStatus = PaymentStatus.UnPaid;
                 bookingAgriculturalTour.StatusBooking = StatusBooking.Processing;
-
-                if (bookingAgriculturalTour.Orders?.Any() == true &&
-                    bookingAgriculturalTour.Orders.All(o => o.OrderDetails != null))
-                {
-                    var allOrderDetails = bookingAgriculturalTour.Orders
-                        .SelectMany(o => o.OrderDetails)
-                        .ToList();
-
-                    var productsWithFacility = allOrderDetails.Select(od => new
-                    {
-                        OrderDetail = od,
-                        FacilityId = _productRepository.Query()
-                            .Where(p => p.ProductId == od.ProductId)
-                            .Select(p => p.TouristFacilityId)
-                            .FirstOrDefault()
-                    });
-
-                    // Group by facility ID
-                    var groupedByFacility = productsWithFacility
-                        .GroupBy(p => p.FacilityId)
-                        .ToList();
-
-                    var newOrders = new List<Data.Models.Order>();
-
-                    foreach (var facilityGroup in groupedByFacility)
-                    {
-                        var newOrder = new Data.Models.Order
-                        {
-                            OrderId = Guid.NewGuid(),
-                            BookingId = bookingAgriculturalTour.BookingId,
-                            CustomerId = bookingAgriculturalTour.CustomerId,
-                            OrderDate = DateTime.UtcNow,
-                            StatusOrder = StatusOrder.Processing,
-                            CreateDate = DateTime.UtcNow,
-                            PaymentType = PaymentType.Transfer,
-                            PaymentStatus = PaymentStatus.UnPaid,
-                            OrderDetails = facilityGroup.Select(g => g.OrderDetail).ToList()
-                        };
-
-                        newOrder.TotalAmount = (double)newOrder.OrderDetails.Sum(od => od.Quantity * od.UnitPrice);
-                        newOrders.Add(newOrder);
-                    }
-
-                    bookingAgriculturalTour.Orders = newOrders;
-                }
-
                 bookingAgriculturalTour.TotalAmmount =
-                    (decimal)(bookingAgriculturalTour.Orders
-                        .Where(x => x.PaymentType == PaymentType.Transfer)
-                        .Sum(od => od.TotalAmount)
-                    + (tour.PriceOfAdults * bookingAgriculturalTour.NumberOfAdults)
+                    (decimal)((tour.PriceOfAdults * bookingAgriculturalTour.NumberOfAdults)
                     + (tour.PriceOfChildren * bookingAgriculturalTour.NumberOfChildren));
 
                 await _bookingAgriculturalTourRepository.AddRangeAsync(bookingAgriculturalTour);
@@ -174,6 +126,7 @@ namespace Service.BookingSer
                 return await _bookingAgriculturalTourRepository.Query()
                     .Include(x => x.AgriculturalTourPackage)
                     .Include(x => x.VNPayPaymentResponses)
+                    .Include(x => x.Customer)
                     .Where(x => x.CustomerId == UserId)
                     .ToListAsync();
             }
@@ -190,6 +143,7 @@ namespace Service.BookingSer
                     .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _bookingAgriculturalTourRepository.Query()
                     .Include(x => x.AgriculturalTourPackage)
+                    .Include(x => x.Customer)
                     .Include(x => x.VNPayPaymentResponses)
                     .Where(x => x.AgriculturalTourPackage.TourCompanyId == TourCompany.TourCompanyId)
                     .ToListAsync();

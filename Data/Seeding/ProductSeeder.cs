@@ -345,7 +345,7 @@ namespace Data.Seeding
                    UpdateDate = null,
                    StatusApproval = StatusApproval.Approved,
                    ReplyRequest = null,
-                   TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+                   TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
                }
 
 
