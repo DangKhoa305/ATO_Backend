@@ -228,7 +228,7 @@ namespace Service.OrderSer
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }

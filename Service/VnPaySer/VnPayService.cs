@@ -230,7 +230,9 @@ namespace Service.VnPaySer
                             TransactionStatus = "Refund",
                             SecureHash = responseData["vnp_SecureHash"],
                             PayDate = DateTime.Now,
-                            TypePayment = TypePayment.Refunded
+                            TypePayment = TypePayment.Refunded,
+                            BankCode = responseData["vnp_BankCode"],
+                            BankTranNo = responseData["vnp_BankTranNo"],
                         };
 
                         return (responseData["vnp_ResponseCode"] == "00", refundResponse);

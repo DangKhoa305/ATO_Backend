@@ -163,6 +163,7 @@ namespace ATO_API.Controllers.AFTO
         {
             try
             {
+
                 Activity responseResult = _mapper.Map<Activity>(activityRequest);
                 bool result = await _tourismPackageService.CreateActivity_AFTO(responseResult);
                 if (result)
