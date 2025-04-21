@@ -1,6 +1,5 @@
-﻿using Data.Models;
-using System;
-using System.Threading.Tasks;
+﻿using Data.DTO.Response;
+using Data.Models;
 
 namespace Service.AdminBalanceSer
 {
@@ -9,5 +8,7 @@ namespace Service.AdminBalanceSer
         Task<bool> AddOrderTransaction(Order order);
         Task<bool> AddBookingTransaction(BookingAgriculturalTour booking);
         Task<decimal> GetTotalBalance();
+        Task<List<AdminBalanceHistoryResponse>> GetBalanceHistory();
+        Task<decimal> GetCurrentBalance();
     }
 }

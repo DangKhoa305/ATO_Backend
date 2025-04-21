@@ -5,7 +5,7 @@ using Service.WithdrawalSer;
 
 namespace ATO_API.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/withdrawl")]
 [ApiController]
 [Authorize]
 public class WithdrawalController(IWithdrawalService withdrawalService) : ControllerBase

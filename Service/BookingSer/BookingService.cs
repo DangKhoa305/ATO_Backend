@@ -1,6 +1,7 @@
 ﻿using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Service.AdminBalanceSer;
 using Service.Repository;
 
 namespace Service.BookingSer;
@@ -14,7 +15,8 @@ public class BookingService(
     IRepository<BookingAgriculturalTour> bookingAgriculturalTourRepository,
     IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository,
     IRepository<VNPayPaymentResponse> vNPayPaymentResponseRepository,
-    IRepository<BookingTourDestination> bookingDestinationRepo) : IBookingService
+    IRepository<BookingTourDestination> bookingDestinationRepo,
+    IAdminBalanceService adminBalanceService) : IBookingService
 {
     private readonly IRepository<Order> _orderRepository = orderRepository;
     private readonly IRepository<TourCompany> _tourCompanyRepository = tourCompanyRepository;
@@ -25,12 +27,12 @@ public class BookingService(
     private readonly IRepository<TouristFacility> _touristFacilityRepository = touristFacilityRepository;
     private readonly IRepository<BookingAgriculturalTour> _bookingAgriculturalTourRepository = bookingAgriculturalTourRepository;
     private readonly IRepository<BookingTourDestination> _bookingDestinationRepo = bookingDestinationRepo;
+    private readonly IAdminBalanceService _adminBalanceService = adminBalanceService;
 
     public async Task AddBookPayment(VNPayPaymentResponse checkResponse)
     {
         try
         {
-
             await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
 
             var tour = await _bookingAgriculturalTourRepository.Query()
@@ -38,9 +40,15 @@ public class BookingService(
             var tourexist = _agriculturalTourPackageRepository.Query()
                 .FirstOrDefault(x => x.TourId == tour.TourId);
             if (checkResponse.TransactionStatus == "00")
+            {
+
                 tour.PaymentStatus = PaymentStatus.Paid;
-            tour.StatusBooking = StatusBooking.Completed;
-            tourexist.Slot = (int)(tourexist.Slot - (tour.NumberOfAdults + tour.NumberOfChildren));
+                tour.StatusBooking = StatusBooking.Completed;
+                tourexist.Slot = (int)(tourexist.Slot - (tour.NumberOfAdults + tour.NumberOfChildren));
+
+                // Add to admin balance
+                await _adminBalanceService.AddBookingTransaction(tour);
+            }
             _bookingAgriculturalTourRepository.UpdateAsync(tour);
             _agriculturalTourPackageRepository.UpdateAsync(tourexist);
         }
