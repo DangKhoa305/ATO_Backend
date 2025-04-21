@@ -1,9 +1,4 @@
 ﻿using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.DTO.Respone
 {
@@ -21,7 +16,23 @@ namespace Data.DTO.Respone
         public virtual AgriculturalTourPackageRespone_Guest? AgriculturalTourPackage { get; set; }
         public virtual ICollection<OrderRespone>? Orders { get; set; }
         public virtual ICollection<VNPayPaymentResponseDTO>? VNPayPaymentResponses { get; set; }
+        public CurrentDestinationInfo? CurrentDestination { get; set; }
+        public int TotalBookedPeople { get; set; }
+
+
     }
+
+    public class CurrentDestinationInfo
+    {
+        public Guid DestinationId { get; set; }
+        public string? DestinationName { get; set; }
+        public string? Address { get; set; }
+        public int VisitOrder { get; set; }
+        public DateTime? ActualStartTime { get; set; }
+        public DateTime? ActualEndTime { get; set; }
+        public BookingDestinationStatus Status { get; set; }
+    }
+
     public class BookingAccept
     {
         public Guid BookingId { get; set; }

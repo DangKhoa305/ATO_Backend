@@ -39,9 +39,8 @@ public class BookingController(
         try
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var response = await _bookingService.ListTourBookeds(Guid.Parse(userId));
+            var response = await _bookingService.ListTourBookeds(Guid.Parse(userId!));
             var responseResult = _mapper.Map<List<BookingAgriculturalTourRespone>>(response);
-
 
             return Ok(responseResult);
         }

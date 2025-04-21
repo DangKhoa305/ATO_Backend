@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Data.DTO.Request;
 using Data.DTO.Respone;
+using Data.DTO.Response;
 using Data.Models;
 using System.ComponentModel;
 using System.Reflection;
@@ -142,10 +143,17 @@ namespace ATO_API.Config
                 // VNPayPaymentResponse
                 config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponseDTO>();
                 config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponse_History>();
+                //config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponse_History_Order>()
+                //.ForMember(dest => dest.Order.Customer, opt => opt.MapFrom(src => src.Order.Account)) ;
                 config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponse_History_Order>()
+                .ForMember(dest => dest.Order, opt => opt.MapFrom(src => src.Order))
                 .ForPath(dest => dest.Order.Customer, opt => opt.MapFrom(src => src.Order.Account));
+
                 // BookingAgriculturalTour
-                config.CreateMap<BookingAgriculturalTour, BookingAgriculturalTourRespone>();
+                config.CreateMap<BookingAgriculturalTour, BookingAgriculturalTourRespone>()
+                  .ForMember(dest => dest.TotalBookedPeople,
+                        opt => opt.MapFrom(src => src.NumberOfAdults + src.NumberOfChildren));
+
                 config.CreateMap<BookingAgriculturalTourRequest, BookingAgriculturalTour>();
                 // Feedback
                 config.CreateMap<Feedback, FeedbackRespone>();
@@ -153,6 +161,8 @@ namespace ATO_API.Config
                 // ShipAddress
                 config.CreateMap<ShipAddress, ShipAddressRespone>();
                 config.CreateMap<ShipAddressRequest, ShipAddress>();
+
+                config.CreateMap<Account, ProfileResponse>();
             });
 
             return mapperConfig.CreateMapper();
