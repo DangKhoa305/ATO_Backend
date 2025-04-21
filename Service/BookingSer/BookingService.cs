@@ -60,6 +60,7 @@ namespace Service.BookingSer
                 tour.StatusBooking = StatusBooking.Completed;
                 tourexist.Slot = (int)(tourexist.Slot - (tour.NumberOfAdults + tour.NumberOfChildren));
                 _bookingAgriculturalTourRepository.UpdateAsync(tour);
+                _agriculturalTourPackageRepository.UpdateAsync(tourexist);
             }
             catch (Exception)
             {
@@ -128,6 +129,7 @@ namespace Service.BookingSer
                     .Include(x => x.VNPayPaymentResponses)
                     .Include(x => x.Customer)
                     .Where(x => x.CustomerId == UserId)
+                    .OrderByDescending(x => x.BookingDate)
                     .ToListAsync();
             }
             catch (Exception)
