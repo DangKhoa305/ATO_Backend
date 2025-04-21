@@ -151,6 +151,7 @@ namespace Service.OrderSer
 
                 return await _orderRepository.Query()
                     .Where(x => x.CustomerId == UserId && x.BookingId == null)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -186,6 +187,7 @@ namespace Service.OrderSer
                 var order = await _orderRepository.Query()
                        .SingleOrDefaultAsync(x => x.OrderId == OrderId);
                 order.ShipCode = ShipCode;
+                order.StatusOrder = StatusOrder.AcceptOrder;
                 await _orderRepository.UpdateAsync(order);
                 return true;
 
@@ -205,7 +207,6 @@ namespace Service.OrderSer
                     .ThenInclude(od => od.Product)
                     .ThenInclude(p => p.OCOPSells)
                     .SingleOrDefaultAsync(x => x.OrderId == checkResponse.OrderId);
-
                 if (order == null) return;
                 checkResponse.Amount = (decimal)order.TotalAmount;
                 await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
@@ -221,9 +222,13 @@ namespace Service.OrderSer
                         .OrderBy(s => s.ExpiryDate)
                         .FirstOrDefault();
 
-                    if (latestValidSell != null)
+                    if (latestValidSell != null && checkResponse.TypePayment != TypePayment.Refunded)
                     {
                         latestValidSell.SellVolume -= orderDetail.Quantity;
+                    }
+                    else if (latestValidSell != null && checkResponse.TypePayment == TypePayment.Refunded)
+                    {
+                        latestValidSell.SellVolume += orderDetail.Quantity;
                     }
                 }
 

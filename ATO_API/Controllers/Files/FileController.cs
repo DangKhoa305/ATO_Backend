@@ -14,12 +14,7 @@ namespace ATO_API.Controllers.Files
         private readonly StorageClient _storageClient;
         public FileController()
         {
-            if (!Directory.Exists(_uploadFolder))
-            {
-                Directory.CreateDirectory(_uploadFolder);
-            }
-
-            string basePath = AppContext.BaseDirectory;
+            string basePath = Directory.GetCurrentDirectory();
 
             string credentialPath = Path.Combine(basePath, "Auth", "ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json");
 

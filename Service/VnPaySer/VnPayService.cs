@@ -231,8 +231,10 @@ namespace Service.VnPaySer
                             SecureHash = responseData["vnp_SecureHash"],
                             PayDate = DateTime.Now,
                             TypePayment = TypePayment.Refunded,
-                            BankCode = responseData["vnp_BankCode"],
-                            BankTranNo = responseData["vnp_BankTranNo"],
+                            BankCode = vNPayPaymentResponse.OrderId.ToString(),
+                            BankTranNo = vNPayPaymentResponse.OrderId.ToString(),
+                            TransactionNo = "00",
+                            CardType = vNPayPaymentResponse.OrderId.ToString(),
                         };
 
                         return (responseData["vnp_ResponseCode"] == "00", refundResponse);

@@ -51,6 +51,5 @@ namespace Data.Models
         Processing,
         AcceptOrder,
         RejecOrder
-
     }
 }
