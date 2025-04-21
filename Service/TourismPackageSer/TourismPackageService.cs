@@ -109,6 +109,8 @@ namespace Service.TourismPackageSer
             {
                 return await _tourismPackageRepository.Query()
                     .Where(x => x.StatusOperating == StatusOperating.Active)
+                    .Include(b => b.Activities)
+                    .Include(b => b.TouristFacility)
                     .ToListAsync();
             }
             catch (Exception)

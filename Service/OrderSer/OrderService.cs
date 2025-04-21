@@ -201,9 +201,34 @@ namespace Service.OrderSer
             {
                 await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
                 var order = await _orderRepository.Query()
+                    .Include(x => x.OrderDetails)
+                    .ThenInclude(od => od.Product)
+                    .ThenInclude(p => p.OCOPSells)
                     .SingleOrDefaultAsync(x => x.OrderId == checkResponse.OrderId);
+
+                if (order == null) return;
+
+                checkResponse.Amount = (decimal)order.TotalAmount;
+                await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
+
                 if (checkResponse.TransactionStatus == "00" && checkResponse.TypePayment != TypePayment.Refunded) order.PaymentStatus = PaymentStatus.Paid;
-                _orderRepository.UpdateAsync(order);
+                await _orderRepository.UpdateAsync(order);
+
+                // Update OCOP quantities for each order detail
+                foreach (var orderDetail in order.OrderDetails)
+                {
+                    var latestValidSell = orderDetail.Product?.OCOPSells?
+                        .Where(s => s.ExpiryDate == null || s.ExpiryDate > DateTime.UtcNow)
+                        .OrderBy(s => s.ExpiryDate)
+                        .FirstOrDefault();
+
+                    if (latestValidSell != null)
+                    {
+                        latestValidSell.SellVolume -= orderDetail.Quantity;
+                    }
+                }
+
+
             }
             catch (Exception)
             {

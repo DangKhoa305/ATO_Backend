@@ -108,16 +108,25 @@ namespace ATO_API.Controllers.Tourist
         {
             try
             {
-                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                var responseResult = _mapper.Map<Data.Models.Order>(OrderRequest);
-                responseResult.CustomerId = Guid.Parse(userId);
-                var response = await _orderService.AddOrder(responseResult);
+                var groupProducts = OrderRequest.OrderDetails.GroupBy(x => x.FacilityId).ToList();
+                var groupResponses = new Dictionary<Guid, decimal>();
+                foreach (var products in groupProducts)
+                {
+                    var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                    var responseResult = _mapper.Map<Data.Models.Order>(OrderRequest);
+                    responseResult.CustomerId = Guid.Parse(userId!);
+                    var response = await _orderService.AddOrder(responseResult);
+
+                    groupResponses.Add(response.OrderId, (decimal)response.TotalAmount);
+                }
+
                 if (OrderRequest.PaymentType == PaymentType.Transfer)
                 {
-                    decimal fee = (decimal)response.TotalAmount;
+                    decimal fee = groupResponses.Sum(x => x.Value);
                     DateTime timecreate = DateTime.UtcNow;
 
-                    var paymentUrl = await _vnPayService.CreatePaymentUrlAsync(HttpContext, response.OrderId, fee, timecreate, TypePayment.OrderPayment);
+                    var listOrderId = string.Join(",", groupResponses.Keys);
+                    var paymentUrl = await _vnPayService.CreatePaymentUrlAsync(HttpContext, listOrderId, fee, timecreate, TypePayment.OrderPayment);
                     return Ok(paymentUrl);
                 }
                 else
@@ -145,14 +154,25 @@ namespace ATO_API.Controllers.Tourist
             {
                 var queryParams = Request.Query;
                 var checkResponse = await _vnPayService.PaymentExecuteOrder(queryParams);
-                await _orderService.AddOrderPayment(checkResponse);
+
+                var listOrderIdRaw = checkResponse.OrderInfo;
+                var listOrderId = listOrderIdRaw.Split(",")
+                    .Select(x => Guid.Parse(x)).ToList();
+
+                foreach (var id in listOrderId)
+                {
+                    checkResponse.OrderId = id;
+                    checkResponse.ResponseId = Guid.NewGuid();
+                    await _orderService.AddOrderPayment(checkResponse);
+                }
+
                 var queryString = new StringBuilder();
                 foreach (var param in queryParams)
                 {
-                    var encodedValue = Uri.EscapeDataString(param.Value);
+                    var encodedValue = Uri.EscapeDataString(param.Value!);
                     queryString.Append($"{param.Key}={encodedValue}&");
                 }
-                string returnUrl = _configuration.GetValue<string>("VNPaySettings:ReturnUrl");
+                var returnUrl = _configuration.GetValue<string>("VNPaySettings:ReturnUrl");
                 return Redirect($"{returnUrl}?{queryString}");
             }
             catch (Exception)

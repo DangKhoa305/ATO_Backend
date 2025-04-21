@@ -25,7 +25,7 @@ namespace Service.VnPaySer
             _orderRepository = orderRepository;
         }
 
-        public async Task<string> CreatePaymentUrlAsync(HttpContext context, Guid codePayment, decimal fee, DateTime dateCreate, TypePayment TypePayment)
+        public async Task<string> CreatePaymentUrlAsync(HttpContext context, dynamic codePayment, decimal fee, DateTime dateCreate, TypePayment TypePayment)
         {
             var tick = DateTime.Now.Ticks.ToString();
 
@@ -138,7 +138,7 @@ namespace Service.VnPaySer
                 return new Data.Models.VNPayPaymentResponse
                 {
                     ResponseId = Guid.NewGuid(),
-                    OrderId = Guid.Parse(vnp_OrderInfo),
+                    OrderId = Guid.NewGuid(),
                     TxnRef = vnp_TxnRef,
                     Amount = vnp_Amount,
                     BankCode = vnp_BankCode,
