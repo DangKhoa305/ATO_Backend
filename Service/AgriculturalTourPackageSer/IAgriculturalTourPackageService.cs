@@ -17,6 +17,9 @@ namespace Service.AgriculturalTourPackageSer
         Task<bool> CreateTourDestination(TourDestination newTourDestination, Guid TourId);
         Task<bool> UpdateTourDestination(Guid TourDestinationId, TourDestination updatedTourDestination);
         Task<List<AgriculturalTourPackage>> GetListAgriculturalTourPackages_Guest();
+        Task<List<AgriculturalTourPackage>> GetAll();
         Task<AgriculturalTourPackage> GetAgriculturalTourPackage_Guest(Guid TourId);
+        Task<bool> ProcessApproval(Guid id, StatusApproval status);
+
     }
 }

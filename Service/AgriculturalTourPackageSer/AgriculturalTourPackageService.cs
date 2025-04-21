@@ -42,6 +42,7 @@ namespace Service.AgriculturalTourPackageSer
                 newTour.TourCompanyId = TourCompany!.TourCompanyId;
                 newTour.TourGuides?.Clear();
                 newTour.TourDestinations?.Clear();
+                newTour.StatusActive = StatusActive.inactive;
 
                 await _agriculturalTourPackageRepository.AddRangeAsync(newTour);
 
@@ -93,6 +94,43 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+        public async Task<bool> ProcessApproval(Guid id, StatusApproval status)
+        {
+            try
+            {
+                var existing = await _agriculturalTourPackageRepository.Query()
+                    .Include(x => x.TourGuides)
+                    .SingleOrDefaultAsync(x => x.TourId == id);
+
+                if (existing == null)
+                    throw new Exception("Không tìm thấy gói du lịch!");
+
+
+                existing.StatusActive = status == StatusApproval.Approved
+                    ? StatusActive.active : StatusActive.inactive;
+
+                if (existing.TourDestinations is not null)
+                {
+                    List<TourDestination> items = [];
+                    foreach (var item in existing.TourDestinations)
+                    {
+                        item.StatusApproval = status;
+                        items.Add(item);
+                    }
+
+                    existing.TourDestinations = items;
+                }
+
+                await _agriculturalTourPackageRepository.UpdateRangeAsync(existing);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<bool> CreateTourDestination(TourDestination newTourDestination, Guid TourId)
         {
             try
@@ -178,6 +216,20 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+        public async Task<List<AgriculturalTourPackage>> GetAll()
+        {
+            try
+            {
+                return await _agriculturalTourPackageRepository.Query()
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<AgriculturalTourPackage> GetAgriculturalTourPackage_Guest(Guid TourId)
         {
             try
