@@ -297,6 +297,153 @@ namespace Data.Seeding
                     Fullname = "Quy Nhơn Explorer",
                     isAccountActive = true
                 },
+
+
+                  // Unassigned accounts
+                  new Account
+                  {
+                      Id = Guid.Parse("20000000-0000-0000-0000-000000000018"),
+                      UserName = "quynhonexplorer",
+                      NormalizedUserName = "QUYNHONEXPLORER",
+                      Email = "contact@gmail.com",
+                      NormalizedEmail = "CONTACT@GMAIL.COM",
+                      EmailConfirmed = true,
+                      PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                      SecurityStamp = Guid.NewGuid().ToString(),
+                      Fullname = "Quy Nhơn Explorer",
+                      isAccountActive = true
+                  },
+
+                  new Account
+                  {
+                      Id = Guid.Parse("20000000-0000-0000-0000-000000000019"),
+                      UserName = "hoianheritage",
+                      NormalizedUserName = "HOIANHERITAGEACCOUNT",
+                      Email = "contact@hoianheritage.com",
+                      NormalizedEmail = "CONTACT@HOIANHERITAGE.COM",
+                      EmailConfirmed = true,
+                      PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                      SecurityStamp = Guid.NewGuid().ToString(),
+                      Fullname = "Hoi An Heritage Tours",
+                      isAccountActive = true
+                  },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000020"),
+                        UserName = "DaNangDiscoveryAccount",
+                        NormalizedUserName = "DANANGDISCOVERYACCOUNT",
+                        Email = "info@danangdiscovery.com",
+                        NormalizedEmail = "INFO@DANANGDISCOVERY.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Da Nang Discovery Travel",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000021"),
+                        UserName = "HueImperialAccount",
+                        NormalizedUserName = "HUEIMPERIALACCOUNT",
+                        Email = "contact@hueimperial.com",
+                        NormalizedEmail = "CONTACT@HUEIMPERIAL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Hue Imperial Adventures",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000022"),
+                        UserName = "NhaTrangBayAccount",
+                        NormalizedUserName = "NHATRANGBAYACCOUNT",
+                        Email = "info@nhatrangbay.com",
+                        NormalizedEmail = "INFO@NHATRANGBAY.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Nha Trang Bay Tours",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000023"),
+                        UserName = "HaLongCruiseAccount",
+                        NormalizedUserName = "HALONGCRUISEACCOUNT",
+                        Email = "booking@halongcruise.com",
+                        NormalizedEmail = "BOOKING@HALONGCRUISE.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Ha Long Cruise Experience",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000024"),
+                        UserName = "SapaHighlandAccount",
+                        NormalizedUserName = "SAPAHIGHLANDACCOUNT",
+                        Email = "contact@sapahighland.com",
+                        NormalizedEmail = "CONTACT@SAPAHIGHLAND.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Sapa Highland Adventures",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000025"),
+                        UserName = "MekongDeltaAccount",
+                        NormalizedUserName = "MEKONGDELTAACCOUNT",
+                        Email = "info@mekongdelta.com",
+                        NormalizedEmail = "INFO@MEKONGDELTA.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Mekong Delta Explorers",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000026"),
+                        UserName = "PhuQuocIslandAccount",
+                        NormalizedUserName = "PHUQUOCISLANDACCOUNT",
+                        Email = "contact@phuquocisland.com",
+                        NormalizedEmail = "CONTACT@PHUQUOCISLAND.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Phu Quoc Island Tours",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000027"),
+                        UserName = "DaLatEcoAccount",
+                        NormalizedUserName = "DALATECOACCOUNT",
+                        Email = "info@dalateco.com",
+                        NormalizedEmail = "INFO@DALATECO.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Da Lat Eco Tourism",
+                        isAccountActive = true
+                    },
+                    new Account
+                    {
+                        Id = Guid.Parse("20000000-0000-0000-0000-000000000028"),
+                        UserName = "ConDaoAccount",
+                        NormalizedUserName = "CONDAOACCOUNT",
+                        Email = "booking@condaotours.com",
+                        NormalizedEmail = "BOOKING@CONDAOTOURS.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "Con Dao Heritage Tours",
+                        isAccountActive = true
+                    },
             #endregion
             #region ATFO
                 new Account()
@@ -728,6 +875,136 @@ namespace Data.Seeding
                           Fullname = "Trại Nông Sản Vĩnh Long",
                           isAccountActive = true,
                       },
+                      new Account()
+                      {
+                          Id = Guid.Parse("10000000-0000-0000-0000-000000000033"),
+                          UserName = "VinpearlResort",
+                          NormalizedUserName = "VINPEARLRESORT",
+                          Email = "contact@vinpearlresort.com",
+                          NormalizedEmail = "CONTACT@VINPEARLRESORT.COM",
+                          EmailConfirmed = true,
+                          PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                          SecurityStamp = Guid.NewGuid().ToString(),
+                          Fullname = "CÔNG TY TNHH VINPEARL RESORT & SPA",
+                          isAccountActive = true,
+                      },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000034"),
+                        UserName = "MuongThanhHotel",
+                        NormalizedUserName = "MUONGTHANHHOTEL",
+                        Email = "info@muongthanhhotel.com",
+                        NormalizedEmail = "INFO@MUONGTHANHHOTEL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "TẬP ĐOÀN KHÁCH SẠN MƯỜNG THANH",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000035"),
+                        UserName = "InterConHanoi",
+                        NormalizedUserName = "INTERCONHANOI",
+                        Email = "reservation@intercontinental.com",
+                        NormalizedEmail = "RESERVATION@INTERCONTINENTAL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "KHÁCH SẠN INTERCONTINENTAL HANOI WESTLAKE",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000036"),
+                        UserName = "SofitelLegend",
+                        NormalizedUserName = "SOFITELLEGEND",
+                        Email = "info@sofitellegend.com",
+                        NormalizedEmail = "INFO@SOFITELLEGEND.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "KHÁCH SẠN SOFITEL LEGEND METROPOLE HÀ NỘI",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000037"),
+                        UserName = "FuramaDanang",
+                        NormalizedUserName = "FURAMADANANG",
+                        Email = "reservation@furamadanang.com",
+                        NormalizedEmail = "RESERVATION@FURAMADANANG.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "CÔNG TY TNHH FURAMA RESORT ĐÀ NẴNG",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000038"),
+                        UserName = "AnantaraSpa",
+                        NormalizedUserName = "ANANTARASPA",
+                        Email = "spa@anantara.com",
+                        NormalizedEmail = "SPA@ANANTARA.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "CÔNG TY TNHH ANANTARA QUY NHƠN VILLAS",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000039"),
+                        UserName = "Amanoispa",
+                        NormalizedUserName = "AMANOISPA",
+                        Email = "resort@amanoi.com",
+                        NormalizedEmail = "RESORT@AMANOI.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "CÔNG TY TNHH AMANOI RESORT NINH THUẬN",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000040"),
+                        UserName = "SixSensesCon",
+                        NormalizedUserName = "SIXSENSESCON",
+                        Email = "contact@sixsenses.com",
+                        NormalizedEmail = "CONTACT@SIXSENSES.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "CÔNG TY TNHH SIX SENSES CÔN ĐẢO",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000041"),
+                        UserName = "BanyanTree",
+                        NormalizedUserName = "BANYANTREE",
+                        Email = "langco@banyantree.com",
+                        NormalizedEmail = "LANGCO@BANYANTREE.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "CÔNG TY TNHH BANYAN TREE LĂNG CÔ",
+                        isAccountActive = true,
+                    },
+                    new Account()
+                    {
+                        Id = Guid.Parse("10000000-0000-0000-0000-000000000042"),
+                        UserName = "ParkHyatt",
+                        NormalizedUserName = "PARKHYATT",
+                        Email = "saigon@hyatt.com",
+                        NormalizedEmail = "SAIGON@HYATT.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        Fullname = "CÔNG TY TNHH PARK HYATT SÀI GÒN",
+                        isAccountActive = true,
+                    },
             #endregion
                 // Tourists
                 new Account()
@@ -743,6 +1020,33 @@ namespace Data.Seeding
                     Fullname = "Tourists",
                     isAccountActive = true,
                 },
+                 new Account()
+                 {
+                     Id = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F1"),
+                     UserName = "thuylinh",
+                     NormalizedUserName = "THUYLINH",
+                     Email = "thuylinh@fpt.edu.vn",
+                     NormalizedEmail = "THUYLINH@FPT.EDU.VN",
+                     EmailConfirmed = true,
+                     PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                     SecurityStamp = Guid.NewGuid().ToString(),
+                     Fullname = "Thùy Linh",
+                     isAccountActive = true,
+                 },
+                  new Account()
+                  {
+                      Id = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F2"),
+                      UserName = "hoaithu",
+                      NormalizedUserName = "HOAITHU",
+                      Email = "hoaithu@fpt.edu.vn",
+                      NormalizedEmail = "HOAITHU@FPT.EDU.VN",
+                      EmailConfirmed = true,
+                      PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
+                      SecurityStamp = Guid.NewGuid().ToString(),
+                      Fullname = "Hoài Thu",
+                      isAccountActive = true,
+                  },
+
                 // Tour Guides
                 new Account()
                 {
@@ -908,6 +1212,7 @@ namespace Data.Seeding
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("B8C777A9-55B9-4B3D-860A-D7B56E4C24B7"), RoleId = Guid.Parse("B8FD818F-63F1-49EE-BEC5-F7B66CAFBFCA") },
                 //Seed Content Moderators
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("11A068D3-9AF4-484C-82A2-E2B5C9D8B5AB"), RoleId = Guid.Parse("0DAE2462-9EBD-452E-A89C-06D4B6025E68") },
+
                 //Seed Tourism Companies
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("053D18EF-BA0E-4141-B142-898D28FA9B5D"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("D2C3E4F5-6789-0123-4567-89ABCDEF0123"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
@@ -927,10 +1232,42 @@ namespace Data.Seeding
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("C7E55065-CACD-4FDF-AE68-2A4BB8AE3375"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("A173D7B4-E503-4508-892A-5D1A4901CD03"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
 
+                //Seed unassigned Tourism Companies
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000018"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000019"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000020"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000021"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000022"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000023"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000024"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000025"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000026"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000027"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("20000000-0000-0000-0000-000000000028"), RoleId = Guid.Parse("6F8CDFBE-2D8F-4B5E-B767-194CBA66309A") },
+
                 //Seed ATFO
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("A631BB94-66D8-44DB-932B-532892D87754"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000001"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000002"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+
+                //Seed unassigned ATFO
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000032"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000033"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000034"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000035"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000036"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000037"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000038"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000039"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000040"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000041"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("10000000-0000-0000-0000-000000000042"), RoleId = Guid.Parse("49E15EF3-2D88-4812-955F-D00859B3F7E3") },
+
                 //Seed Tourists
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F0"), RoleId = Guid.Parse("C78A64EB-5190-44C1-9886-CA707854B807") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F1"), RoleId = Guid.Parse("C78A64EB-5190-44C1-9886-CA707854B807") },
+                new IdentityUserRole<Guid> { UserId = Guid.Parse("E025738E-4686-4282-ABC3-DAE9C65907F2"), RoleId = Guid.Parse("C78A64EB-5190-44C1-9886-CA707854B807") },
+
                 //Seed Tour Guides
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("64454A5E-9883-4548-9A9D-D7986BF6B3AD"), RoleId = Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD") },
                 new IdentityUserRole<Guid> { UserId = Guid.Parse("22222222-2222-2222-2222-222222222222"), RoleId = Guid.Parse("870DD1EC-C340-41EE-9088-0F3612F510CD") },

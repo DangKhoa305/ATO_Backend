@@ -1,11 +1,5 @@
 ﻿using Data.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Seeding
 {
@@ -28,12 +22,12 @@ namespace Data.Seeding
                 {
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     UserId = Guid.Parse("053D18EF-BA0E-4141-B142-898D28FA9B5D"),
-                    AddressCompany = "03 Hai Bà Trưng, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội.",
+                    AddressCompany = "03 Hai Bà Trưng, Hoàn Kiếm, Hà Nội.",
                     CompanynName = "Công ty Cổ phần Vietravel",
                     CompanyDescription = "",
                     EmailCompany = "vtv.cholon@vietravel.com",
                     Website = "https://travel.com.vn/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWyblRzW2ET2uC9wdJBm6_PUq1zCiSi6SGJw&s",
                     CreateDate = new DateTime(2025, 1, 22, 3, 38, 59, 419, DateTimeKind.Local).AddTicks(3253)
                 },
                 new TourCompany
@@ -45,7 +39,7 @@ namespace Data.Seeding
                     CompanyDescription = "Lữ hành hàng đầu Việt Nam.",
                     EmailCompany = "contact@saigontourist.net",
                     Website = "https://saigontourist.net/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://icolor.vn/wp-content/uploads/2021/01/Tham-kh%E1%BA%A3o-Logo-c%C3%B4ng-ty-du-l%E1%BB%8Bch-Saigontourist-3.jpg",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany
@@ -57,7 +51,7 @@ namespace Data.Seeding
                     CompanyDescription = "Tour du lịch nội địa và quốc tế.",
                     EmailCompany = "support@hanoitourist.com",
                     Website = "https://hanoitourist.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.DQh7E8nzGNx-fipB0stcygHaGf?w=190&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany
@@ -69,7 +63,7 @@ namespace Data.Seeding
                     CompanyDescription = "Tour trọn gói, uy tín.",
                     EmailCompany = "info@fiditour.com",
                     Website = "https://fiditour.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.kzYdv7-VmS2zRF7qZaOyvwAAAA?w=212&h=212&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany
@@ -81,7 +75,7 @@ namespace Data.Seeding
                     CompanyDescription = "Chuyên tour biển đảo Đà Nẵng.",
                     EmailCompany = "info@danangtravel.com",
                     Website = "https://danangtravel.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.vj2L0nLe0ocGi4pxbLwnowHaHa?w=200&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -93,7 +87,7 @@ namespace Data.Seeding
                     CompanyDescription = "Chuyên tour du lịch nội địa và quốc tế.",
                     EmailCompany = "contact@vietsuntravel.com",
                     Website = "https://vietsuntravel.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.nwXDxpVx9hsOdW9efOtlRAHaDq?w=334&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -105,7 +99,7 @@ namespace Data.Seeding
                     CompanyDescription = "Dịch vụ du lịch cao cấp.",
                     EmailCompany = "contact@bambotravel.com",
                     Website = "https://bambotravel.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.8nxVZ-RcEPQMdis_Yg4TWAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -117,7 +111,7 @@ namespace Data.Seeding
                     CompanyDescription = "Du lịch chất lượng, giá rẻ.",
                     EmailCompany = "info@phuongnamtravel.com",
                     Website = "https://phuongnamtravel.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.p6Shq1r_4g--m-4Q8nIUfgHaHa?rs=1&pid=ImgDetMain",
                     CreateDate = DateTime.UtcNow
                 },
                  new TourCompany()
@@ -129,7 +123,7 @@ namespace Data.Seeding
                      CompanyDescription = "Chuyên tổ chức tour du lịch trong và ngoài nước.",
                      EmailCompany = "contact@datviettour.com",
                      Website = "https://datviettour.com/",
-                     LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                     LogoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMJbyGoIQYOyNFDh34TrlaOOozlKmiTefzoQ&s",
                      CreateDate = DateTime.UtcNow
                  },
                 new TourCompany()
@@ -141,7 +135,7 @@ namespace Data.Seeding
                     CompanyDescription = "Dịch vụ du lịch chất lượng cao.",
                     EmailCompany = "info@redtour.com.vn",
                     Website = "https://redtour.com.vn/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.zD605q-X7zzIpJAgyfVvwQHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -153,7 +147,7 @@ namespace Data.Seeding
                     CompanyDescription = "Thông tin và tổ chức tour du lịch.",
                     EmailCompany = "support@dulichtoday.com",
                     Website = "https://dulichtoday.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://png.pngtree.com/png-clipart/20200722/original/pngtree-travel-and-tour-logo-png-image_5051851.jpg",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -165,7 +159,7 @@ namespace Data.Seeding
                     CompanyDescription = "Công ty du lịch chuyên nghiệp tại Huế.",
                     EmailCompany = "contact@havatravel.com",
                     Website = "https://havatravel.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://img.freepik.com/premium-vector/tours-travel-logo-with-airplane-passing-blue-world_101890-71.jpg?w=2000",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -177,7 +171,7 @@ namespace Data.Seeding
                     CompanyDescription = "Tour du lịch biển chất lượng cao.",
                     EmailCompany = "info@vungtautravel.com",
                     Website = "https://vungtautravel.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2cf01f84467867.5d5da886617be.jpg",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -189,7 +183,7 @@ namespace Data.Seeding
                     CompanyDescription = "Dịch vụ đặt tour du lịch biển chuyên nghiệp.",
                     EmailCompany = "support@nhatrangholiday.com",
                     Website = "https://nhatrangholiday.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.inoQUXN-Y4DfWTpe5-ec-gHaFJ?w=241&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -201,7 +195,7 @@ namespace Data.Seeding
                     CompanyDescription = "Chuyên tour khám phá biển và cát trắng.",
                     EmailCompany = "contact@phanthiettours.com",
                     Website = "https://phanthiettours.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.KBj43NwwtJw5Ht71M6ts8gHaF7?rs=1&pid=ImgDetMain",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -213,7 +207,7 @@ namespace Data.Seeding
                     CompanyDescription = "Tour du lịch khám phá Đà Lạt.",
                     EmailCompany = "info@dalattour.com",
                     Website = "https://dalattour.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://images-platform.99static.com/OowUwWHMa4KA7v_azo1Bq_7ByCs=/6x0:1001x995/500x500/top/smart/99designs-contests-attachments/86/86578/attachment_86578583",
                     CreateDate = DateTime.UtcNow
                 },
                 new TourCompany()
@@ -225,7 +219,7 @@ namespace Data.Seeding
                     CompanyDescription = "Tour du lịch biển và văn hóa Quy Nhơn.",
                     EmailCompany = "contact@quynhonexplorer.com",
                     Website = "https://quynhonexplorer.com/",
-                    LogoURL = "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Logo%2F1.png?alt=media&token=6c69e085-dfc9-4d14-8f73-ecbcbc7d3fcb",
+                    LogoURL = "https://th.bing.com/th/id/OIP.lVVxjoYVel7RgNeu1hH2RgHaFr?rs=1&pid=ImgDetMain",
                     CreateDate = DateTime.UtcNow
                 }
             );
