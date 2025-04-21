@@ -64,6 +64,12 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new BookingAgriculturalTourConfiguration());
             modelBuilder.ApplyConfiguration(new FeedbackConfiguration());
             modelBuilder.ApplyConfiguration(new ShipAddressConfiguration());
+
+            // Addition
+            modelBuilder.ApplyConfiguration(new AdminBalanceConfiguration());
+            modelBuilder.ApplyConfiguration(new BookingTourDestinationConfiguration());
+            modelBuilder.ApplyConfiguration(new WithdrawalHistoryConfiguration());
+            modelBuilder.ApplyConfiguration(new WithdrawalRequestConfiguration());
             #endregion
             #region config FK for generate account and role,...
             modelBuilder.Entity<IdentityUserLogin<Guid>>(entity =>
@@ -173,6 +179,10 @@ namespace Data.ArmsContext
         public DbSet<BookingAgriculturalTour> BookingAgriculturalTours { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<ShipAddress> ShipAddresses { get; set; }
+        public DbSet<AdminBalance> AdminBalances { get; set; }
+        public DbSet<BookingTourDestination> BookingTourDestinations { get; set; }
+        public DbSet<WithdrawalRequest> WithdrawalRequests { get; set; }
+        public DbSet<WithdrawalHistory> WithdrawalHistories { get; set; }
 
         #endregion
     }

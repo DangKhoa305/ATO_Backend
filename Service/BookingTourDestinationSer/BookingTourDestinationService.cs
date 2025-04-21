@@ -1,4 +1,5 @@
 ﻿using Data.DTO.Request;
+using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
@@ -86,5 +87,44 @@ namespace Service.BookingTourDestinationSer
             await _bookingDestinationRepo.RealAddRangeAsync(destinations);
             return true;
         }
+
+        public async Task<CurrentDestinationInfo?> GetCurrentDestination(Guid bookingId)
+        {
+            var currentDestination = await _bookingDestinationRepo.Query()
+                .Include(x => x.TourDestination)
+                .ThenInclude(x => x.Activity)
+                .Include(x => x.TourDestination)
+                .ThenInclude(x => x.Accommodation)
+                .Where(x => x.BookingId == bookingId)
+                .OrderByDescending(x => x.ActualStartTime)
+                .FirstOrDefaultAsync(x => x.Status == BookingDestinationStatus.InProgress)
+                ?? await _bookingDestinationRepo.Query()
+                    .Include(x => x.TourDestination)
+                    .ThenInclude(x => x.Activity)
+                    .Include(x => x.TourDestination)
+                    .ThenInclude(x => x.Accommodation)
+                    .Where(x => x.BookingId == bookingId)
+                    .OrderBy(x => x.TourDestination!.VisitOrder)
+                    .FirstOrDefaultAsync(x => x.Status == BookingDestinationStatus.Pending);
+
+            if (currentDestination == null) return null;
+
+            return new CurrentDestinationInfo
+            {
+                DestinationId = currentDestination.TourDestinationId,
+                DestinationName = currentDestination.TourDestination?.Activity != null
+                    ? currentDestination.TourDestination.Activity.ActivityName
+                    : currentDestination.TourDestination!.Accommodation?.AccommodationName,
+                Address = currentDestination.TourDestination.Activity != null
+                    ? currentDestination.TourDestination.Activity.Location
+                    : currentDestination.TourDestination.Accommodation?.Address,
+                VisitOrder = currentDestination.TourDestination.VisitOrder,
+                ActualStartTime = currentDestination.ActualStartTime,
+                ActualEndTime = currentDestination.ActualEndTime,
+                Status = currentDestination.Status
+            };
+        }
+
+
     }
 }

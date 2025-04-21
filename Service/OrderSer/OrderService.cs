@@ -1,25 +1,15 @@
 ﻿using Data.DTO.Request;
-using Data.DTO.Respone;
-using Data.Migrations;
 using Data.Models;
-using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using Nest;
-using Service.Repository;
+using Service.AdminBalanceSer;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Transactions;
 
 namespace Service.OrderSer
 {
     public class OrderService : IOrderService
     {
+        private readonly IAdminBalanceService _adminBalanceService;
         private readonly Service.Repository.IRepository<Data.Models.Order> _orderRepository;
         private readonly Service.Repository.IRepository<Data.Models.VNPayPaymentResponse> _VNPayPaymentResponseRepository;
         private readonly Service.Repository.IRepository<OrderDetail> _orderDetailRepository;

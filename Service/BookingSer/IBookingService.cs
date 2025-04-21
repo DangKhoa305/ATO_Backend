@@ -1,10 +1,6 @@
-﻿using Data.DTO.Respone;
+﻿using Data.DTO.Request;
+using Data.DTO.Respone;
 using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.BookingSer
 {
@@ -17,6 +13,5 @@ namespace Service.BookingSer
         Task<List<BookingAgriculturalTour>> ListTourBookingTour_TourCompany(Guid UserId);
         Task BookingAccept(BookingAccept bookingAccept);
         Task<List<VNPayPaymentResponse>> ListHistoryPayments(Guid UserId);
-
     }
 }
