@@ -199,7 +199,6 @@ namespace Service.OrderSer
         {
             try
             {
-                await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
                 var order = await _orderRepository.Query()
                     .Include(x => x.OrderDetails)
                     .ThenInclude(od => od.Product)
@@ -207,7 +206,6 @@ namespace Service.OrderSer
                     .SingleOrDefaultAsync(x => x.OrderId == checkResponse.OrderId);
 
                 if (order == null) return;
-
                 checkResponse.Amount = (decimal)order.TotalAmount;
                 await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
 

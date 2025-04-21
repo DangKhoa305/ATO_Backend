@@ -15,6 +15,7 @@ namespace Data.Models
         public DateTime? ExpiryDate { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
+        public bool? ActiveStatus { get; set; }
         //FK
         public Guid ProductId { get; set; }
         public virtual Product? Product { get; set; }

@@ -661,7 +661,8 @@ namespace Data.Migrations
                     ExpiryDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ActiveStatus = table.Column<bool>(type: "bit", nullable: true),
                 },
                 constraints: table =>
                 {
