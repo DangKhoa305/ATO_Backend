@@ -313,6 +313,7 @@ namespace ATO_API.Controllers.AFTO
                 request.service_type_id = 2;
                 request.service_id = 0;
                 request.coupon = "";
+                request.cod_amount = 0;
                 request.note = "nothing";
                 var shipping = await _shippingService.CreateShippingOrder(request);
                 await _orderService.UpdateShipCode(Guid.Parse(request.client_order_code), shipping.order_code);
