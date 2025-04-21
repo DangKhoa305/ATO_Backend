@@ -23,6 +23,7 @@ namespace Data.DTO.Respone
         public DateTime? UpdateDate { get; set; }
         public double TotalAmountProducts { get; set; }
         public double TotalShip { get; set; }
+        public virtual UserRespone? Customer { get; set; }
         public virtual ICollection<OrderDetailRespone> OrderDetails { get; set; }
         public virtual ICollection<VNPayPaymentResponseDTO> VNPayPaymentResponses { get; set; }
     }
@@ -59,6 +60,45 @@ namespace Data.DTO.Respone
         public string TransactionStatus { get; set; }
         public string SecureHash { get; set; }
 
+        public TypePayment TypePayment { get; set; }
+    }
+    public class VNPayPaymentResponse_History
+    {
+        public Guid ResponseId { get; set; }
+        public Guid? BookingId { get; set; }
+        public string TxnRef { get; set; }
+        public decimal Amount { get; set; }
+        public string BankCode { get; set; }
+        public string BankTranNo { get; set; }
+        public string CardType { get; set; }
+        public string OrderInfo { get; set; }
+        public DateTime PayDate { get; set; }
+        public string ResponseCode { get; set; }
+        public string TmnCode { get; set; }
+        public string TransactionNo { get; set; }
+        public string TransactionStatus { get; set; }
+        public string SecureHash { get; set; }
+
+        public TypePayment TypePayment { get; set; }
+        public virtual BookingAgriculturalTourRespone? BookingAgriculturalTour { get; set; }
+    }
+    public class VNPayPaymentResponse_History_Order
+    {
+        public Guid ResponseId { get; set; }
+        public Guid? BookingId { get; set; }
+        public string TxnRef { get; set; }
+        public decimal Amount { get; set; }
+        public string BankCode { get; set; }
+        public string BankTranNo { get; set; }
+        public string CardType { get; set; }
+        public string OrderInfo { get; set; }
+        public DateTime PayDate { get; set; }
+        public string ResponseCode { get; set; }
+        public string TmnCode { get; set; }
+        public string TransactionNo { get; set; }
+        public string TransactionStatus { get; set; }
+        public string SecureHash { get; set; }
+        public virtual OrderRespone? Order { get; set; }
         public TypePayment TypePayment { get; set; }
     }
 }

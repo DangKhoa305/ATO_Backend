@@ -121,6 +121,7 @@ namespace ATO_API.Config
                 config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone>();
                 config.CreateMap<AgriculturalTourPackageRequest, AgriculturalTourPackage>();
                 config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone_Guest>();
+
                 // TourDestination
                 config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone>();
                 config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone_Guest>();
@@ -140,6 +141,9 @@ namespace ATO_API.Config
                 config.CreateMap<OrderDetailRequest, OrderDetail>();
                 // VNPayPaymentResponse
                 config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponseDTO>();
+                config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponse_History>();
+                config.CreateMap<VNPayPaymentResponse, VNPayPaymentResponse_History_Order>()
+                .ForMember(dest => dest.Order.Customer, opt => opt.MapFrom(src => src.Order.Account));
                 // BookingAgriculturalTour
                 config.CreateMap<BookingAgriculturalTour, BookingAgriculturalTourRespone>();
                 config.CreateMap<BookingAgriculturalTourRequest, BookingAgriculturalTour>();

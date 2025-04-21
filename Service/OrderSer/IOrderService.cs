@@ -27,5 +27,6 @@ namespace Service.OrderSer
         Task UpdateOrderStatus(Guid orderId, PaymentType refunded, int paymentStatus, StatusOrder canceled);
         Task<bool> UpdateShipCode(Guid OrderId, string ShipCode);
         Task AcceptOrder(OrderAcceptRequest orderAcceptRequest);
+        Task<List<VNPayPaymentResponse>> ListHistoryPaymentsOrder(Guid UserId);
     }
 }

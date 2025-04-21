@@ -25,6 +25,7 @@ namespace Service.OrderSer
         private readonly Service.Repository.IRepository<OrderDetail> _orderDetailRepository;
         private readonly Service.Repository.IRepository<Product> _productRepository;
         private readonly Service.Repository.IRepository<TouristFacility> _touristFacilityRepository;
+
         private readonly IConnectionMultiplexer _redis;
         private readonly StackExchange.Redis.IDatabase _db;
         public OrderService(
@@ -228,11 +229,43 @@ namespace Service.OrderSer
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
+
         }
+        public async Task<List<VNPayPaymentResponse>> ListHistoryPaymentsOrder(Guid UserId)
+        {
+            try
+            {
+                // Lấy TouristFacility theo UserId
+                var touristFacility = await _touristFacilityRepository.Query()
+                    .SingleOrDefaultAsync(x => x.UserId == UserId);
+
+                if (touristFacility == null)
+                    return new List<VNPayPaymentResponse>();
+
+                var touristFacilityId = touristFacility.TouristFacilityId;
+
+                // Lấy danh sách các lịch sử thanh toán
+                return await _VNPayPaymentResponseRepository.Query()
+                    .Include(x => x.Order)
+                        .ThenInclude(o => o.Account)
+                    .Include(x => x.Order)
+                        .ThenInclude(o => o.OrderDetails)
+                            .ThenInclude(od => od.Product)
+                    .Where(x => x.BookingId == null &&
+                                x.Order.OrderDetails.Any(od => od.Product.TouristFacilityId == touristFacilityId))
+                    .OrderByDescending(x => x.PayDate)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi, vui lòng thử lại sau!");
+            }
+        }
+
 
         //public async Task UpdateOrderShipping(Guid orderId, ShippingOrderResponse shippingResponse)
         //{

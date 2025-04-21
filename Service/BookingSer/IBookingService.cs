@@ -16,5 +16,7 @@ namespace Service.BookingSer
         Task AddBookPayment(VNPayPaymentResponse checkResponse);
         Task<List<BookingAgriculturalTour>> ListTourBookingTour_TourCompany(Guid UserId);
         Task BookingAccept(BookingAccept bookingAccept);
+        Task<List<VNPayPaymentResponse>> ListHistoryPayments(Guid UserId);
+
     }
 }

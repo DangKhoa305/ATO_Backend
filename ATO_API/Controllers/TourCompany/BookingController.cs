@@ -61,6 +61,29 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
+        [HttpGet("get-list-history-payment")]
+        [ProducesResponseType(typeof(List<VNPayPaymentResponse_History>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetBookedsHistory()
+        {
+            try
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var response = await _bookingService.ListHistoryPayments(Guid.Parse(userId));
+                var responseResult = _mapper.Map<List<VNPayPaymentResponse>>(response);
+
+
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
         [HttpGet("get-book-tour/{BookingId}")]
         [ProducesResponseType(typeof(BookingAgriculturalTourRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]

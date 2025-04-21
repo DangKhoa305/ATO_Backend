@@ -77,6 +77,29 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
+        [HttpGet("get-list-history-payment")]
+        [ProducesResponseType(typeof(List<VNPayPaymentResponse_History_Order>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetBookedsHistory()
+        {
+            try
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var response = await _orderService.ListHistoryPaymentsOrder(Guid.Parse(userId));
+                var responseResult = _mapper.Map<List<VNPayPaymentResponse_History_Order>>(response);
+
+
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
         [HttpGet("get-order/{OrderId}")]
         [ProducesResponseType(typeof(OrderRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
