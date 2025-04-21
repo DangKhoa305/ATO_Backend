@@ -17,4 +17,6 @@ namespace Data.DTO.Respone
         public string? Message { get; set; }
         public string? toEmail { get; set; }
     }
+
+    public record ResponseModel(bool Status, string? Message);
 }

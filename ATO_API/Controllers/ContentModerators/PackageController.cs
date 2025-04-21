@@ -1,111 +1,90 @@
 ﻿using AutoMapper;
-using Azure;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Service.AgriculturalTourPackageSer;
+using Service.TourismPackageSer;
 
-namespace ATO_API.Controllers
+namespace ATO_API.Controllers;
+
+[Route("api/content-moderators/package")]
+[ApiController]
+[Authorize(Roles = "ContentModerators")]
+public class PackageController(
+    ITourismPackageService service,
+    IMapper mapper) : ControllerBase
 {
-    [Route("api/content-moderators/package")]
-    [ApiController]
-    [Authorize(Roles = "ContentModerators")]
-    public class PackageController : ControllerBase
+    private readonly ITourismPackageService _service = service;
+    private readonly IMapper _mapper = mapper;
+
+    [HttpGet]
+    [ProducesResponseType(typeof(List<TourismPackageRespone>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetAllAsync()
     {
-        private readonly IAgriculturalTourPackageService _agriculturalTourPackageService;
-        private readonly IMapper _mapper;
-
-        public PackageController(
-             IMapper mapper,
-             IAgriculturalTourPackageService agriculturalTourPackageService
-        )
+        try
         {
-            _mapper = mapper;
-            _agriculturalTourPackageService = agriculturalTourPackageService;
+            var response = await _service.GetAllAsync();
+            var mapped = _mapper.Map<List<TourismPackageRespone>>(response);
+            return Ok(mapped);
         }
-        [HttpGet]
-        [ProducesResponseType(typeof(List<AgriculturalTourPackageRespone_Guest>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAgriculturalTourPackages()
+        catch (Exception ex)
         {
-            try
-            {
-                var response = await _agriculturalTourPackageService.GetAll();
-                var responseResult = _mapper.Map<List<AgriculturalTourPackageRespone_Guest>>(response);
-
-
-                return Ok(responseResult);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM
-                {
-                    Status = false,
-                    Message = ex.Message,
-                });
-            }
+            return StatusCode(500, new ResponseModel(true, ex.Message));
         }
-        [HttpGet("{tourId}")]
-        [ProducesResponseType(typeof(AgriculturalTourPackageRespone_Guest), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAgriculturalTourPackage(Guid tourId)
+    }
+    [HttpGet("{id}")]
+    [ProducesResponseType(typeof(TourismPackageRespone), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetAsync(Guid id)
+    {
+        try
         {
-            try
-            {
-                var response = await _agriculturalTourPackageService.GetAgriculturalTourPackage_Guest(tourId);
-                var responseResult = _mapper.Map<AgriculturalTourPackageRespone_Guest>(response);
-                return Ok(responseResult);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM
-                {
-                    Status = false,
-                    Message = ex.Message,
-                });
-            }
+            var response = await _service.GetTourismPackage(id);
+            var mapped = _mapper.Map<TourismPackageRespone>(response);
+            return Ok(mapped);
         }
-
-        [HttpPut("process-approval/{tourId}/{status}")]
-        [ProducesResponseType(typeof(AgriculturalTourPackageRespone_Guest), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAgriculturalTourPackage(Guid tourId, StatusApproval status)
+        catch (Exception ex)
         {
-            try
-            {
-                var success = await _agriculturalTourPackageService.ProcessApproval(tourId, status);
-                var action = status == StatusApproval.Approved ? "Duyệt" : "Từ chối";
-                var response = new { success, message = success ? $"{action} thành công" : $"{action} thất bại" };
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                var error = new { success = false, message = ex.Message };
-                return Ok(error);
-            }
+            return StatusCode(500, new ResponseModel(true, ex.Message));
         }
+    }
 
-        [HttpGet("destination/{id}")]
-        [ProducesResponseType(typeof(AgriculturalTourPackage_TourDestination_Respone), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetTourDestination(Guid id)
+    [HttpPut("process-approval/{id}/{status}")]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> ProccessApprovalAsync(Guid id, StatusApproval status)
+    {
+        try
         {
-            try
-            {
-                var response = await _agriculturalTourPackageService.GetTourDestination(id);
-                var responseResult = _mapper.Map<AgriculturalTourPackage_TourDestination_Respone>(response);
-                return Ok(responseResult);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM
-                {
-                    Status = false,
-                    Message = ex.Message,
-                });
-            }
-        }
+            var result = await _service.ProcessApprovalAsync(id, status);
+            if (result is false)
+                throw new Exception("Cập nhật không thành công!");
 
+            return Ok(new ResponseModel(true, "Cập nhật thành công!"));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ResponseModel(true, ex.Message));
+        }
+    }
+    [HttpGet("activity/{id}")]
+    [ProducesResponseType(typeof(ActivityRespone), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+
+    public async Task<IActionResult> GetActivityAsync(Guid id)
+    {
+        try
+        {
+            var response = await _service.GetActivity(id);
+            var mapped = _mapper.Map<ActivityRespone>(response);
+            return Ok(mapped);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ResponseModel(true, ex.Message));
+        }
     }
 }
+

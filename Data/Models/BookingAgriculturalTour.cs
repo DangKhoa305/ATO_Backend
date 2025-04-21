@@ -23,6 +23,7 @@ namespace Data.Models
         public virtual AgriculturalTourPackage? AgriculturalTourPackage { get; set; }
         public virtual ICollection<Order>? Orders { get; set; }
         public virtual ICollection<VNPayPaymentResponse>? VNPayPaymentResponses { get; set; }
+        public virtual ICollection<BookingTourDestination>? BookingTourDestinations { get; set; }
     }
     public enum StatusBooking
     {

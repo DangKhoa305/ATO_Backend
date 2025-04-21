@@ -1,11 +1,6 @@
 ﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.TourismPackageSer
 {
@@ -124,11 +119,28 @@ namespace Service.TourismPackageSer
             }
         }
 
+        public async Task<List<TourismPackage>> GetAllAsync()
+        {
+            try
+            {
+                return await _tourismPackageRepository.Query()
+                    .Include(b => b.TouristFacility)
+                    .Include(b => b.Activities)
+                    .ThenInclude(b => b.Products)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<TourismPackage> GetTourismPackage(Guid PackageId)
         {
             try
             {
                 return await _tourismPackageRepository.Query()
+                    .Include(b => b.TouristFacility)
                     .Include(b => b.Activities)
                     .ThenInclude(b => b.Products)
                     .SingleOrDefaultAsync(x => x.PackageId == PackageId);
@@ -218,6 +230,41 @@ namespace Service.TourismPackageSer
                 existingTourismPackage.UpdateDate = DateTime.UtcNow;
 
                 await _tourismPackageRepository.UpdateAsync(existingTourismPackage);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
+        public async Task<bool> ProcessApprovalAsync(Guid packageId, StatusApproval status)
+        {
+            try
+            {
+                var exist = await _tourismPackageRepository.Query()
+                    .SingleOrDefaultAsync(x => x.PackageId == packageId);
+
+                if (exist == null)
+                    throw new Exception("Không tìm thấy gói du lịch!");
+
+                exist.StatusApproval = status;
+
+                var activities = exist.Activities;
+                var newActivities = new List<Activity>();
+
+                if (activities?.Any() is true)
+                {
+                    foreach (var item in activities)
+                    {
+                        item.StatusApproval = status;
+                        newActivities.Add(item);
+                    }
+                }
+
+                exist.Activities = newActivities;
+                await _tourismPackageRepository.UpdateAsync(exist);
 
                 return true;
             }

@@ -1,16 +1,7 @@
-﻿using Data.DTO.Request;
-using Data.DTO.Respone;
+﻿using Data.DTO.Respone;
 using Data.Models;
-using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
-using Org.BouncyCastle.Asn1.X509;
 using Service.Repository;
-using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.BookingSer
 {
@@ -137,6 +128,27 @@ namespace Service.BookingSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+        public async Task<List<VNPayPaymentResponse>> ListHistoryPayments(Guid UserId)
+        {
+            try
+            {
+                TourCompany TourCompany = await _tourCompanyRepository.Query()
+                   .SingleOrDefaultAsync(x => x.UserId == UserId);
+                return await _VNPayPaymentResponseRepository.Query()
+                    .Include(x => x.BookingAgriculturalTour)
+                    .ThenInclude(x => x.Customer)
+                    .Include(x => x.BookingAgriculturalTour)
+                    .ThenInclude(x => x.AgriculturalTourPackage)
+                    .Where(x => x.OrderId == null && x.BookingAgriculturalTour.AgriculturalTourPackage.TourCompanyId == TourCompany.TourCompanyId)
+                    .OrderByDescending(x => x.PayDate)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<List<BookingAgriculturalTour>> ListTourBookingTour_TourCompany(Guid UserId)
         {
             try

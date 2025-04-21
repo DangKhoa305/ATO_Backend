@@ -16,6 +16,7 @@ namespace Service.Repository
         Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
         Task AddRangeAsync(T entity);
+        Task RealAddRangeAsync(IEnumerable<T> entity);
         Task UpdateAsync(T entity);
         Task UpdateRangeAsync(T entity);
         Task DeleteAsync(int id);
