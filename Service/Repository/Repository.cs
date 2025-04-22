@@ -50,6 +50,14 @@ namespace Service.Repository
             await _context.SaveChangesAsync();
         }
 
+        public async Task DetachedAndUpdateAsync(T entity)
+        {
+            _context.Entry(entity).State = EntityState.Detached;
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
+        }
+
+
         public async Task DeleteAsync(int id)
         {
             var entity = await GetByIdAsync(id);
@@ -95,6 +103,11 @@ namespace Service.Repository
         }
 
         public async Task UpdateRangeAsync(T entity)
+        {
+            _context.Set<T>().UpdateRange(entity);
+            await _context.SaveChangesAsync();
+        }
+        public async Task RealUpdateRangeAsync(IEnumerable<T> entity)
         {
             _context.Set<T>().UpdateRange(entity);
             await _context.SaveChangesAsync();

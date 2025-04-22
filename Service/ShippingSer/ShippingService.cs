@@ -195,7 +195,6 @@ namespace Service.ShippingSer
         public async Task<ShipAddressRespone> GetShipAddressDetails(Guid shipAddressId)
         {
             var details = await _shipAddressRepository.GetByIdAsync(shipAddressId);
-            var (districtName, wardName) = await GetDistrictAndWardName(details.ToDistrictId, details.ToWardCode);
 
             return (new ShipAddressRespone
             {
@@ -203,9 +202,11 @@ namespace Service.ShippingSer
                 DefaultAddress = details.DefaultAddress,
                 ShipAddressId = details.ShipAddressId,
                 ToDistrictId = details.ToDistrictId,
-                ToDistrictName = districtName,
+                ToDistrictName = details.ToDistrictName,
                 ToWardCode = details.ToWardCode,
-                ToWardName = wardName,
+                ToWardName = details.ToWardName,
+                ToProvinceId = details.ToProvinceId,
+                ToProvinceName = details.ToProvinceName,
                 ToPhone = details.ToPhone
             });
         }
@@ -214,49 +215,22 @@ namespace Service.ShippingSer
         {
             var shipAddresses = await _shipAddressRepository.Query()
                 .Where(x => x.AccountId == accountId)
-                .ToListAsync();
-
-            var result = new List<ShipAddressRespone>();
-
-            foreach (var item in shipAddresses)
-            {
-                var (districtName, wardName) = await GetDistrictAndWardName(item.ToDistrictId, item.ToWardCode);
-
-                result.Add(new ShipAddressRespone
+                .Select(item => new ShipAddressRespone
                 {
                     ToName = item.ToName,
                     DefaultAddress = item.DefaultAddress,
                     ShipAddressId = item.ShipAddressId,
                     ToDistrictId = item.ToDistrictId,
-                    ToDistrictName = districtName,
+                    ToDistrictName = item.ToDistrictName,
                     ToWardCode = item.ToWardCode,
-                    ToWardName = wardName,
+                    ToWardName = item.ToWardName,
+                    ToProvinceId = item.ToProvinceId,
+                    ToProvinceName = item.ToProvinceName,
                     ToPhone = item.ToPhone
-                });
-            }
+                })
+                .ToListAsync();
 
-            return result;
-        }
-
-        private async Task<(string districtName, string wardName)> GetDistrictAndWardName(int districtId, string wardCode)
-        {
-            var provinces = await GetProvinces();
-
-            foreach (var province in provinces.Data)
-            {
-                var districtResponse = await GetDistricts(province.ProvinceID);
-                var district = districtResponse.Data.FirstOrDefault(x => x.DistrictID == districtId);
-
-                if (district != null)
-                {
-                    var wardResponse = await GetWards(districtId);
-                    var ward = wardResponse.Data.FirstOrDefault(w => w.WardCode == wardCode);
-
-                    return (district.DistrictName, ward?.WardName ?? string.Empty);
-                }
-            }
-
-            return (string.Empty, string.Empty);
+            return shipAddresses;
         }
 
         public class DistrictDto

@@ -247,6 +247,43 @@ namespace Service.AccountSer
                 Message = "Đổi mật khẩu thành công!"
             };
         }
+
+        public async Task<ResponseModel> ChangePassword(string? id, string currentPassword, string newPassword)
+        {
+            try
+            {
+                if (id == null)
+                    throw new Exception("Không tìm thấy tài khoản");
+
+                var user = await _userManager.FindByIdAsync(id);
+                if (user == null)
+                    throw new Exception("Không tìm thấy tài khoản");
+
+
+                if (!await _userManager.CheckPasswordAsync(user, currentPassword))
+                {
+                    throw new Exception("Mật khẩu cũ không chính xác");
+
+                }
+                if (!IsValidPassword(newPassword))
+                    throw new Exception("Mật khẩu mới phải chứa ít nhất một ký tự in hoa, một ký tự thường, một số và một ký tự đặc biệt.");
+
+                var resetPasswordResult = await _userManager.RemovePasswordAsync(user);
+                if (!resetPasswordResult.Succeeded)
+                    throw new Exception("Đã xảy ra lỗi, vui lòng thử lại sau!");
+
+                var result = await _userManager.AddPasswordAsync(user, newPassword);
+                if (!result.Succeeded)
+                    throw new Exception("Đặt lại mật khẩu không thành công!");
+
+                return new ResponseModel(true, "Đổi mật khẩu thành công!");
+            }
+            catch (Exception ex)
+            {
+                return new ResponseModel(false, ex.Message);
+            }
+        }
+
         // Phương thức kiểm tra mật khẩu mới
         private bool IsValidPassword(string password)
         {

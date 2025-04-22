@@ -302,53 +302,7 @@ namespace ATO_API.Controllers.Tourist
                 });
             }
         }
-        [HttpGet("provinces")]
-        [ProducesResponseType(typeof(ProvinceResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetProvinces()
-        {
-            try
-            {
-                var provinces = await _shippingService.GetProvinces();
-                return Ok(provinces);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM { Status = false, Message = ex.Message });
-            }
-        }
 
-        [HttpGet("districts/{provinceId}")]
-        [ProducesResponseType(typeof(DistrictResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetDistricts(int provinceId)
-        {
-            try
-            {
-                var districts = await _shippingService.GetDistricts(provinceId);
-                return Ok(districts);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM { Status = false, Message = ex.Message });
-            }
-        }
-
-        [HttpGet("wards/{districtId}")]
-        [ProducesResponseType(typeof(WardResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetWards(int districtId)
-        {
-            try
-            {
-                var wards = await _shippingService.GetWards(districtId);
-                return Ok(wards);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM { Status = false, Message = ex.Message });
-            }
-        }
         [HttpPost("calculate-shipping-fee")]
         [ProducesResponseType(typeof(ShippingFeeResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]

@@ -28,5 +28,6 @@ namespace Service.AccountSer
         Task<bool> AnyAccountByEmailAsync(string email);
         Task<bool> AnyAccountByUsernameAsync(string username);
         Task<bool> AnyAccountByPhoneAsync(string phone);
+        Task<ResponseModel> ChangePassword(string? id, string currentPassword, string password);
     }
 }

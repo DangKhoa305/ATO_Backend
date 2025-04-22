@@ -161,6 +161,7 @@ namespace ATO_API.Config
                 // ShipAddress
                 config.CreateMap<ShipAddress, ShipAddressRespone>();
                 config.CreateMap<ShipAddressRequest, ShipAddress>();
+                config.CreateMap<AddShipAddressRequest, ShipAddress>();
 
                 config.CreateMap<Account, ProfileResponse>();
             });

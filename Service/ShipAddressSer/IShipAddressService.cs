@@ -13,5 +13,6 @@ namespace Service.ShipAddressSer
         Task<ShipAddress> GetShipAddressDetails(Guid ShipAddressId);
         Task<bool> AddShipAddress(ShipAddress ShipAddress);
         Task<bool> UpdateShipAddress(Guid ShipAddressId, ShipAddress ShipAddress);
+        Task<bool> DeleteShipAddress(Guid shipAddressId);
     }
 }

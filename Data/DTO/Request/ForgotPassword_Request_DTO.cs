@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Data.DTO.Request
 {
@@ -20,4 +15,6 @@ namespace Data.DTO.Request
         [Required]
         public string ConfimPassword { get; set; }
     }
+
+    public record ChangePasswordModel(string CurrentPassword, string NewPassword);
 }

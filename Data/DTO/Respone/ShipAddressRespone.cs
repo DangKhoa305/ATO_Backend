@@ -16,5 +16,7 @@ namespace Data.DTO.Respone
         public string? ToWardName { get; set; }
         public string ToDistrictName { get; set; }
         public int ToDistrictId { get; set; }
+        public int ToProvinceId { get; set; }
+        public string ToProvinceName { get; set; }
     }
 }

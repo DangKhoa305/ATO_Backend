@@ -18,8 +18,6 @@ public class ProfileController(IAccountService accountService, IMapper mapper) :
     private readonly IMapper _mapper = mapper;
 
     [HttpGet]
-    [ProducesResponseType(typeof(ProfileResponse), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProfile()
     {
         try
@@ -44,8 +42,6 @@ public class ProfileController(IAccountService accountService, IMapper mapper) :
     }
 
     [HttpPut]
-    [ProducesResponseType(typeof(ProfileResponse), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileRequest request)
     {
         try
@@ -59,11 +55,13 @@ public class ProfileController(IAccountService accountService, IMapper mapper) :
             // Update user properties
             user.Fullname = request.FullName;
             user.PhoneNumber = request.PhoneNumber;
-            user.Dob = request.DateOfBirth;
-            user.AvatarURL = request.Avatar;
+            user.Dob = request.Dob;
+            user.AvatarURL = request.AvatarURL;
 
             await _accountService.UpdateAccountAsync(user);
 
+
+            // abcd
             var response = _mapper.Map<ProfileResponse>(user);
             return Ok(response);
         }
@@ -77,5 +75,20 @@ public class ProfileController(IAccountService accountService, IMapper mapper) :
         }
     }
 
+    [HttpPut("change-password")]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
+    {
+        try
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var result = await _accountService.ChangePassword(
+                userId, model.CurrentPassword, model.NewPassword);
 
+            return Ok(result);
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, new ResponseModel(false, "Đã sảy ra lỗi, vui lòng thử lại sau!"));
+        }
+    }
 }
