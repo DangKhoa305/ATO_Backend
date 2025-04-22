@@ -60,60 +60,24 @@ public class AuthenticationController(UserManager<Account> userManager,
     }
 
     [HttpPost("sign-up")]
-    [ProducesResponseType(typeof(ResponseLogin), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> SignUp([FromBody] CreateAccountRequest request)
     {
         try
         {
-
             if (!IsValidEmail(request.Email!))
-            {
-                return BadRequest(new ResponseVM
-                {
-                    Status = false,
-                    Message = "Email không hợp lệ. Vui lòng nhập đúng định dạng."
-                });
-            }
+                throw new Exception("Email không hợp lệ. Vui lòng nhập đúng định dạng.");
 
             if (!IsValidPhoneNumber(request.PhoneNumber!))
-            {
-                return BadRequest(new ResponseVM
-                {
-                    Status = false,
-                    Message = "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng."
-                });
-            }
-            var existingEmail = await _userManager.FindByEmailAsync(request.Email!);
+                throw new Exception("Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng.");
 
-            if (existingEmail != null)
-            {
-                return BadRequest(new ResponseVM
-                {
-                    Status = false,
-                    Message = "Email đã tồn tại trong hệ thống."
-                });
-            }
+            if (await _accountService.AnyAccountByEmailAsync(request.Email!))
+                throw new Exception("Email đã tồn tại trong hệ thống.");
 
-            var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber!);
-            if (existingPhone != null)
-            {
-                return BadRequest(new ResponseVM
-                {
-                    Status = false,
-                    Message = "Số điện thoại đã tồn tại trong hệ thống."
-                });
-            }
-            var existingUsername = await _userManager.FindByNameAsync(request.UserName);
-            if (existingUsername != null)
-            {
-                return BadRequest(new ResponseVM
-                {
-                    Status = false,
-                    Message = "User name đã tồn tại trong hệ thống."
-                });
-            }
+            if (await _accountService.AnyAccountByPhoneAsync(request.PhoneNumber!))
+                throw new Exception("Số điện thoại đã tồn tại trong hệ thống.");
+
+            if (await _accountService.AnyAccountByUsernameAsync(request.UserName!))
+                throw new Exception("User name đã tồn tại trong hệ thống.");
 
             var newAccount = _mapper.Map<Account>(request);
             newAccount.Id = Guid.NewGuid();
@@ -136,7 +100,7 @@ public class AuthenticationController(UserManager<Account> userManager,
         catch (Exception ex)
         {
             Console.WriteLine(ex.ToString());
-            return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
+            return Ok(new ResponseModel(false, ex.Message));
         }
     }
 

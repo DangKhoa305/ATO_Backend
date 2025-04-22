@@ -3,24 +3,14 @@ using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
-using Nest;
 using Service.EmailSer;
-using Service.Repository;
-using Service.TourCompanySer;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
-using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Service.AccountSer
 {
@@ -295,6 +285,15 @@ namespace Service.AccountSer
             return await _accountRepository.Query()
                    .FirstOrDefaultAsync(a => a.PhoneNumber == phoneNumber);
         }
+
+        public async Task<bool> AnyAccountByEmailAsync(string email)
+            => await _accountRepository.Query().AnyAsync(a => a.Email == email);
+
+        public async Task<bool> AnyAccountByUsernameAsync(string username)
+            => await _accountRepository.Query().AnyAsync(a => a.UserName == username);
+
+        public async Task<bool> AnyAccountByPhoneAsync(string phone)
+           => await _accountRepository.Query().AnyAsync(a => a.PhoneNumber == phone);
 
         public async Task<IEnumerable<Account>> GetUnassignedTourCompaniesAsync()
         {
