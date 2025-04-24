@@ -13,5 +13,6 @@ namespace Service.WithdrawalSer
         Task<bool> ProcessWithdrawalRequest(Guid requestId, bool isApproved, string adminResponse, Guid adminId);
         Task<bool> CompleteWithdrawal(Guid requestId, string transactionReference);
         Task<List<WithdrawalHistory>> GetUserWithdrawalHistory(Guid userId);
+        Task<List<WithdrawalHistory>> GetWithdrawalHistory_Admin();
     }
 }

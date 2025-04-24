@@ -26,7 +26,8 @@ public class OrderService : IOrderService
         IRepository<TouristFacility> touristFacilityRepository,
         IConnectionMultiplexer redis,
         IRepository<Product> productRepository,
-        IRepository<Data.Models.VNPayPaymentResponse> vNPayPaymentResponseRepository)
+        IRepository<Data.Models.VNPayPaymentResponse> vNPayPaymentResponseRepository,
+     IAdminBalanceService adminBalanceService)
     {
         _orderRepository = orderRepository;
         _orderDetailRepository = orderDetailRepository;
@@ -35,6 +36,7 @@ public class OrderService : IOrderService
         _productRepository = productRepository;
         _VNPayPaymentResponseRepository = vNPayPaymentResponseRepository;
         _touristFacilityRepository = touristFacilityRepository;
+        _adminBalanceService = adminBalanceService;
     }
 
     public async Task<Data.Models.Order> AddOrder(Data.Models.Order order)
@@ -234,32 +236,6 @@ public class OrderService : IOrderService
         {
             throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
         }
-        public async Task<List<VNPayPaymentResponse>> ListHistoryPayments()
-    {
-        try
-        {
-
-
-            return await _VNPayPaymentResponseRepository.Query()
-                .Include(x => x.Order)
-                    .ThenInclude(o => o.Account)
-                .Include(x => x.Order)
-                    .ThenInclude(o => o.OrderDetails)
-                        .ThenInclude(od => od.Product)
-                 .Include(x => x.Order)
-                    .ThenInclude(o => o.Account)
-                 .Include(x => x.BookingAgriculturalTour)
-                    .ThenInclude(x => x.AgriculturalTourPackage)
-                .Include(x => x.BookingAgriculturalTour)
-                    .ThenInclude(x => x.Customer)
-                .OrderByDescending(x => x.PayDate)
-                .ToListAsync();
-        }
-        catch (Exception)
-        {
-            throw new Exception("Đã xảy ra lỗi, vui lòng thử lại sau!");
-        }
-    }
 
     }
     public async Task<List<VNPayPaymentResponse>> ListHistoryPaymentsOrder(Guid UserId)
@@ -269,7 +245,6 @@ public class OrderService : IOrderService
             // Lấy TouristFacility theo UserId
             var touristFacility = await _touristFacilityRepository.Query()
                 .SingleOrDefaultAsync(x => x.UserId == UserId);
-
 
             if (touristFacility == null)
                 return new List<VNPayPaymentResponse>();
@@ -324,5 +299,10 @@ public class OrderService : IOrderService
                .SingleOrDefaultAsync(x => x.OrderId == orderAcceptRequest.OrderId);
         order.StatusOrder = orderAcceptRequest.StatusOrder;
         await _orderRepository.UpdateAsync(order);
+    }
+
+    public Task<List<VNPayPaymentResponse>> ListHistoryPayments()
+    {
+        throw new NotImplementedException();
     }
 }

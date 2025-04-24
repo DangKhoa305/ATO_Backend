@@ -42,6 +42,14 @@ public class WithdrawalController(IWithdrawalService withdrawalService) : Contro
         var requests = await withdrawalService.GetAllPendingRequests();
         return Ok(requests);
     }
+    // lịch sử giải ngân của admin 
+    [HttpGet("history")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetHistoryRequests()
+    {
+        var requests = await withdrawalService.GetWithdrawalHistory_Admin();
+        return Ok(requests);
+    }
 
     [HttpPut("{requestId}/process")]
     [Authorize(Roles = "Admin")]

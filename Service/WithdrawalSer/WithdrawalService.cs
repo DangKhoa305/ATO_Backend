@@ -99,4 +99,11 @@ public class WithdrawalService(
             .Include(x => x.Request)
             .ToListAsync();
     }
+    public async Task<List<WithdrawalHistory>> GetWithdrawalHistory_Admin()
+    {
+        return await _historyRepo.Query()
+            .OrderByDescending(x => x.ProcessedDate)
+            .Include(x => x.Request)
+            .ToListAsync();
+    }
 }
