@@ -33,5 +33,6 @@ namespace Service.ProductSer
         Task<bool> ApprovelProduct_CM(Guid ProductId, Product updatedProduct);
         Task<List<Product>> GetListProducts_Guest();
         Task<Product> GetProduct_Guest(Guid ProductId);
+        Task<bool> UpdateStatusAsync(Guid OCOPSellId, StatusActive status);
     }
 }

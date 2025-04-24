@@ -1,4 +1,4 @@
-﻿using Data.Models;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
 
@@ -39,8 +39,8 @@ namespace Service.TourGuidePackageSer
                 .Include(x => x.TourDestinations)
                     .ThenInclude(d => d.Accommodation)
                 .Include(x => x.TourCompany)
-                .FirstOrDefaultAsync(x =>
-                    x.TourId == packageId &&
+                .FirstOrDefaultAsync(x => 
+                    x.TourId == packageId && 
                     x.TourGuides.Any(g => g.UserId == guideId));
         }
     }

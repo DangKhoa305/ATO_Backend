@@ -165,6 +165,25 @@ namespace ATO_API.Config
                 config.CreateMap<AddShipAddressRequest, ShipAddress>();
 
                 config.CreateMap<Account, ProfileResponse>();
+
+
+                config.CreateMap<AgriculturalTourPackage, TourGuidePackageResponse>()
+                    .ForMember(dest => dest.TourName, opt => opt.MapFrom(x => x.PackageName))
+                    .ForMember(dest => dest.TotalBookedPeople, opt => opt.MapFrom(src =>
+                        src.BookingAgriculturalTours!.Sum(b => b.NumberOfAdults + b.NumberOfChildren)))
+                    .ForMember(dest => dest.BookedTours, opt => opt.MapFrom(src =>
+                        src.BookingAgriculturalTours!.Where(b => b.PaymentStatus == PaymentStatus.Paid)));
+
+                config.CreateMap<TourDestination, TourDestinationResponse>()
+                    .ForMember(dest => dest.Name, opt => opt.MapFrom(src =>
+                        src.Activity != null ? src.Activity.ActivityName : src.Accommodation!.AccommodationName))
+                    .ForMember(dest => dest.Address, opt => opt.MapFrom(src =>
+                        src.Activity != null ? src.Activity.Location : src.Accommodation!.Address))
+                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src =>
+                        src.Activity != null ? "Activity" : "Accommodation"));
+
+                config.CreateMap<BookingAgriculturalTour, BookedTourResponse>();
+
             });
 
             return mapperConfig.CreateMapper();

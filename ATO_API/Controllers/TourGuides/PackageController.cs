@@ -1,16 +1,15 @@
 ﻿using AutoMapper;
 using Data.DTO.Respone;
 using Data.DTO.Response;
-using Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.TourGuidePackageSer;
 
-namespace ATO_API.Controllers.TourGuide;
+namespace ATO_API.Controllers.TourGuides;
 
-[Route("api/tour-guide/packages")]
+[Route("api/tour-guide/tour")]
 [ApiController]
-[Authorize(Roles = "TourGuide")]
+[Authorize(Roles = "TourGuides")]
 public class PackageController : ControllerBase
 {
     private readonly ITourGuidePackageService _tourGuidePackageService;
@@ -24,16 +23,14 @@ public class PackageController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpGet("assigned")]
-    [ProducesResponseType(typeof(List<AgriculturalTourPackageDTO>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+    [HttpGet]
     public async Task<IActionResult> GetAssignedPackages()
     {
         try
         {
             var guideId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             var packages = await _tourGuidePackageService.GetAssignedPackages(Guid.Parse(guideId));
-            var response = _mapper.Map<List<AgriculturalTourPackageDTO>>(packages);
+            var response = _mapper.Map<List<TourGuidePackageResponse>>(packages);
 
             return Ok(response);
         }
@@ -47,9 +44,7 @@ public class PackageController : ControllerBase
         }
     }
 
-    [HttpGet("assigned/{packageId}")]
-    [ProducesResponseType(typeof(AgriculturalTourPackageDTO), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status404NotFound)]
+    [HttpGet("{packageId}")]
     public async Task<IActionResult> GetPackageDetails(Guid packageId)
     {
         try
@@ -58,9 +53,9 @@ public class PackageController : ControllerBase
             var package = await _tourGuidePackageService.GetPackageDetails(packageId, Guid.Parse(guideId));
 
             if (package == null)
-                return NotFound(new ResponseVM { Status = false, Message = "Package not found or not assigned to you" });
+                return NotFound(new ResponseModel(false, "Package not found or not assigned to you"));
 
-            var response = _mapper.Map<AgriculturalTourPackageDTO>(package);
+            var response = _mapper.Map<TourGuidePackageResponse>(package);
             return Ok(response);
         }
         catch (Exception ex)

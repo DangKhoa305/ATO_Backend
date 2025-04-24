@@ -10,4 +10,6 @@ namespace Data.DTO.Request
         public string? Notes { get; set; }
         public BookingDestinationStatus Status { get; set; }
     }
+
+
 }

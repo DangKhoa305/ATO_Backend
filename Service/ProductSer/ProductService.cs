@@ -1,12 +1,6 @@
-﻿using Data.DTO.Respone;
-using Data.Models;
+﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.ProductSer
 {
@@ -142,6 +136,32 @@ namespace Service.ProductSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+
+        public async Task<bool> UpdateStatusAsync(Guid OCOPSellId, StatusActive status)
+        {
+            try
+            {
+                var existingOCOPSell = await _OCOPSellRepository.Query()
+                    .SingleOrDefaultAsync(x => x.OCOPSellId == OCOPSellId);
+
+                if (existingOCOPSell == null)
+                {
+                    throw new Exception("Không tìm thấy sản phẩm bán ra!");
+                }
+
+                existingOCOPSell.ActiveStatus = status == StatusActive.active;
+
+                await _OCOPSellRepository.UpdateAsync(existingOCOPSell);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
         public async Task<bool> CreateProduct_AFTO(Product newProduct, Guid UserId)
         {
             try

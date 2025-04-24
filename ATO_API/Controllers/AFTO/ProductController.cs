@@ -245,6 +245,39 @@ namespace ATO_API.Controllers.AFTO
                 });
             }
         }
+        [HttpPut("ocop-sell/{ocopSellId}/{status}")]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateOCOPSellStatus(Guid ocopSellId, StatusActive status)
+        {
+            try
+            {
+                await Task.Delay(1000);
+                var result = await _productService.UpdateStatusAsync(ocopSellId, status);
+                if (result)
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = true,
+                        Message = "Cập nhật trạng thái thành công!"
+                    });
+                }
+                return BadRequest(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Cập nhật trạng thái không thành công!"
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message
+                });
+            }
+        }
         [HttpGet("get-ocop-sells-by-productid/{ProductId}")]
         [ProducesResponseType(typeof(List<OCOPSellDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
