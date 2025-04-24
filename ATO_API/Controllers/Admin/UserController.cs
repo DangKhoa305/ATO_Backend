@@ -301,7 +301,7 @@ namespace ATO_API.Controllers.Admin
                 account.Fullname = request.Fullname;
                 account.AvatarURL = request.AvatarURL;
                 account.UserName = request.UserName;
-                account.Dob = request.Dob;
+                account.Dob= request.Dob;
                 account.Gender = request.Gender;
                 account.isAccountActive = request.isAccountActive;
                 // Nếu có thay đổi vai trò, cập nhật lại

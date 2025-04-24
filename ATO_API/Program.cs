@@ -45,7 +45,6 @@ using Service.WithdrawalSer;
 using StackExchange.Redis;
 using System.Text;
 using System.Text.Json.Serialization;
-using System.Diagnostics.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
