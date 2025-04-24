@@ -36,7 +36,7 @@ namespace Service.AboutSer
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
-            
+
         }
     }
 }

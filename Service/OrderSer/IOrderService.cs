@@ -28,5 +28,6 @@ namespace Service.OrderSer
         Task<bool> UpdateShipCode(Guid OrderId, string ShipCode);
         Task AcceptOrder(OrderAcceptRequest orderAcceptRequest);
         Task<List<VNPayPaymentResponse>> ListHistoryPaymentsOrder(Guid UserId);
+        Task<List<VNPayPaymentResponse>> ListHistoryPayments();
     }
 }
