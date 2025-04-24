@@ -23,14 +23,17 @@ namespace ATO_API.Controllers.Admin
     public class ContractController : ControllerBase
     {
         private readonly IContractService _contractService;
+        private readonly IDriverService _driverService;
         private readonly IMapper _mapper;
 
         public ContractController(
              IMapper mapper,
-             IContractService contractService
+             IContractService contractService,
+             IDriverService driverService
             )
         {
             _mapper = mapper;
+            _driverService = driverService;
             _contractService = contractService;
         }
         [HttpGet("get-list-contract")]
@@ -92,17 +95,16 @@ namespace ATO_API.Controllers.Admin
                 });
             }
         }
-        [HttpPut("update-contract/{ContractId}")]
+        [HttpPut("update-contract/{contractId}")]
         [ProducesResponseType(typeof(DriverRequest), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateDriver(Guid DriverId, [FromBody] DriverRequest DriverRequest)
+        public async Task<IActionResult> UpdateDriver(Guid contractId, [FromBody] Contract request)
         {
             try
             {
                 var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                var responseResult = _mapper.Map<Driver>(DriverRequest);
-                var response = await _driverService.UpdateDriver(DriverId, responseResult);
-                return Ok(DriverRequest);
+                var response = await _contractService.UpdateContract(contractId, request);
+                return Ok(response);
             }
             catch (Exception ex)
             {
