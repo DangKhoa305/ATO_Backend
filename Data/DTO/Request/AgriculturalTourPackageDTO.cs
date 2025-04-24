@@ -21,6 +21,7 @@ namespace Data.DTO.Request
         public double Durations { get; set; }
         public TimeType DurationsType { get; set; }
         public virtual ICollection<AgriculturalTourPackageRequest_TourGuides>? TourGuides { get; set; }
+        public virtual ICollection<TourDestinationRequest>? TourDestinations { get; set; }
     }
     public class AgriculturalTourPackageRequest_TourGuides
     {

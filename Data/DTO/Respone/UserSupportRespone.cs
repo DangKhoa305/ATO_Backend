@@ -21,7 +21,7 @@ namespace Data.DTO.Request
         public bool IsResolved { get; set; } = false;
         public DateTime? UpdatedDate { get; set; }
         public string? ResponeBy { get; set; }
-        public string? ListIssueType { get; set; } = 
+        public string? ListIssueType { get; set; } =
             "0 - SystemBug - Lỗi phần mềm hoặc chức năng không hoạt động đúng ;" +
             "1 - PerformanceIssue - Hệ thống chậm, tải trang lâu ;" +
             "2 - IntegrationIssue - Lỗi kết nối API hoặc tích hợp hệ thống khác;" +
@@ -29,12 +29,12 @@ namespace Data.DTO.Request
             "4 - AccountLocked - Tài khoản bị khóa hoặc vô hiệu hóa;" +
             "5 - PermissionIssue - Không có quyền truy cập vào chức năng cần thiết;" +
             "6 - FailedPayment - Thanh toán không thành công;" +
-            "7 - RefundRequest - Yêu cầu hoàn tiền;"+
+            "7 - RefundRequest - Yêu cầu hoàn tiền;" +
             "8 - IncorrectCharge - Sai lệch về số tiền bị trừ; " +
             "9 - FeatureRequest - Đề xuất tính năng mới; " +
             "10 - DataUpdateRequest- Yêu cầu cập nhật thông tin cá nhân hoặc dữ liệu;" +
             "11 - Other - Khác;";
 
     }
-   
+
 }

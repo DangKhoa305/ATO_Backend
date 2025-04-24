@@ -16,7 +16,7 @@ namespace Data.Configurations
             builder.ToTable(nameof(Account));
             builder.Property(x => x.AvatarURL).IsRequired(false);
             builder.Property(x => x.Gender).IsRequired(false);
-            builder.Property(x => x.Fullname).IsRequired(false); 
+            builder.Property(x => x.Fullname).IsRequired(false);
             builder.Property(x => x.Dob).IsRequired(false);
             builder.Property(x => x.isAccountActive).IsRequired();
 

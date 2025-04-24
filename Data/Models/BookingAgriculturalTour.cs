@@ -1,39 +1,35 @@
-﻿using Data.Models;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Data.DTO.Respone
+namespace Data.Models
 {
-    public class BookingAgriculturalTourRespone
+    public class BookingAgriculturalTour
     {
         public Guid BookingId { get; set; }
         public Guid TourId { get; set; }
+        public Guid CustomerId { get; set; }
         public DateTime BookingDate { get; set; }
         public int NumberOfAdults { get; set; }
         public int? NumberOfChildren { get; set; }
         public decimal TotalAmmount { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public StatusBooking StatusBooking { get; set; }
-        public virtual UserRespone? Customer { get; set; }
-        public virtual AgriculturalTourPackageRespone_Guest? AgriculturalTourPackage { get; set; }
-        public virtual ICollection<OrderRespone>? Orders { get; set; }
-        public virtual ICollection<VNPayPaymentResponseDTO>? VNPayPaymentResponses { get; set; }
-        public CurrentDestinationInfo? CurrentDestination { get; set; }
-
+        public virtual Account? Customer { get; set; }
+        public virtual AgriculturalTourPackage? AgriculturalTourPackage { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
+        public virtual ICollection<VNPayPaymentResponse>? VNPayPaymentResponses { get; set; }
+        public virtual ICollection<BookingTourDestination>? BookingTourDestinations { get; set; }
     }
-
-    public class CurrentDestinationInfo
+    public enum StatusBooking
     {
-        public Guid DestinationId { get; set; }
-        public string? DestinationName { get; set; }
-        public string? Address { get; set; }
-        public int VisitOrder { get; set; }
-        public DateTime? ActualStartTime { get; set; }
-        public DateTime? ActualEndTime { get; set; }
-        public BookingDestinationStatus Status { get; set; }
-    }
-
-    public class BookingAccept
-    {
-        public Guid BookingId { get; set; }
-        public StatusBooking StatusBooking { get; set; }
+        Processing,
+        Completed,
+        Canceled,
+        ConfirmBooking
     }
 }

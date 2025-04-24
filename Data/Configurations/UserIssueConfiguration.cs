@@ -18,7 +18,7 @@ namespace Data.Configurations
             builder.Property(x => x.IssueType).IsRequired();
             builder.Property(x => x.CreatedDate).IsRequired();
             builder.Property(x => x.SolutionContent).IsRequired();
-            
+
             builder.Property(x => x.IssueDescription).IsRequired(false);
             builder.Property(x => x.UpdatedDate).IsRequired(false);
         }

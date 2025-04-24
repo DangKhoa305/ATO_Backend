@@ -19,7 +19,7 @@ namespace Data.Models
         public DateTime? ResponseDate { get; set; }
         public string? ResponseMessage { get; set; }
         public bool IsResolved { get; set; } = false;
-        public DateTime? UpdatedDate { get; set;}
+        public DateTime? UpdatedDate { get; set; }
         public virtual Account? ResponeAccount { get; set; }
 
     }

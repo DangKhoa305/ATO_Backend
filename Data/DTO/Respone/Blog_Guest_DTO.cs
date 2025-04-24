@@ -50,5 +50,3 @@ namespace Data.DTO.Respone
         public string DescriptionAPI { get; set; } = "BlogType( 0-Sự kiện, 1-Tin tức )";
     }
 }
-
-
