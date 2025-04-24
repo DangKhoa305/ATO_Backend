@@ -1,17 +1,10 @@
 ﻿using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Service.TourGuideSer
+namespace Service.TourGuidePackageSer
 {
-    public interface ITourGuideService
+    public interface ITourGuidePackageService
     {
-        Task<IEnumerable<TourGuide>> GetTourGuidesAsync(Guid UserId);
-        Task<TourGuide> GetTourGuideByIdAsync(Guid GuideId);
-        Task AddTourGuideAsync(TourGuide TourGuide, Guid UserId);
-        Task UpdateTourGuideAsync(TourGuide TourGuide);
+        Task<List<AgriculturalTourPackage>> GetAssignedPackages(Guid guideId);
+        Task<AgriculturalTourPackage> GetPackageDetails(Guid packageId, Guid guideId);
     }
 }

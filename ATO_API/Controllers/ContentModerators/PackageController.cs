@@ -60,9 +60,9 @@ public class PackageController(
         {
             var result = await _service.ProcessApprovalAsync(id, status);
             if (result is false)
-                throw new Exception("Cập nhật không thành công!");
+                throw new Exception("Cập nhật trạng thái thất bại!");
 
-            return Ok(new ResponseModel(true, "Cập nhật thành công!"));
+            return Ok(new ResponseModel(true, "Cập nhật trạng thái thành công!"));
         }
         catch (Exception ex)
         {

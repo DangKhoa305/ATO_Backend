@@ -20,8 +20,13 @@ namespace Data.DTO.Respone
         public StatusApproval StatusApproval { get; set; }
         public string? ReplyRequest { get; set; }
         public StatusOperating StatusOperating { get; set; }
+        public TouristFacilityModel? TouristFacility { get; set; }
         public virtual ICollection<ActivityRespone>? Activities { get; set; }
+
     }
+
+    public record TouristFacilityModel(string TouristFacilityId, string TouristFacilityName);
+
     public class TourismPackageRespone_TC
     {
         public Guid PackageId { get; set; }

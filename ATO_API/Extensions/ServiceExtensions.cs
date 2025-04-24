@@ -2,6 +2,7 @@
 using Service.AdminBalanceSer;
 using Service.BookingTourDestinationSer;
 using Service.Repository;
+using Service.TourGuidePackageSer;
 using Service.WithdrawalSer;
 
 namespace ATO_API.Extensions;
@@ -27,6 +28,7 @@ public static class ServiceExtensions
         services.AddScoped<IBookingTourDestinationService, BookingTourDestinationService>();
         services.AddScoped<IAdminBalanceService, AdminBalanceService>();
         services.AddScoped<IWithdrawalService, WithdrawalService>();
+        services.AddScoped<ITourGuidePackageService, TourGuidePackageService>();
 
         return services;
     }
