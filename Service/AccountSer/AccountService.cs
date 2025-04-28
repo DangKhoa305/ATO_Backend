@@ -58,6 +58,7 @@ namespace Service.AccountSer
                        .Include(b => b.TourCompany)
                        .Include(b => b.TouristFacility)
                        .Include(b => b.TourGuide)
+                        .OrderByDescending(b => b.Id)
                        .ToListAsync();
             }
             catch (Exception)

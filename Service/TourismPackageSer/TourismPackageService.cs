@@ -96,6 +96,7 @@ namespace Service.TourismPackageSer
                     .Include(x => x.TourDestinations)
                     .Include(x => x.Activities)
                     .Where(x => x.TouristFacilityId == facility.TouristFacilityId)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -111,6 +112,7 @@ namespace Service.TourismPackageSer
                     .Where(x => x.StatusOperating == StatusOperating.Active)
                     .Include(b => b.Activities)
                     .Include(b => b.TouristFacility)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -127,6 +129,7 @@ namespace Service.TourismPackageSer
                     .Include(b => b.TouristFacility)
                     .Include(b => b.Activities)
                     .ThenInclude(b => b.Products)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)

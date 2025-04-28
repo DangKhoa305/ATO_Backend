@@ -28,6 +28,7 @@ namespace Service.TouristFacilitySer
             {
                 return await _touristFacilityRepository.Query()
                     .Include(b => b.Account)
+                     .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)

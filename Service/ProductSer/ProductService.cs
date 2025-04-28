@@ -74,6 +74,7 @@ namespace Service.ProductSer
                     .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _productRepository.Query()
                     .Where(x => x.TouristFacilityId == TouristFacility.TouristFacilityId)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -323,6 +324,7 @@ namespace Service.ProductSer
                 return await _certificationRepository.Query()
                     .Include(x => x.Product)
                     .Include(x => x.TouristFacility)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -403,7 +405,10 @@ namespace Service.ProductSer
             {
                 return await _productRepository.Query()
                     .Include(x => x.TouristFacility)
+                     .Include(b => b.Certifications.Where(a => a.StatusApproval == StatusApproval.Approved))
                     .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate > DateTime.UtcNow))
+                      .Where(x => x.OCOPSells.Any())
+                    .Where(x => x.Certifications.Any())
                     .ToListAsync();
             }
             catch (Exception)
@@ -419,6 +424,8 @@ namespace Service.ProductSer
                     .Include(x => x.TouristFacility)
                      .Include(b => b.Certifications.Where(a => a.ProductId == ProductId && a.StatusApproval == StatusApproval.Approved))
                     .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate > DateTime.UtcNow))
+                    .Where(x => x.OCOPSells.Any())
+                    .Where(x => x.Certifications.Any())
                     .SingleOrDefaultAsync(x => x.ProductId == ProductId);
             }
             catch (Exception)

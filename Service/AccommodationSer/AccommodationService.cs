@@ -57,6 +57,7 @@ namespace Service.AccommodationSer
                     .FirstOrDefaultAsync(x => x.UserId == UserId);
                 return await _accommodationRepository.Query()
                     .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
+                    .OrderByDescending(x => x.AccommodationId)
                     .ToListAsync();
             }
             catch (Exception)

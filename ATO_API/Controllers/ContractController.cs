@@ -1,4 +1,7 @@
-﻿using Data.DTO.Respone;
+﻿
+using AutoMapper;
+using Data.DTO.Request;
+using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Service.ContractSer;
@@ -8,9 +11,10 @@ namespace ATO_API.Controllers;
 //[Guid("D66F7410-19D2-46D7-9C78-80C95BF57C8E")]
 [Route("api/contract")]
 [ApiController]
-public class ContractController(IContractService contractService) : ControllerBase
+public class ContractController(IContractService contractService, IMapper mapper) : ControllerBase
 {
     private readonly IContractService _contractService = contractService;
+    private readonly IMapper _mapper = mapper;
 
     [HttpGet]
     public async Task<IActionResult> GetAllAsync()
@@ -89,11 +93,12 @@ public class ContractController(IContractService contractService) : ControllerBa
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddContract([FromBody] Contract Contract)
+    public async Task<IActionResult> AddContract([FromBody] CreateContractRequest request)
     {
         try
         {
-            var response = await _contractService.AddContract(Contract);
+            var contract = _mapper.Map<Contract>(request);
+            var response = await _contractService.AddContract(contract);
             return Ok(response);
         }
         catch (Exception ex)
@@ -107,12 +112,13 @@ public class ContractController(IContractService contractService) : ControllerBa
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateContract(Guid id, [FromBody] Contract request)
+    public async Task<IActionResult> UpdateContract(Guid id, [FromBody] UpdateContractRequest request)
     {
         try
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var response = await _contractService.UpdateContract(id, request);
+            var contract = _mapper.Map<Contract>(request);
+            var response = await _contractService.UpdateContract(id, contract);
             return Ok(response);
         }
         catch (Exception ex)

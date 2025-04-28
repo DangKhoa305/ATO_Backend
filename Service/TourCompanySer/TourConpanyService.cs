@@ -31,6 +31,7 @@ namespace Service.TourCompanySer
             {
                 return await _tourCompanyRepository.Query()
                     .Include(b => b.Account)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)

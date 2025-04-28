@@ -85,6 +85,7 @@ namespace Service.AgriculturalTourPackageSer
                 existing.Imgs = updatedTour.Imgs;
                 existing.TourGuides?.Clear();
                 existing.TourDestinations?.Clear();
+                existing.StatusActive = updatedTour.StatusActive;
                 await _agriculturalTourPackageRepository.UpdateRangeAsync(existing);
 
                 await AddTourDestinations(updatedTour.TourDestinations, TourId);
@@ -199,6 +200,7 @@ namespace Service.AgriculturalTourPackageSer
                                         .Include(x => x.TourGuides)
 .Include(x => x.TourDestinations)
                     .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -212,6 +214,7 @@ namespace Service.AgriculturalTourPackageSer
             {
                 return await _agriculturalTourPackageRepository.Query()
                     .Where(x => x.StatusActive == StatusActive.active)
+                    .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
@@ -336,10 +339,22 @@ namespace Service.AgriculturalTourPackageSer
         #region private 
         private async Task AddTourDestinations(ICollection<TourDestination>? destinations, Guid tourId)
         {
+            await RemoveTourDestinations(tourId);
             if (destinations is null) return;
             foreach (var des in destinations)
             {
                 await CreateTourDestination(des, tourId);
+            }
+        }
+
+        private async Task RemoveTourDestinations(Guid tourId)
+        {
+            var destinations = await _tourDestinationRepository.Query()
+                .Where(x => x.TourId == tourId).ToListAsync();
+
+            foreach (var des in destinations)
+            {
+                await _tourDestinationRepository.DeleteAsync(des.TourDestinationId);
             }
         }
 

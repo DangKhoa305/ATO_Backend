@@ -86,8 +86,12 @@ public class BookingService(
                 CreateDate = DateTime.UtcNow
             }).ToList();
 
+            if (bookingDestinations?.Any() == true)
+            {
+                await _bookingDestinationRepo.RealAddRangeAsync(bookingDestinations);
 
-            await _bookingDestinationRepo.RealAddRangeAsync(bookingDestinations);
+            }
+
 
             return bookingAgriculturalTour;
         }
@@ -175,6 +179,7 @@ public class BookingService(
                 .Include(x => x.Customer)
                 .Include(x => x.VNPayPaymentResponses)
                 .Where(x => x.AgriculturalTourPackage.TourCompanyId == TourCompany.TourCompanyId)
+                .OrderByDescending(x => x.BookingDate)
                 .ToListAsync();
         }
         catch (Exception)

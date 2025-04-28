@@ -124,6 +124,11 @@ namespace ATO_API.Config
                 config.CreateMap<AgriculturalTourPackageRequest, AgriculturalTourPackage>();
                 config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone_Guest>();
 
+
+                config.CreateMap<CreateContractRequest, Contract>();
+                config.CreateMap<UpdateContractRequest, Contract>();
+
+
                 // TourDestination
                 config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone>();
                 config.CreateMap<TourDestination, AgriculturalTourPackage_TourDestination_Respone_Guest>();
@@ -156,6 +161,7 @@ namespace ATO_API.Config
                         opt => opt.MapFrom(src => src.NumberOfAdults + src.NumberOfChildren));
 
                 config.CreateMap<BookingAgriculturalTourRequest, BookingAgriculturalTour>();
+                config.CreateMap<AgriculturalTourPackage, AgriculturalTourPackageRespone>();
                 // Feedback
                 config.CreateMap<Feedback, FeedbackRespone>();
                 config.CreateMap<FeedbackRequest, Feedback>();

@@ -18,6 +18,7 @@ namespace Data.DTO.Respone
         public TimeType DurationsType { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
+        public StatusActive? StatusActive { get; set; }
         public virtual ICollection<AgriculturalTourPackage_TourDestination_Respone>? TourDestinations { get; set; }
         public virtual ICollection<AgriculturalTourPackage_TourGuide_Respone>? TourGuides { get; set; }
     }

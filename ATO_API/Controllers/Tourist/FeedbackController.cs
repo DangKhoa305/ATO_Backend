@@ -3,13 +3,8 @@ using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.FeedbackSer;
-using Service.OrderSer;
-using Service.ShippingSer;
-using Service.VnPaySer;
-using StackExchange.Redis;
 
 namespace ATO_API.Controllers.Tourist
 {

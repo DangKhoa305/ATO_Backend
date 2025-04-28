@@ -163,6 +163,7 @@ public class OrderService : IOrderService
                 .Include(x => x.OrderDetails)
                 .ThenInclude(y => y.Product)
                 .Where(x => x.OrderDetails.Any(x => x.Product.TouristFacilityId == TouristFacility.TouristFacilityId))
+                .OrderByDescending(x => x.OrderDate)
                 .ToListAsync();
         }
         catch (Exception)

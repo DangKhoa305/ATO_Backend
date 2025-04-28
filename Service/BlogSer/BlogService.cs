@@ -77,6 +77,7 @@ namespace Service.BlogSer
                         .ThenInclude(a => a.TourCompany)
                     .Include(b => b.Account)
                         .ThenInclude(a => a.TouristFacility)
+                        .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }
             catch (Exception)
