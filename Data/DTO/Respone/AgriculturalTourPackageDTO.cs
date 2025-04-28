@@ -21,6 +21,8 @@ namespace Data.DTO.Respone
         public StatusActive? StatusActive { get; set; }
         public virtual ICollection<AgriculturalTourPackage_TourDestination_Respone>? TourDestinations { get; set; }
         public virtual ICollection<AgriculturalTourPackage_TourGuide_Respone>? TourGuides { get; set; }
+        public virtual ICollection<BookingTourDestination>? Trackings { get; set; }
+
     }
     public class AgriculturalTourPackage_TourDestination_Respone
     {

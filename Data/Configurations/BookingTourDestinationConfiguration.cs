@@ -12,27 +12,18 @@ namespace Data.Configurations
             builder.HasKey(x => x.BookingDestinationId);
 
             // Required fields
-            builder.Property(x => x.BookingId).IsRequired();
             builder.Property(x => x.TourDestinationId).IsRequired();
             builder.Property(x => x.Status).IsRequired();
-            builder.Property(x => x.CreateDate).IsRequired();
 
             // Optional fields
             builder.Property(x => x.ActualStartTime).IsRequired(false);
             builder.Property(x => x.ActualEndTime).IsRequired(false);
             builder.Property(x => x.Notes).IsRequired(false);
-            builder.Property(x => x.UpdateDate).IsRequired(false);
-
-            // Relationships
-            builder.HasOne(x => x.Booking)
-                .WithMany()
-                .HasForeignKey(x => x.BookingId)
-                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(x => x.TourDestination)
-                .WithMany()
-                .HasForeignKey(x => x.TourDestinationId)
-                .OnDelete(DeleteBehavior.Restrict);
+               .WithMany()
+               .HasForeignKey(x => x.TourDestinationId)
+               .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
