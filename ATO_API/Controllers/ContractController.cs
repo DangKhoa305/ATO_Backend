@@ -123,7 +123,7 @@ public class ContractController(IContractService contractService, IMapper mapper
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new ResponseVM
+            return Ok(new ResponseVM
             {
                 Status = false,
                 Message = ex.Message,
@@ -139,7 +139,7 @@ public class ContractController(IContractService contractService, IMapper mapper
             var response = await _contractService.SendOTPAsync(id);
             if (!response)
             {
-                return BadRequest(new ResponseVM
+                return Ok(new ResponseVM
                 {
                     Status = false,
                     Message = "Không thể gửi mã OTP"
@@ -153,7 +153,7 @@ public class ContractController(IContractService contractService, IMapper mapper
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new ResponseVM
+            return Ok(new ResponseVM
             {
                 Status = false,
                 Message = ex.Message
@@ -161,6 +161,35 @@ public class ContractController(IContractService contractService, IMapper mapper
         }
     }
 
+    [HttpPost("verify-otp/{id}/{code}")]
+    public async Task<IActionResult> VerifyOtp(Guid id, string code)
+    {
+        try
+        {
+            var response = await _contractService.VerifyOtpAsync(id, code);
+            if (!response)
+            {
+                return Ok(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Mã OTP không chính xác"
+                });
+            }
+            return Ok(new ResponseVM
+            {
+                Status = true,
+                Message = "Xác thực mã OTP thành công"
+            });
+        }
+        catch (Exception ex)
+        {
+            return Ok(new ResponseVM
+            {
+                Status = false,
+                Message = ex.Message
+            });
+        }
+    }
     [HttpPut("sign/{id}")]
     public async Task<IActionResult> SignContract(Guid id)
     {
@@ -191,29 +220,91 @@ public class ContractController(IContractService contractService, IMapper mapper
         }
     }
 
-    [HttpPost("extend/{id}")]
-    public async Task<IActionResult> ExtendContract(Guid id)
+
+    [HttpPut("extend/{id}/{months}")]
+    public async Task<IActionResult> ExtendContract(Guid id, int months)
     {
         try
         {
-            var response = await _contractService.SendOTPAsync(id);
+            var response = await _contractService.ExtendContractAsync(id, months);
             if (!response)
             {
-                return BadRequest(new ResponseVM
+                return Ok(new ResponseVM
                 {
                     Status = false,
-                    Message = "Không thể gửi mã OTP"
+                    Message = "Yêu cầu gia hạn hợp đồng thất bại"
                 });
             }
             return Ok(new ResponseVM
             {
                 Status = true,
-                Message = "Đã gửi mã OTP thành công"
+                Message = "Yêu cầu gia hạn hợp đồng thành công"
             });
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new ResponseVM
+            return Ok(new ResponseVM
+            {
+                Status = false,
+                Message = ex.Message
+            });
+        }
+    }
+
+    [HttpPut("reject/{id}")]
+    public async Task<IActionResult> RejectContract(Guid id)
+    {
+        try
+        {
+            var response = await _contractService.RejectContractAsync(id);
+            if (!response)
+            {
+                return Ok(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Không thể ký hợp đồng"
+                });
+            }
+            return Ok(new ResponseVM
+            {
+                Status = true,
+                Message = "Ký hợp đồng thành công"
+            });
+        }
+        catch (Exception ex)
+        {
+            return Ok(new ResponseVM
+            {
+                Status = false,
+                Message = ex.Message
+            });
+        }
+    }
+
+
+    [HttpPut("approve-extend/{id}")]
+    public async Task<IActionResult> ApproveContract(Guid id)
+    {
+        try
+        {
+            var response = await _contractService.ApproveExtendContract(id);
+            if (!response)
+            {
+                return Ok(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Xác nhận gia hạn hợp đồng thất bại"
+                });
+            }
+            return Ok(new ResponseVM
+            {
+                Status = true,
+                Message = "Xác nhận hạn hợp đồng thành công"
+            });
+        }
+        catch (Exception ex)
+        {
+            return Ok(new ResponseVM
             {
                 Status = false,
                 Message = ex.Message

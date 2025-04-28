@@ -88,7 +88,7 @@ public class ContractService(IRepository<Data.Models.Contract> contractRepositor
             return await _contractRepository.Query()
                 .Include(x => x.TourCompany)
                 .Include(x => x.TouristFacility)
-                .Where(x => x.TourCompanyId == TouristFacility.TouristFacilityId)
+                .Where(x => x.TouristFacilityId == TouristFacility.TouristFacilityId)
                 .ToListAsync();
         }
         catch (Exception)
@@ -103,6 +103,7 @@ public class ContractService(IRepository<Data.Models.Contract> contractRepositor
             var exist = await _contractRepository.Query()
                     .Include(x => x.TourCompany)
                     .Include(x => x.TouristFacility)
+                    .Where(x => x.ContractId == contractId)
                     .FirstOrDefaultAsync();
             var email = "";
             if (exist == null) throw new Exception();
@@ -127,6 +128,36 @@ public class ContractService(IRepository<Data.Models.Contract> contractRepositor
         }
 
     }
+
+    public async Task<bool> VerifyOtpAsync(Guid contractId, string requestOtp)
+    {
+        try
+        {
+            var exist = await _contractRepository.Query()
+                   .Include(x => x.TourCompany)
+                   .Include(x => x.TouristFacility)
+                    .Where(x => x.ContractId == contractId)
+                   .FirstOrDefaultAsync();
+            var email = "";
+            if (exist == null) throw new Exception();
+            else if (exist.TourCompany != null) email = exist.TourCompany.EmailCompany;
+            else if (exist.TouristFacility != null) email = exist.TouristFacility.EmailTouristFacility;
+            if (email == null)
+            {
+                return false;
+            }
+
+            var otp = _cache.Get(email) as string;
+
+            return otp == requestOtp;
+        }
+        catch (Exception)
+        {
+            throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+        }
+
+    }
+
     public async Task<bool> SignContractAsync(Guid contractId)
     {
         try
@@ -145,6 +176,26 @@ public class ContractService(IRepository<Data.Models.Contract> contractRepositor
         }
 
     }
+
+    public async Task<bool> RejectContractAsync(Guid contractId)
+    {
+        try
+        {
+            var exist = await _contractRepository.GetByIdAsync(contractId);
+            exist.UpdateDate = DateTime.UtcNow;
+            exist.Status = exist.Status == false;
+            exist.SigningStatus = SigningStatus.Rejected;
+
+            await _contractRepository.UpdateAsync(exist);
+            return true;
+        }
+        catch (Exception)
+        {
+            throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+        }
+
+    }
+
     public async Task<bool> UpdateContract(Guid ContractId, Data.Models.Contract Contract)
     {
         try
@@ -169,14 +220,19 @@ public class ContractService(IRepository<Data.Models.Contract> contractRepositor
         }
     }
 
-    public async Task<bool> ExtendContract(Guid contractId)
+    public async Task<bool> ExtendContractAsync(Guid contractId, int months)
     {
         try
         {
             var exist = await _contractRepository.GetByIdAsync(contractId);
+
+            exist.StartDate = exist.EndDate;
+            exist.EndDate = exist.EndDate?.AddMonths(months);
+
             exist.RequestReSignContract = true;
             exist.SigningStatus = SigningStatus.RequestExtend;
 
+            await _contractRepository.UpdateAsync(exist);
             return true;
         }
         catch (Exception)
@@ -192,6 +248,8 @@ public class ContractService(IRepository<Data.Models.Contract> contractRepositor
             var exist = await _contractRepository.GetByIdAsync(contractId);
             exist.RequestReSignContract = false;
             exist.SigningStatus = SigningStatus.ApprovedExtend;
+
+            await _contractRepository.UpdateAsync(exist);
 
             return true;
         }
