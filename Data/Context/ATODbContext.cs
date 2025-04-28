@@ -73,6 +73,7 @@ namespace Data.ArmsContext
             modelBuilder.ApplyConfiguration(new BookingTourDestinationConfiguration());
             modelBuilder.ApplyConfiguration(new WithdrawalHistoryConfiguration());
             modelBuilder.ApplyConfiguration(new WithdrawalRequestConfiguration());
+            modelBuilder.ApplyConfiguration(new BankAccountConfiguration());
 
             #endregion
             #region config FK for generate account and role,...
@@ -156,6 +157,7 @@ namespace Data.ArmsContext
             new DriverSeeder(modelBuilder).Seed();
             new AccommodationSeeder(modelBuilder).Seed();
             new ShipAddressSeeder(modelBuilder).Seed();
+            new BankAccountSeeder(modelBuilder).Seed();
             #endregion
 
         }
@@ -190,6 +192,7 @@ namespace Data.ArmsContext
         public DbSet<BookingTourDestination> BookingTourDestinations { get; set; }
         public DbSet<WithdrawalRequest> WithdrawalRequests { get; set; }
         public DbSet<WithdrawalHistory> WithdrawalHistories { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
 
 
         #endregion

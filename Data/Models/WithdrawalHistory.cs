@@ -5,15 +5,26 @@ namespace Data.Models
     public class WithdrawalHistory
     {
         public Guid WithdrawalId { get; set; }
-        public Guid RequestId { get; set; }
-        public Guid UserId { get; set; }
         public decimal Amount { get; set; }
-        public string TransactionReference { get; set; }
+        public string? TransactionReference { get; set; }
         public DateTime ProcessedDate { get; set; }
         public string? Note { get; set; }
+        public string? TransactionImage { get; set; }
+        public WithdrawalStatus WithdrawalStatus { get; set; } = WithdrawalStatus.New;
 
         // Navigation properties
-        public virtual WithdrawalRequest? Request { get; set; }
-        public virtual Account? User { get; set; }
+        public Guid? TourCompanyId { get; set; }
+        public Guid? TouristFacilityId { get; set; }
+        public virtual TourCompany? TourCompany { get; set; }
+        public virtual TouristFacility? TouristFacility { get; set; }
     }
+
+    public enum WithdrawalStatus
+    {
+        New = 0,
+        InProgress = 1,
+        Completed = 2,
+        Cancelled = 3
+    }
+
 }

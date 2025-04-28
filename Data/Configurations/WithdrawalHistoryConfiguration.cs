@@ -16,15 +16,16 @@ namespace Data.Configurations
             builder.Property(x => x.ProcessedDate).IsRequired();
             builder.Property(x => x.Note).IsRequired(false);
 
-            builder.HasOne(x => x.Request)
-                .WithMany()
-                .HasForeignKey(x => x.RequestId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            builder.HasOne(x => x.User)
-                .WithMany()
-                .HasForeignKey(x => x.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+            #region config relation
+            builder.HasOne(x => x.TourCompany)
+                      .WithMany(c => c.WithdrawalHistories)
+                      .HasForeignKey(x => x.TourCompanyId)
+                      .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(x => x.TouristFacility)
+                      .WithMany(c => c.WithdrawalHistories)
+                      .HasForeignKey(x => x.TouristFacilityId)
+                      .OnDelete(DeleteBehavior.NoAction);
+            #endregion
         }
     }
 }
