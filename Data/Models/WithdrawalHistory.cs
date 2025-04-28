@@ -12,6 +12,8 @@ namespace Data.Models
         public string? TransactionImage { get; set; }
         public WithdrawalStatus WithdrawalStatus { get; set; } = WithdrawalStatus.New;
 
+        public Guid? BankAccountId { get; set; }
+
         // Navigation properties
         public Guid? TourCompanyId { get; set; }
         public Guid? TouristFacilityId { get; set; }

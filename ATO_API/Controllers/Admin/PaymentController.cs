@@ -5,41 +5,35 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.OrderSer;
 
-namespace ATO_API.Controllers.Admin
+namespace ATO_API.Controllers.Admin;
+
+[Route("api/admin/payment-history")]
+[ApiController]
+[Authorize(Roles = "Admin")]
+public class PaymentController(
+    IOrderService orderService,
+    IMapper mapper) : ControllerBase
 {
-    [Route("api/admin/payment-history")]
-    [ApiController]
-    [Authorize(Roles = "Admin")]
-    public class PaymentController : ControllerBase
+    private readonly IOrderService _orderService = orderService;
+    private readonly IMapper _mapper = mapper;
+
+    [HttpGet]
+    [ProducesResponseType(typeof(List<VNPayPaymentResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetAllAsync()
     {
-        private readonly IOrderService _orderService;
-        private readonly IMapper _mapper;
-        public PaymentController(
-            IOrderService orderService,
-            IMapper mapper
-            )
+        try
         {
-            _orderService = orderService;
-            _mapper = mapper;
+            List<VNPayPaymentResponse> response = await _orderService.ListHistoryPayments();
+            return Ok(response);
         }
-        [HttpGet]
-        [ProducesResponseType(typeof(List<VNPayPaymentResponse>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ListUserSupport()
+        catch (Exception ex)
         {
-            try
+            return StatusCode(500, new ResponseVM
             {
-                List<VNPayPaymentResponse> response = await _orderService.ListHistoryPayments();
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new ResponseVM
-                {
-                    Status = false,
-                    Message = ex.Message,
-                });
-            }
+                Status = false,
+                Message = ex.Message,
+            });
         }
     }
 }

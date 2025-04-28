@@ -158,6 +158,7 @@ namespace Data.ArmsContext
             new AccommodationSeeder(modelBuilder).Seed();
             new ShipAddressSeeder(modelBuilder).Seed();
             new BankAccountSeeder(modelBuilder).Seed();
+            new ContractSeeder(modelBuilder).Seed();
             #endregion
 
         }

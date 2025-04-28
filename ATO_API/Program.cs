@@ -45,6 +45,9 @@ using Service.WithdrawalSer;
 using StackExchange.Redis;
 using System.Text;
 using System.Text.Json.Serialization;
+using ATO_API;
+using ATO_API.HostedServices;
+using Service.BankAccountSer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -217,14 +220,18 @@ builder.Services.AddScoped<IRepository<Feedback>, Repository<Feedback>>();
 //ShipAddress 
 builder.Services.AddScoped<IShipAddressService, ShipAddressService>();
 builder.Services.AddScoped<IRepository<ShipAddress>, Repository<ShipAddress>>();
-
 //Contract 
+builder.Services.AddScoped<IBankAccountService, BankAccountService>();
+builder.Services.AddScoped<IRepository<BankAccount>, Repository<BankAccount>>();
 builder.Services.AddScoped<IContractService, ContractService>();
 builder.Services.AddScoped<IRepository<Contract>, Repository<Contract>>();
 
 // Addition
 builder.Services.AddRepositoryServices();
 builder.Services.AddServices();
+
+// Add after builder.Services.AddServices();
+builder.Services.AddHostedService<MonthlyWithdrawalService>();
 
 
 // app
@@ -246,3 +253,4 @@ app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();
+

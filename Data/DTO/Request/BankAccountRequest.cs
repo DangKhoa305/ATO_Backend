@@ -4,7 +4,6 @@ namespace Data.DTO.Request
 {
     public class BankAccountRequest
     {
-        public Guid OwnerId { get; set; }
         public OwnerType OwnerType { get; set; }
         public string BankName { get; set; }
         public string AccountNumber { get; set; }
