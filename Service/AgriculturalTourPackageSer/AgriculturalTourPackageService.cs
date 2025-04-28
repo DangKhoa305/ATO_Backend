@@ -16,17 +16,20 @@ namespace Service.AgriculturalTourPackageSer
         private readonly IRepository<TourDestination> _tourDestinationRepository;
         private readonly IRepository<TourCompany> _tourCompanyRepository;
         private readonly IRepository<TourGuide> _tourGuideRepository;
+        private readonly IRepository<BookingAgriculturalTour> _bookingRepository;
         public AgriculturalTourPackageService(
             IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository,
             IRepository<TourCompany> tourCompanyRepository,
             IRepository<TourGuide> tourGuideRepository,
-            IRepository<TourDestination> tourDestinationRepository
+            IRepository<TourDestination> tourDestinationRepository,
+            IRepository<BookingAgriculturalTour> bookingRepository
             )
         {
             _agriculturalTourPackageRepository = agriculturalTourPackageRepository;
             _tourCompanyRepository = tourCompanyRepository;
             _tourGuideRepository = tourGuideRepository;
             _tourDestinationRepository = tourDestinationRepository;
+            _bookingRepository = bookingRepository;
         }
 
         public async Task<bool> CreateAgriculturalTourPackage(AgriculturalTourPackage newTour, Guid UserId)
@@ -320,6 +323,14 @@ namespace Service.AgriculturalTourPackageSer
             await _tourDestinationRepository.UpdateRangeAsync(existing);
 
             return true;
+        }
+
+
+        public async Task<int> GetPeople(Guid tourId)
+        {
+            return await _bookingRepository.Query()
+              .Where(x => x.TourId == tourId)
+              .CountAsync();
         }
 
         #region private 
