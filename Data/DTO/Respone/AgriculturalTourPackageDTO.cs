@@ -22,6 +22,7 @@ namespace Data.DTO.Respone
         public virtual ICollection<AgriculturalTourPackage_TourDestination_Respone>? TourDestinations { get; set; }
         public virtual ICollection<AgriculturalTourPackage_TourGuide_Respone>? TourGuides { get; set; }
         public virtual ICollection<BookingTourDestination>? Trackings { get; set; }
+        public int People { get; set; }
 
     }
     public class AgriculturalTourPackage_TourDestination_Respone
@@ -83,7 +84,7 @@ namespace Data.DTO.Respone
         public DateTime EndTime { get; set; }
         public double Durations { get; set; }
         public TimeType DurationsType { get; set; }
-        public virtual ICollection<AgriculturalTourPackage_TourDestination_Respone_Guest>? TourDestinations { get; set; }
+        public virtual ICollection<AgriculturalTourPackage_TourDestination_Respone>? TourDestinations { get; set; }
         public virtual ICollection<AgriculturalTourPackage_TourGuide_Respone>? TourGuides { get; set; }
         public int People { get; set; }
     }

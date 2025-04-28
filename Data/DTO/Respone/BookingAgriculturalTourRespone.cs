@@ -19,7 +19,7 @@ namespace Data.DTO.Respone
         public CurrentDestinationInfo? CurrentDestination { get; set; }
         public int TotalBookedPeople { get; set; }
 
-
+        public ICollection<BookingTourDestination>? Trackings { get; set; }
     }
 
     public class CurrentDestinationInfo
