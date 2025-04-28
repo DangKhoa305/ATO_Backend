@@ -1,22 +1,14 @@
 ﻿using AutoMapper;
 using Data.DTO.Request;
 using Data.DTO.Respone;
-using Data.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Service.AccountSer;
-using Service.DriverSer;
 using Service.OrderSer;
 using Service.ShipAddressSer;
 using Service.ShippingSer;
 using Service.TouristFacilitySer;
 using Service.VnPaySer;
 using StackExchange.Redis;
-using System.Text;
-using System.Transactions;
 using static Service.ShippingSer.ShippingService;
 
 namespace ATO_API.Controllers.AFTO
@@ -279,7 +271,7 @@ namespace ATO_API.Controllers.AFTO
                         name = item.Product.ProductName,
                         code = item.Product.ProductId.ToString(),
                         quantity = item.Quantity,
-                        price = int.Parse(item.UnitPrice.ToString().Replace(".00", "")),
+                        price = int.Parse(item.UnitPrice.ToString().Replace(".00", "").Replace(",", "")),
                         length = 15,
                         weight = 15,
                         height = 15,
@@ -341,5 +333,8 @@ namespace ATO_API.Controllers.AFTO
                 return StatusCode(500, new ResponseVM { Status = false, Message = ex.Message });
             }
         }
+
+
+
     }
 }

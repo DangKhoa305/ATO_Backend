@@ -48,8 +48,9 @@ namespace Data.Models
     }
     public enum StatusOrder
     {
-        Processing,
-        AcceptOrder,
-        RejecOrder
+        RejecOrder = -1,
+        Processing = 0,
+        AcceptOrder = 1,
+        Completed = 2
     }
 }

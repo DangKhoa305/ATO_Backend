@@ -29,5 +29,7 @@ namespace Service.OrderSer
         Task AcceptOrder(OrderAcceptRequest orderAcceptRequest);
         Task<List<VNPayPaymentResponse>> ListHistoryPaymentsOrder(Guid UserId);
         Task<List<VNPayPaymentResponse>> ListHistoryPayments();
+
+        Task<bool> UpdateStatus(Guid OrderId, StatusOrder statusOrder);
     }
 }

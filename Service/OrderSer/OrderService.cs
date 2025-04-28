@@ -193,6 +193,26 @@ public class OrderService : IOrderService
         }
     }
 
+
+    public async Task<bool> UpdateStatus(Guid OrderId, StatusOrder statusOrder)
+    {
+        try
+        {
+            var order = await _orderRepository.Query()
+                   .SingleOrDefaultAsync(x => x.OrderId == OrderId);
+            if (order is null) return false;
+
+            order.StatusOrder = statusOrder;
+            await _orderRepository.UpdateAsync(order);
+            return true;
+
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
     public async Task AddOrderPayment(Data.Models.VNPayPaymentResponse checkResponse)
     {
         try

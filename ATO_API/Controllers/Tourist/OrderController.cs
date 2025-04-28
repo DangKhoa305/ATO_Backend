@@ -3,22 +3,14 @@ using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Nest;
-using Service.AccountSer;
-using Service.DriverSer;
 using Service.OrderSer;
 using Service.ShipAddressSer;
 using Service.ShippingSer;
 using Service.TouristFacilitySer;
 using Service.VnPaySer;
 using StackExchange.Redis;
-using System.Net.Http;
 using System.Text;
-using System.Transactions;
 using static Service.ShippingSer.ShippingService;
 
 namespace ATO_API.Controllers.Tourist
@@ -438,6 +430,22 @@ namespace ATO_API.Controllers.Tourist
                 var response = await _orderService.GetOrderDetails(OrderId);
                 var tracking = await _shippingService.TrackShippingOrder(response.ShipCode);
                 return Ok(tracking);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM { Status = false, Message = ex.Message });
+            }
+        }
+
+        [HttpPost("complete/{OrderId}")]
+        [ProducesResponseType(typeof(ShippingTrackingResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CompleteOrder(Guid OrderId)
+        {
+            try
+            {
+                var response = await _orderService.UpdateStatus(OrderId, Data.Models.StatusOrder.Completed);
+                return Ok(new { status = true });
             }
             catch (Exception ex)
             {
