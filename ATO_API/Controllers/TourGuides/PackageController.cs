@@ -1,70 +1,72 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using Data.DTO.Respone;
-using Data.DTO.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Service.TourGuidePackageSer;
+using Service.AgriculturalTourPackageSer;
+using Service.BookingTourDestinationSer;
 
-namespace ATO_API.Controllers.TourGuides;
-
-[Route("api/tour-guide/tour")]
-[ApiController]
-[Authorize(Roles = "TourGuides")]
-public class PackageController : ControllerBase
+namespace ATO_API.Controllers.TourCompany
 {
-    private readonly ITourGuidePackageService _tourGuidePackageService;
-    private readonly IMapper _mapper;
 
-    public PackageController(
-        ITourGuidePackageService tourGuidePackageService,
-        IMapper mapper)
+    [Route("api/tour-guide/tour")]
+    [ApiController]
+    [Authorize(Roles = "TourGuides")]
+    public class PackageController : ControllerBase
     {
-        _tourGuidePackageService = tourGuidePackageService;
-        _mapper = mapper;
-    }
+        private readonly IAgriculturalTourPackageService _agriculturalTourPackageService;
+        private readonly IMapper _mapper;
+        private readonly IBookingTourDestinationService _service;
 
-    [HttpGet]
-    public async Task<IActionResult> GetAssignedPackages()
-    {
-        try
+        public PackageController(
+             IMapper mapper,
+             IAgriculturalTourPackageService agriculturalTourPackageService,
+             IBookingTourDestinationService service
+        )
         {
-            var guideId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var packages = await _tourGuidePackageService.GetAssignedPackages(Guid.Parse(guideId));
-            var response = _mapper.Map<List<TourGuidePackageResponse>>(packages);
-
-            return Ok(response);
+            _mapper = mapper;
+            _service = service;
+            _agriculturalTourPackageService = agriculturalTourPackageService;
         }
-        catch (Exception ex)
+        [HttpGet]
+        public async Task<IActionResult> GetAgriculturalTourPackages()
         {
-            return StatusCode(500, new ResponseVM
+            try
             {
-                Status = false,
-                Message = ex.Message
-            });
-        }
-    }
-
-    [HttpGet("{packageId}")]
-    public async Task<IActionResult> GetPackageDetails(Guid packageId)
-    {
-        try
-        {
-            var guideId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var package = await _tourGuidePackageService.GetPackageDetails(packageId, Guid.Parse(guideId));
-
-            if (package == null)
-                return NotFound(new ResponseModel(false, "Package not found or not assigned to you"));
-
-            var response = _mapper.Map<TourGuidePackageResponse>(package);
-            return Ok(response);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new ResponseVM
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var response = await _agriculturalTourPackageService.GetAllByTourGuideAsync(Guid.Parse(userId!));
+                var responseResult = _mapper.Map<List<AgriculturalTourPackageRespone>>(response);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
             {
-                Status = false,
-                Message = ex.Message
-            });
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+        [HttpGet("{TourId}")]
+        public async Task<IActionResult> GetAsync(Guid TourId)
+        {
+            try
+            {
+                var response = await _agriculturalTourPackageService.GetAgriculturalTourPackage(TourId);
+                var responseResult = _mapper.Map<AgriculturalTourPackageRespone>(response);
+
+                responseResult.Trackings = await _service.GetAllByTour(responseResult.TourId);
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
         }
     }
 }
+

@@ -75,24 +75,6 @@ public class BookingService(
 
             await _bookingAgriculturalTourRepository.AddRangeAsync(bookingAgriculturalTour);
 
-
-            // Create booking destinations
-            var bookingDestinations = tour.TourDestinations?.Select(td => new BookingTourDestination
-            {
-                BookingDestinationId = Guid.NewGuid(),
-                BookingId = bookingAgriculturalTour.BookingId,
-                TourDestinationId = td.TourDestinationId,
-                Status = BookingDestinationStatus.Pending,
-                CreateDate = DateTime.UtcNow
-            }).ToList();
-
-            if (bookingDestinations?.Any() == true)
-            {
-                await _bookingDestinationRepo.RealAddRangeAsync(bookingDestinations);
-
-            }
-
-
             return bookingAgriculturalTour;
         }
         catch (Exception)

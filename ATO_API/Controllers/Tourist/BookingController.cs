@@ -20,7 +20,8 @@ public class BookingController(
     IVnPayService vnPayService,
     IConfiguration configuration,
     IBookingService bookingService,
-    IBookingTourDestinationService bookingTourDestinationService
+    IBookingTourDestinationService bookingTourDestinationService,
+    IBookingTourDestinationService service
        ) : ControllerBase
 {
     private readonly IOrderService _orderService = orderService;
@@ -29,6 +30,7 @@ public class BookingController(
     private readonly IMapper _mapper = mapper;
     private readonly IVnPayService _vnPayService = vnPayService;
     private readonly IConfiguration _configuration = configuration;
+    private readonly IBookingTourDestinationService _service = service;
 
     [HttpGet("get-list-book-tours")]
     [Authorize(Roles = "Tourists")]
@@ -63,9 +65,7 @@ public class BookingController(
         {
             var response = await _bookingService.GetBookTourDetails(BookingId);
             var responseResult = _mapper.Map<BookingAgriculturalTourRespone>(response);
-
-            responseResult.CurrentDestination =
-                await _bookingTourDestinationService.GetCurrentDestination(response.BookingId);
+            responseResult.Trackings = await _service.GetAllByTour(responseResult.TourId);
 
             return Ok(responseResult);
         }

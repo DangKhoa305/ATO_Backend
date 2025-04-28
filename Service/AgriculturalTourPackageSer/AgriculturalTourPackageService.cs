@@ -1,12 +1,6 @@
-﻿using Data.Migrations;
-using Data.Models;
+﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.AgriculturalTourPackageSer
 {
@@ -200,6 +194,35 @@ namespace Service.AgriculturalTourPackageSer
                                         .Include(x => x.TourGuides)
 .Include(x => x.TourDestinations)
                     .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
+                    .OrderByDescending(x => x.CreateDate)
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
+        public async Task<List<AgriculturalTourPackage>> GetAllByTourGuideAsync(Guid UserId)
+        {
+            try
+            {
+
+                return await _agriculturalTourPackageRepository.Query()
+                     .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.TourismPackage)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.Driver)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.Accommodation)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.Activity)
+                            .ThenInclude(x => x.Products)
+                    .Include(x => x.TourDestinations)
+                        .ThenInclude(b => b.TourGuides)
+                    .Include(x => x.TourGuides)
+                        .ThenInclude(b => b.Account)
+                    .Where(x => x.TourGuides.Any(x => x.UserId == UserId))
                     .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }

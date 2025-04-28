@@ -57,8 +57,8 @@ namespace ATO_API.Controllers
         {
             try
             {
-                var response = await _agriculturalTourPackageService.GetAgriculturalTourPackage_Guest(TourId);
-                var responseResult = _mapper.Map<AgriculturalTourPackageRespone_Guest>(response);
+                var response = await _agriculturalTourPackageService.GetAgriculturalTourPackage(TourId);
+                var responseResult = _mapper.Map<AgriculturalTourPackageRespone>(response);
                 responseResult.People = await _agriculturalTourPackageService.GetPeople(TourId);
 
                 return Ok(responseResult);

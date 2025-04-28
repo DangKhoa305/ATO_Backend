@@ -22,6 +22,6 @@ namespace Service.AgriculturalTourPackageSer
         Task<bool> ProcessApproval(Guid id, StatusApproval status);
         Task<int> GetPeople(Guid tourId);
 
-
+        Task<List<AgriculturalTourPackage>> GetAllByTourGuideAsync(Guid UserId);
     }
 }
