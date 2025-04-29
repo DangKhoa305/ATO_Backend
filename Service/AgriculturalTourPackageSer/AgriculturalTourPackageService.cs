@@ -191,14 +191,14 @@ namespace Service.AgriculturalTourPackageSer
         {
             try
             {
-                TourCompany TourCompany = await _tourCompanyRepository.Query()
+                var TourCompany = await _tourCompanyRepository.Query()
                     .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _agriculturalTourPackageRepository.Query()
-                                        .Include(x => x.TourGuides)
-.Include(x => x.TourDestinations)
-                    .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
-                    .OrderByDescending(x => x.CreateDate)
-                    .ToListAsync();
+                                .Include(x => x.TourGuides)
+                                .Include(x => x.TourDestinations)
+                                .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
+                                .OrderByDescending(x => x.CreateDate)
+                                .ToListAsync();
             }
             catch (Exception)
             {

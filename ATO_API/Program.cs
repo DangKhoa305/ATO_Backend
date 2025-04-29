@@ -20,6 +20,7 @@ using Service.BankAccountSer;
 using Service.BlogSer;
 using Service.BookingSer;
 using Service.ContractSer;
+using Service.DashboardSer;
 using Service.DriverSer;
 using Service.EmailSer;
 using Service.FeedbackSer;
@@ -215,7 +216,7 @@ builder.Services.AddScoped<IBankAccountService, BankAccountService>();
 builder.Services.AddScoped<IRepository<BankAccount>, Repository<BankAccount>>();
 builder.Services.AddScoped<IContractService, ContractService>();
 builder.Services.AddScoped<IRepository<Contract>, Repository<Contract>>();
-
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 // Addition
 builder.Services.AddRepositoryServices();
 builder.Services.AddServices();

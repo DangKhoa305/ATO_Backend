@@ -39,7 +39,7 @@ namespace ATO_API.Controllers.TourCompany
             try
             {
                 var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                var response = await _agriculturalTourPackageService.GetListAgriculturalTourPackages(Guid.Parse(userId));
+                var response = await _agriculturalTourPackageService.GetListAgriculturalTourPackages(Guid.Parse(userId!));
                 var responseResult = _mapper.Map<List<AgriculturalTourPackageRespone>>(response);
 
 

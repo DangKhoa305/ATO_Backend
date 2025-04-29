@@ -67,7 +67,7 @@ namespace Data.ArmsContext
 
             modelBuilder.ApplyConfiguration(new ContractConfiguration());
 
-
+            modelBuilder.ApplyConfiguration(new FacilityCertificationConfiguration());
             // Addition
             modelBuilder.ApplyConfiguration(new AdminBalanceConfiguration());
             modelBuilder.ApplyConfiguration(new BookingTourDestinationConfiguration());
@@ -194,7 +194,7 @@ namespace Data.ArmsContext
         public DbSet<WithdrawalRequest> WithdrawalRequests { get; set; }
         public DbSet<WithdrawalHistory> WithdrawalHistories { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
-
+        public DbSet<FacilityCertification> FacilityCertifications { get; set; }
 
         #endregion
     }
