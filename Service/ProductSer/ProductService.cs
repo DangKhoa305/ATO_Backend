@@ -405,10 +405,10 @@ namespace Service.ProductSer
             {
                 return await _productRepository.Query()
                     .Include(x => x.TouristFacility)
-                     .Include(b => b.Certifications.Where(a => a.StatusApproval == StatusApproval.Approved))
-                    .Include(x => x.OCOPSells.Where(p => p.ExpiryDate == null || p.ExpiryDate > DateTime.UtcNow))
-                      .Where(x => x.OCOPSells.Any())
-                    .Where(x => x.Certifications.Any())
+                    .Include(b => b.Certifications)
+                    .Include(b => b.OCOPSells)
+                    .Where(x => x.OCOPSells.Where(p => p.ActiveStatus == true && p.ExpiryDate > DateTime.UtcNow).Any())
+                    .Where(x => x.Certifications.Where(a => a.StatusApproval == StatusApproval.Approved).Any())
                     .ToListAsync();
             }
             catch (Exception)
