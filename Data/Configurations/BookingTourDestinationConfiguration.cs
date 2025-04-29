@@ -23,7 +23,7 @@ namespace Data.Configurations
             builder.HasOne(x => x.TourDestination)
                .WithMany()
                .HasForeignKey(x => x.TourDestinationId)
-               .OnDelete(DeleteBehavior.Restrict);
+               .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

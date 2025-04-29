@@ -11,12 +11,14 @@ namespace Service.AgriculturalTourPackageSer
         private readonly IRepository<TourCompany> _tourCompanyRepository;
         private readonly IRepository<TourGuide> _tourGuideRepository;
         private readonly IRepository<BookingAgriculturalTour> _bookingRepository;
+        private readonly IRepository<BookingTourDestination> _bookingTourDestinationRepo;
         public AgriculturalTourPackageService(
             IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository,
             IRepository<TourCompany> tourCompanyRepository,
             IRepository<TourGuide> tourGuideRepository,
             IRepository<TourDestination> tourDestinationRepository,
-            IRepository<BookingAgriculturalTour> bookingRepository
+            IRepository<BookingAgriculturalTour> bookingRepository,
+            IRepository<BookingTourDestination> bookingTourDestinationRepo
             )
         {
             _agriculturalTourPackageRepository = agriculturalTourPackageRepository;
@@ -24,6 +26,7 @@ namespace Service.AgriculturalTourPackageSer
             _tourGuideRepository = tourGuideRepository;
             _tourDestinationRepository = tourDestinationRepository;
             _bookingRepository = bookingRepository;
+            _bookingTourDestinationRepo = bookingTourDestinationRepo;
         }
 
         public async Task<bool> CreateAgriculturalTourPackage(AgriculturalTourPackage newTour, Guid UserId)
@@ -362,11 +365,21 @@ namespace Service.AgriculturalTourPackageSer
         #region private 
         private async Task AddTourDestinations(ICollection<TourDestination>? destinations, Guid tourId)
         {
+            await RemoveBookedTourDestinations(tourId);
             await RemoveTourDestinations(tourId);
             if (destinations is null) return;
             foreach (var des in destinations)
             {
                 await CreateTourDestination(des, tourId);
+            }
+        }
+
+        private async Task RemoveBookedTourDestinations(Guid tourId)
+        {
+            var bookedDestinations = await _bookingTourDestinationRepo.Query().Where(x => x.TourId == tourId).ToListAsync();
+            foreach (var des in bookedDestinations)
+            {
+                await _bookingTourDestinationRepo.DeleteAsync(des.TourDestinationId);
             }
         }
 
