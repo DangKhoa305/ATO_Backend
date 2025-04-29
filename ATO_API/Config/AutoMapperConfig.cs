@@ -189,6 +189,7 @@ namespace ATO_API.Config
                         src.Activity != null ? "Activity" : "Accommodation"));
 
                 config.CreateMap<BookingAgriculturalTour, BookedTourResponse>();
+                config.CreateMap<TouristFacility, TouristFacilityDTO_Guest>();
 
             });
 

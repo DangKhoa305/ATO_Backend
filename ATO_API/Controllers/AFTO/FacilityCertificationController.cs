@@ -69,18 +69,24 @@ public class FacilityCertificationController(IFacilityCertificationService certi
     }
 
     [HttpPost("{id}/approve")]
-    public async Task<IActionResult> Approve(Guid id, [FromBody] string reply)
+    public async Task<IActionResult> Approve(Guid id, [FromBody] ReplyRequest? request)
     {
-        var result = await _certificationService.ApproveCertificationAsync(id, reply);
+        var result = await _certificationService.ApproveCertificationAsync(id, request?.Reply);
         if (!result) return NotFound();
         return NoContent();
     }
 
     [HttpPost("{id}/reject")]
-    public async Task<IActionResult> Reject(Guid id, [FromBody] string reply)
+    public async Task<IActionResult> Reject(Guid id, [FromBody] ReplyRequest? request)
     {
-        var result = await _certificationService.RejectCertificationAsync(id, reply);
+        var result = await _certificationService.RejectCertificationAsync(id, request?.Reply);
         if (!result) return NotFound();
         return NoContent();
     }
+}
+
+public class ReplyRequest
+{
+    public string? Reply { get; set; }
+
 }

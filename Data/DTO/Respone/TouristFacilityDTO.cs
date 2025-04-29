@@ -64,6 +64,7 @@ namespace Data.DTO.Respone
         public string? EmailTouristFacility { get; set; }
         public string? Website { get; set; }
         public string? LogoURL { get; set; }
-        public virtual ICollection<CertificationRespone>? Certifications { get; set; }
+        public virtual ICollection<FacilityCertification>? Certifications { get; set; }
+        public virtual ICollection<ProductDTO_Guest>? Products { get; set; }
     }
 }

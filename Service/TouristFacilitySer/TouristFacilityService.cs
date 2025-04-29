@@ -62,7 +62,6 @@ namespace Service.TouristFacilitySer
             {
                 return await _touristFacilityRepository.Query()
                     .Include(b => b.Account)
-                    .Include(b => b.Certifications.Where(a => a.ProductId == null && a.StatusApproval == StatusApproval.Approved))
                     .SingleOrDefaultAsync(x => x.TouristFacilityId == TouristFacilityId);
             }
             catch (Exception)

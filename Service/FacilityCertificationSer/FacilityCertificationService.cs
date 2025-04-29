@@ -10,13 +10,17 @@ public class FacilityCertificationService(IRepository<FacilityCertification> cer
 
     public async Task<FacilityCertification> GetByIdAsync(Guid id)
     {
-        return await _certificationRepo.GetByIdAsync(id);
+        return await _certificationRepo.Query()
+            .Include(x => x.TouristFacility)
+            .Where(x => x.CertificationId == id)
+            .FirstOrDefaultAsync();
     }
 
     public async Task<List<FacilityCertification>> GetAllByFacilityAsync(Guid facilityId)
     {
         return await _certificationRepo.Query()
             .Where(c => c.TouristFacilityId == facilityId)
+             .Include(x => x.TouristFacility)
             .ToListAsync();
     }
 
@@ -53,7 +57,7 @@ public class FacilityCertificationService(IRepository<FacilityCertification> cer
         return true;
     }
 
-    public async Task<bool> ApproveCertificationAsync(Guid id, string reply)
+    public async Task<bool> ApproveCertificationAsync(Guid id, string? reply)
     {
         var certification = await _certificationRepo.GetByIdAsync(id);
         if (certification == null) return false;
@@ -66,7 +70,7 @@ public class FacilityCertificationService(IRepository<FacilityCertification> cer
         return true;
     }
 
-    public async Task<bool> RejectCertificationAsync(Guid id, string reply)
+    public async Task<bool> RejectCertificationAsync(Guid id, string? reply)
     {
         var certification = await _certificationRepo.GetByIdAsync(id);
         if (certification == null) return false;
@@ -82,6 +86,7 @@ public class FacilityCertificationService(IRepository<FacilityCertification> cer
     public async Task<List<FacilityCertification>> GetAll()
     {
         return await _certificationRepo.Query()
+            .Include(x => x.TouristFacility)
             .ToListAsync();
     }
 }

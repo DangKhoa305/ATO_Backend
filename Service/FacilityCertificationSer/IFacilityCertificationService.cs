@@ -13,6 +13,6 @@ public interface IFacilityCertificationService
     Task<bool> CreateAsync(FacilityCertification certification);
     Task<bool> UpdateAsync(Guid id, FacilityCertification certification);
     Task<bool> DeleteAsync(Guid id);
-    Task<bool> ApproveCertificationAsync(Guid id, string reply);
-    Task<bool> RejectCertificationAsync(Guid id, string reply);
+    Task<bool> ApproveCertificationAsync(Guid id, string? reply);
+    Task<bool> RejectCertificationAsync(Guid id, string? reply);
 }
