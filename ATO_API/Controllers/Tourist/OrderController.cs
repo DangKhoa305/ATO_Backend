@@ -268,15 +268,15 @@ namespace ATO_API.Controllers.Tourist
                     returnUrl
                 );
 
-                if (refundResult.Success == false)
-                {
-                    return BadRequest(new ResponseVM
-                    {
-                        Status = false,
-                        Message = "Hoàn tiền thất bại. Vui lòng thử lại sau!"
-                    });
-                }
-                var PaymentStatus = refundResult.Success ? 3 : 2;
+                //if (refundResult.Success == false)
+                //{
+                //    return BadRequest(new ResponseVM
+                //    {
+                //        Status = false,
+                //        Message = "Hoàn tiền thất bại. Vui lòng thử lại sau!"
+                //    });
+                //}
+                var PaymentStatus = 0;
                 await _orderService.UpdateOrderStatus(orderId, PaymentType.Refunded, PaymentStatus, StatusOrder.RejecOrder);
                 await _orderService.AddOrderPayment(refundResult.Response);
                 return Ok(new ResponseVM
