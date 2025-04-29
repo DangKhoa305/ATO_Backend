@@ -78,4 +78,10 @@ public class FacilityCertificationService(IRepository<FacilityCertification> cer
         await _certificationRepo.UpdateAsync(certification);
         return true;
     }
+
+    public async Task<List<FacilityCertification>> GetAll()
+    {
+        return await _certificationRepo.Query()
+            .ToListAsync();
+    }
 }

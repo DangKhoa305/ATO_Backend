@@ -359,6 +359,7 @@ namespace Service.AgriculturalTourPackageSer
         {
             return await _bookingRepository.Query()
               .Where(x => x.TourId == tourId)
+              .Where(x => x.StatusBooking != StatusBooking.Canceled)
               .CountAsync();
         }
 

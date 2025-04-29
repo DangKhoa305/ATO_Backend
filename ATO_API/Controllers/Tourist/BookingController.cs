@@ -129,4 +129,73 @@ public class BookingController(
             });
         }
     }
+
+    [HttpPost("cancel/{tourId}")]
+    [Authorize(Roles = "Tourists")]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> RefundOrder(Guid tourId)
+    {
+        try
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null) return Unauthorized();
+
+            var tour = await _bookingService.GetBookTourDetails(tourId);
+            if (tour == null)
+            {
+                return NotFound(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Không tìm thấy tour!"
+                });
+            }
+
+            if (tour.CustomerId != Guid.Parse(userId))
+            {
+                return BadRequest(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Bạn không có quyền hoàn tiền đơn hàng này!"
+                });
+            }
+
+            var successfulPayment = tour.VNPayPaymentResponses?
+                 .FirstOrDefault(x => x.TransactionStatus == "00");
+
+            if (successfulPayment == null)
+            {
+                return BadRequest(new ResponseVM
+                {
+                    Status = false,
+                    Message = "Không tìm thấy giao dịch thanh toán hợp lệ!"
+                });
+            }
+            string returnUrl = _configuration.GetValue<string>("VNPaySettings:RefundUrl")!;
+            var refundResult = await _vnPayService.ProcessRefundAsync(
+                successfulPayment,
+                tour.TotalAmmount,
+                tour.TourId.ToString(),
+                returnUrl
+            );
+
+
+            var PaymentStatus = 0;
+            await _bookingService.UpdateStatus(tourId, PaymentStatus, StatusBooking.Canceled);
+            await _bookingService.AddBookPayment(refundResult.Response);
+            return Ok(new ResponseVM
+            {
+                Status = true,
+                Message = "Hoàn tiền thành công!"
+            });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ResponseVM
+            {
+                Status = false,
+                Message = "Đã xảy ra lỗi trong quá trình hoàn tiền: " + ex.Message
+            });
+        }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using Data.Models;
 using Service.AdminBalanceSer;
 using Service.BookingTourDestinationSer;
+using Service.FacilityCertificationSer;
 using Service.Repository;
 using Service.TourGuidePackageSer;
 using Service.WithdrawalSer;
@@ -17,6 +18,7 @@ public static class ServiceExtensions
         services.AddScoped<IRepository<WithdrawalHistory>, Repository<WithdrawalHistory>>();
         services.AddScoped<IRepository<WithdrawalRequest>, Repository<WithdrawalRequest>>();
         services.AddScoped<IRepository<BookingTourDestination>, Repository<BookingTourDestination>>();
+        services.AddScoped<IRepository<FacilityCertification>, Repository<FacilityCertification>>();
 
         return services;
     }
@@ -29,6 +31,7 @@ public static class ServiceExtensions
         services.AddScoped<IAdminBalanceService, AdminBalanceService>();
         services.AddScoped<IWithdrawalService, WithdrawalService>();
         services.AddScoped<ITourGuidePackageService, TourGuidePackageService>();
+        services.AddScoped<IFacilityCertificationService, FacilityCertificationService>();
 
         return services;
     }

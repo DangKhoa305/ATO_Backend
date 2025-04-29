@@ -1,18 +1,27 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Service.DashboardSer;
 using Service.FacilityCertificationSer;
-using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ATO_API.Controllers;
 
 [Route("api/facility-certifications")]
 [ApiController]
-public class FacilityCertificationController(IFacilityCertificationService certificationService) : ControllerBase
+[Authorize]
+public class FacilityCertificationController(IFacilityCertificationService certificationService,
+    IDashboardService dashboardService) : ControllerBase
 {
     private readonly IFacilityCertificationService _certificationService = certificationService;
+    private readonly IDashboardService _dashboardService = dashboardService;
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var certification = await _certificationService.GetAll();
+        if (certification == null) return NotFound();
+        return Ok(certification);
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
@@ -22,24 +31,27 @@ public class FacilityCertificationController(IFacilityCertificationService certi
         return Ok(certification);
     }
 
-    [HttpGet("facility/{facilityId}")]
-    public async Task<IActionResult> GetAllByFacility(Guid facilityId)
+    [HttpGet("facility")]
+    public async Task<IActionResult> GetAllByFacility()
     {
+        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        var facilityId = await _dashboardService.GetFacilityIdFromUserIdAsync(Guid.Parse(userId!)) ?? Guid.Empty;
+
         var certifications = await _certificationService.GetAllByFacilityAsync(facilityId);
         return Ok(certifications);
     }
 
     [HttpPost]
-    [Authorize(Roles = "TouristFacilities")]
     public async Task<IActionResult> Create(FacilityCertification certification)
     {
+        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        certification.TouristFacilityId = await _dashboardService.GetFacilityIdFromUserIdAsync(Guid.Parse(userId!));
         var result = await _certificationService.CreateAsync(certification);
         if (!result) return BadRequest();
         return CreatedAtAction(nameof(GetById), new { id = certification.CertificationId }, certification);
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "TouristFacilities")]
     public async Task<IActionResult> Update(Guid id, FacilityCertification certification)
     {
         if (id != certification.CertificationId) return BadRequest();
@@ -49,7 +61,6 @@ public class FacilityCertificationController(IFacilityCertificationService certi
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles = "TouristFacilities")]
     public async Task<IActionResult> Delete(Guid id)
     {
         var result = await _certificationService.DeleteAsync(id);
@@ -58,7 +69,6 @@ public class FacilityCertificationController(IFacilityCertificationService certi
     }
 
     [HttpPost("{id}/approve")]
-    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Approve(Guid id, [FromBody] string reply)
     {
         var result = await _certificationService.ApproveCertificationAsync(id, reply);
@@ -67,7 +77,6 @@ public class FacilityCertificationController(IFacilityCertificationService certi
     }
 
     [HttpPost("{id}/reject")]
-    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Reject(Guid id, [FromBody] string reply)
     {
         var result = await _certificationService.RejectCertificationAsync(id, reply);

@@ -169,4 +169,15 @@ public class BookingService(
             throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
         }
     }
+    public async Task UpdateStatus(Guid bookingId, int paymentStatus, StatusBooking canceled)
+    {
+        var order = await _bookingAgriculturalTourRepository.Query()
+                .SingleOrDefaultAsync(x => x.BookingId == bookingId);
+        if (order == null)
+            throw new Exception("Order not found");
+        order.StatusBooking = canceled;
+        order.PaymentStatus = (PaymentStatus)paymentStatus;
+        await _bookingAgriculturalTourRepository.UpdateAsync(order);
+    }
+
 }
