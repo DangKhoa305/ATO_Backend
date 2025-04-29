@@ -39,6 +39,25 @@ namespace Service.TourismPackageSer
 
                     responseResult.Products = Products;
                 }
+
+
+                var package = await _tourismPackageRepository.GetByIdAsync(responseResult.PackageId ?? Guid.Empty);
+
+                if (package is not null)
+                {
+                    package.StatusApproval = StatusApproval.Processing;
+                    await _tourismPackageRepository.UpdateAsync(package);
+                }
+
+                var existActivities = await _activityRepository.Query()
+                    .Where(x => x.PackageId == responseResult.PackageId).ToListAsync();
+
+                if (existActivities.Count > 0)
+                {
+                    existActivities.ForEach(x => x.StatusApproval = StatusApproval.Processing);
+                    await _activityRepository.RealUpdateRangeAsync(existActivities);
+                }
+
                 await _activityRepository.AddRangeAsync(responseResult);
 
                 return true;
