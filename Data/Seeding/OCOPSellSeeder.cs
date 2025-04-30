@@ -20,6 +20,7 @@ namespace Data.Seeding
          */
         public void Seed()
         {
+
             modelBuilder.Entity<OCOPSell>().HasData(
                new OCOPSell()
                {
@@ -29,7 +30,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2023-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 90000,
+                   SalePrice = 85000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -39,7 +41,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 90000,
+                   SalePrice = 87000,
                },
                new OCOPSell()
                {
@@ -49,7 +51,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 85000,
                },
                new OCOPSell()
                {
@@ -59,7 +61,9 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 87000,
+                   ActiveStatus = true
+
                },
                new OCOPSell()
                {
@@ -69,7 +73,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 92000,
                },
                new OCOPSell()
                {
@@ -79,7 +83,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 92000,
                },
                new OCOPSell()
                {
@@ -89,7 +93,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 92000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -99,7 +104,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 120000,
                },
                new OCOPSell()
                {
@@ -109,7 +114,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 10000,
                },
                new OCOPSell()
                {
@@ -119,7 +124,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 120000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -129,7 +135,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 40000,
                },
                new OCOPSell()
                {
@@ -139,7 +145,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 40000,
                },
                new OCOPSell()
                {
@@ -149,7 +155,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 120000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -159,7 +166,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 90000,
                },
                new OCOPSell()
                {
@@ -169,7 +176,9 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 80000,
+                   ActiveStatus = true
+
                },
                new OCOPSell()
                {
@@ -179,7 +188,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 90000,
                },
                new OCOPSell()
                {
@@ -189,7 +198,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 40000,
                },
                new OCOPSell()
                {
@@ -199,7 +208,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 60000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -209,7 +219,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 60000,
                },
                new OCOPSell()
                {
@@ -219,7 +229,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 10000,
                },
                new OCOPSell()
                {
@@ -229,7 +239,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 130000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -239,7 +250,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 90000,
                },
                new OCOPSell()
                {
@@ -249,7 +260,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 10000,
                },
                new OCOPSell()
                {
@@ -259,7 +270,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 10000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -269,7 +281,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 130000,
                },
                new OCOPSell()
                {
@@ -279,7 +291,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 70000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -289,7 +302,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 130000,
                }
                ,
                new OCOPSell()
@@ -300,7 +313,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 70000,
                },
                new OCOPSell()
                {
@@ -310,7 +323,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 80000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -320,7 +334,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 80000,
                },
                new OCOPSell()
                {
@@ -330,7 +344,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 10000,
                },
                new OCOPSell()
                {
@@ -340,7 +354,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 110000,
+                   ActiveStatus = true
                },
                new OCOPSell()
                {
@@ -350,7 +365,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 70000,
                },
                new OCOPSell()
                {
@@ -360,7 +375,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-03-01"),
                    ExpiryDate = DateTime.Parse("2026-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 10000,
                },
                new OCOPSell()
                {
@@ -370,7 +385,7 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2024-05-01"),
                    ExpiryDate = DateTime.Parse("2026-09-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 110000,
                },
                new OCOPSell()
                {
@@ -380,7 +395,8 @@ namespace Data.Seeding
                    ManufacturingDate = DateTime.Parse("2025-03-01"),
                    ExpiryDate = DateTime.Parse("2027-03-01"),
                    CreateDate = DateTime.UtcNow,
-                   SalePrice = 100000,
+                   SalePrice = 110000,
+                   ActiveStatus = true
                }
            );
         }

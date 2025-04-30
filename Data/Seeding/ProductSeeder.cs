@@ -346,9 +346,68 @@ namespace Data.Seeding
                    StatusApproval = StatusApproval.Approved,
                    ReplyRequest = null,
                    TouristFacilityId = Guid.Parse("10000000-0000-0000-0000-000000000001"),
-               }
+               },
 
-
+        new Product()
+        {
+            ProductId = Guid.Parse("69006CFE-5233-7776-B181-D81A485873E3"),
+            ProductName = "[OCOP] Mật Ong Rừng Nguyên Chất 500ml",
+            Imgs = new List<string>()
+            {
+                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fvi-vn.facebook.com%2Fmatongnguyenchatbaoloc123%2F&psig=AOvVaw0psQ_ofRkq3xidpma68DF4&ust=1745923051724000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIiT7qnE-owDFQAAAAAdAAAAABAZ",
+                "https://topaz.vn/wp-content/uploads/2022/11/dia-chi-ban-mat-ong-rung-nguyen-chat-tai-tphcm-1.jpg"
+            },
+            Description = "Mật ong rừng nguyên chất, thu hoạch từ các khu rừng nguyên sinh",
+            UnitProduct = UnitProduct.ml,
+            Price = 150000,
+            ProductCategory = ProductCategory.Food,
+            CreateDate = DateTime.Now,
+            TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+            Origin = "Việt Nam",
+            Manufacturer = "HTX Mật Ong Rừng",
+            AddressManufacturer = "Mộc Châu, Sơn La",
+            StatusApproval = StatusApproval.Approved
+        },
+        new Product()
+        {
+            ProductId = Guid.Parse("98E14DA8-4445-4E50-BD9B-EB74112F6625"),
+            ProductName = "[OCOP] Trà Shan Tuyết Cổ Thụ 200g",
+            Imgs = new List<string>()
+            {
+                "https://vietcotra.vn/media/product/1726818655_tra-shan-tuyet-suoi-giang-cc.jpg",
+                "https://bizweb.dktcdn.net/100/201/525/files/unnamed.jpg?v=1720524034006"
+            },
+            Description = "Trà Shan Tuyết từ cây chè cổ thụ trên 100 năm tuổi",
+            UnitProduct = UnitProduct.g,
+            Price = 250000,
+            ProductCategory = ProductCategory.Beverage,
+            CreateDate = DateTime.Now,
+            TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+            Origin = "Việt Nam",
+            Manufacturer = "HTX Trà Shan Tuyết",
+            AddressManufacturer = "Yên Bái",
+            StatusApproval = StatusApproval.Approved
+        },
+    new Product()
+    {
+        ProductId = Guid.Parse("20000000-4444-0000-3333-000000000001"),
+        ProductName = "[OCOP] Gạo ST25 Hữu Cơ 5kg",
+        Imgs = new List<string>()
+        {
+            "https://bizweb.dktcdn.net/thumb/1024x1024/100/399/910/products/gao-trang-st25-huu-co.jpg?v=1656410170790",
+            "https://gaophuongnam.vn/upload/ckfinder/images/g%E1%BA%A1o%20st24%2025/gao-thom-st25-huu-co-chinh-hang.jpg"
+        },
+        Description = "Gạo ST25 đạt chuẩn hữu cơ, gạo ngon nhất thế giới 2019",
+        UnitProduct = UnitProduct.ml,
+        Price = 200000,
+        ProductCategory = ProductCategory.Food,
+        CreateDate = DateTime.Now,
+        TouristFacilityId = Guid.Parse("D9E2DE12-D4BC-436A-9209-9F1DE3EF185C"),
+        Origin = "Việt Nam",
+        Manufacturer = "HTX Gạo ST25",
+        AddressManufacturer = "Sóc Trăng",
+        StatusApproval = StatusApproval.Approved
+    }
            );
         }
 

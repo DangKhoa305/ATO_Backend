@@ -208,6 +208,7 @@ namespace Service.ProductSer
                 existingProduct.UnitProduct = updatedProduct.UnitProduct;
                 existingProduct.UpdateDate = DateTime.UtcNow;
                 existingProduct.StatusApproval = StatusApproval.Update;
+                existingProduct.ProductCategory = updatedProduct.ProductCategory;
                 await _productRepository.UpdateAsync(existingProduct);
 
                 return true;

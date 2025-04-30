@@ -12,9 +12,11 @@ namespace Service.TourCompanySer
     public class TourCompanyService : ITourCompanyService
     {
         private readonly IRepository<TourCompany> _tourCompanyRepository;
-        public TourCompanyService(IRepository<TourCompany> tourCompanyRepository)
+        private readonly IRepository<TourGuide> _tourGuideRepo;
+        public TourCompanyService(IRepository<TourCompany> tourCompanyRepository, IRepository<TourGuide> tourGuideRepo)
         {
             _tourCompanyRepository = tourCompanyRepository;
+            _tourGuideRepo = tourGuideRepo;
         }
 
         public async Task AddTourCompanyAsync(TourCompany tourCompany)
@@ -52,6 +54,26 @@ namespace Service.TourCompanySer
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
+        }
+
+        public async Task UpdateTourGuide(Guid companyId, Guid guideId)
+        {
+            var company = await _tourCompanyRepository.Query()
+                     .Include(b => b.Account)
+                     .SingleOrDefaultAsync(x => x.TourCompanyId == companyId);
+
+
+            if (company is not null)
+            {
+                company.UserId = guideId;
+
+                await _tourCompanyRepository.UpdateAsync(company);
+            }
+        }
+
+        public async Task AddTourGuide(TourGuide guide)
+        {
+            await _tourGuideRepo.AddAsync(guide);
         }
     }
 }

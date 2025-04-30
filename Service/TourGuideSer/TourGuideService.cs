@@ -53,15 +53,15 @@ namespace Service.TourGuideSer
         {
             try
             {
-                TourCompany TourCompany = await _tourCompanyRepository.Query()
-       .SingleOrDefaultAsync(x => x.UserId == UserId);
+                var TourCompany = await _tourCompanyRepository.Query()
+                    .SingleOrDefaultAsync(x => x.UserId == UserId);
                 return await _tourGuideRepository.Query()
-                    .AsNoTracking()
+                        .AsNoTracking()
                        .Include(b => b.Account)
                        .Where(x => x.TourCompanyId == TourCompany.TourCompanyId)
                        .ToListAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");

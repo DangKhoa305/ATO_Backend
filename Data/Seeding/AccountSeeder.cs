@@ -627,7 +627,7 @@ namespace Data.Seeding
                       SecurityStamp = Guid.NewGuid().ToString(),
                       Fullname = "Trang Trại Nông Sản Sạch Càng Long",
                       isAccountActive = true,
-                  },
+                  },// 49e15ef3-2d88-4812-955f-d00859b3f7e3
                   new Account()
                   {
                       Id = Guid.Parse("10000000-0000-0000-0000-000000000014"),
@@ -654,6 +654,7 @@ namespace Data.Seeding
                       Fullname = "Trang Trại Châu Đốc",
                       isAccountActive = true,
                   },
+
                   new Account()
                   {
                       Id = Guid.Parse("10000000-0000-0000-0000-000000000016"),

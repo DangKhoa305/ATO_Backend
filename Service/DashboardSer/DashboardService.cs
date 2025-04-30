@@ -1,6 +1,7 @@
 ﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
+using System.ComponentModel.Design;
 
 namespace Service.DashboardSer;
 
@@ -20,6 +21,7 @@ public class DashboardService(
         var userCount = await accountRepo.Query().CountAsync();
         var companyCount = await companyRepo.Query().CountAsync();
         var facilityCount = await facilityRepo.Query().CountAsync();
+
         var monthlyRevenues = await GetMonthlyRevenueAsync();
         var yearlyRevenues = await GetYearlyRevenueAsync();
         var totalOrderAmount = await orderRepo.Query()
@@ -184,6 +186,21 @@ public class DashboardService(
         return monthlyRevenue;
     }
 
+    public async Task<List<MonthlyRevenue>> GetMonthlyOrderRevenueAsync()
+    {
+        var monthlyRevenue = await orderRepo.Query()
+            .GroupBy(o => new { o.OrderDate.Year, o.OrderDate.Month })
+            .Select(g => new MonthlyRevenue
+            {
+                Year = g.Key.Year,
+                Month = g.Key.Month,
+                TotalAmount = (decimal)g.Sum(o => o.TotalAmount)
+            })
+            .ToListAsync();
+
+        return monthlyRevenue;
+    }
+
     public async Task<List<YearlyRevenue>> GetYearlyRevenueAsync()
     {
         var yearlyRevenue = await bookingRepo.Query()
@@ -194,6 +211,20 @@ public class DashboardService(
                 TotalAmount = g.Sum(b => b.TotalAmmount)
             })
             .ToListAsync();
+
+        return yearlyRevenue;
+    }
+
+    public async Task<List<YearlyRevenue>> GetYearlyOrderRevenueAsync()
+    {
+        var yearlyRevenue = await bookingRepo.Query()
+          .GroupBy(b => b.BookingDate.Year)
+          .Select(g => new YearlyRevenue
+          {
+              Year = g.Key,
+              TotalAmount = g.Sum(b => b.TotalAmmount)
+          })
+          .ToListAsync();
 
         return yearlyRevenue;
     }

@@ -80,7 +80,7 @@ namespace Service.AccountSer
                        .Include(b => b.TourGuide)
                        .FirstOrDefaultAsync(a => a.Id == id);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");

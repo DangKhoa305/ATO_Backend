@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Service.AccountSer;
+using Service.DashboardSer;
+using Service.TourCompanySer;
 using System.Text.RegularExpressions;
 
 namespace ATO_API.Controllers.Admin
 {
     [Route("api/admin/user")]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -21,12 +23,16 @@ namespace ATO_API.Controllers.Admin
         private readonly IConfiguration _configuration;
         private readonly IAccountService _accountService;
         private readonly IMapper _mapper;
+        private readonly ITourCompanyService _tourCompanyService;
+        private readonly IDashboardService _dashboardService;
 
         public UserController(UserManager<Account> userManager,
             RoleManager<IdentityRole<Guid>> roleManager,
             IConfiguration configuration,
             IAccountService accountService,
-             IMapper mapper
+             IMapper mapper,
+             ITourCompanyService tourCompanyService,
+             IDashboardService dashboardService
             )
         {
             _userManager = userManager;
@@ -34,6 +40,8 @@ namespace ATO_API.Controllers.Admin
             _configuration = configuration;
             _accountService = accountService;
             _mapper = mapper;
+            _tourCompanyService = tourCompanyService;
+            _dashboardService = dashboardService;
         }
         [HttpGet("get-list-users")]
         [ProducesResponseType(typeof(List<UserRespone>), StatusCodes.Status200OK)]
@@ -217,6 +225,110 @@ namespace ATO_API.Controllers.Admin
                 return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
             }
         }
+
+
+        [HttpPost("create-tour-guide")]
+        [ProducesResponseType(typeof(UserRespone), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CreateTourGuide([FromBody] CreateAccountRequest request)
+        {
+            try
+            {
+
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var companyId = await _dashboardService.GetCompanyIdFromUserIdAsync(Guid.Parse(userId!));
+
+                if (!IsValidEmail(request.Email))
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Email không hợp lệ. Vui lòng nhập đúng định dạng."
+                    });
+                }
+
+                if (!IsValidPhoneNumber(request.PhoneNumber))
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng."
+                    });
+                }
+                var existingEmail = await _userManager.FindByEmailAsync(request.Email);
+
+                if (existingEmail != null)
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Email đã tồn tại trong hệ thống."
+                    });
+                }
+
+                var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber);
+                if (existingPhone != null)
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Số điện thoại đã tồn tại trong hệ thống."
+                    });
+                }
+                var existingUsername = await _userManager.FindByNameAsync(request.UserName);
+                if (existingUsername != null)
+                {
+                    return BadRequest(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "User name đã tồn tại trong hệ thống."
+                    });
+                }
+
+                var newAccount = _mapper.Map<Account>(request);
+                newAccount.Id = Guid.NewGuid();
+                newAccount.isAccountActive = true;
+                newAccount.PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a");
+                newAccount.SecurityStamp = Guid.NewGuid().ToString();
+                await _accountService.AddAccountAsync(newAccount);
+                // add role for account
+                var roleName = await _roleManager.Roles
+                    .Where(r => r.Id == request.Role)
+                    .Select(r => r.Name)
+                    .FirstOrDefaultAsync();
+
+                if (!string.IsNullOrEmpty(roleName))
+                {
+                    await _userManager.AddToRoleAsync(newAccount, roleName);
+                }
+                var response = _mapper.Map<UserRespone>(newAccount);
+                response.RoleName = (await _userManager.GetRolesAsync(newAccount)).SingleOrDefault();
+
+                var guide = new TourGuide
+                {
+                    GuideId = Guid.NewGuid(),
+                    TourCompanyId = companyId ?? Guid.Empty,
+                    UserId = newAccount.Id,
+                    Bio = "Expert in eco-tourism with 5 years of experience.",
+                    Languages = "English, French",
+                    ExpertiseArea = "Eco-farming, fruit orchards",
+                    Rating = 4.8,
+                    CreateDate = DateTime.UtcNow,
+                    UpdateDate = null
+                };
+
+                await _tourCompanyService.AddTourGuide(guide);
+                return CreatedAtAction(nameof(GetUsers), new { id = newAccount.Id }, response);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return StatusCode(500, new ResponseVM { Status = false, Message = ex.ToString() });
+            }
+        }
+
+
         [HttpPut("update-account")]
         [ProducesResponseType(typeof(UserRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status400BadRequest)]
@@ -271,7 +383,7 @@ namespace ATO_API.Controllers.Admin
                 }
 
                 // Nếu số điện thoại thay đổi, kiểm tra xem số mới có bị trùng không
-                if (!account.PhoneNumber.Equals(request.PhoneNumber, StringComparison.OrdinalIgnoreCase))
+                if (account.PhoneNumber?.Equals(request.PhoneNumber, StringComparison.OrdinalIgnoreCase) == false)
                 {
                     var existingPhone = await _accountService.GetAccountByPhoneNumberAsync(request.PhoneNumber);
                     if (existingPhone != null && existingPhone.Id != account.Id)
@@ -301,7 +413,7 @@ namespace ATO_API.Controllers.Admin
                 account.Fullname = request.Fullname;
                 account.AvatarURL = request.AvatarURL;
                 account.UserName = request.UserName;
-                account.Dob= request.Dob;
+                account.Dob = request.Dob;
                 account.Gender = request.Gender;
                 account.isAccountActive = request.isAccountActive;
                 // Nếu có thay đổi vai trò, cập nhật lại

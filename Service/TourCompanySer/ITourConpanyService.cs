@@ -1,9 +1,4 @@
 ﻿using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.TourCompanySer
 {
@@ -13,5 +8,7 @@ namespace Service.TourCompanySer
         Task<TourCompany> GetTourCompany_Admin(Guid TourCompanyId);
         Task AddTourCompanyAsync(TourCompany tourCompany);
         Task UpdateTourCompanyAsync(TourCompany tourCompany);
+        Task UpdateTourGuide(Guid companyId, Guid guideId);
+        Task AddTourGuide(TourGuide guide);
     }
 }

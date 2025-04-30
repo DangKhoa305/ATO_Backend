@@ -181,7 +181,7 @@ public class OrderService : IOrderService
         {
             var order = await _orderRepository.Query()
                    .SingleOrDefaultAsync(x => x.OrderId == OrderId);
-            order.ShipCode = ShipCode;
+            //order.ShipCode = ShipCode;
             order.StatusOrder = StatusOrder.AcceptOrder;
             await _orderRepository.UpdateAsync(order);
             return true;

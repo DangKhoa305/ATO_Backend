@@ -105,6 +105,7 @@ public class WithdrawalService(
         return await _historyRepo.Query()
             .Include(x => x.TourCompany)
             .Include(x => x.TouristFacility)
+            .Where(x => x.TouristFacilityId == userId || x.TouristFacilityId == userId)
             .OrderByDescending(x => x.ProcessedDate)
             .ToListAsync();
     }

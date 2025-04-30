@@ -16,8 +16,13 @@ namespace Data.Seeding
         {
             this.modelBuilder = modelBuilder;
         }
+
+        int RoundToNearestHundredThousand(int value) => (int)Math.Round(value / 100000.0) * 100000;
+
         public void Seed()
         {
+            var random = new Random();
+
             modelBuilder.Entity<AgriculturalTourPackage>().HasData(
                 new AgriculturalTourPackage
                 {
@@ -32,8 +37,8 @@ namespace Data.Seeding
 
                     },
                     Slot = 20,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 2, 15, 8, 0, 0),
                     EndTime = new DateTime(2024, 2, 15, 17, 0, 0),
                     Durations = 1,
@@ -42,6 +47,7 @@ namespace Data.Seeding
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
                     StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -57,8 +63,8 @@ namespace Data.Seeding
 
                 },
                     Slot = 15,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 3, 1, 8, 30, 0),
                     EndTime = new DateTime(2024, 3, 1, 16, 30, 0),
                     Durations = 1,
@@ -66,7 +72,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -82,8 +89,8 @@ namespace Data.Seeding
                             "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F91.jpg?alt=media&token=aa93f1f6-7464-4016-b32a-dc298f3719a9"
                     },
                     Slot = 12,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 3, 15, 8, 0, 0),
                     EndTime = new DateTime(2024, 3, 15, 17, 0, 0),
                     Durations = 1,
@@ -91,7 +98,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -106,8 +114,8 @@ namespace Data.Seeding
                             "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F134.jpg?alt=media&token=2cf26d42-a673-4dde-a41c-6f1076363516"
                         },
                     Slot = 25,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 4, 1, 8, 0, 0),
                     EndTime = new DateTime(2024, 4, 1, 17, 30, 0),
                     Durations = 1,
@@ -115,7 +123,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -128,8 +137,8 @@ namespace Data.Seeding
                             "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F183.jpg?alt=media&token=b0f66603-ed84-4706-8a10-261b21cb298c"
                         },
                     Slot = 15,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 4, 15, 7, 30, 0),
                     EndTime = new DateTime(2024, 4, 15, 16, 30, 0),
                     Durations = 1,
@@ -137,7 +146,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -151,8 +161,8 @@ namespace Data.Seeding
                         "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F224.jpg?alt=media&token=8da7861e-b793-4126-a1d4-e1541b94a286"
                         },
                     Slot = 20,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 5, 1, 8, 0, 0),
                     EndTime = new DateTime(2024, 5, 1, 16, 0, 0),
                     Durations = 1,
@@ -160,7 +170,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -173,8 +184,8 @@ namespace Data.Seeding
                         "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F263.jpg?alt=media&token=f0089a61-9297-482e-8bb8-1846d6ce43b2"
                         },
                     Slot = 20,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 5, 10, 8, 0, 0),
                     EndTime = new DateTime(2024, 5, 10, 17, 30, 0),
                     Durations = 1,
@@ -182,7 +193,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -195,8 +207,8 @@ namespace Data.Seeding
                             "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F303.jpg?alt=media&token=eda67947-d9fc-4646-a340-d95738ad6706"
                             },
                     Slot = 15,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 5, 15, 8, 0, 0),
                     EndTime = new DateTime(2024, 5, 15, 19, 0, 0),
                     Durations = 1,
@@ -204,7 +216,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -218,8 +231,8 @@ namespace Data.Seeding
                             "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F344.jpg?alt=media&token=fb34619f-9131-4144-add2-afca0ba19b9a"
                             },
                     Slot = 12,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 5, 20, 8, 0, 0),
                     EndTime = new DateTime(2024, 5, 20, 16, 0, 0),
                     Durations = 1,
@@ -227,7 +240,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 },
                 new AgriculturalTourPackage
                 {
@@ -243,8 +257,8 @@ namespace Data.Seeding
                         "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Activity%2F376.jpg?alt=media&token=bcab3f6a-f04f-4084-b72d-39de575881d1"
                         },
                     Slot = 15,
-                    PriceOfAdults = 1500000,
-                    PriceOfChildren = 1200000,
+                    PriceOfAdults = RoundToNearestHundredThousand(random.Next(10000000, 20000000)),
+                    PriceOfChildren = RoundToNearestHundredThousand(random.Next(10000000, 12000000)),
                     StartTime = new DateTime(2024, 5, 25, 8, 0, 0),
                     EndTime = new DateTime(2024, 5, 25, 17, 0, 0),
                     Durations = 1,
@@ -252,7 +266,8 @@ namespace Data.Seeding
                     CreateDate = DateTime.UtcNow,
                     UpdateDate = null,
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74"),
-                    StatusActive = StatusActive.active
+                    StatusActive = StatusActive.active,
+                    ChildTicketAge = "3 tuổi"
                 }
             );
         }

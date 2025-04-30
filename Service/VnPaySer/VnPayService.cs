@@ -26,7 +26,7 @@ namespace Service.VnPaySer
             vnpay.AddRequestData("vnp_Version", await _configRepository.GetConfigValueAsync("Version"));
             vnpay.AddRequestData("vnp_Command", await _configRepository.GetConfigValueAsync("Command"));
             vnpay.AddRequestData("vnp_TmnCode", await _configRepository.GetConfigValueAsync("TmnCode"));
-            vnpay.AddRequestData("vnp_Amount", ((int)(fee * 100)).ToString());
+            vnpay.AddRequestData("vnp_Amount", ((fee * 100)).ToString());
 
             vnpay.AddRequestData("vnp_CreateDate", dateCreate.ToString("yyyyMMddHHmmss"));
             vnpay.AddRequestData("vnp_CurrCode", await _configRepository.GetConfigValueAsync("CurrCode"));
