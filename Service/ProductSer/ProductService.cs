@@ -1,6 +1,7 @@
 ﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
+using System.Collections.Frozen;
 
 namespace Service.ProductSer
 {
@@ -82,6 +83,16 @@ namespace Service.ProductSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+        public async Task<bool> AnyOcopAsync(OCOPSell newOCOPSell)
+            => await _OCOPSellRepository.Query()
+                .Where(x => x.SellVolume == newOCOPSell.SellVolume)
+                .Where(x => x.SalePrice == newOCOPSell.SalePrice)
+                .Where(x => x.ManufacturingDate == newOCOPSell.ManufacturingDate)
+                .Where(x => x.ExpiryDate == newOCOPSell.ExpiryDate)
+                .Where(x => x.ProductId == newOCOPSell.ProductId)
+                .AnyAsync();
+
         public async Task<Product> GetProduct_AFTO(Guid ProductId)
         {
             try

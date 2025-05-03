@@ -34,5 +34,6 @@ namespace Service.ProductSer
         Task<List<Product>> GetListProducts_Guest();
         Task<Product> GetProduct_Guest(Guid ProductId);
         Task<bool> UpdateStatusAsync(Guid OCOPSellId, StatusActive status);
+        Task<bool> AnyOcopAsync(OCOPSell newOCOPSell);
     }
 }

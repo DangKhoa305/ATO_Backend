@@ -188,6 +188,18 @@ namespace ATO_API.Controllers.AFTO
             try
             {
                 OCOPSell responseResult = _mapper.Map<OCOPSell>(newOCOPSellDTO);
+                bool anyOCOP = await _productService.AnyOcopAsync(responseResult);
+
+                if (anyOCOP)
+                {
+                    return Ok(new ResponseVM
+                    {
+                        Status = false,
+                        Message = "Đợt bán trùng",
+                    });
+                }
+
+
                 bool result = await _productService.CreateOCOPSell_AFTO(responseResult);
                 if (result)
                 {
