@@ -10,13 +10,13 @@ namespace ATO_API.Controllers.Files
     {
         private readonly string _uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
 
-        private readonly string _bucketName = "ato-c80b3.firebasestorage.app";
+        private readonly string _bucketName = "arms-acdfc.appspot.com";
         private readonly StorageClient _storageClient;
         public FileController()
         {
             string basePath = Directory.GetCurrentDirectory();
 
-            string credentialPath = Path.Combine(basePath, "Auth", "ato-c80b3-firebase-adminsdk-fbsvc-e6a97098c2.json");
+            string credentialPath = Path.Combine(basePath, "Auth", "arms-acdfc-firebase-adminsdk-k69jb-5769670d14.json");
 
             GoogleCredential credential = GoogleCredential.FromFile(credentialPath);
             _storageClient = StorageClient.Create(credential);
