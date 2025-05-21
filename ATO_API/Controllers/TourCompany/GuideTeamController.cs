@@ -60,7 +60,7 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
-        [HttpGet("get-guide-team/{GuideId}")]
+        [HttpGet("vv/{GuideId}")]
         [ProducesResponseType(typeof(TourGuideRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetGuideTeam(Guid GuideId)

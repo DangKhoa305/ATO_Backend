@@ -3,12 +3,9 @@ using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Service.AccommodationSer;
 using Service.AgriculturalTourPackageSer;
 using Service.BookingSer;
-using Service.BookingTourDestinationSer;
 
 namespace ATO_API.Controllers.TourCompany
 {

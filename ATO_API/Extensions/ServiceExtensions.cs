@@ -1,4 +1,5 @@
 ﻿using Data.Models;
+using Service;
 using Service.AdminBalanceSer;
 using Service.BookingTourDestinationSer;
 using Service.FacilityCertificationSer;
@@ -32,6 +33,7 @@ public static class ServiceExtensions
         services.AddScoped<IWithdrawalService, WithdrawalService>();
         services.AddScoped<ITourGuidePackageService, TourGuidePackageService>();
         services.AddScoped<IFacilityCertificationService, FacilityCertificationService>();
+        services.AddScoped<IGeneralService, GeneralService>();
 
         return services;
     }

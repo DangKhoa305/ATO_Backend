@@ -43,6 +43,7 @@ namespace Service.AgriculturalTourPackageSer
                 newTour.TourGuides?.Clear();
                 newTour.TourDestinations?.Clear();
                 newTour.StatusActive = StatusActive.inactive;
+                newTour.ChildTicketAge = "dưới 10 tuổi";
 
                 await _agriculturalTourPackageRepository.AddRangeAsync(newTour);
 
@@ -83,6 +84,8 @@ namespace Service.AgriculturalTourPackageSer
                 existing.TourGuides?.Clear();
                 existing.TourDestinations?.Clear();
                 existing.StatusActive = updatedTour.StatusActive;
+                existing.GatheringLocation = updatedTour.GatheringLocation;
+
                 await _agriculturalTourPackageRepository.UpdateRangeAsync(existing);
 
                 await AddTourDestinations(updatedTour.TourDestinations, TourId);
@@ -200,7 +203,7 @@ namespace Service.AgriculturalTourPackageSer
                                 .OrderByDescending(x => x.CreateDate)
                                 .ToListAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }

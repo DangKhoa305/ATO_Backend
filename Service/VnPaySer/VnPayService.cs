@@ -167,7 +167,7 @@ namespace Service.VnPaySer
                     ["vnp_Command"] = "refund",
                     ["vnp_TmnCode"] = await _configRepository.GetConfigValueAsync("TmnCode"),
                     ["vnp_TransactionType"] = "02",
-                    ["vnp_Amount"] = ((int)(amount * 100)).ToString(),
+                    ["vnp_Amount"] = (amount * 100).ToString(),
                     ["vnp_TxnRef"] = vNPayPaymentResponse.TxnRef,
                     ["vnp_OrderInfo"] = orderInfo,
                     ["vnp_TransactionDate"] = vNPayPaymentResponse.PayDate.ToString("yyyyMMddHHmmss"),

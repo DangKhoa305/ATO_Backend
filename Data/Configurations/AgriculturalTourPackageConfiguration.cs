@@ -29,6 +29,7 @@ namespace Data.Configurations
             builder.Property(x => x.CreateDate).IsRequired();
             builder.Property(x => x.UpdateDate).IsRequired(false);
             builder.Property(x => x.TourCompanyId).IsRequired();
+            builder.Property(x => x.GatheringLocation);
 
 
             #region config relation
