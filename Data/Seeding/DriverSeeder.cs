@@ -25,7 +25,7 @@ namespace Data.Seeding
                     DriverName = "Nguyễn Văn A",
                     PhoneNumber = "0987654321",
                     VehicleType = VehicleType.Car4,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -34,7 +34,7 @@ namespace Data.Seeding
                     DriverName = "Trần Văn B",
                     PhoneNumber = "0978543210",
                     VehicleType = VehicleType.Car7,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -43,7 +43,7 @@ namespace Data.Seeding
                     DriverName = "Phạm Văn C",
                     PhoneNumber = "0967452103",
                     VehicleType = VehicleType.Car16,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -52,7 +52,7 @@ namespace Data.Seeding
                     DriverName = "Lê Thị D",
                     PhoneNumber = "0956328745",
                     VehicleType = VehicleType.Car29,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -61,7 +61,7 @@ namespace Data.Seeding
                     DriverName = "Hoàng Văn E",
                     PhoneNumber = "0945216987",
                     VehicleType = VehicleType.Car45,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -70,7 +70,7 @@ namespace Data.Seeding
                     DriverName = "Đỗ Thị F",
                     PhoneNumber = "0934125698",
                     VehicleType = VehicleType.SleeperBusSingle,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -79,7 +79,7 @@ namespace Data.Seeding
                     DriverName = "Ngô Văn G",
                     PhoneNumber = "0923546987",
                     VehicleType = VehicleType.SleeperBusCouple,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -88,7 +88,7 @@ namespace Data.Seeding
                     DriverName = "Bùi Văn H",
                     PhoneNumber = "0912564873",
                     VehicleType = VehicleType.Fly,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -97,7 +97,7 @@ namespace Data.Seeding
                     DriverName = "Vũ Thị I",
                     PhoneNumber = "0901254789",
                     VehicleType = VehicleType.Car4,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -106,7 +106,7 @@ namespace Data.Seeding
                     DriverName = "Dương Văn J",
                     PhoneNumber = "0896541237",
                     VehicleType = VehicleType.Car7,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -115,7 +115,7 @@ namespace Data.Seeding
                     DriverName = "Phan Thị K",
                     PhoneNumber = "0889652314",
                     VehicleType = VehicleType.Car16,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -124,7 +124,7 @@ namespace Data.Seeding
                     DriverName = "Lý Văn L",
                     PhoneNumber = "0871236549",
                     VehicleType = VehicleType.Car29,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -133,7 +133,7 @@ namespace Data.Seeding
                     DriverName = "Trịnh Văn M",
                     PhoneNumber = "0867412365",
                     VehicleType = VehicleType.Car45,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -142,7 +142,7 @@ namespace Data.Seeding
                     DriverName = "Nguyễn Thị N",
                     PhoneNumber = "0859632147",
                     VehicleType = VehicleType.SleeperBusSingle,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -151,7 +151,7 @@ namespace Data.Seeding
                     DriverName = "Lê Văn O",
                     PhoneNumber = "0847125639",
                     VehicleType = VehicleType.SleeperBusCouple,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -160,7 +160,7 @@ namespace Data.Seeding
                     DriverName = "Võ Văn P",
                     PhoneNumber = "0836547891",
                     VehicleType = VehicleType.Fly,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 },
                 new Driver
@@ -169,7 +169,7 @@ namespace Data.Seeding
                     DriverName = "Trần Văn Q",
                     PhoneNumber = "0825478963",
                     VehicleType = VehicleType.Car4,
-                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/t%E1%BA%A3i%20xu%E1%BB%91ng%20(5).jpg?alt=media&token=edf3ca4b-17fe-4a84-8be1-92db77df7a67" },
+                    Imgs = new List<string> { "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Xe-Khach-Hyundai-Universe-45-cho-4.jpg?alt=media&token=230f0598-5950-42b2-be2b-8bf65ac29074" },
                     TourCompanyId = Guid.Parse("E33545B1-C97E-412F-B844-17B15CD28B74")
                 }
             );

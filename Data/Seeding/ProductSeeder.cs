@@ -239,9 +239,9 @@ namespace Data.Seeding
                    ProductName = "Mứt dâu tây Mộc Châu",
                    Imgs = new List<string>
                     {
-                        "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F1.jpg?alt=media&token=b474731f-3c05-418e-ac71-9e7bd36f85d2",
-                        "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F2.jpg?alt=media&token=7b48babb-d847-4333-ad7f-332c2c051698",
-                        "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F3.jpg?alt=media&token=1316b40a-1b2d-4160-a798-905976414bdc"
+                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fmut_dau_moc_chau.jpg?alt=media&token=5cbd4a36-f066-4014-b922-0bce4c578272",
+                        "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fmut_dau_moc_chau_2.jpg?alt=media&token=f172742b-2518-4c49-bc2c-ec96aa161dc7",
+                        "https://https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fdau-tay-moc-chau-3.jpg?alt=media&token=7cd28015-7dcd-43c4-b579-8468b7e9a6e6"
                     },
                    Price = 95000,
                    Description = "Mứt dâu tây thủ công được làm từ những quả dâu tươi được hái tại nông trại trong tour tham quan.",
@@ -268,8 +268,8 @@ namespace Data.Seeding
                    ProductName = "Sữa tươi thanh trùng Mộc Châu",
                    Imgs = new List<string>
                     {
-                    "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F4.jpg?alt=media&token=cc2b259e-55e1-4ee8-bd6e-7f619a3ca9b9",
-                    "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F5.jpg?alt=media&token=b4c42af8-a554-496f-933f-ee72eaa99ad7"
+                    "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fsua_moc_chau.webp?alt=media&token=0bee6dea-0373-4832-a59b-75385e0bf2a6",
+                    "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fsua_moc_chau_2.webp?alt=media&token=64822296-e84f-4e59-b2fe-fabe2df2e6b7"
                     },
                    Price = 45000,
                    Description = "Sữa tươi nguyên chất, thu hoạch và chế biến trực tiếp từ trang trại bò sữa Mộc Châu.",
@@ -296,9 +296,9 @@ namespace Data.Seeding
                    ProductName = "Rau cải ngọt hữu cơ Mộc Châu",
                    Imgs = new List<string>
                     {
-                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F6.jpg?alt=media&token=2579c65f-9b67-42f3-a052-3c1fc19c509f",
-                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F7.jpg?alt=media&token=8532128f-6b27-4059-a04b-e912b62f0556",
-                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F8.jpg?alt=media&token=d1f4592d-ea8d-42a2-b975-ef99493f8f33"
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Frau_cai_moc_chau.jpg?alt=media&token=7806aa89-1434-4973-a4c4-f75157dc263f",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Frau_cai_moc_chau_2.jpg?alt=media&token=9d619514-84e3-427a-ba7c-6b56cafb24ba",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Frau_cai_moc_chau_3.jpg?alt=media&token=01deb8a8-a991-4ec5-bc40-818fa56f80b2"
                     },
                    Price = 25000,
                    Description = "Rau cải ngọt được trồng theo phương pháp hữu cơ chuẩn OCOP tại trang trại rau Mộc Châu Xanh.",
@@ -325,9 +325,9 @@ namespace Data.Seeding
                    ProductName = "Món ăn đặc sản Mộc Châu",
                    Imgs = new List<string>
                    {
-                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F9.jpg?alt=media&token=fe337e6e-fe5f-43d7-8a94-622137e2dd3f",
-                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F10.jpg?alt=media&token=2d61b4e2-0451-467a-9ca8-ef26a6cb603f",
-                       "https://firebasestorage.googleapis.com/v0/b/ato-c80b3.firebasestorage.app/o/Product%2F11.jpg?alt=media&token=28e3c536-92a5-4dd8-9dda-c70f3e8b34c0"
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fdac_san_moc_chau.png?alt=media&token=dd60c37e-bee9-45ad-bf3a-49d3ac0a8064",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fdac_san_moc_chau_2.png?alt=media&token=0e22ac4f-c71b-4eac-a69d-8dda23b53608",
+                       "https://firebasestorage.googleapis.com/v0/b/arms-acdfc.appspot.com/o/Product%2Fdac_san_moc_chau_3.png?alt=media&token=26fd6f31-d166-412e-abb2-034150f3d37b"
                    },
                    Price = 200000,
                    Description = "Bữa trưa gồm các món ăn đặc sản như bê chao, cá suối, rau rừng, và sữa chua Mộc Châu, tất cả đều làm từ nguyên liệu tươi ngon và sạch.",
