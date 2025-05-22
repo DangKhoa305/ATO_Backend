@@ -115,6 +115,12 @@ namespace ATO_API.Controllers.Tourist
                     var response = await _orderService.AddOrder(responseResult);
 
                     groupResponses.Add(response.OrderId, (decimal)response.TotalAmount);
+
+                    foreach (var product in products)
+                    {
+                        await _orderService.UpdateOcopQuantity(product.ProductId);
+                    }
+
                 }
 
                 if (orderRequest.PaymentType == PaymentType.Transfer)

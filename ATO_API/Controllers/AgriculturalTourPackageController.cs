@@ -42,7 +42,7 @@ namespace ATO_API.Controllers
                     item.People = await _agriculturalTourPackageService.GetPeople(item.TourId);
 
                     var isStarted = await _service.IsTourStarted(item.TourId);
-                    if (isStarted is false)
+                    if (isStarted is false && item.EndTime > DateTime.Now)
                     {
                         result.Add(item);
                     }

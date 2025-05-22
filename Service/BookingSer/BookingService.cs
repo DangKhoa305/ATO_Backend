@@ -180,4 +180,12 @@ public class BookingService(
         await _bookingAgriculturalTourRepository.UpdateAsync(order);
     }
 
+    public async Task<bool> IsActiveBooking(Guid id)
+    {
+        var any = await _bookingAgriculturalTourRepository.Query()
+                .Include(x => x.AgriculturalTourPackage)
+                .AnyAsync(x => x.CustomerId == id && x.AgriculturalTourPackage!.EndTime > DateTime.Now);
+
+        return any;
+    }
 }

@@ -16,11 +16,13 @@ public class OrderService : IOrderService
     private readonly IRepository<OrderDetail> _orderDetailRepository;
     private readonly IRepository<Product> _productRepository;
     private readonly IRepository<TouristFacility> _touristFacilityRepository;
+    private readonly IRepository<OCOPSell> _OCOPSellRepository;
 
     private readonly IConnectionMultiplexer _redis;
     private readonly StackExchange.Redis.IDatabase _db;
 
     public OrderService(
+        IRepository<OCOPSell> OCOPSellRepository,
         IRepository<Data.Models.Order> orderRepository,
         IRepository<OrderDetail> orderDetailRepository,
         IRepository<TouristFacility> touristFacilityRepository,
@@ -37,7 +39,31 @@ public class OrderService : IOrderService
         _VNPayPaymentResponseRepository = vNPayPaymentResponseRepository;
         _touristFacilityRepository = touristFacilityRepository;
         _adminBalanceService = adminBalanceService;
+        _OCOPSellRepository = OCOPSellRepository;
     }
+
+
+    public async Task UpdateOcopQuantity(Guid productId)
+    {
+        try
+        {
+            var activeOcop = await _OCOPSellRepository.Query()
+                .Where(x => x.ProductId == productId)
+                .Where(x => x.ActiveStatus == true)
+                .FirstOrDefaultAsync();
+
+            if (activeOcop is not null && activeOcop?.SellVolume > 0)
+            {
+                activeOcop.SellVolume -= 1;
+                await _OCOPSellRepository.UpdateAsync(activeOcop);
+            }
+        }
+        catch (Exception)
+        {
+            throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+        }
+    }
+
 
     public async Task<Data.Models.Order> AddOrder(Data.Models.Order order)
     {

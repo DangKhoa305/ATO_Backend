@@ -87,6 +87,14 @@ public class BookingController(
         try
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            // TODO: restrict booked tours
+            var isActiveBooking = await _bookingService.IsActiveBooking(Guid.Parse(userId!));
+            if (isActiveBooking)
+            {
+                return Ok(new ResponseModel(false, "Bạn đang có tour đang hoạt động"));
+            }
+
             var responseResult = _mapper.Map<Data.Models.BookingAgriculturalTour>(BookingAgriculturalTour);
             responseResult.CustomerId = Guid.Parse(userId);
             var response = await _bookingService.AddBookTour(responseResult);
