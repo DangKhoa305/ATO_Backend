@@ -58,7 +58,7 @@ namespace Data.Seeding
                    ConfigId = 5,
                    ConfigType = ConfigType.VnPayConfig,
                    ConfigKey = "TmnCode",
-                   ConfigValue = "7S4BSWDD",
+                   ConfigValue = "KC8MB258",
                    CreateDate = DateTime.UtcNow
                }
                ,
@@ -67,7 +67,7 @@ namespace Data.Seeding
                    ConfigId = 6,
                    ConfigType = ConfigType.VnPayConfig,
                    ConfigKey = "HashSecret",
-                   ConfigValue = "RC7QASGETNFSP0EDKUE4IT7X6VRKM4NJ",
+                   ConfigValue = "02Y8EHIO9SPTGHUHOAMPUUISF3P4H2S2",
                    CreateDate = DateTime.UtcNow
                },
                new SystemConfigurations()

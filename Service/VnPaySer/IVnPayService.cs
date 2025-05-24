@@ -9,6 +9,7 @@ namespace Service.VnPaySer
         Task<VNPayPaymentResponse> PaymentExecute(IQueryCollection collections);
         Task<(bool Success, VNPayPaymentResponse Response)> ProcessRefundAsync(VNPayPaymentResponse vNPayPaymentResponse, decimal amount, string orderInfo, string returnUrl);
         Task<Data.Models.VNPayPaymentResponse> PaymentExecuteOrder(IQueryCollection collections);
+        Task<(bool Success, VNPayPaymentResponse Response)> ProcessRefundBookingAsync(VNPayPaymentResponse vNPayPaymentResponse, decimal amount, string orderInfo, string returnUrl);
 
     }
 }

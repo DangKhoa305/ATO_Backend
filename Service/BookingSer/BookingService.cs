@@ -57,7 +57,34 @@ public class BookingService(
             throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
         }
     }
+    public async Task AddBookPaymentRefund(VNPayPaymentResponse checkResponse)
+    {
+        try
+        {
+            await _VNPayPaymentResponseRepository.AddAsync(checkResponse);
 
+            var tour = await _bookingAgriculturalTourRepository.Query()
+                .SingleOrDefaultAsync(x => x.BookingId == checkResponse.BookingId);
+            var tourexist = _agriculturalTourPackageRepository.Query()
+                .FirstOrDefault(x => x.TourId == tour.TourId);
+            if (checkResponse.TransactionStatus == "00")
+            {
+
+                tour.PaymentStatus = PaymentStatus.Paid;
+                tour.StatusBooking = StatusBooking.Canceled;
+                tourexist.Slot = (int)(tourexist.Slot + (tour.NumberOfAdults + tour.NumberOfChildren));
+
+                // Add to admin balance
+                await _adminBalanceService.AddBookingTransaction(tour);
+            }
+            _bookingAgriculturalTourRepository.UpdateAsync(tour);
+            _agriculturalTourPackageRepository.UpdateAsync(tourexist);
+        }
+        catch (Exception)
+        {
+            throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+        }
+    }
     public async Task<BookingAgriculturalTour> AddBookTour(BookingAgriculturalTour bookingAgriculturalTour)
     {
         try

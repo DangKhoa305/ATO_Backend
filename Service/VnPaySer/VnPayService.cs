@@ -167,7 +167,7 @@ namespace Service.VnPaySer
                     ["vnp_Command"] = "refund",
                     ["vnp_TmnCode"] = await _configRepository.GetConfigValueAsync("TmnCode"),
                     ["vnp_TransactionType"] = "02",
-                    ["vnp_Amount"] = (amount * 100).ToString(),
+                    ["vnp_Amount"] = ((int)(amount * 100)).ToString(),
                     ["vnp_TxnRef"] = vNPayPaymentResponse.TxnRef,
                     ["vnp_OrderInfo"] = orderInfo,
                     ["vnp_TransactionDate"] = vNPayPaymentResponse.PayDate.ToString("yyyyMMddHHmmss"),
@@ -223,11 +223,97 @@ namespace Service.VnPaySer
                             TransactionStatus = "Refund",
                             SecureHash = responseData["vnp_SecureHash"],
                             PayDate = DateTime.Now,
+                            TypePayment = TypePayment.Refunded
+                        };
+
+                        return (responseData["vnp_ResponseCode"] == "00", refundResponse);
+                    }
+
+                    return (false, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Refund Error: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                return (false, null);
+            }
+
+
+
+        }
+        public async Task<(bool Success, VNPayPaymentResponse Response)> ProcessRefundBookingAsync(VNPayPaymentResponse vNPayPaymentResponse, decimal amount, string orderInfo, string returnUrl)
+        {
+            try
+            {
+                var requestId = DateTime.Now.Ticks.ToString();
+                var createDate = DateTime.Now.ToString("yyyyMMddHHmmss");
+
+                var requestData = new Dictionary<string, string>
+                {
+                    ["vnp_RequestId"] = requestId,
+                    ["vnp_Version"] = await _configRepository.GetConfigValueAsync("Version"),
+                    ["vnp_Command"] = "refund",
+                    ["vnp_TmnCode"] = await _configRepository.GetConfigValueAsync("TmnCode"),
+                    ["vnp_TransactionType"] = "02",
+                    ["vnp_Amount"] = (amount * 100).ToString(),
+                    ["vnp_TxnRef"] = vNPayPaymentResponse.TxnRef,
+                    ["vnp_OrderInfo"] = orderInfo,
+                    ["vnp_TransactionDate"] = vNPayPaymentResponse.PayDate.ToString("yyyyMMddHHmmss"),
+                    ["vnp_CreateBy"] = "System",
+                    ["vnp_CreateDate"] = createDate,
+                    ["vnp_IpAddr"] = "127.0.0.1",
+                    ["vnp_TransactionNo"] = vNPayPaymentResponse.TransactionNo
+                };
+
+                var sortedData = new StringBuilder();
+                foreach (var (key, value) in requestData.OrderBy(x => x.Key))
+                {
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        sortedData.Append($"{key}={value}&");
+                    }
+                }
+
+                var signData = sortedData.ToString().TrimEnd('&');
+                var hashSecret = await _configRepository.GetConfigValueAsync("HashSecret");
+                using var hmac = new System.Security.Cryptography.HMACSHA512(Encoding.UTF8.GetBytes(hashSecret));
+                var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(signData));
+                requestData["vnp_SecureHash"] = BitConverter.ToString(hash).Replace("-", "").ToLower();
+
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var jsonContent = JsonSerializer.Serialize(requestData);
+                    var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                    var response = await client.PostAsync("https://sandbox.vnpayment.vn/merchant_webapi/api/transaction", content);
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine($"Response Status: {response.StatusCode}");
+                    Console.WriteLine($"Response Content: {responseContent}");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseData = JsonSerializer.Deserialize<Dictionary<string, string>>(responseContent);
+                        var refundResponse = new VNPayPaymentResponse
+                        {
+                            ResponseId = Guid.Parse(responseData["vnp_ResponseId"]),
+                            BookingId = vNPayPaymentResponse.BookingId,
+                            TxnRef = responseData["vnp_TxnRef"],
+                            Amount = amount,
+                            OrderInfo = orderInfo,
+                            ResponseCode = responseData["vnp_ResponseCode"],
+                            TmnCode = responseData["vnp_TmnCode"],
+                            TransactionStatus = "Refund",
+                            SecureHash = responseData["vnp_SecureHash"],
+                            PayDate = DateTime.Now,
                             TypePayment = TypePayment.Refunded,
-                            BankCode = vNPayPaymentResponse.OrderId.ToString(),
-                            BankTranNo = vNPayPaymentResponse.OrderId.ToString(),
-                            TransactionNo = "00",
-                            CardType = vNPayPaymentResponse.OrderId.ToString()
+                            BankCode = vNPayPaymentResponse.BookingId.ToString(),
+                            BankTranNo = vNPayPaymentResponse.BookingId.ToString(),
+                            TransactionNo = responseData["vnp_TransactionNo"],
+                            CardType = vNPayPaymentResponse.BookingId.ToString()
                         };
 
                         return (responseData["vnp_ResponseCode"] == "00", refundResponse);

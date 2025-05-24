@@ -88,12 +88,12 @@ public class BookingController(
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-            // TODO: restrict booked tours
-            var isActiveBooking = await _bookingService.IsActiveBooking(Guid.Parse(userId!));
-            if (isActiveBooking)
-            {
-                return Ok(new ResponseModel(false, "Bạn đang có tour đang hoạt động"));
-            }
+            //// TODO: restrict booked tours
+            //var isActiveBooking = await _bookingService.IsActiveBooking(Guid.Parse(userId!));
+            //if(isActiveBooking)
+            //{
+            //    return Ok(new ResponseModel(false, "Bạn đang có tour đang hoạt động"));
+            //}
 
             var responseResult = _mapper.Map<Data.Models.BookingAgriculturalTour>(BookingAgriculturalTour);
             responseResult.CustomerId = Guid.Parse(userId);
@@ -180,17 +180,17 @@ public class BookingController(
                 });
             }
             string returnUrl = _configuration.GetValue<string>("VNPaySettings:RefundUrl")!;
-            var refundResult = await _vnPayService.ProcessRefundAsync(
+            var refundResult = await _vnPayService.ProcessRefundBookingAsync(
                 successfulPayment,
                 tour.TotalAmmount,
-                tour.TourId.ToString(),
+                successfulPayment.BookingId.ToString(),
                 returnUrl
             );
 
 
             var PaymentStatus = 0;
             await _bookingService.UpdateStatus(tourId, PaymentStatus, StatusBooking.Canceled);
-            await _bookingService.AddBookPayment(refundResult.Response);
+            await _bookingService.AddBookPaymentRefund(refundResult.Response);
             return Ok(new ResponseVM
             {
                 Status = true,

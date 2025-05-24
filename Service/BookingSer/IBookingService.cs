@@ -15,5 +15,6 @@ namespace Service.BookingSer
         Task<List<VNPayPaymentResponse>> ListHistoryPayments(Guid UserId);
         Task UpdateStatus(Guid bookingId, int paymentStatus, StatusBooking canceled);
         Task<bool> IsActiveBooking(Guid id);
+        Task AddBookPaymentRefund(VNPayPaymentResponse checkResponse);
     }
 }
