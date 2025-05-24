@@ -45,6 +45,7 @@ namespace Data.Seeding
                     SecurityStamp = Guid.NewGuid().ToString(),
                     Fullname = "Administrator",
                     isAccountActive = true,
+                    PhoneNumber = "0355881010"
                 },
                 //Content Moderators
                 new Account()
@@ -1020,6 +1021,7 @@ namespace Data.Seeding
                     SecurityStamp = Guid.NewGuid().ToString(),
                     Fullname = "Tourists",
                     isAccountActive = true,
+                    PhoneNumber = "0355881010"
                 },
                  new Account()
                  {
@@ -1046,6 +1048,7 @@ namespace Data.Seeding
                       SecurityStamp = Guid.NewGuid().ToString(),
                       Fullname = "Hoài Thu",
                       isAccountActive = true,
+                      PhoneNumber = "0355881011"
                   },
 
                 // Tour Guides
@@ -1061,6 +1064,7 @@ namespace Data.Seeding
                     SecurityStamp = Guid.NewGuid().ToString(),
                     Fullname = "TourGuides",
                     isAccountActive = true,
+                    PhoneNumber = "0355881012"
                 },
                  new Account
                  {
@@ -1076,14 +1080,15 @@ namespace Data.Seeding
                      Gender = true,
                      AvatarURL = "https://example.com/avatar1.jpg",
                      Dob = new DateTime(1990, 5, 15),
-                     isAccountActive = true
+                     isAccountActive = true,
+                     PhoneNumber = "0355881013"
                  },
                 new Account
                 {
                     Id = Guid.Parse("44444444-4444-4444-4444-444444444444"),
                     UserName = "EmmaWatson",
                     NormalizedUserName = "EMMAWATSON",
-                    Email = "emmawatson@example.com",
+                    Email = "emmawatson@example.com4",
                     NormalizedEmail = "EMMAWATSON@EXAMPLE.COM",
                     EmailConfirmed = true,
                     PasswordHash = new PasswordHasher<Account>().HashPassword(null, "A123@123a"),
@@ -1092,7 +1097,8 @@ namespace Data.Seeding
                     Gender = false,
                     AvatarURL = "https://example.com/avatar2.jpg",
                     Dob = new DateTime(1988, 8, 20),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881014"
                 },
                 new Account
                 {
@@ -1108,7 +1114,8 @@ namespace Data.Seeding
                     Gender = true,
                     AvatarURL = "https://example.com/avatar3.jpg",
                     Dob = new DateTime(1985, 11, 10),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881015"
                 },
                 new Account
                 {
@@ -1124,7 +1131,8 @@ namespace Data.Seeding
                     Gender = false,
                     AvatarURL = "https://example.com/avatar4.jpg",
                     Dob = new DateTime(1992, 3, 25),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881016"
                 },
                 new Account
                 {
@@ -1140,7 +1148,8 @@ namespace Data.Seeding
                     Gender = true,
                     AvatarURL = "https://example.com/avatar5.jpg",
                     Dob = new DateTime(1995, 7, 30),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881017"
                 },
                 new Account
                 {
@@ -1156,7 +1165,8 @@ namespace Data.Seeding
                     Gender = true,
                     AvatarURL = "https://example.com/avatar6.jpg",
                     Dob = new DateTime(1987, 6, 14),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881018"
                 },
                 new Account
                 {
@@ -1172,7 +1182,8 @@ namespace Data.Seeding
                     Gender = false,
                     AvatarURL = "https://example.com/avatar7.jpg",
                     Dob = new DateTime(1993, 12, 5),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881019"
                 },
                 new Account
                 {
@@ -1188,7 +1199,8 @@ namespace Data.Seeding
                     Gender = true,
                     AvatarURL = "https://example.com/avatar8.jpg",
                     Dob = new DateTime(1989, 2, 18),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881020"
                 },
                 new Account
                 {
@@ -1204,7 +1216,8 @@ namespace Data.Seeding
                     Gender = false,
                     AvatarURL = "https://example.com/avatar9.jpg",
                     Dob = new DateTime(1994, 9, 8),
-                    isAccountActive = true
+                    isAccountActive = true,
+                    PhoneNumber = "0355881021"
                 }
                 );
             // Seed User in role
