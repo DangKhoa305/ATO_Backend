@@ -308,7 +308,7 @@ namespace ATO_API.Controllers.AFTO
                 request.cod_amount = 0;
                 request.note = "nothing";
                 await _orderService.UpdateShipCode(Guid.Parse(request.client_order_code), "");
-                //var shipping = await _shippingService.CreateShippingOrder(request);
+                var shipping = await _shippingService.CreateShippingOrder(request);
                 return Ok();
             }
             catch (Exception ex)

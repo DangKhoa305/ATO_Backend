@@ -1,21 +1,11 @@
-﻿using Azure;
-using Data.DTO.Request;
+﻿using Data.DTO.Request;
 using Data.DTO.Respone;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Nest;
-using Org.BouncyCastle.Bcpg.Sig;
-using Service.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace Service.ShippingSer
 {
@@ -24,8 +14,8 @@ namespace Service.ShippingSer
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
         private readonly Service.Repository.IRepository<ShipAddress> _shipAddressRepository;
-        private const string TOKEN = "df68a4d9-1d28-11f0-b4b0-86fb070a61a1";
-        private const int SHOP_ID = 5740705;
+        private const string TOKEN = "3d60f46d-2b5a-11f0-afab-c2dd849a5f98";
+        private const int SHOP_ID = 5743000;
 
         public ShippingService(HttpClient httpClient, IConfiguration configuration, Service.Repository.IRepository<ShipAddress> shipAddressRepository)
         {
