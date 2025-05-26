@@ -266,6 +266,7 @@ namespace Service.TourismPackageSer
             try
             {
                 var exist = await _tourismPackageRepository.Query()
+                    .Include(x => x.Activities)
                     .SingleOrDefaultAsync(x => x.PackageId == packageId);
 
                 if (exist == null)

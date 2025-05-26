@@ -53,6 +53,25 @@ public class GeneralService(
         };
     }
 
+    public async Task<IEnumerable<IdentityModel>> GetTouristAsync(Guid tourId)
+    {
+        var query = bookingRepo.Query()
+            .Include(x => x.Customer)
+            .Include(x => x.AgriculturalTourPackage)
+                .ThenInclude(x => x!.TourGuides)!
+                .ThenInclude(x => x.Account)
+            .Include(x => x.AgriculturalTourPackage)
+                .ThenInclude(x => x!.TourCompany)
+            .Where(x => x.TourId == tourId);
+
+        var tourists = await query
+            .Select(x => new IdentityModel(x.Customer!.Fullname, x.Customer.PhoneNumber, x.Customer.Email))
+            .Distinct()
+            .ToListAsync();
+
+        return tourists;
+    }
+
     public async Task<bool> IsTourStarted(Guid tourId)
     {
         var isStarted = await bookingDestinationRepo.Query()

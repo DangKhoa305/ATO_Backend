@@ -15,6 +15,13 @@ public class GeneralController(IGeneralService service) : ControllerBase
         return Ok(data);
     }
 
+    [HttpGet("tourist/{tourId}")]
+    public async Task<IActionResult> GetTourist(Guid tourId)
+    {
+        var data = await service.GetTouristAsync(tourId);
+        return Ok(data);
+    }
+
     [HttpPut("{tourId}/{location}")]
     public async Task<IActionResult> UpdateLocation(Guid tourId, string location)
     {
