@@ -97,6 +97,11 @@ namespace Service.AgriculturalTourPackageSer
                 if (existing == null)
                     throw new Exception("Không tìm thấy gói du lịch!");
 
+                if (existing.GroupId == null)
+                {
+                    existing.GroupId = Guid.NewGuid();
+                }
+
                 existing.PackageName = updatedTour.PackageName;
                 existing.Description = updatedTour.Description;
                 existing.Imgs = updatedTour.Imgs;
@@ -349,6 +354,7 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Không tìm thấy hoạt động!");
             }
 
+
             existing.Title = updatedTour.Title;
             existing.Description = updatedTour.Description;
             existing.StartTime = updatedTour.StartTime;
@@ -389,10 +395,13 @@ namespace Service.AgriculturalTourPackageSer
 
         public async Task<int> GetPeople(Guid tourId)
         {
-            return await _bookingRepository.Query()
-              .Where(x => x.TourId == tourId)
-              .Where(x => x.StatusBooking != StatusBooking.Canceled)
-              .CountAsync();
+
+            var total = await _bookingRepository.Query()
+               .Where(x => x.GroupId == tourId)
+               .Select(x => x.NumberOfChildren + x.NumberOfAdults)
+               .SumAsync(x => x.Value);
+
+            return total;
         }
 
         #region private 

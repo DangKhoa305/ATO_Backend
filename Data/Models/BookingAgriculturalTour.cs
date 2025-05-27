@@ -28,9 +28,10 @@ namespace Data.Models
     }
     public enum StatusBooking
     {
-        Processing,
-        Completed,
-        Canceled,
-        ConfirmBooking
+        Processing = 0,
+        Completed = 1,
+        Canceled = 2,
+        ConfirmBooking = 3,
+        InProgress = 4,
     }
 }

@@ -5,6 +5,7 @@ using Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Service.AgriculturalTourPackageSer;
 using Service.BookingSer;
 using Service.OrderSer;
 using Service.ShippingSer;
@@ -21,6 +22,7 @@ namespace ATO_API.Controllers.TourCompany
     {
         private readonly IOrderService _orderService;
         private readonly IBookingService _bookingService;
+        private readonly IAgriculturalTourPackageService _agriculturalTourPackageService;
         private readonly IMapper _mapper;
         private readonly IVnPayService _vnPayService;
         private readonly IConfiguration _configuration;
@@ -29,7 +31,8 @@ namespace ATO_API.Controllers.TourCompany
             IOrderService orderService,
             IVnPayService vnPayService,
             IConfiguration configuration,
-            IBookingService bookingService
+            IBookingService bookingService,
+             IAgriculturalTourPackageService agriculturalTourPackageService
            )
         {
             _mapper = mapper;
@@ -37,6 +40,7 @@ namespace ATO_API.Controllers.TourCompany
             _vnPayService = vnPayService;
             _configuration = configuration;
             _bookingService = bookingService;
+            _agriculturalTourPackageService = agriculturalTourPackageService;
         }
         [HttpGet("get-list-book-tours")]
         [ProducesResponseType(typeof(List<BookingAgriculturalTourRespone>), StatusCodes.Status200OK)]
@@ -50,7 +54,18 @@ namespace ATO_API.Controllers.TourCompany
                 var responseResult = _mapper.Map<List<BookingAgriculturalTourRespone>>(response);
 
 
-                return Ok(responseResult);
+                var result = new List<BookingAgriculturalTourRespone>();
+
+                foreach (var item in responseResult)
+                {
+                    item.TotalBookedPeople = await _agriculturalTourPackageService.GetPeople(item.GroupId ?? Guid.Empty);
+
+                    result.Add(item);
+                }
+
+
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -104,7 +119,7 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
-        [HttpPost("accept-booking")]
+        [HttpPost("update-booking-status")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> BookingAccept([FromBody] BookingAccept BookingAccept)
@@ -112,6 +127,10 @@ namespace ATO_API.Controllers.TourCompany
             try
             {
                 await _bookingService.BookingAccept(BookingAccept);
+
+
+
+
                 return Ok();
             }
             catch (Exception ex)

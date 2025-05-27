@@ -39,7 +39,7 @@ namespace ATO_API.Controllers
 
                 foreach (var item in responseResult)
                 {
-                    item.People = await _agriculturalTourPackageService.GetPeople(item.TourId);
+                    item.People = await _agriculturalTourPackageService.GetPeople(item.GroupId ?? Guid.Empty);
 
                     var isStarted = await _service.IsTourStarted(item.TourId);
                     if (isStarted is false && item.EndTime > DateTime.Now)

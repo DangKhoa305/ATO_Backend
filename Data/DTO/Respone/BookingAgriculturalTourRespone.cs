@@ -36,7 +36,7 @@ namespace Data.DTO.Respone
 
     public class BookingAccept
     {
-        public Guid BookingId { get; set; }
+        public Guid TourId { get; set; }
         public StatusBooking StatusBooking { get; set; }
     }
 }
