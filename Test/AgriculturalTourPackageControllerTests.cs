@@ -5,6 +5,7 @@ using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Service;
 using Service.AgriculturalTourPackageSer;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Test
     public class AgriculturalTourPackageControllerTests
     {
             private Mock<IAgriculturalTourPackageService> _mockService;
+            private Mock<IGeneralService> _service;
             private Mock<IMapper> _mockMapper;
             private AgriculturalTourPackageController _controller;
 
@@ -23,7 +25,8 @@ namespace Test
             {
                 _mockService = new Mock<IAgriculturalTourPackageService>();
                 _mockMapper = new Mock<IMapper>();
-                _controller = new AgriculturalTourPackageController(_mockMapper.Object, _mockService.Object);
+                _service = new Mock<IGeneralService>();
+            _controller = new AgriculturalTourPackageController(_mockMapper.Object, _mockService.Object, _service.Object);
             }
 
             [TestMethod]
