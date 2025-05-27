@@ -67,6 +67,9 @@ public class BookingController(
             var responseResult = _mapper.Map<BookingAgriculturalTourRespone>(response);
             responseResult.Trackings = await _service.GetAllByTour(responseResult.TourId);
 
+            responseResult.AgriculturalTourPackage!.TourGuides = await _bookingService.GetTourGuide(responseResult.TourGuidIds);
+
+
             return Ok(responseResult);
         }
         catch (Exception ex)
@@ -144,8 +147,12 @@ public class BookingController(
     [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> RefundOrder(Guid tourId)
     {
+
         try
         {
+            // Note: this will cancel all the booked tour of others so unable to fix it with current design
+            return Ok();
+
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             if (userId == null) return Unauthorized();
 

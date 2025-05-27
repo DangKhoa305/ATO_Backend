@@ -1,11 +1,6 @@
 ﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Service.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.DriverSer
 {
@@ -13,10 +8,15 @@ namespace Service.DriverSer
     {
         private readonly IRepository<TourCompany> _tourCompanyRepository;
         private readonly IRepository<Driver> _driverRepository;
-        public DriverService(IRepository<Driver> driverRepository, IRepository<TourCompany> tourCompanyRepository)
+        private readonly IRepository<AgriculturalTourPackage> _agriculturalTourPackageRepository;
+
+        public DriverService(IRepository<Driver> driverRepository,
+            IRepository<TourCompany> tourCompanyRepository,
+            IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository)
         {
             _driverRepository = driverRepository;
             _tourCompanyRepository = tourCompanyRepository;
+            _agriculturalTourPackageRepository = agriculturalTourPackageRepository;
         }
         public async Task<bool> AddDriver(Driver driver, Guid UserId)
         {
@@ -48,6 +48,41 @@ namespace Service.DriverSer
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
+        }
+
+        public async Task<Dictionary<Guid?, string>> ListBusyDriver(Guid packageId)
+        {
+            Dictionary<Guid?, string> busyDrivers = new();
+
+            var tours = await _agriculturalTourPackageRepository.Query()
+                .Include(x => x.TourDestinations)
+                .Where(x => x.TourId != packageId)
+                .Select(x => new { x.TourDestinations, x.PackageName }).ToListAsync();
+
+            foreach (var tour in tours)
+            {
+                if (tour is not null)
+                {
+                    var destinations = tour.TourDestinations?.ToList();
+                    if (destinations is not null)
+                    {
+                        foreach (var destination in destinations)
+                        {
+                            if (destination.DriverId is not null)
+                            {
+                                var key = destination.DriverId;
+                                if (!busyDrivers.Keys.Contains(key))
+                                {
+                                    busyDrivers.Add(key, $"Đang bận lái xe cho tour '{tour.PackageName}', rảnh sau ngày {destination.EndTime.ToShortDateString()}");
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            return busyDrivers;
         }
 
         public async Task<List<Driver>> ListDriver(Guid UserId)

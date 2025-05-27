@@ -122,15 +122,11 @@ namespace ATO_API.Controllers.TourCompany
         [HttpPost("update-booking-status")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> BookingAccept([FromBody] BookingAccept BookingAccept)
+        public async Task<IActionResult> UpdateBookingStatus([FromBody] BookingAccept BookingAccept)
         {
             try
             {
-                await _bookingService.BookingAccept(BookingAccept);
-
-
-
-
+                await _bookingService.UpdateBookingStatus(BookingAccept);
                 return Ok();
             }
             catch (Exception ex)

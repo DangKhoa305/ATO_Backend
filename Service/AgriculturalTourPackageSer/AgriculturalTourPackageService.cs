@@ -277,6 +277,7 @@ namespace Service.AgriculturalTourPackageSer
             {
                 return await _agriculturalTourPackageRepository.Query()
                     .Where(x => x.StatusActive == StatusActive.active)
+                    .Where(x => x.StatusActive != StatusActive.inProgress)
                     .OrderByDescending(x => x.CreateDate)
                     .ToListAsync();
             }

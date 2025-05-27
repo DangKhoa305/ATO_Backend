@@ -1,14 +1,5 @@
 ﻿using Data.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Configuration;
-using Service.EmailSer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.TourGuideSer
 {
@@ -16,13 +7,17 @@ namespace Service.TourGuideSer
     {
         private readonly Service.Repository.IRepository<TourGuide> _tourGuideRepository;
         private readonly Service.Repository.IRepository<TourCompany> _tourCompanyRepository;
+        private readonly Service.Repository.IRepository<AgriculturalTourPackage> _agriculturalTourPackageRepository;
+
         public TourGuideService(
             Service.Repository.IRepository<TourGuide> tourGuideRepository,
-            Service.Repository.IRepository<TourCompany> tourCompanyRepository
+            Service.Repository.IRepository<TourCompany> tourCompanyRepository,
+            Service.Repository.IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository
             )
         {
             _tourGuideRepository = tourGuideRepository;
             _tourCompanyRepository = tourCompanyRepository;
+            _agriculturalTourPackageRepository = agriculturalTourPackageRepository;
         }
         public async Task AddTourGuideAsync(TourGuide TourGuide, Guid UserId)
         {
@@ -67,6 +62,47 @@ namespace Service.TourGuideSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+        public async Task<Dictionary<Guid, string>> GetBusyTourGuide(Guid packageId)
+        {
+            try
+            {
+                Dictionary<Guid, string> busyTourGuides = new();
+
+                var tours = await _agriculturalTourPackageRepository.Query()
+                    .Include(x => x.TourGuides)
+                    .Where(x => x.TourId != packageId)
+                    .Select(x => new { x.TourGuides, x.PackageName, x.EndTime }).ToListAsync();
+
+                foreach (var tour in tours)
+                {
+                    if (tour is not null)
+                    {
+                        var guides = tour.TourGuides?.ToList();
+                        if (guides is not null)
+                        {
+                            foreach (var guide in guides)
+                            {
+                                var key = Guid.Parse(guide.GuideId.ToString()!);
+                                if (!busyTourGuides.Keys.Contains(key))
+                                {
+                                    busyTourGuides.Add(key, $"Đang bận hướng dẫn tour '{tour.PackageName}', rảnh sau ngày {tour.EndTime.ToShortDateString()}");
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                return busyTourGuides;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
+
 
         public async Task UpdateTourGuideAsync(TourGuide TourGuide)
         {

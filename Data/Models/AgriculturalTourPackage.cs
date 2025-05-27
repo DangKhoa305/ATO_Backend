@@ -37,6 +37,7 @@ namespace Data.Models
     public enum StatusActive
     {
         active = 0,
-        inactive = 1
+        inactive = 1,
+        inProgress = 2,
     }
 }

@@ -10,6 +10,8 @@ namespace Service.DriverSer
     public interface IDriverService
     {
         Task<List<Driver>> ListDriver(Guid UserId);
+        Task<Dictionary<Guid?, string>> ListBusyDriver(Guid packageId);
+
         Task<Driver> GetDriver(Guid DriverId);
         Task<bool> AddDriver(Driver driver, Guid UserId);
         Task<bool> UpdateDriver(Guid DriverId, Driver driver);

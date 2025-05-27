@@ -15,5 +15,6 @@ namespace Service.TourismPackageSer
         Task<TourismPackage> GetTourismPackage_TC(Guid PackageId);
         Task<List<TourismPackage>> GetAllAsync();
         Task<bool> ProcessApprovalAsync(Guid packageId, StatusApproval status);
+        Task<int?> CountCurrentCapacityAsync(Guid activityId);
     }
 }

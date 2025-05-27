@@ -7,6 +7,7 @@ namespace Service.TourismPackageSer
     public class TourismPackageService : ITourismPackageService
     {
         private readonly IRepository<TourismPackage> _tourismPackageRepository;
+        private readonly IRepository<AgriculturalTourPackage> _agriculturalTourPackageRepository;
         private readonly IRepository<TouristFacility> _touristFacilityRepository;
         private readonly IRepository<Activity> _activityRepository;
         private readonly IRepository<Product> _productRepository;
@@ -14,12 +15,14 @@ namespace Service.TourismPackageSer
             IRepository<TourismPackage> tourismPackageRepository,
             IRepository<TouristFacility> touristFacilityRepository,
             IRepository<Activity> activityRepository,
-            IRepository<Product> productRepository)
+            IRepository<Product> productRepository,
+            IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository)
         {
             _tourismPackageRepository = tourismPackageRepository;
             _touristFacilityRepository = touristFacilityRepository;
             _activityRepository = activityRepository;
             _productRepository = productRepository;
+            _agriculturalTourPackageRepository = agriculturalTourPackageRepository;
         }
 
         public async Task<bool> CreateActivity_AFTO(Activity responseResult)
@@ -296,6 +299,14 @@ namespace Service.TourismPackageSer
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
+        }
+
+        public async Task<int?> CountCurrentCapacityAsync(Guid activityId)
+        {
+            return _agriculturalTourPackageRepository.Query()
+                   .Include(x => x.TourDestinations)
+                   .Where(x => x.TourDestinations!.Select(x => x.ActivityId).Contains(activityId))
+                   .Count();
         }
     }
 }

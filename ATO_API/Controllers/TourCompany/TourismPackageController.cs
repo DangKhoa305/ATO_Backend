@@ -37,6 +37,19 @@ namespace ATO_API.Controllers.TourCompany
                 var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 List<Data.Models.TourismPackage> response = await _tourismPackageService.GetListTourism_TC();
                 List<TourismPackageRespone_TC> responseResult = _mapper.Map<List<TourismPackageRespone_TC>>(response);
+                responseResult.ForEach(x =>
+                {
+                    var newActivities = x.Activities?.ToList();
+
+                    newActivities?.ForEach(async x =>
+                    {
+                        x.MaxCapacity = x.MaxCapacity ?? 1;
+                        x.CurrentCapacity = await _tourismPackageService.CountCurrentCapacityAsync(x.ActivityId);
+                    });
+
+                    x.Activities = newActivities;
+                });
+
                 return Ok(responseResult);
             }
             catch (Exception ex)

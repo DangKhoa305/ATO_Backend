@@ -21,8 +21,10 @@ namespace Data.DTO.Respone
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public StatusApproval StatusApproval { get; set; }
+
         public string? ReplyRequest { get; set; }
         public int? MaxCapacity { get; set; }
+        public int? CurrentCapacity { get; set; }
         public virtual ICollection<Product_ActivityRespone>? Products { get; set; }
     }
     public class Product_ActivityRespone

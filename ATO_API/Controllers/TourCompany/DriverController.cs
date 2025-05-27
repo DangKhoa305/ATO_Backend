@@ -61,6 +61,70 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
+
+        [HttpGet("available/{packageId}")]
+        [ProducesResponseType(typeof(List<DriverRespone>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetDrivers(Guid packageId)
+        {
+            try
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var response = await _driverService.ListDriver(Guid.Parse(userId!));
+
+                var busyDrivers = await _driverService.ListBusyDriver(packageId);
+                var responseResult = _mapper.Map<List<DriverRespone>>(response);
+
+                responseResult.ForEach(x =>
+                {
+                    if (busyDrivers.Keys.Contains(x.DriverId))
+                    {
+                        x.IsAvailable = false;
+                        x.Message = busyDrivers.GetValueOrDefault(x.DriverId);
+                    }
+                    else
+                    {
+                        x.IsAvailable = true;
+                    }
+                });
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+
+        [HttpGet("available")]
+        [ProducesResponseType(typeof(List<DriverRespone>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetAvailableDrivers()
+        {
+            try
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var response = await _driverService.ListDriver(Guid.Parse(userId));
+
+
+                var responseResult = _mapper.Map<List<DriverRespone>>(response);
+
+
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+
         [HttpGet("get-driver/{DriverId}")]
         [ProducesResponseType(typeof(DriverRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]

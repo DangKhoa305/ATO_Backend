@@ -16,6 +16,7 @@ public class BookingService(
     IRepository<AgriculturalTourPackage> agriculturalTourPackageRepository,
     IRepository<VNPayPaymentResponse> vNPayPaymentResponseRepository,
     IRepository<BookingTourDestination> bookingDestinationRepo,
+    IRepository<TourGuide> tourGuideRepo,
     IAdminBalanceService adminBalanceService) : IBookingService
 {
     private readonly IRepository<Order> _orderRepository = orderRepository;
@@ -27,6 +28,7 @@ public class BookingService(
     private readonly IRepository<TouristFacility> _touristFacilityRepository = touristFacilityRepository;
     private readonly IRepository<BookingAgriculturalTour> _bookingAgriculturalTourRepository = bookingAgriculturalTourRepository;
     private readonly IRepository<BookingTourDestination> _bookingDestinationRepo = bookingDestinationRepo;
+    private readonly IRepository<TourGuide> _tourGuideRepo = tourGuideRepo;
     private readonly IAdminBalanceService _adminBalanceService = adminBalanceService;
 
     public async Task AddBookPayment(VNPayPaymentResponse checkResponse)
@@ -110,34 +112,64 @@ public class BookingService(
         }
     }
 
-    public async Task BookingAccept(BookingAccept bookingAccept)
+    public async Task UpdateBookingStatus(BookingAccept bookingAccept)
     {
         var booking = await _bookingAgriculturalTourRepository.Query()
             .Where(x => x.GroupId == bookingAccept.TourId)
             .ToListAsync();
 
 
-        // TODO: refund user if cancel tour
-        if (bookingAccept.StatusBooking == StatusBooking.Completed || bookingAccept.StatusBooking == StatusBooking.Canceled)
+        var tourId = booking.FirstOrDefault()?.TourId;
+
+        var tour = await _agriculturalTourPackageRepository
+            .Query()
+            .Include(x => x.TourDestinations)
+            .Include(x => x.TourGuides)
+            .Where(x => x.TourId == tourId)
+            .FirstOrDefaultAsync();
+
+        if (tour is null) return;
+
+        if (bookingAccept.StatusBooking == StatusBooking.InProgress || bookingAccept.StatusBooking == StatusBooking.ConfirmBooking)
         {
-            var tourId = booking.FirstOrDefault()?.TourId;
-
-            var tour = await _agriculturalTourPackageRepository
-                .Query()
-                .Include(x => x.TourGuides)
-                .Where(x => x.TourId == tourId)
-                .FirstOrDefaultAsync();
-
-            if (tour is not null)
-            {
-                tour.TourGuides = null;
-                await _agriculturalTourPackageRepository.UpdateAsync(tour);
-            }
+            tour.StatusActive = StatusActive.inProgress;
         }
 
+        if (bookingAccept.StatusBooking == StatusBooking.Completed || bookingAccept.StatusBooking == StatusBooking.Canceled)
+        {
+            booking.ForEach(x =>
+            {
+                x.StatusBooking = bookingAccept.StatusBooking;
+                x.TourGuidIds = tour.TourGuides?.Select(x => x.GuideId).ToList();
+                x.DriverIds = tour.TourDestinations?.Select(x => x.DriverId).ToList();
+            });
 
+            await _bookingAgriculturalTourRepository.RealUpdateRangeAsync(booking);
 
-        booking.ForEach(x => x.StatusBooking = bookingAccept.StatusBooking);
+            var newDestinations = tour.TourDestinations?.ToList();
+            if (newDestinations is not null)
+                newDestinations.ForEach(x => x.DriverId = null);
+
+            tour.GroupId = Guid.NewGuid();
+            tour.TourGuides = null;
+            tour.TourDestinations = newDestinations;
+            tour.StatusActive = StatusActive.active;
+            await _agriculturalTourPackageRepository.UpdateAsync(tour);
+
+            // TODO: refund user if cancel tour
+            if (bookingAccept.StatusBooking == StatusBooking.Canceled)
+            {
+
+            }
+
+            return;
+        }
+
+        booking.ForEach(x =>
+        {
+            x.StatusBooking = bookingAccept.StatusBooking;
+        });
+
         await _bookingAgriculturalTourRepository.RealUpdateRangeAsync(booking);
     }
 
@@ -236,5 +268,37 @@ public class BookingService(
                 .AnyAsync(x => x.CustomerId == id && x.AgriculturalTourPackage!.EndTime > DateTime.Now);
 
         return any;
+    }
+
+    public async Task<ICollection<AgriculturalTourPackage_TourGuide_Respone>?> GetTourGuide(List<Guid>? tourGuidIds)
+    {
+        try
+        {
+
+            return await _tourGuideRepo.Query()
+          .Include(x => x.Account)
+          .Where(x => tourGuidIds.Contains(x.GuideId))
+          .Select(x => new AgriculturalTourPackage_TourGuide_Respone()
+          {
+              GuideId = x.GuideId,
+              Bio = x.Bio,
+              ExpertiseArea = x.ExpertiseArea,
+              Languages = x.Languages,
+              Rating = x.Rating,
+              UserId = x.UserId,
+              Account = new TourGuideRespone_Account()
+              {
+                  Fullname = x.Account!.Fullname,
+                  Email = x.Account.Email,
+                  PhoneNumber = x.Account.PhoneNumber
+              }
+          }).ToListAsync();
+        }
+
+        catch (Exception ex)
+        {
+            return [];
+        }
+
     }
 }

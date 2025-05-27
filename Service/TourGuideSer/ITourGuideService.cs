@@ -13,5 +13,7 @@ namespace Service.TourGuideSer
         Task<TourGuide> GetTourGuideByIdAsync(Guid GuideId);
         Task AddTourGuideAsync(TourGuide TourGuide, Guid UserId);
         Task UpdateTourGuideAsync(TourGuide TourGuide);
+
+        Task<Dictionary<Guid, string>> GetBusyTourGuide(Guid packageId);
     }
 }

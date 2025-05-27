@@ -20,6 +20,8 @@ namespace Data.Models
         public PaymentStatus PaymentStatus { get; set; }
         public StatusBooking StatusBooking { get; set; }
         public Guid? GroupId { get; set; }
+        public List<Guid>? TourGuidIds { get; set; } = [];
+        public List<Guid?>? DriverIds { get; set; } = [];
         public virtual Account? Customer { get; set; }
         public virtual AgriculturalTourPackage? AgriculturalTourPackage { get; set; }
         public virtual ICollection<Order>? Orders { get; set; }

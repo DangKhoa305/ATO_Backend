@@ -60,7 +60,45 @@ namespace ATO_API.Controllers.TourCompany
                 });
             }
         }
-        [HttpGet("vv/{GuideId}")]
+
+        [HttpGet("available/{packageId}")]
+        [ProducesResponseType(typeof(List<TourGuideRespone>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> Available(Guid packageId)
+        {
+            try
+            {
+                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                var response = await _tourGuideService.GetTourGuidesAsync(Guid.Parse(userId));
+                var busyGuides = await _tourGuideService.GetBusyTourGuide(packageId);
+                var responseResult = _mapper.Map<List<TourGuideRespone>>(response);
+
+                responseResult.ForEach(x =>
+                {
+                    if (busyGuides.Keys.Contains(x.GuideId))
+                    {
+                        x.IsAvailable = false;
+                        x.Message = busyGuides.GetValueOrDefault(x.GuideId);
+                    }
+                    else
+                    {
+                        x.IsAvailable = true;
+                    }
+                });
+
+                return Ok(responseResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseVM
+                {
+                    Status = false,
+                    Message = ex.Message,
+                });
+            }
+        }
+
+        [HttpGet("get-guide-team/{GuideId}")]
         [ProducesResponseType(typeof(TourGuideRespone), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseVM), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetGuideTeam(Guid GuideId)
