@@ -15,6 +15,7 @@ namespace Data.Models
         public List<string>? Imgs { get; set; }
         public Guid TourCompanyId { get; set; }
         public virtual TourCompany? TourCompany { get; set; }
+        public bool? IsAvailable { get; set; }
         public virtual ICollection<TourDestination>? TourDestinations { get; set; }
     }
     public enum VehicleType

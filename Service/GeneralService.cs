@@ -9,6 +9,11 @@ public class GeneralService(
     IRepository<BookingTourDestination> bookingDestinationRepo,
     IRepository<AgriculturalTourPackage> packageRepo) : IGeneralService
 {
+    public Task<IEnumerable<Notification>> GetOCOPNotifications(Guid userId)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<TourInfo> GetTourAsync(Guid tourId)
     {
         var query = bookingRepo.Query()

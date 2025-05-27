@@ -44,6 +44,7 @@ namespace Service.AgriculturalTourPackageSer
                 newTour.TourDestinations?.Clear();
                 newTour.StatusActive = StatusActive.inactive;
                 newTour.ChildTicketAge = "dưới 10 tuổi";
+                newTour.GroupId = Guid.NewGuid();
 
                 await _agriculturalTourPackageRepository.AddRangeAsync(newTour);
 
@@ -57,6 +58,34 @@ namespace Service.AgriculturalTourPackageSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+
+        public async Task AddTourGuides(List<Guid>? tourGuideIds, Guid tourId)
+        {
+            if (tourGuideIds is null) return;
+
+            var pack = await _agriculturalTourPackageRepository.Query().SingleOrDefaultAsync(x => x.TourId == tourId);
+            if (pack is null) return;
+
+            var tourGuides = await _tourGuideRepository.Query()
+                .Where(tg => tourGuideIds.Contains(tg.GuideId))
+                .ToListAsync();
+
+            pack.TourGuides = tourGuides;
+            await _agriculturalTourPackageRepository.UpdateRangeAsync(pack);
+        }
+
+        public async Task AddTourDestinations(ICollection<TourDestination>? destinations, Guid tourId)
+        {
+            await RemoveBookedTourDestinations(tourId);
+            await RemoveTourDestinations(tourId);
+            if (destinations is null) return;
+            foreach (var des in destinations)
+            {
+                await CreateTourDestination(des, tourId);
+
+            }
+        }
+
         public async Task<bool> UpdateAgriculturalTourPackage(Guid TourId, AgriculturalTourPackage updatedTour)
         {
             try
@@ -367,16 +396,7 @@ namespace Service.AgriculturalTourPackageSer
         }
 
         #region private 
-        private async Task AddTourDestinations(ICollection<TourDestination>? destinations, Guid tourId)
-        {
-            await RemoveBookedTourDestinations(tourId);
-            await RemoveTourDestinations(tourId);
-            if (destinations is null) return;
-            foreach (var des in destinations)
-            {
-                await CreateTourDestination(des, tourId);
-            }
-        }
+
 
         private async Task RemoveBookedTourDestinations(Guid tourId)
         {
@@ -398,20 +418,7 @@ namespace Service.AgriculturalTourPackageSer
             }
         }
 
-        private async Task AddTourGuides(List<Guid>? tourGuideIds, Guid tourId)
-        {
-            if (tourGuideIds is null) return;
 
-            var pack = await _agriculturalTourPackageRepository.Query().SingleOrDefaultAsync(x => x.TourId == tourId);
-            if (pack is null) return;
-
-            var tourGuides = await _tourGuideRepository.Query()
-                .Where(tg => tourGuideIds.Contains(tg.GuideId))
-                .ToListAsync();
-
-            pack.TourGuides = tourGuides;
-            await _agriculturalTourPackageRepository.UpdateRangeAsync(pack);
-        }
 
 
 

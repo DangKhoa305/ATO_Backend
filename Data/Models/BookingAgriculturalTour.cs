@@ -19,6 +19,7 @@ namespace Data.Models
         public decimal TotalAmmount { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public StatusBooking StatusBooking { get; set; }
+        public Guid? GroupId { get; set; }
         public virtual Account? Customer { get; set; }
         public virtual AgriculturalTourPackage? AgriculturalTourPackage { get; set; }
         public virtual ICollection<Order>? Orders { get; set; }

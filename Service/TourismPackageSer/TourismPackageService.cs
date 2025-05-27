@@ -208,6 +208,7 @@ namespace Service.TourismPackageSer
                 existingActivity.BreakTimeInMinutesType = responseResult.BreakTimeInMinutesType;
                 existingActivity.PackageId = responseResult.PackageId;
                 existingActivity.UpdateDate = DateTime.UtcNow;
+                existingActivity.MaxCapacity = responseResult.MaxCapacity;
                 existingActivity.Products?.Clear();
                 if (existingActivity.Products == null)
                 {

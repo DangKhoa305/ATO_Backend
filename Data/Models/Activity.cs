@@ -25,5 +25,7 @@ namespace Data.Models
         public virtual ICollection<Product>? Products { get; set; }
         public virtual TourismPackage? TourismPackage { get; set; }
         public virtual ICollection<TourDestination>? TourDestinations { get; set; }
+        public int? MaxCapacity { get; set; }
+
     }
 }

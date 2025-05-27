@@ -18,6 +18,8 @@ namespace Data.DTO.Respone
         public double Rating { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
+        public bool? IsAvailable { get; set; }
+        public string? Message { get; set; }
         public virtual TourGuideRespone_Account? Account { get; set; }
     }
     public class TourGuideRespone_Account

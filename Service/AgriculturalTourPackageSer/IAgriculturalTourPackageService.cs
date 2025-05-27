@@ -23,5 +23,8 @@ namespace Service.AgriculturalTourPackageSer
         Task<int> GetPeople(Guid tourId);
 
         Task<List<AgriculturalTourPackage>> GetAllByTourGuideAsync(Guid UserId);
+        Task AddTourGuides(List<Guid>? tourGuideIds, Guid tourId);
+        Task AddTourDestinations(ICollection<TourDestination>? destinations, Guid tourId);
+
     }
 }

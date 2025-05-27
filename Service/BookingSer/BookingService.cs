@@ -92,6 +92,8 @@ public class BookingService(
             var tour = _agriculturalTourPackageRepository.Query()
                 .FirstOrDefault(x => x.TourId == bookingAgriculturalTour.TourId);
             if (tour?.Slot <= 0) throw new Exception("Hết vé!");
+
+            bookingAgriculturalTour.GroupId = tour?.GroupId;
             bookingAgriculturalTour.BookingId = Guid.NewGuid();
             bookingAgriculturalTour.BookingDate = DateTime.UtcNow;
             bookingAgriculturalTour.PaymentStatus = PaymentStatus.UnPaid;

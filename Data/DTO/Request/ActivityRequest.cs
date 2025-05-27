@@ -21,6 +21,7 @@ namespace Data.DTO.Request
         public DateTime EndTime { get; set; }
         public Guid? PackageId { get; set; }
         public virtual ICollection<Product_ActivityResquest>? Products { get; set; }
+        public int? MaxCapacity { get; set; }
     }
     public class Product_ActivityResquest
     {

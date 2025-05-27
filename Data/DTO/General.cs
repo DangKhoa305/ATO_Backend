@@ -10,3 +10,4 @@ public class TourInfo
     public IdentityModel? TourCompany { get; set; }
     public string? Location { get; set; }
 }
+public record Notification(string Message);

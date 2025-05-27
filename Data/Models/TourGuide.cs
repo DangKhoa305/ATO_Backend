@@ -15,6 +15,8 @@ namespace Data.Models
         public string? Languages { get; set; }
         public string? ExpertiseArea { get; set; }
         public double Rating { get; set; }
+        public bool? IsAvailable { get; set; }
+
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public virtual Account? Account { get; set; }
