@@ -124,6 +124,7 @@ public class BookingService(
         var tour = await _agriculturalTourPackageRepository
             .Query()
             .Include(x => x.TourDestinations)
+                .ThenInclude(x => x.Driver)
             .Include(x => x.TourGuides)
             .Where(x => x.TourId == tourId)
             .FirstOrDefaultAsync();
