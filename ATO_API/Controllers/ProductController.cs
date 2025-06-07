@@ -10,6 +10,7 @@ using Nest;
 using Service.BlogSer;
 using Service.ProductSer;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace ATO_API.Controllers
@@ -44,6 +45,7 @@ namespace ATO_API.Controllers
                     var ocops = await _productService.GetListOCOPSellsByProductId_AFTO(item.ProductId, false);
                     var variations = _mapper.Map<List<OCOPSellDTO>>(ocops
                             .Where(x => x.ActiveStatus == true))
+                        .Where(x => x.SellVolume > 0)
                           .OrderBy(x => x.ExpiryDate);
                     foreach (var variation in variations)
                     {

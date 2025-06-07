@@ -432,7 +432,7 @@ namespace Service.ProductSer
                     .Include(x => x.TouristFacility)
                     .Include(b => b.Certifications)
                     .Include(b => b.OCOPSells)
-                    .Where(x => x.OCOPSells.Where(p => p.ActiveStatus == true && p.ExpiryDate > DateTime.UtcNow).Any())
+                    .Where(x => x.OCOPSells.Where(p => p.ActiveStatus == true && p.SellVolume > 0 && p.ExpiryDate > DateTime.UtcNow).Any())
                     .Where(x => x.Certifications.Where(a => a.StatusApproval == StatusApproval.Approved).Any())
                     .ToListAsync();
             }
