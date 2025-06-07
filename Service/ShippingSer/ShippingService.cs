@@ -14,8 +14,8 @@ namespace Service.ShippingSer
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
         private readonly Service.Repository.IRepository<ShipAddress> _shipAddressRepository;
-        private const string TOKEN = "3d60f46d-2b5a-11f0-afab-c2dd849a5f98";
-        private const int SHOP_ID = 5743000;
+        private const string TOKEN = "63ed1349-4145-11f0-8d71-124b06c09882";
+        private const int SHOP_ID = 5818831;
 
         public ShippingService(HttpClient httpClient, IConfiguration configuration, Service.Repository.IRepository<ShipAddress> shipAddressRepository)
         {

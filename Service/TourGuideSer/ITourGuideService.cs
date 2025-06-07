@@ -15,5 +15,7 @@ namespace Service.TourGuideSer
         Task UpdateTourGuideAsync(TourGuide TourGuide);
 
         Task<Dictionary<Guid, string>> GetBusyTourGuide(Guid packageId);
+        Task<Dictionary<Guid, string>> GetListBusyTourGuide();
+
     }
 }

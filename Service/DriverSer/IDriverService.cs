@@ -11,6 +11,7 @@ namespace Service.DriverSer
     {
         Task<List<Driver>> ListDriver(Guid UserId);
         Task<Dictionary<Guid?, string>> ListBusyDriver(Guid packageId);
+        Task<Dictionary<Guid?, string>> ListAllBusyDriver();
 
         Task<Driver> GetDriver(Guid DriverId);
         Task<bool> AddDriver(Driver driver, Guid UserId);

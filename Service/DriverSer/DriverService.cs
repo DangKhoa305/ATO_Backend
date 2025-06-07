@@ -85,6 +85,40 @@ namespace Service.DriverSer
             return busyDrivers;
         }
 
+        public async Task<Dictionary<Guid?, string>> ListAllBusyDriver()
+        {
+            Dictionary<Guid?, string> busyDrivers = new();
+
+            var tours = await _agriculturalTourPackageRepository.Query()
+                .Include(x => x.TourDestinations)
+                .Select(x => new { x.TourDestinations, x.PackageName }).ToListAsync();
+
+            foreach (var tour in tours)
+            {
+                if (tour is not null)
+                {
+                    var destinations = tour.TourDestinations?.ToList();
+                    if (destinations is not null)
+                    {
+                        foreach (var destination in destinations)
+                        {
+                            if (destination.DriverId is not null)
+                            {
+                                var key = destination.DriverId;
+                                if (!busyDrivers.Keys.Contains(key))
+                                {
+                                    busyDrivers.Add(key, $"Đang bận lái xe cho tour '{tour.PackageName}', rảnh sau ngày {destination.EndTime.ToShortDateString()}");
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            return busyDrivers;
+        }
+
         public async Task<List<Driver>> ListDriver(Guid UserId)
         {
             try

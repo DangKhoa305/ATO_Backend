@@ -108,9 +108,21 @@ namespace ATO_API.Controllers.TourCompany
             {
                 var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
                 var response = await _driverService.ListDriver(Guid.Parse(userId));
-
-
+                var busyDrivers = await _driverService.ListAllBusyDriver();
                 var responseResult = _mapper.Map<List<DriverRespone>>(response);
+
+                responseResult.ForEach(x =>
+                {
+                    if (busyDrivers.Keys.Contains(x.DriverId))
+                    {
+                        x.IsAvailable = false;
+                        x.Message = busyDrivers.GetValueOrDefault(x.DriverId);
+                    }
+                    else
+                    {
+                        x.IsAvailable = true;
+                    }
+                });
 
 
                 return Ok(responseResult);

@@ -102,6 +102,44 @@ namespace Service.TourGuideSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
+        public async Task<Dictionary<Guid, string>> GetListBusyTourGuide()
+        {
+            try
+            {
+                Dictionary<Guid, string> busyTourGuides = new();
+
+                var tours = await _agriculturalTourPackageRepository.Query()
+                    .Include(x => x.TourGuides)
+                    .Select(x => new { x.TourGuides, x.PackageName, x.EndTime }).ToListAsync();
+
+                foreach (var tour in tours)
+                {
+                    if (tour is not null)
+                    {
+                        var guides = tour.TourGuides?.ToList();
+                        if (guides is not null)
+                        {
+                            foreach (var guide in guides)
+                            {
+                                var key = Guid.Parse(guide.GuideId.ToString()!);
+                                if (!busyTourGuides.Keys.Contains(key))
+                                {
+                                    busyTourGuides.Add(key, $"Đang bận hướng dẫn tour '{tour.PackageName}', rảnh sau ngày {tour.EndTime.ToShortDateString()}");
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                return busyTourGuides;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
+            }
+        }
 
 
         public async Task UpdateTourGuideAsync(TourGuide TourGuide)
