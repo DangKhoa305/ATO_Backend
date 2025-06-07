@@ -40,16 +40,29 @@ namespace Service.ProductSer
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }
         }
-        public async Task<List<OCOPSell>> GetListOCOPSellsByProductId_AFTO(Guid ProductId)
+        public async Task<List<OCOPSell>> GetListOCOPSellsByProductId_AFTO(Guid ProductId, bool? showAll = true)
         {
             try
             {
-                return await _OCOPSellRepository.Query()
-                    .Include(x => x.Product)
-                    .Where(x => x.ProductId == ProductId)
-                    .ToListAsync();
+                if (showAll == true)
+                {
+                    return await _OCOPSellRepository.Query()
+                   .Include(x => x.Product)
+                   .Where(x => x.ProductId == ProductId)
+                   .ToListAsync();
+                }
+                else
+                {
+                    return await _OCOPSellRepository.Query()
+                     .Include(x => x.Product)
+                     .Where(x => x.SellVolume > 0)
+                     .Where(x => x.ExpiryDate > DateTime.Now)
+                     .Where(x => x.ProductId == ProductId)
+                     .Where(x => x.ActiveStatus == true)
+                     .ToListAsync();
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Exception("Đã xảy ra lỗi vui lòng thử lại sau!");
             }

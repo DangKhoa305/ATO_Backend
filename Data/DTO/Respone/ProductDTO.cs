@@ -85,7 +85,11 @@ namespace Data.DTO.Respone
         public Guid TouristFacilityId { get; set; }
         public virtual TouristFacilityDTO_Certfication? TouristFacility { get; set; }
         public virtual ICollection<CertificationRespone>? Certifications { get; set; }
+
+
     }
+
+
     public class ProductDTO_Guest
     {
         public Guid ProductId { get; set; }
@@ -108,6 +112,9 @@ namespace Data.DTO.Respone
         public Guid TouristFacilityId { get; set; }
         public virtual ProductDTO_TouristFacility? TouristFacility { get; set; }
         public virtual ICollection<CertificationRespone_Guest>? Certifications { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public IEnumerable<OCOPSellDTO> Variations { get; set; } = [];
+        public Guid OcopId { get; set; }
     }
     public class ProductDTO_TouristFacility
     {

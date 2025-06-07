@@ -20,7 +20,7 @@ namespace Service.ProductSer
         Task<OCOPSell> GetOCOPSell_AFTO(Guid OCOPSellId);
         Task<bool> CreateOCOPSell_AFTO(OCOPSell newOCOPSell);
         Task<bool> UpdateOCOPSell_AFTO(Guid OCOPSellId, OCOPSell updatedOCOPSell);
-        Task<List<OCOPSell>> GetListOCOPSellsByProductId_AFTO(Guid ProductId);
+        Task<List<OCOPSell>> GetListOCOPSellsByProductId_AFTO(Guid ProductId, bool? showAll = true);
         Task<List<Certification>> GetListCertificationsByProductId_AFTO(Guid productId);
         Task<Certification> GetCertification_AFTO(Guid CertificationId);
         Task<bool> CreateCertification_AFTO(Certification certification, Guid UserId);

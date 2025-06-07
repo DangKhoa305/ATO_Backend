@@ -10,7 +10,6 @@ namespace ATO_API.Controllers.Tourist
 {
     [Route("api/tourist/feedback")]
     [ApiController]
-    [Authorize(Roles = "Tourists")]
     public class FeedbackController : ControllerBase
     {
         private readonly IFeedbackService _feedbackService;
